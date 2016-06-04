@@ -1,0 +1,17 @@
+.top-bar, .top-bar ul {
+  background-color: $nav-background;
+  height: rem-calc(20);
+}
+
+.top-bar {
+  .menu-text {
+    color:$nav-text-color;
+  }
+
+// > is the next selector
+.menu > .menu-text > a {
+  display: inline;
+  padding: 0;
+}
+
+}
