@@ -13,11 +13,11 @@ class Home extends React.Component {
                 </div>
                 </div>
 
-                <div className="row">
+                <div className="row" data-equalizer data-equalize-on="medium" id="test-eq">
                     <h1 className="page-sub-heading">Subheading</h1>
                 <div className="large-7 columns">
 
-                  <div className="callout small">
+                  <div className="callout small" data-equalizer-watch>
           <h5>This is a large callout</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -31,7 +31,7 @@ class Home extends React.Component {
 
 
             <div className="large-4 columns">
-              <div className="callout small">
+              <div className="callout small" data-equalizer-watch>
                 <dl>
         <dt>Time</dt>
         <dd>The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.</dd>

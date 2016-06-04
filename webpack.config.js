@@ -9,28 +9,6 @@ module.exports = {
         'script!foundation-sites/dist/foundation.min.js',
         './src/index.js'
     ],
-
-    externals: {
-      jquery: 'jQuery'
-    },
-    module: {
-        loaders: [{
-            test: /\.js?$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-            query: {
-              cacheDirectory: true,
-              presets: ['react', 'es2015', 'survivejs-kanban']
-            },
-        }]
-    },
-    resolve: {
-    root: __dirname,
-    alias: {
-      applicationStyles: 'src/styles/app.scss'
-    },
-    extensions: ['', '.js', '.jsx']
-  },
     output: {
         path: 'dist',
         publicPath: '/',
@@ -40,6 +18,28 @@ module.exports = {
         contentBase: './dist',
         hot: true
     },
+    externals: {
+      jquery: 'jQuery'
+    },
+    resolve: {
+    root: __dirname,
+    alias: {
+      applicationStyles: 'src/styles/app.scss'
+    },
+    extensions: ['', '.js', '.jsx']
+  },
+    module: {
+        loaders: [{
+            test: /\.js?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: {
+              cacheDirectory: true,
+              presets: ['react', 'es2015', 'stage-0']
+            },
+        }]
+    },
+
     sassLoader: {
       includePaths: [
         path.resolve(__dirname, './node_modules/foundation-sites/scss')

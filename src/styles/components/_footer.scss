@@ -1,9 +1,23 @@
 .footer-wrapper {
     background-color: $nav-background;
+    height: rem-calc(300);
+    a {
+      color: $nav-text-color;
+      font-size: rem-calc(15);
+      margin-left: 0;
+      opacity: 0.75;
+    }
 }
 
-p.copyright {
-  padding: 0;
-  background-color: darken($primary-color, 5);
-  margin: 0;
+  .footer-heading {
+    margin-top: rem-calc(20);
+    color: $nav-text-color;
+    font-weight: bold;
+    margin-left: 10px;
   }
+
+  p.copyright {
+    padding: 0;
+    background-color: darken($nav-background, 5);
+    margin: 0;
+    }
