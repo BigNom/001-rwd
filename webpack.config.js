@@ -17,7 +17,11 @@ module.exports = {
         loaders: [{
             test: /\.js?$/,
             exclude: /node_modules/,
-            loader: 'react-hot!babel'
+            loader: 'babel',
+            query: {
+              cacheDirectory: true,
+              presets: ['react', 'es2015', 'survivejs-kanban']
+            },
         }]
     },
     resolve: {

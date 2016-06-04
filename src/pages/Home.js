@@ -9,7 +9,7 @@ class Home extends React.Component {
                 <div className="site-header fade-in">
                   <div className="row columns">
                   <h1 className="text-center site-title">Reactive Web Designs</h1>
-                    <h5 className="page-sub-title text-center">Building Responsive Site</h5>
+                    <h3 className="page-sub-title text-center">Building Responsive Applications</h3>
                 </div>
                 </div>
 
