@@ -12,18 +12,24 @@ const Footer = React.createClass({
                       <li><a>Home</a></li>
                       <li><a>Home</a></li>
                       <li><a>Home</a></li>
-                      
+
                       </ul>
                 </div>
                 <div className="medium-4 large-4 columns">
                   <ul className="menu footer">
+                      <li><a>Contact</a></li>
+                      <li><a>Contact</a></li>
+                      <li><a>Contact</a></li>
                       <li><a>Contact</a></li>
                       </ul>
                 </div>
                 <div className="medium-4 large-4 columns">
                   <ul className="menu footer">
                       <li><a>About</a></li>
-                  </ul>
+                      <li><a>About</a></li>
+                      <li><a>About</a></li>
+                      <li><a>About</a></li>
+                                        </ul>
                 </div>
               </div>
                 <p className="copyright text-center"><small>Copyright © 2009 Gordon Freeman</small></p>
