@@ -1,11 +1,11 @@
 .callout {
   margin-top: 0;
-  background-color: $light-gray;
+  background: $light-gray;
+  border: 1px solid $light-grey-border;
 
   h3 {
   margin: 0 2rem;
-  border-top:2px solid #cacaca;;
-  border-bottom:2px solid #cacaca;;
+  border-bottom: 1px solid $light-grey-border;
   text-transform:uppercase;
 }
 
@@ -26,3 +26,12 @@
   margin-top: rem-calc(30);
   margin-left: rem-calc(40);
 }
+
+dl {
+  padding: 0;
+
+  margin: 0 2rem;
+  dt {
+      border-bottom: 1px solid $light-grey-border;
+  }
+  }

@@ -14,7 +14,7 @@ class Home extends React.Component {
                 </div>
 
                 <div className="row" data-equalizer data-equalize-on="medium" id="test-eq">
-                    <h1 className="page-sub-heading">Subheading</h1>
+                    <h1 className="page-sub-heading">Reactive Web Designs</h1>
                 <div className="large-7 columns">
 
                   <div className="callout small" data-equalizer-watch>

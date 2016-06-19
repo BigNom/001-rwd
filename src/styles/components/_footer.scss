@@ -1,6 +1,6 @@
 .footer-wrapper {
     background-color: $nav-background;
-    height: rem-calc(300);
+    height: rem-calc(500);
     a {
       color: $nav-text-color;
       font-size: rem-calc(15);
@@ -21,3 +21,13 @@
     background-color: darken($nav-background, 5);
     margin: 0;
     }
+
+.social-menu {
+  position: absolute;
+  left: 40%;
+  padding-top: 50px;
+}
+
+.social {
+ padding: 20px;
+}

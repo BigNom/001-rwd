@@ -15,7 +15,7 @@ class Contact extends React.Component {
           </div>
 
           <div className="row">
-              <h1 className="page-sub-heading">Subheading</h1>
+              <h1 className="page-sub-heading">Contact Us today</h1>
           <div className="large-8 columns">
   <ContactForm />
   </div>

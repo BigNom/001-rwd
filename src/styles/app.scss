@@ -5,18 +5,25 @@
 @import url(https://fonts.googleapis.com/css?family=Monoton);
 
 // foundation
+//@import "base/foundation-icons";
 @import "base/foundation-settings";
 @import "foundation";
 @include foundation-everything;
+
 
 //Components
 @import "components/navbar";
 @import "components/pageheader";
 @import "components/contactform";
+@import "components/sidenav";
 //@import "components/main-content";
 @import "components/footer";
 @import "components/about";
 @import "components/contact";
 
 // iconfonts
-@import 'base/ionicons';
+//@import 'base/ionicons';
+
+//@import "css/component.scss";
+// @import "css/demo.scss";
+//@import "css/normalize.scss";

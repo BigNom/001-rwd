@@ -3,24 +3,26 @@ var path = require('path');
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://localhost:8080',
-        'webpack/hot/only-dev-server',
         'script!jquery/dist/jquery.min.js',
         'script!foundation-sites/dist/foundation.min.js',
         './src/index.js'
+    ],
+    externals: {
+      jquery: 'jQuery'
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProvidePlugin({
+          '$': 'jquery',
+          'jQuery': 'jquery'
+        })
     ],
     output: {
         path: 'dist',
         publicPath: '/',
         filename: 'bundle.js'
     },
-    devServer: {
-        contentBase: './dist',
-        hot: true
-    },
-    externals: {
-      jquery: 'jQuery'
-    },
+
     resolve: {
     root: __dirname,
     alias: {
@@ -29,7 +31,8 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
     module: {
-        loaders: [{
+        loaders: [
+          {
             test: /\.js?$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
@@ -37,7 +40,18 @@ module.exports = {
               cacheDirectory: true,
               presets: ['react', 'es2015', 'stage-0']
             },
-        }]
+        },
+        {
+            test: /\.(jpg|png)$/,
+            loader: 'url?limit=25000',
+            include: 'src/styles/img/',
+            filename: 'demo-1-bg.jpg'
+          }
+      ]
+    },
+    devServer: {
+        contentBase: './dist',
+        hot: true
     },
 
     sassLoader: {
@@ -45,11 +59,5 @@ module.exports = {
         path.resolve(__dirname, './node_modules/foundation-sites/scss')
       ]
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.ProvidePlugin({
-          '$': 'jquery',
-          'jQuery': 'jquery'
-        })
-    ]
+
 };

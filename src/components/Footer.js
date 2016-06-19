@@ -1,5 +1,7 @@
  import React from 'react';
 import { IndexLink, Link } from 'react-router';
+import Social from './Social';
+
 
 const Footer = React.createClass({
   render() {
@@ -10,6 +12,7 @@ const Footer = React.createClass({
                 <div className="medium-3 large-3 columns">
                   <ul className="menu footer vertical">
                     <h5 className="footer-heading">Design</h5>
+                    <button class="hollow button" href="/webdesign">Web Design</button>
                       <li><a>Responsive Web Designs</a></li>
                       <li><a>Design Options</a></li>
                       <li><a>eCommerce Websites</a></li>
@@ -38,12 +41,13 @@ const Footer = React.createClass({
                   <ul className="menu footer vertical">
                     <h5 className="footer-heading">Contact</h5>
                         <li class="menu social align-right">
-                                <li><a href="http://www.twitter.com">Twitter</a></li>
-                                <li><a href="http://www.facebook.com"><i class="fi-social-facebook"></i></a></li>
+                                 <button className="button social" type="submit" value="Submit">Social</button>
+
                             </li>
                       </ul>
                 </div>
               </div>
+              <Social />
 
               </div>
               <p className="copyright text-center"><small>Copyright © 2016 ReactiveWebDesigns</small></p>

@@ -15,11 +15,11 @@ const ContactForm = React.createClass({
                         <label className="form-label">Phone</label>
                         <input type="number" placeholder="Enter your phone number"/>
                           <select>
-    <option value="husker">Design</option>
-    <option value="starbuck">Marketing</option>
-    <option value="hotdog">eCommerce</option>
-    <option value="apollo">Other</option>
-  </select>
+                          <option value="husker">Design</option>
+                          <option value="starbuck">Marketing</option>
+                          <option value="hotdog">eCommerce</option>
+                          <option value="apollo">Other</option>
+                        </select>
 
                           <label className="form-label message">Message</label>
                           <textarea placeholder="Leave a message"/>

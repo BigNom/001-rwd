@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ca5422fdfb254e1153bd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7990a6534b2c3cf3e99c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -655,7 +655,7 @@
 	$(document).foundation();
 
 	// App css
-	__webpack_require__(248);
+	__webpack_require__(374);
 
 	var appHistory = (0, _reactRouter.useRouterHistory)(_history.createHashHistory)({ queryKey: false });
 
@@ -26708,17 +26708,25 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _Home = __webpack_require__(244);
+	var _Home = __webpack_require__(366);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Contact = __webpack_require__(245);
+	var _Contact = __webpack_require__(367);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
-	var _About = __webpack_require__(247);
+	var _About = __webpack_require__(370);
 
 	var _About2 = _interopRequireDefault(_About);
+
+	var _SideNav = __webpack_require__(371);
+
+	var _SideNav2 = _interopRequireDefault(_SideNav);
+
+	var _Webdesign = __webpack_require__(373);
+
+	var _Webdesign2 = _interopRequireDefault(_Webdesign);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26727,7 +26735,9 @@
 		{ path: '/', component: _App2.default },
 		_react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: 'contact', component: _Contact2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: 'about', component: _About2.default })
+		_react2.default.createElement(_reactRouter.Route, { path: 'about', component: _About2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: 'sidenav', component: _SideNav2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: 'webdesign', component: _Webdesign2.default })
 	);
 
 	exports.default = routes;
@@ -26763,6 +26773,8 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	//import Titlebar from '../components/titlebar';
+
 
 	var App = function (_React$Component) {
 		_inherits(App, _React$Component);
@@ -26873,6 +26885,24 @@
 	                { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	                'About'
 	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/sidenav', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                'SideNav'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/landingpage', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                'LandingPage'
+	              )
 	            )
 	          )
 	        ),
@@ -26919,6 +26949,10 @@
 
 	var _reactRouter = __webpack_require__(175);
 
+	var _Social = __webpack_require__(244);
+
+	var _Social2 = _interopRequireDefault(_Social);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Footer = _react2.default.createClass({
@@ -26926,142 +26960,189 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'footer-wrapper' },
+	      { className: 'component-wrapper' },
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'row' },
+	        { className: 'footer-wrapper' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'medium-4 large-4 columns' },
+	          { className: 'row' },
 	          _react2.default.createElement(
-	            'ul',
-	            { className: 'menu footer' },
+	            'div',
+	            { className: 'medium-3 large-3 columns' },
 	            _react2.default.createElement(
-	              'li',
-	              null,
+	              'ul',
+	              { className: 'menu footer vertical' },
 	              _react2.default.createElement(
-	                'a',
+	                'h5',
+	                { className: 'footer-heading' },
+	                'Design'
+	              ),
+	              _react2.default.createElement(
+	                'button',
+	                { 'class': 'hollow button', href: '/webdesign' },
+	                'Web Design'
+	              ),
+	              _react2.default.createElement(
+	                'li',
 	                null,
-	                'Home'
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'Responsive Web Designs'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'Design Options'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'eCommerce Websites'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'Logo and Branding'
+	                )
 	              )
-	            ),
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'medium-3 large-3 columns' },
 	            _react2.default.createElement(
-	              'li',
-	              null,
+	              'ul',
+	              { className: 'menu footer vertical' },
 	              _react2.default.createElement(
-	                'a',
+	                'h5',
+	                { className: 'footer-heading' },
+	                'Marketing'
+	              ),
+	              _react2.default.createElement(
+	                'li',
 	                null,
-	                'Home'
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'SEO Professionals'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'Website Marketing'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'Google Adwords'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'Facebook Marketing'
+	                )
 	              )
-	            ),
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'medium-3 large-3 columns' },
 	            _react2.default.createElement(
-	              'li',
-	              null,
+	              'ul',
+	              { className: 'menu footer vertical' },
 	              _react2.default.createElement(
-	                'a',
+	                'h5',
+	                { className: 'footer-heading' },
+	                'About'
+	              ),
+	              _react2.default.createElement(
+	                'li',
 	                null,
-	                'Home'
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'Why Choose'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'Testimonials'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'Team'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  null,
+	                  'HomeBlog'
+	                )
 	              )
-	            ),
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'medium-3 large-3 columns' },
 	            _react2.default.createElement(
-	              'li',
-	              null,
+	              'ul',
+	              { className: 'menu footer vertical' },
 	              _react2.default.createElement(
-	                'a',
-	                null,
-	                'Home'
+	                'h5',
+	                { className: 'footer-heading' },
+	                'Contact'
+	              ),
+	              _react2.default.createElement(
+	                'li',
+	                { 'class': 'menu social align-right' },
+	                _react2.default.createElement(
+	                  'button',
+	                  { className: 'button social', type: 'submit', value: 'Submit' },
+	                  'Social'
+	                )
 	              )
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'medium-4 large-4 columns' },
-	          _react2.default.createElement(
-	            'ul',
-	            { className: 'menu footer' },
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                'a',
-	                null,
-	                'Contact'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                'a',
-	                null,
-	                'Contact'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                'a',
-	                null,
-	                'Contact'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                'a',
-	                null,
-	                'Contact'
-	              )
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'medium-4 large-4 columns' },
-	          _react2.default.createElement(
-	            'ul',
-	            { className: 'menu footer' },
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                'a',
-	                null,
-	                'About'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                'a',
-	                null,
-	                'About'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                'a',
-	                null,
-	                'About'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                'a',
-	                null,
-	                'About'
-	              )
-	            )
-	          )
-	        )
+	        _react2.default.createElement(_Social2.default, null)
 	      ),
 	      _react2.default.createElement(
 	        'p',
@@ -27069,7 +27150,7 @@
 	        _react2.default.createElement(
 	          'small',
 	          null,
-	          'Copyright © 2009 Gordon Freeman'
+	          'Copyright © 2016 ReactiveWebDesigns'
 	        )
 	      )
 	    );
@@ -27080,6 +27161,7351 @@
 
 /***/ },
 /* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(8);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactShare = __webpack_require__(245);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/* eslint-disable react/prefer-stateless-function */
+	var FacebookShareButton = _reactShare.ShareButtons.FacebookShareButton;
+	var GooglePlusShareButton = _reactShare.ShareButtons.GooglePlusShareButton;
+	var LinkedinShareButton = _reactShare.ShareButtons.LinkedinShareButton;
+	var TwitterShareButton = _reactShare.ShareButtons.TwitterShareButton;
+	var PinterestShareButton = _reactShare.ShareButtons.PinterestShareButton;
+
+
+	var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
+	var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
+	var GooglePlusIcon = (0, _reactShare.generateShareIcon)('google');
+	var LinkedinIcon = (0, _reactShare.generateShareIcon)('linkedin');
+	var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');
+
+	var Social = _react2.default.createClass({
+	  displayName: 'Social',
+	  render: function render() {
+	    var shareUrl = 'http://github.com';
+	    var title = 'GitHub';
+
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'row' },
+	      _react2.default.createElement(
+	        'ul',
+	        { className: 'menu social-menu' },
+	        _react2.default.createElement(
+	          'li',
+	          { className: 'social' },
+	          _react2.default.createElement(
+	            FacebookShareButton,
+	            {
+	              url: shareUrl,
+	              title: title,
+	              className: 'Demo__some-network__share-button' },
+	            _react2.default.createElement(FacebookIcon, {
+	              size: 48,
+	              round: true })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          { className: 'social' },
+	          _react2.default.createElement(
+	            TwitterShareButton,
+	            {
+	              url: shareUrl,
+	              title: title,
+	              className: 'Demo__some-network__share-button' },
+	            _react2.default.createElement(TwitterIcon, {
+	              size: 48,
+	              round: true })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          { className: 'social' },
+	          _react2.default.createElement(
+	            GooglePlusShareButton,
+	            {
+	              url: shareUrl,
+	              className: 'Demo__some-network__share-button' },
+	            _react2.default.createElement(GooglePlusIcon, {
+	              size: 48,
+	              round: true })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'li',
+	          { className: 'social' },
+	          _react2.default.createElement(
+	            LinkedinShareButton,
+	            {
+	              url: shareUrl,
+	              title: title,
+	              className: 'Demo__some-network__share-button' },
+	            _react2.default.createElement(LinkedinIcon, {
+	              size: 48,
+	              round: true })
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = Social;
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.ShareCounts = exports.ShareButtons = exports.generateShareIcon = undefined;
+
+	var _generateIcon = __webpack_require__(246);
+
+	var _shareButtons = __webpack_require__(286);
+
+	var ShareButtons = _interopRequireWildcard(_shareButtons);
+
+	var _shareCounts = __webpack_require__(358);
+
+	var ShareCounts = _interopRequireWildcard(_shareCounts);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	exports.generateShareIcon = _generateIcon.generateIcon;
+	exports.ShareButtons = ShareButtons;
+	exports.ShareCounts = ShareCounts;
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends2 = __webpack_require__(247);
+
+	var _extends3 = _interopRequireDefault(_extends2);
+
+	exports.generateIcon = generateIcon;
+
+	var _react = __webpack_require__(8);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _icons = __webpack_require__(285);
+
+	var _icons2 = _interopRequireDefault(_icons);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function generateIcon(network) {
+	  if (!_icons2.default[network.toLowerCase()]) {
+	    throw new Error('invalid network name for a social icon');
+	  }
+
+	  var iconConfig = _icons2.default[network.toLowerCase()];
+
+	  return _react2.default.createClass({
+	    propTypes: {
+	      className: _react2.default.PropTypes.string,
+	      iconBgStyle: _react2.default.PropTypes.object,
+	      logoFillColor: _react2.default.PropTypes.string,
+	      round: _react2.default.PropTypes.bool,
+	      size: _react2.default.PropTypes.number
+	    },
+
+	    getDefaultProps: function getDefaultProps() {
+	      return {
+	        logoFillColor: 'white',
+	        size: 64
+	      };
+	    },
+	    render: function render() {
+	      var _props = this.props;
+	      var className = _props.className;
+	      var iconBgStyle = _props.iconBgStyle;
+	      var logoFillColor = _props.logoFillColor;
+	      var round = _props.round;
+	      var size = _props.size;
+
+
+	      var baseStyle = {
+	        width: size,
+	        height: size
+	      };
+
+	      var svgStyle = {
+	        fill: logoFillColor,
+	        width: size,
+	        height: size
+	      };
+
+	      var classes = 'social-icon social-icon--' + network + ' ' + className;
+
+	      var finalIconBgStyle = (0, _extends3.default)({
+	        fill: iconConfig.color
+	      }, iconBgStyle);
+
+	      return _react2.default.createElement(
+	        'div',
+	        { style: baseStyle },
+	        _react2.default.createElement(
+	          'svg',
+	          { viewBox: '0 0 64 64',
+	            style: svgStyle,
+	            className: classes },
+	          _react2.default.createElement(
+	            'g',
+	            null,
+	            !round ? _react2.default.createElement('rect', {
+	              width: '64',
+	              height: '64',
+	              style: finalIconBgStyle }) : _react2.default.createElement('circle', {
+	              cx: '32',
+	              cy: '32',
+	              r: '31',
+	              style: finalIconBgStyle })
+	          ),
+	          _react2.default.createElement(
+	            'g',
+	            null,
+	            _react2.default.createElement('path', { d: iconConfig.icon })
+	          )
+	        )
+	      );
+	    }
+	  });
+	}
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _assign = __webpack_require__(248);
+
+	var _assign2 = _interopRequireDefault(_assign);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _assign2.default || function (target) {
+	  for (var i = 1; i < arguments.length; i++) {
+	    var source = arguments[i];
+
+	    for (var key in source) {
+	      if (Object.prototype.hasOwnProperty.call(source, key)) {
+	        target[key] = source[key];
+	      }
+	    }
+	  }
+
+	  return target;
+	};
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(249), __esModule: true };
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(250);
+	module.exports = __webpack_require__(253).Object.assign;
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(251);
+
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(266)});
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(252)
+	  , core      = __webpack_require__(253)
+	  , ctx       = __webpack_require__(254)
+	  , hide      = __webpack_require__(256)
+	  , PROTOTYPE = 'prototype';
+
+	var $export = function(type, name, source){
+	  var IS_FORCED = type & $export.F
+	    , IS_GLOBAL = type & $export.G
+	    , IS_STATIC = type & $export.S
+	    , IS_PROTO  = type & $export.P
+	    , IS_BIND   = type & $export.B
+	    , IS_WRAP   = type & $export.W
+	    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
+	    , expProto  = exports[PROTOTYPE]
+	    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
+	    , key, own, out;
+	  if(IS_GLOBAL)source = name;
+	  for(key in source){
+	    // contains in native
+	    own = !IS_FORCED && target && target[key] !== undefined;
+	    if(own && key in exports)continue;
+	    // export native or passed
+	    out = own ? target[key] : source[key];
+	    // prevent global pollution for namespaces
+	    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+	    // bind timers to global for call from export context
+	    : IS_BIND && own ? ctx(out, global)
+	    // wrap global constructors for prevent change them in library
+	    : IS_WRAP && target[key] == out ? (function(C){
+	      var F = function(a, b, c){
+	        if(this instanceof C){
+	          switch(arguments.length){
+	            case 0: return new C;
+	            case 1: return new C(a);
+	            case 2: return new C(a, b);
+	          } return new C(a, b, c);
+	        } return C.apply(this, arguments);
+	      };
+	      F[PROTOTYPE] = C[PROTOTYPE];
+	      return F;
+	    // make static versions for prototype methods
+	    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+	    // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
+	    if(IS_PROTO){
+	      (exports.virtual || (exports.virtual = {}))[key] = out;
+	      // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
+	      if(type & $export.R && expProto && !expProto[key])hide(expProto, key, out);
+	    }
+	  }
+	};
+	// type bitmap
+	$export.F = 1;   // forced
+	$export.G = 2;   // global
+	$export.S = 4;   // static
+	$export.P = 8;   // proto
+	$export.B = 16;  // bind
+	$export.W = 32;  // wrap
+	$export.U = 64;  // safe
+	$export.R = 128; // real proto method for `library` 
+	module.exports = $export;
+
+/***/ },
+/* 252 */
+/***/ function(module, exports) {
+
+	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+	var global = module.exports = typeof window != 'undefined' && window.Math == Math
+	  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
+	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
+
+/***/ },
+/* 253 */
+/***/ function(module, exports) {
+
+	var core = module.exports = {version: '2.4.0'};
+	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// optional / simple context binding
+	var aFunction = __webpack_require__(255);
+	module.exports = function(fn, that, length){
+	  aFunction(fn);
+	  if(that === undefined)return fn;
+	  switch(length){
+	    case 1: return function(a){
+	      return fn.call(that, a);
+	    };
+	    case 2: return function(a, b){
+	      return fn.call(that, a, b);
+	    };
+	    case 3: return function(a, b, c){
+	      return fn.call(that, a, b, c);
+	    };
+	  }
+	  return function(/* ...args */){
+	    return fn.apply(that, arguments);
+	  };
+	};
+
+/***/ },
+/* 255 */
+/***/ function(module, exports) {
+
+	module.exports = function(it){
+	  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
+	  return it;
+	};
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var dP         = __webpack_require__(257)
+	  , createDesc = __webpack_require__(265);
+	module.exports = __webpack_require__(261) ? function(object, key, value){
+	  return dP.f(object, key, createDesc(1, value));
+	} : function(object, key, value){
+	  object[key] = value;
+	  return object;
+	};
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var anObject       = __webpack_require__(258)
+	  , IE8_DOM_DEFINE = __webpack_require__(260)
+	  , toPrimitive    = __webpack_require__(264)
+	  , dP             = Object.defineProperty;
+
+	exports.f = __webpack_require__(261) ? Object.defineProperty : function defineProperty(O, P, Attributes){
+	  anObject(O);
+	  P = toPrimitive(P, true);
+	  anObject(Attributes);
+	  if(IE8_DOM_DEFINE)try {
+	    return dP(O, P, Attributes);
+	  } catch(e){ /* empty */ }
+	  if('get' in Attributes || 'set' in Attributes)throw TypeError('Accessors not supported!');
+	  if('value' in Attributes)O[P] = Attributes.value;
+	  return O;
+	};
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var isObject = __webpack_require__(259);
+	module.exports = function(it){
+	  if(!isObject(it))throw TypeError(it + ' is not an object!');
+	  return it;
+	};
+
+/***/ },
+/* 259 */
+/***/ function(module, exports) {
+
+	module.exports = function(it){
+	  return typeof it === 'object' ? it !== null : typeof it === 'function';
+	};
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = !__webpack_require__(261) && !__webpack_require__(262)(function(){
+	  return Object.defineProperty(__webpack_require__(263)('div'), 'a', {get: function(){ return 7; }}).a != 7;
+	});
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Thank's IE8 for his funny defineProperty
+	module.exports = !__webpack_require__(262)(function(){
+	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+	});
+
+/***/ },
+/* 262 */
+/***/ function(module, exports) {
+
+	module.exports = function(exec){
+	  try {
+	    return !!exec();
+	  } catch(e){
+	    return true;
+	  }
+	};
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var isObject = __webpack_require__(259)
+	  , document = __webpack_require__(252).document
+	  // in old IE typeof document.createElement is 'object'
+	  , is = isObject(document) && isObject(document.createElement);
+	module.exports = function(it){
+	  return is ? document.createElement(it) : {};
+	};
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.1 ToPrimitive(input [, PreferredType])
+	var isObject = __webpack_require__(259);
+	// instead of the ES6 spec version, we didn't implement @@toPrimitive case
+	// and the second argument - flag - preferred type is a string
+	module.exports = function(it, S){
+	  if(!isObject(it))return it;
+	  var fn, val;
+	  if(S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
+	  if(typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it)))return val;
+	  if(!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it)))return val;
+	  throw TypeError("Can't convert object to primitive value");
+	};
+
+/***/ },
+/* 265 */
+/***/ function(module, exports) {
+
+	module.exports = function(bitmap, value){
+	  return {
+	    enumerable  : !(bitmap & 1),
+	    configurable: !(bitmap & 2),
+	    writable    : !(bitmap & 4),
+	    value       : value
+	  };
+	};
+
+/***/ },
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	// 19.1.2.1 Object.assign(target, source, ...)
+	var getKeys  = __webpack_require__(267)
+	  , gOPS     = __webpack_require__(282)
+	  , pIE      = __webpack_require__(283)
+	  , toObject = __webpack_require__(284)
+	  , IObject  = __webpack_require__(271)
+	  , $assign  = Object.assign;
+
+	// should work with symbols and should have deterministic property order (V8 bug)
+	module.exports = !$assign || __webpack_require__(262)(function(){
+	  var A = {}
+	    , B = {}
+	    , S = Symbol()
+	    , K = 'abcdefghijklmnopqrst';
+	  A[S] = 7;
+	  K.split('').forEach(function(k){ B[k] = k; });
+	  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+	}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
+	  var T     = toObject(target)
+	    , aLen  = arguments.length
+	    , index = 1
+	    , getSymbols = gOPS.f
+	    , isEnum     = pIE.f;
+	  while(aLen > index){
+	    var S      = IObject(arguments[index++])
+	      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
+	      , length = keys.length
+	      , j      = 0
+	      , key;
+	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
+	  } return T;
+	} : $assign;
+
+/***/ },
+/* 267 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+	var $keys       = __webpack_require__(268)
+	  , enumBugKeys = __webpack_require__(281);
+
+	module.exports = Object.keys || function keys(O){
+	  return $keys(O, enumBugKeys);
+	};
+
+/***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var has          = __webpack_require__(269)
+	  , toIObject    = __webpack_require__(270)
+	  , arrayIndexOf = __webpack_require__(274)(false)
+	  , IE_PROTO     = __webpack_require__(278)('IE_PROTO');
+
+	module.exports = function(object, names){
+	  var O      = toIObject(object)
+	    , i      = 0
+	    , result = []
+	    , key;
+	  for(key in O)if(key != IE_PROTO)has(O, key) && result.push(key);
+	  // Don't enum bug & hidden keys
+	  while(names.length > i)if(has(O, key = names[i++])){
+	    ~arrayIndexOf(result, key) || result.push(key);
+	  }
+	  return result;
+	};
+
+/***/ },
+/* 269 */
+/***/ function(module, exports) {
+
+	var hasOwnProperty = {}.hasOwnProperty;
+	module.exports = function(it, key){
+	  return hasOwnProperty.call(it, key);
+	};
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// to indexed object, toObject with fallback for non-array-like ES3 strings
+	var IObject = __webpack_require__(271)
+	  , defined = __webpack_require__(273);
+	module.exports = function(it){
+	  return IObject(defined(it));
+	};
+
+/***/ },
+/* 271 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// fallback for non-array-like ES3 and non-enumerable old V8 strings
+	var cof = __webpack_require__(272);
+	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
+	  return cof(it) == 'String' ? it.split('') : Object(it);
+	};
+
+/***/ },
+/* 272 */
+/***/ function(module, exports) {
+
+	var toString = {}.toString;
+
+	module.exports = function(it){
+	  return toString.call(it).slice(8, -1);
+	};
+
+/***/ },
+/* 273 */
+/***/ function(module, exports) {
+
+	// 7.2.1 RequireObjectCoercible(argument)
+	module.exports = function(it){
+	  if(it == undefined)throw TypeError("Can't call method on  " + it);
+	  return it;
+	};
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// false -> Array#indexOf
+	// true  -> Array#includes
+	var toIObject = __webpack_require__(270)
+	  , toLength  = __webpack_require__(275)
+	  , toIndex   = __webpack_require__(277);
+	module.exports = function(IS_INCLUDES){
+	  return function($this, el, fromIndex){
+	    var O      = toIObject($this)
+	      , length = toLength(O.length)
+	      , index  = toIndex(fromIndex, length)
+	      , value;
+	    // Array#includes uses SameValueZero equality algorithm
+	    if(IS_INCLUDES && el != el)while(length > index){
+	      value = O[index++];
+	      if(value != value)return true;
+	    // Array#toIndex ignores holes, Array#includes - not
+	    } else for(;length > index; index++)if(IS_INCLUDES || index in O){
+	      if(O[index] === el)return IS_INCLUDES || index || 0;
+	    } return !IS_INCLUDES && -1;
+	  };
+	};
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.15 ToLength
+	var toInteger = __webpack_require__(276)
+	  , min       = Math.min;
+	module.exports = function(it){
+	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+	};
+
+/***/ },
+/* 276 */
+/***/ function(module, exports) {
+
+	// 7.1.4 ToInteger
+	var ceil  = Math.ceil
+	  , floor = Math.floor;
+	module.exports = function(it){
+	  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+	};
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var toInteger = __webpack_require__(276)
+	  , max       = Math.max
+	  , min       = Math.min;
+	module.exports = function(index, length){
+	  index = toInteger(index);
+	  return index < 0 ? max(index + length, 0) : min(index, length);
+	};
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var shared = __webpack_require__(279)('keys')
+	  , uid    = __webpack_require__(280);
+	module.exports = function(key){
+	  return shared[key] || (shared[key] = uid(key));
+	};
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global = __webpack_require__(252)
+	  , SHARED = '__core-js_shared__'
+	  , store  = global[SHARED] || (global[SHARED] = {});
+	module.exports = function(key){
+	  return store[key] || (store[key] = {});
+	};
+
+/***/ },
+/* 280 */
+/***/ function(module, exports) {
+
+	var id = 0
+	  , px = Math.random();
+	module.exports = function(key){
+	  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+	};
+
+/***/ },
+/* 281 */
+/***/ function(module, exports) {
+
+	// IE 8- don't enum bug keys
+	module.exports = (
+	  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
+	).split(',');
+
+/***/ },
+/* 282 */
+/***/ function(module, exports) {
+
+	exports.f = Object.getOwnPropertySymbols;
+
+/***/ },
+/* 283 */
+/***/ function(module, exports) {
+
+	exports.f = {}.propertyIsEnumerable;
+
+/***/ },
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.13 ToObject(argument)
+	var defined = __webpack_require__(273);
+	module.exports = function(it){
+	  return Object(defined(it));
+	};
+
+/***/ },
+/* 285 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/* eslint-disable max-len */
+	exports.default = {
+	  facebook: {
+	    icon: 'M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z',
+	    mask: 'M0,0v64h64V0H0z M39.6,22l-2.8,0c-2.2,0-2.6,1.1-2.6,2.6V28h5.3l-0.7,5.3h-4.6V47h-5.5V33.3H24V28h4.6V24 c0-4.6,2.8-7,6.9-7c2,0,3.6,0.1,4.1,0.2V22z',
+	    color: '#3b5998'
+	  },
+	  google: {
+	    icon: 'M35.4,17h-8c-1.1,0-2.2,0.1-3.4,0.4 c-1.2,0.3-2.4,0.9-3.5,1.8c-1.7,1.6-2.5,3.4-2.5,5.4c0,1.6,0.6,3.1,1.8,4.3c1.1,1.3,2.7,2,4.9,2c0.4,0,0.8,0,1.3-0.1 c-0.1,0.2-0.2,0.4-0.2,0.7c-0.1,0.2-0.2,0.5-0.2,0.9c0,0.6,0.1,1.1,0.4,1.5c0.2,0.4,0.5,0.8,0.8,1.2c-0.9,0-2.1,0.1-3.5,0.4 c-1.4,0.2-2.8,0.7-4.1,1.5c-1.2,0.7-1.9,1.5-2.4,2.4c-0.5,0.9-0.7,1.7-0.7,2.5c0,1.5,0.7,2.8,2.1,3.9c1.4,1.2,3.5,1.8,6.3,1.8 c3.3-0.1,5.9-0.9,7.7-2.4c1.7-1.5,2.6-3.2,2.6-5.2c0-1.4-0.3-2.5-0.9-3.3c-0.6-0.8-1.4-1.6-2.2-2.3l-1.4-1.1 c-0.2-0.2-0.4-0.4-0.6-0.7c-0.2-0.3-0.4-0.6-0.4-1c0-0.4,0.1-0.8,0.4-1.1c0.2-0.3,0.4-0.6,0.7-0.8c0.4-0.4,0.8-0.7,1.2-1.1 c0.3-0.4,0.6-0.7,0.9-1.2c0.6-0.9,0.9-2,0.9-3.4c0-0.8-0.1-1.5-0.3-2.1c-0.2-0.6-0.5-1.1-0.7-1.5c-0.3-0.5-0.6-0.8-0.9-1.2 c-0.3-0.3-0.6-0.5-0.8-0.7H33L35.4,17z M31,38.9c0.7,0.8,1,1.6,1,2.7c0,1.3-0.5,2.3-1.5,3.1c-1,0.8-2.4,1.2-4.3,1.3 c-2.1,0-3.8-0.5-5-1.4c-1.3-0.9-1.9-2.1-1.9-3.5c0-0.7,0.1-1.3,0.4-1.8c0.3-0.5,0.6-0.9,0.9-1.2c0.4-0.3,0.8-0.6,1.1-0.7 c0.4-0.2,0.7-0.3,0.9-0.4c0.9-0.3,1.7-0.5,2.5-0.6c0.8-0.1,1.4-0.1,1.6-0.1c0.3,0,0.6,0,0.9,0C29.2,37.3,30.3,38.2,31,38.9z  M29.7,27.1c-0.1,0.5-0.3,1.1-0.7,1.6c-0.7,0.7-1.6,1.1-2.6,1.1c-0.8,0-1.6-0.3-2.2-0.8c-0.6-0.5-1.2-1.1-1.6-1.9 c-0.8-1.6-1.3-3.1-1.3-4.5c0-1.1,0.3-2.1,0.9-3c0.7-0.9,1.6-1.3,2.7-1.3c0.8,0,1.5,0.3,2.2,0.7c0.6,0.5,1.1,1.1,1.5,1.9 c0.8,1.6,1.2,3.2,1.2,4.8C29.8,26.1,29.8,26.5,29.7,27.1z M43.7,29.5v-4.3h-2.5v4.3H37V32h4.2v4.2h2.5V32H48v-2.5H43.7z',
+	    mask: 'M0,0v64h64V0H0z M31.3,19.1c0.3,0.3,0.6,0.7,0.9,1.2c0.3,0.4,0.5,0.9,0.7,1.5c0.2,0.6,0.3,1.3,0.3,2.1 c0,1.4-0.3,2.6-0.9,3.4c-0.3,0.4-0.6,0.8-0.9,1.2c-0.4,0.4-0.8,0.7-1.2,1.1c-0.2,0.2-0.5,0.5-0.7,0.8c-0.2,0.3-0.4,0.7-0.4,1.1 c0,0.4,0.1,0.8,0.4,1c0.2,0.3,0.4,0.5,0.6,0.7l1.4,1.1c0.8,0.7,1.6,1.5,2.2,2.3c0.6,0.8,0.9,2,0.9,3.3c0,1.9-0.9,3.7-2.6,5.2 c-1.8,1.6-4.3,2.4-7.7,2.4c-2.8,0-4.9-0.6-6.3-1.8c-1.4-1.1-2.1-2.4-2.1-3.9c0-0.7,0.2-1.6,0.7-2.5c0.4-0.9,1.2-1.7,2.4-2.4 c1.3-0.7,2.7-1.2,4.1-1.5c1.4-0.2,2.6-0.3,3.5-0.4c-0.3-0.4-0.5-0.8-0.8-1.2c-0.3-0.4-0.4-0.9-0.4-1.5c0-0.4,0-0.6,0.2-0.9 c0.1-0.2,0.2-0.5,0.2-0.7c-0.5,0.1-0.9,0.1-1.3,0.1c-2.1,0-3.8-0.7-4.9-2c-1.2-1.2-1.8-2.7-1.8-4.3c0-2,0.8-3.8,2.5-5.4 c1.1-0.9,2.3-1.6,3.5-1.8c1.2-0.2,2.3-0.4,3.4-0.4h8L33,18.4h-2.5C30.7,18.6,31,18.8,31.3,19.1z M48,32h-4.3v4.2h-2.5V32H37v-2.5 h4.2v-4.3h2.5v4.3H48V32z M27.1,19.1c-0.6-0.5-1.4-0.7-2.2-0.7c-1.1,0-2,0.5-2.7,1.3c-0.6,0.9-0.9,1.9-0.9,3c0,1.5,0.4,3,1.3,4.5 c0.4,0.7,0.9,1.4,1.6,1.9c0.6,0.5,1.4,0.8,2.2,0.8c1.1,0,1.9-0.4,2.6-1.1c0.3-0.5,0.6-1,0.7-1.6c0.1-0.5,0.1-1,0.1-1.4 c0-1.6-0.4-3.2-1.2-4.8C28.2,20.2,27.7,19.5,27.1,19.1z M26.9,36.2c-0.2,0-0.7,0-1.6,0.1c-0.8,0.1-1.7,0.3-2.5,0.6 c-0.2,0.1-0.5,0.2-0.9,0.4c-0.4,0.2-0.7,0.4-1.1,0.7c-0.4,0.3-0.7,0.7-0.9,1.2c-0.3,0.5-0.4,1.1-0.4,1.8c0,1.4,0.6,2.6,1.9,3.5 c1.2,0.9,2.9,1.4,5,1.4c1.9,0,3.3-0.4,4.3-1.3c1-0.8,1.5-1.8,1.5-3.1c0-1-0.3-1.9-1-2.7c-0.7-0.7-1.8-1.6-3.3-2.6 C27.5,36.2,27.2,36.2,26.9,36.2z',
+	    color: '#dd4b39'
+	  },
+	  linkedin: {
+	    icon: 'M20.4,44h5.4V26.6h-5.4V44z M23.1,18c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1 c1.7,0,3.1-1.4,3.1-3.1C26.2,19.4,24.8,18,23.1,18z M39.5,26.2c-2.6,0-4.4,1.4-5.1,2.8h-0.1v-2.4h-5.2V44h5.4v-8.6 c0-2.3,0.4-4.5,3.2-4.5c2.8,0,2.8,2.6,2.8,4.6V44H46v-9.5C46,29.8,45,26.2,39.5,26.2z',
+	    mask: 'M0,0v64h64V0H0z M25.8,44h-5.4V26.6h5.4V44z M23.1,24.3c-1.7,0-3.1-1.4-3.1-3.1c0-1.7,1.4-3.1,3.1-3.1 c1.7,0,3.1,1.4,3.1,3.1C26.2,22.9,24.8,24.3,23.1,24.3z M46,44h-5.4v-8.4c0-2,0-4.6-2.8-4.6c-2.8,0-3.2,2.2-3.2,4.5V44h-5.4V26.6 h5.2V29h0.1c0.7-1.4,2.5-2.8,5.1-2.8c5.5,0,6.5,3.6,6.5,8.3V44z',
+	    color: '#007fb1'
+	  },
+	  twitter: {
+	    icon: 'M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z',
+	    mask: 'M0,0v64h64V0H0z M44.7,25.5c0,0.3,0,0.6,0,0.8C44.7,35,38.1,45,26.1,45c-3.7,0-7.2-1.1-10.1-2.9 c0.5,0.1,1,0.1,1.6,0.1c3.1,0,5.9-1,8.2-2.8c-2.9-0.1-5.3-2-6.1-4.6c0.4,0.1,0.8,0.1,1.2,0.1c0.6,0,1.2-0.1,1.7-0.2 c-3-0.6-5.3-3.3-5.3-6.4c0,0,0-0.1,0-0.1c0.9,0.5,1.9,0.8,3,0.8c-1.8-1.2-2.9-3.2-2.9-5.5c0-1.2,0.3-2.3,0.9-3.3 c3.2,4,8.1,6.6,13.5,6.9c-0.1-0.5-0.2-1-0.2-1.5c0-3.6,2.9-6.6,6.6-6.6c1.9,0,3.6,0.8,4.8,2.1c1.5-0.3,2.9-0.8,4.2-1.6 c-0.5,1.5-1.5,2.8-2.9,3.6c1.3-0.2,2.6-0.5,3.8-1C47.1,23.4,46,24.5,44.7,25.5z',
+	    color: '#00aced'
+	  },
+	  pinterest: {
+	    icon: 'M32,16c-8.8,0-16,7.2-16,16c0,6.6,3.9,12.2,9.6,14.7c0-1.1,0-2.5,0.3-3.7 c0.3-1.3,2.1-8.7,2.1-8.7s-0.5-1-0.5-2.5c0-2.4,1.4-4.1,3.1-4.1c1.5,0,2.2,1.1,2.2,2.4c0,1.5-0.9,3.7-1.4,5.7 c-0.4,1.7,0.9,3.1,2.5,3.1c3,0,5.1-3.9,5.1-8.5c0-3.5-2.4-6.1-6.7-6.1c-4.9,0-7.9,3.6-7.9,7.7c0,1.4,0.4,2.4,1.1,3.1 c0.3,0.3,0.3,0.5,0.2,0.9c-0.1,0.3-0.3,1-0.3,1.3c-0.1,0.4-0.4,0.6-0.8,0.4c-2.2-0.9-3.3-3.4-3.3-6.1c0-4.5,3.8-10,11.4-10 c6.1,0,10.1,4.4,10.1,9.2c0,6.3-3.5,11-8.6,11c-1.7,0-3.4-0.9-3.9-2c0,0-0.9,3.7-1.1,4.4c-0.3,1.2-1,2.5-1.6,3.4 c1.4,0.4,3,0.7,4.5,0.7c8.8,0,16-7.2,16-16C48,23.2,40.8,16,32,16z',
+	    mask: 'M0,0v64h64V0H0z M32,48c-1.6,0-3.1-0.2-4.5-0.7c0.6-1,1.3-2.2,1.6-3.4c0.2-0.7,1.1-4.4,1.1-4.4 c0.6,1.1,2.2,2,3.9,2c5.1,0,8.6-4.7,8.6-11c0-4.7-4-9.2-10.1-9.2c-7.6,0-11.4,5.5-11.4,10c0,2.8,1,5.2,3.3,6.1 c0.4,0.1,0.7,0,0.8-0.4c0.1-0.3,0.2-1,0.3-1.3c0.1-0.4,0.1-0.5-0.2-0.9c-0.6-0.8-1.1-1.7-1.1-3.1c0-4,3-7.7,7.9-7.7 c4.3,0,6.7,2.6,6.7,6.1c0,4.6-2,8.5-5.1,8.5c-1.7,0-2.9-1.4-2.5-3.1c0.5-2,1.4-4.2,1.4-5.7c0-1.3-0.7-2.4-2.2-2.4 c-1.7,0-3.1,1.8-3.1,4.1c0,1.5,0.5,2.5,0.5,2.5s-1.8,7.4-2.1,8.7c-0.3,1.2-0.3,2.6-0.3,3.7C19.9,44.2,16,38.6,16,32 c0-8.8,7.2-16,16-16c8.8,0,16,7.2,16,16C48,40.8,40.8,48,32,48z',
+	    color: '#cb2128'
+	  },
+	  vk: {
+	    icon: 'M44.94,44.84h-0.2c-2.17-.36-3.66-1.92-4.92-3.37C39.1,40.66,38,38.81,36.7,39c-1.85.3-.93,3.52-1.71,4.9-0.62,1.11-3.29.91-5.12,0.71-5.79-.62-8.75-3.77-11.35-7.14A64.13,64.13,0,0,1,11.6,26a10.59,10.59,0,0,1-1.51-4.49C11,20.7,12.56,21,14.11,21c1.31,0,3.36-.29,4.32.2C19,21.46,19.57,23,20,24a37.18,37.18,0,0,0,3.31,5.82c0.56,0.81,1.41,2.35,2.41,2.14s1.06-2.63,1.1-4.18c0-1.77,0-4-.5-4.9S25,22,24.15,21.47c0.73-1.49,2.72-1.63,5.12-1.63,2,0,4.84-.23,5.62,1.12s0.25,3.85.2,5.71c-0.06,2.09-.41,4.25,1,5.21,1.09-.12,1.68-1.2,2.31-2A28,28,0,0,0,41.72,24c0.44-1,.91-2.65,1.71-3,1.21-.47,3.15-0.1,4.92-0.1,1.46,0,4.05-.41,4.52.61,0.39,0.85-.75,3-1.1,3.57a61.88,61.88,0,0,1-4.12,5.61c-0.58.78-1.78,2-1.71,3.27,0.05,0.94,1,1.67,1.71,2.35a33.12,33.12,0,0,1,3.92,4.18c0.47,0.62,1.5,2,1.4,2.76C52.66,45.81,46.88,44.24,44.94,44.84Z',
+	    mask: 'M0,0v64h64V0H0z M44.94,44.84h-0.2c-2.17-.36-3.66-1.92-4.92-3.37C39.1,40.66,38,38.81,36.7,39c-1.85.3-.93,3.52-1.71,4.9-0.62,1.11-3.29.91-5.12,0.71-5.79-.62-8.75-3.77-11.35-7.14A64.13,64.13,0,0,1,11.6,26a10.59,10.59,0,0,1-1.51-4.49C11,20.7,12.56,21,14.11,21c1.31,0,3.36-.29,4.32.2C19,21.46,19.57,23,20,24a37.18,37.18,0,0,0,3.31,5.82c0.56,0.81,1.41,2.35,2.41,2.14s1.06-2.63,1.1-4.18c0-1.77,0-4-.5-4.9S25,22,24.15,21.47c0.73-1.49,2.72-1.63,5.12-1.63,2,0,4.84-.23,5.62,1.12s0.25,3.85.2,5.71c-0.06,2.09-.41,4.25,1,5.21,1.09-.12,1.68-1.2,2.31-2A28,28,0,0,0,41.72,24c0.44-1,.91-2.65,1.71-3,1.21-.47,3.15-0.1,4.92-0.1,1.46,0,4.05-.41,4.52.61,0.39,0.85-.75,3-1.1,3.57a61.88,61.88,0,0,1-4.12,5.61c-0.58.78-1.78,2-1.71,3.27,0.05,0.94,1,1.67,1.71,2.35a33.12,33.12,0,0,1,3.92,4.18c0.47,0.62,1.5,2,1.4,2.76C52.66,45.81,46.88,44.24,44.94,44.84Z',
+	    color: '#45668e'
+	  }
+	};
+	/* eslint-enable max-len */
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.VKShareButton = exports.PinterestShareButton = exports.LinkedinShareButton = exports.GooglePlusShareButton = exports.TwitterShareButton = exports.FacebookShareButton = undefined;
+
+	var _extends2 = __webpack_require__(247);
+
+	var _extends3 = _interopRequireDefault(_extends2);
+
+	var _objectWithoutProperties2 = __webpack_require__(287);
+
+	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+	var _getPrototypeOf = __webpack_require__(288);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(293);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(294);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(298);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(333);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _keys = __webpack_require__(341);
+
+	var _keys2 = _interopRequireDefault(_keys);
+
+	var _react = __webpack_require__(8);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(344);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _socialMediaShareLinks = __webpack_require__(345);
+
+	var links = _interopRequireWildcard(_socialMediaShareLinks);
+
+	var _utils = __webpack_require__(355);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/* eslint-disable react/no-multi-comp */
+
+
+	var supportedNetworks = (0, _keys2.default)(links);
+
+	var ShareButton = function (_Component) {
+	  (0, _inherits3.default)(ShareButton, _Component);
+
+	  function ShareButton() {
+	    var _Object$getPrototypeO;
+
+	    var _temp, _this, _ret;
+
+	    (0, _classCallCheck3.default)(this, ShareButton);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_Object$getPrototypeO = (0, _getPrototypeOf2.default)(ShareButton)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.onClick = function (e) {
+	      if (!_this.props.disabled) {
+	        e.preventDefault();
+	        (0, _utils.windowOpen)(_this.link());
+	      }
+	    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+	  }
+
+	  (0, _createClass3.default)(ShareButton, [{
+	    key: 'link',
+	    value: function link() {
+	      var _props = this.props;
+	      var url = _props.url;
+	      var opts = _props.opts;
+	      var network = _props.network;
+
+	      return links[network](url, opts);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _props2 = this.props;
+	      var className = _props2.className;
+	      var disabled = _props2.disabled;
+	      var disabledStyle = _props2.disabledStyle;
+	      var network = _props2.network;
+	      var style = _props2.style;
+	      var rest = (0, _objectWithoutProperties3.default)(_props2, ['className', 'disabled', 'disabledStyle', 'network', 'style']);
+
+
+	      var classes = (0, _classnames2.default)('SocialMediaShareButton', 'SocialMediaShareButton--' + network, {
+	        'SocialMediaShareButton--disabled': !!disabled,
+	        disabled: !!disabled
+	      }, className);
+
+	      return _react2.default.createElement('div', (0, _extends3.default)({}, rest, {
+	        onClick: this.onClick,
+	        url: this.link(),
+	        className: classes,
+	        style: (0, _extends3.default)({}, style, disabled ? disabledStyle : {}) }));
+	    }
+	  }]);
+	  return ShareButton;
+	}(_react.Component);
+
+	/* HOC to ease migration from v1 to v2.
+	 * To-be-removed in v2.
+	 */
+
+
+	ShareButton.propTypes = {
+	  className: _react.PropTypes.string,
+	  disabled: _react.PropTypes.bool,
+	  disabledStyle: _react.PropTypes.object,
+	  network: _react.PropTypes.oneOf(supportedNetworks),
+	  opts: _react.PropTypes.object,
+	  url: _react.PropTypes.string.isRequired,
+	  style: _react.PropTypes.object
+	};
+	ShareButton.defaultProps = {
+	  disabledStyle: {
+	    opacity: 0.6
+	  }
+	};
+	exports.default = ShareButton;
+	function createShareButton(network) {
+	  var optsMap = arguments.length <= 1 || arguments[1] === undefined ? function () {
+	    return {};
+	  } : arguments[1];
+	  var propTypes = arguments[2];
+
+	  return _react2.default.createClass({
+	    propTypes: propTypes,
+
+	    render: function render() {
+	      return _react2.default.createElement(ShareButton, (0, _extends3.default)({}, this.props, {
+	        network: network,
+	        opts: optsMap(this.props) }));
+	    }
+	  });
+	}
+
+	var FacebookShareButton = exports.FacebookShareButton = createShareButton('facebook', function (props) {
+	  return {
+	    title: props.title
+	  };
+	}, {
+	  title: _react.PropTypes.string.isRequired
+	});
+
+	var TwitterShareButton = exports.TwitterShareButton = createShareButton('twitter', function (props) {
+	  return {
+	    text: props.title,
+	    via: props.via,
+	    hashtags: props.hashtags
+	  };
+	}, {
+	  title: _react.PropTypes.string.isRequired,
+	  url: _react.PropTypes.string.isRequired,
+	  via: _react.PropTypes.string
+	});
+
+	var GooglePlusShareButton = exports.GooglePlusShareButton = createShareButton('googlePlus');
+
+	var LinkedinShareButton = exports.LinkedinShareButton = createShareButton('linkedin', function (props) {
+	  return {
+	    title: props.title
+	  };
+	}, {
+	  title: _react.PropTypes.string.isRequired
+	});
+
+	var PinterestShareButton = exports.PinterestShareButton = createShareButton('pinterest', function (props) {
+	  return {
+	    media: props.media,
+	    description: props.description
+	  };
+	}, {
+	  media: _react.PropTypes.string.isRequired,
+	  description: _react.PropTypes.string
+	});
+
+	var VKShareButton = exports.VKShareButton = createShareButton('vk');
+
+/***/ },
+/* 287 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	exports.default = function (obj, keys) {
+	  var target = {};
+
+	  for (var i in obj) {
+	    if (keys.indexOf(i) >= 0) continue;
+	    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+	    target[i] = obj[i];
+	  }
+
+	  return target;
+	};
+
+/***/ },
+/* 288 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(289), __esModule: true };
+
+/***/ },
+/* 289 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(290);
+	module.exports = __webpack_require__(253).Object.getPrototypeOf;
+
+/***/ },
+/* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.9 Object.getPrototypeOf(O)
+	var toObject        = __webpack_require__(284)
+	  , $getPrototypeOf = __webpack_require__(291);
+
+	__webpack_require__(292)('getPrototypeOf', function(){
+	  return function getPrototypeOf(it){
+	    return $getPrototypeOf(toObject(it));
+	  };
+	});
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+	var has         = __webpack_require__(269)
+	  , toObject    = __webpack_require__(284)
+	  , IE_PROTO    = __webpack_require__(278)('IE_PROTO')
+	  , ObjectProto = Object.prototype;
+
+	module.exports = Object.getPrototypeOf || function(O){
+	  O = toObject(O);
+	  if(has(O, IE_PROTO))return O[IE_PROTO];
+	  if(typeof O.constructor == 'function' && O instanceof O.constructor){
+	    return O.constructor.prototype;
+	  } return O instanceof Object ? ObjectProto : null;
+	};
+
+/***/ },
+/* 292 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// most Object methods by ES6 should accept primitives
+	var $export = __webpack_require__(251)
+	  , core    = __webpack_require__(253)
+	  , fails   = __webpack_require__(262);
+	module.exports = function(KEY, exec){
+	  var fn  = (core.Object || {})[KEY] || Object[KEY]
+	    , exp = {};
+	  exp[KEY] = exec(fn);
+	  $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
+	};
+
+/***/ },
+/* 293 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	exports.default = function (instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	};
+
+/***/ },
+/* 294 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _defineProperty = __webpack_require__(295);
+
+	var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function () {
+	  function defineProperties(target, props) {
+	    for (var i = 0; i < props.length; i++) {
+	      var descriptor = props[i];
+	      descriptor.enumerable = descriptor.enumerable || false;
+	      descriptor.configurable = true;
+	      if ("value" in descriptor) descriptor.writable = true;
+	      (0, _defineProperty2.default)(target, descriptor.key, descriptor);
+	    }
+	  }
+
+	  return function (Constructor, protoProps, staticProps) {
+	    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+	    if (staticProps) defineProperties(Constructor, staticProps);
+	    return Constructor;
+	  };
+	}();
+
+/***/ },
+/* 295 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(296), __esModule: true };
+
+/***/ },
+/* 296 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(297);
+	var $Object = __webpack_require__(253).Object;
+	module.exports = function defineProperty(it, key, desc){
+	  return $Object.defineProperty(it, key, desc);
+	};
+
+/***/ },
+/* 297 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $export = __webpack_require__(251);
+	// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+	$export($export.S + $export.F * !__webpack_require__(261), 'Object', {defineProperty: __webpack_require__(257).f});
+
+/***/ },
+/* 298 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _typeof2 = __webpack_require__(299);
+
+	var _typeof3 = _interopRequireDefault(_typeof2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (self, call) {
+	  if (!self) {
+	    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	  }
+
+	  return call && ((typeof call === "undefined" ? "undefined" : (0, _typeof3.default)(call)) === "object" || typeof call === "function") ? call : self;
+	};
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _iterator = __webpack_require__(300);
+
+	var _iterator2 = _interopRequireDefault(_iterator);
+
+	var _symbol = __webpack_require__(319);
+
+	var _symbol2 = _interopRequireDefault(_symbol);
+
+	var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default ? "symbol" : typeof obj; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
+	  return typeof obj === "undefined" ? "undefined" : _typeof(obj);
+	} : function (obj) {
+	  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
+	};
+
+/***/ },
+/* 300 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(301), __esModule: true };
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(302);
+	__webpack_require__(314);
+	module.exports = __webpack_require__(318).f('iterator');
+
+/***/ },
+/* 302 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var $at  = __webpack_require__(303)(true);
+
+	// 21.1.3.27 String.prototype[@@iterator]()
+	__webpack_require__(304)(String, 'String', function(iterated){
+	  this._t = String(iterated); // target
+	  this._i = 0;                // next index
+	// 21.1.5.2.1 %StringIteratorPrototype%.next()
+	}, function(){
+	  var O     = this._t
+	    , index = this._i
+	    , point;
+	  if(index >= O.length)return {value: undefined, done: true};
+	  point = $at(O, index);
+	  this._i += point.length;
+	  return {value: point, done: false};
+	});
+
+/***/ },
+/* 303 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var toInteger = __webpack_require__(276)
+	  , defined   = __webpack_require__(273);
+	// true  -> String#at
+	// false -> String#codePointAt
+	module.exports = function(TO_STRING){
+	  return function(that, pos){
+	    var s = String(defined(that))
+	      , i = toInteger(pos)
+	      , l = s.length
+	      , a, b;
+	    if(i < 0 || i >= l)return TO_STRING ? '' : undefined;
+	    a = s.charCodeAt(i);
+	    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
+	      ? TO_STRING ? s.charAt(i) : a
+	      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
+	  };
+	};
+
+/***/ },
+/* 304 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var LIBRARY        = __webpack_require__(305)
+	  , $export        = __webpack_require__(251)
+	  , redefine       = __webpack_require__(306)
+	  , hide           = __webpack_require__(256)
+	  , has            = __webpack_require__(269)
+	  , Iterators      = __webpack_require__(307)
+	  , $iterCreate    = __webpack_require__(308)
+	  , setToStringTag = __webpack_require__(312)
+	  , getPrototypeOf = __webpack_require__(291)
+	  , ITERATOR       = __webpack_require__(313)('iterator')
+	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
+	  , FF_ITERATOR    = '@@iterator'
+	  , KEYS           = 'keys'
+	  , VALUES         = 'values';
+
+	var returnThis = function(){ return this; };
+
+	module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
+	  $iterCreate(Constructor, NAME, next);
+	  var getMethod = function(kind){
+	    if(!BUGGY && kind in proto)return proto[kind];
+	    switch(kind){
+	      case KEYS: return function keys(){ return new Constructor(this, kind); };
+	      case VALUES: return function values(){ return new Constructor(this, kind); };
+	    } return function entries(){ return new Constructor(this, kind); };
+	  };
+	  var TAG        = NAME + ' Iterator'
+	    , DEF_VALUES = DEFAULT == VALUES
+	    , VALUES_BUG = false
+	    , proto      = Base.prototype
+	    , $native    = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT]
+	    , $default   = $native || getMethod(DEFAULT)
+	    , $entries   = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined
+	    , $anyNative = NAME == 'Array' ? proto.entries || $native : $native
+	    , methods, key, IteratorPrototype;
+	  // Fix native
+	  if($anyNative){
+	    IteratorPrototype = getPrototypeOf($anyNative.call(new Base));
+	    if(IteratorPrototype !== Object.prototype){
+	      // Set @@toStringTag to native iterators
+	      setToStringTag(IteratorPrototype, TAG, true);
+	      // fix for some old engines
+	      if(!LIBRARY && !has(IteratorPrototype, ITERATOR))hide(IteratorPrototype, ITERATOR, returnThis);
+	    }
+	  }
+	  // fix Array#{values, @@iterator}.name in V8 / FF
+	  if(DEF_VALUES && $native && $native.name !== VALUES){
+	    VALUES_BUG = true;
+	    $default = function values(){ return $native.call(this); };
+	  }
+	  // Define iterator
+	  if((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])){
+	    hide(proto, ITERATOR, $default);
+	  }
+	  // Plug for library
+	  Iterators[NAME] = $default;
+	  Iterators[TAG]  = returnThis;
+	  if(DEFAULT){
+	    methods = {
+	      values:  DEF_VALUES ? $default : getMethod(VALUES),
+	      keys:    IS_SET     ? $default : getMethod(KEYS),
+	      entries: $entries
+	    };
+	    if(FORCED)for(key in methods){
+	      if(!(key in proto))redefine(proto, key, methods[key]);
+	    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
+	  }
+	  return methods;
+	};
+
+/***/ },
+/* 305 */
+/***/ function(module, exports) {
+
+	module.exports = true;
+
+/***/ },
+/* 306 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(256);
+
+/***/ },
+/* 307 */
+/***/ function(module, exports) {
+
+	module.exports = {};
+
+/***/ },
+/* 308 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var create         = __webpack_require__(309)
+	  , descriptor     = __webpack_require__(265)
+	  , setToStringTag = __webpack_require__(312)
+	  , IteratorPrototype = {};
+
+	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
+	__webpack_require__(256)(IteratorPrototype, __webpack_require__(313)('iterator'), function(){ return this; });
+
+	module.exports = function(Constructor, NAME, next){
+	  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
+	  setToStringTag(Constructor, NAME + ' Iterator');
+	};
+
+/***/ },
+/* 309 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+	var anObject    = __webpack_require__(258)
+	  , dPs         = __webpack_require__(310)
+	  , enumBugKeys = __webpack_require__(281)
+	  , IE_PROTO    = __webpack_require__(278)('IE_PROTO')
+	  , Empty       = function(){ /* empty */ }
+	  , PROTOTYPE   = 'prototype';
+
+	// Create object with fake `null` prototype: use iframe Object with cleared prototype
+	var createDict = function(){
+	  // Thrash, waste and sodomy: IE GC bug
+	  var iframe = __webpack_require__(263)('iframe')
+	    , i      = enumBugKeys.length
+	    , gt     = '>'
+	    , iframeDocument;
+	  iframe.style.display = 'none';
+	  __webpack_require__(311).appendChild(iframe);
+	  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
+	  // createDict = iframe.contentWindow.Object;
+	  // html.removeChild(iframe);
+	  iframeDocument = iframe.contentWindow.document;
+	  iframeDocument.open();
+	  iframeDocument.write('<script>document.F=Object</script' + gt);
+	  iframeDocument.close();
+	  createDict = iframeDocument.F;
+	  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
+	  return createDict();
+	};
+
+	module.exports = Object.create || function create(O, Properties){
+	  var result;
+	  if(O !== null){
+	    Empty[PROTOTYPE] = anObject(O);
+	    result = new Empty;
+	    Empty[PROTOTYPE] = null;
+	    // add "__proto__" for Object.getPrototypeOf polyfill
+	    result[IE_PROTO] = O;
+	  } else result = createDict();
+	  return Properties === undefined ? result : dPs(result, Properties);
+	};
+
+/***/ },
+/* 310 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var dP       = __webpack_require__(257)
+	  , anObject = __webpack_require__(258)
+	  , getKeys  = __webpack_require__(267);
+
+	module.exports = __webpack_require__(261) ? Object.defineProperties : function defineProperties(O, Properties){
+	  anObject(O);
+	  var keys   = getKeys(Properties)
+	    , length = keys.length
+	    , i = 0
+	    , P;
+	  while(length > i)dP.f(O, P = keys[i++], Properties[P]);
+	  return O;
+	};
+
+/***/ },
+/* 311 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(252).document && document.documentElement;
+
+/***/ },
+/* 312 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var def = __webpack_require__(257).f
+	  , has = __webpack_require__(269)
+	  , TAG = __webpack_require__(313)('toStringTag');
+
+	module.exports = function(it, tag, stat){
+	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
+	};
+
+/***/ },
+/* 313 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var store      = __webpack_require__(279)('wks')
+	  , uid        = __webpack_require__(280)
+	  , Symbol     = __webpack_require__(252).Symbol
+	  , USE_SYMBOL = typeof Symbol == 'function';
+
+	var $exports = module.exports = function(name){
+	  return store[name] || (store[name] =
+	    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+	};
+
+	$exports.store = store;
+
+/***/ },
+/* 314 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(315);
+	var global        = __webpack_require__(252)
+	  , hide          = __webpack_require__(256)
+	  , Iterators     = __webpack_require__(307)
+	  , TO_STRING_TAG = __webpack_require__(313)('toStringTag');
+
+	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
+	  var NAME       = collections[i]
+	    , Collection = global[NAME]
+	    , proto      = Collection && Collection.prototype;
+	  if(proto && !proto[TO_STRING_TAG])hide(proto, TO_STRING_TAG, NAME);
+	  Iterators[NAME] = Iterators.Array;
+	}
+
+/***/ },
+/* 315 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var addToUnscopables = __webpack_require__(316)
+	  , step             = __webpack_require__(317)
+	  , Iterators        = __webpack_require__(307)
+	  , toIObject        = __webpack_require__(270);
+
+	// 22.1.3.4 Array.prototype.entries()
+	// 22.1.3.13 Array.prototype.keys()
+	// 22.1.3.29 Array.prototype.values()
+	// 22.1.3.30 Array.prototype[@@iterator]()
+	module.exports = __webpack_require__(304)(Array, 'Array', function(iterated, kind){
+	  this._t = toIObject(iterated); // target
+	  this._i = 0;                   // next index
+	  this._k = kind;                // kind
+	// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
+	}, function(){
+	  var O     = this._t
+	    , kind  = this._k
+	    , index = this._i++;
+	  if(!O || index >= O.length){
+	    this._t = undefined;
+	    return step(1);
+	  }
+	  if(kind == 'keys'  )return step(0, index);
+	  if(kind == 'values')return step(0, O[index]);
+	  return step(0, [index, O[index]]);
+	}, 'values');
+
+	// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
+	Iterators.Arguments = Iterators.Array;
+
+	addToUnscopables('keys');
+	addToUnscopables('values');
+	addToUnscopables('entries');
+
+/***/ },
+/* 316 */
+/***/ function(module, exports) {
+
+	module.exports = function(){ /* empty */ };
+
+/***/ },
+/* 317 */
+/***/ function(module, exports) {
+
+	module.exports = function(done, value){
+	  return {value: value, done: !!done};
+	};
+
+/***/ },
+/* 318 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports.f = __webpack_require__(313);
+
+/***/ },
+/* 319 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(320), __esModule: true };
+
+/***/ },
+/* 320 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(321);
+	__webpack_require__(330);
+	__webpack_require__(331);
+	__webpack_require__(332);
+	module.exports = __webpack_require__(253).Symbol;
+
+/***/ },
+/* 321 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	// ECMAScript 6 symbols shim
+	var global         = __webpack_require__(252)
+	  , has            = __webpack_require__(269)
+	  , DESCRIPTORS    = __webpack_require__(261)
+	  , $export        = __webpack_require__(251)
+	  , redefine       = __webpack_require__(306)
+	  , META           = __webpack_require__(322).KEY
+	  , $fails         = __webpack_require__(262)
+	  , shared         = __webpack_require__(279)
+	  , setToStringTag = __webpack_require__(312)
+	  , uid            = __webpack_require__(280)
+	  , wks            = __webpack_require__(313)
+	  , wksExt         = __webpack_require__(318)
+	  , wksDefine      = __webpack_require__(323)
+	  , keyOf          = __webpack_require__(324)
+	  , enumKeys       = __webpack_require__(325)
+	  , isArray        = __webpack_require__(326)
+	  , anObject       = __webpack_require__(258)
+	  , toIObject      = __webpack_require__(270)
+	  , toPrimitive    = __webpack_require__(264)
+	  , createDesc     = __webpack_require__(265)
+	  , _create        = __webpack_require__(309)
+	  , gOPNExt        = __webpack_require__(327)
+	  , $GOPD          = __webpack_require__(329)
+	  , $DP            = __webpack_require__(257)
+	  , $keys          = __webpack_require__(267)
+	  , gOPD           = $GOPD.f
+	  , dP             = $DP.f
+	  , gOPN           = gOPNExt.f
+	  , $Symbol        = global.Symbol
+	  , $JSON          = global.JSON
+	  , _stringify     = $JSON && $JSON.stringify
+	  , PROTOTYPE      = 'prototype'
+	  , HIDDEN         = wks('_hidden')
+	  , TO_PRIMITIVE   = wks('toPrimitive')
+	  , isEnum         = {}.propertyIsEnumerable
+	  , SymbolRegistry = shared('symbol-registry')
+	  , AllSymbols     = shared('symbols')
+	  , OPSymbols      = shared('op-symbols')
+	  , ObjectProto    = Object[PROTOTYPE]
+	  , USE_NATIVE     = typeof $Symbol == 'function'
+	  , QObject        = global.QObject;
+	// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
+	var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
+
+	// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
+	var setSymbolDesc = DESCRIPTORS && $fails(function(){
+	  return _create(dP({}, 'a', {
+	    get: function(){ return dP(this, 'a', {value: 7}).a; }
+	  })).a != 7;
+	}) ? function(it, key, D){
+	  var protoDesc = gOPD(ObjectProto, key);
+	  if(protoDesc)delete ObjectProto[key];
+	  dP(it, key, D);
+	  if(protoDesc && it !== ObjectProto)dP(ObjectProto, key, protoDesc);
+	} : dP;
+
+	var wrap = function(tag){
+	  var sym = AllSymbols[tag] = _create($Symbol[PROTOTYPE]);
+	  sym._k = tag;
+	  return sym;
+	};
+
+	var isSymbol = USE_NATIVE && typeof $Symbol.iterator == 'symbol' ? function(it){
+	  return typeof it == 'symbol';
+	} : function(it){
+	  return it instanceof $Symbol;
+	};
+
+	var $defineProperty = function defineProperty(it, key, D){
+	  if(it === ObjectProto)$defineProperty(OPSymbols, key, D);
+	  anObject(it);
+	  key = toPrimitive(key, true);
+	  anObject(D);
+	  if(has(AllSymbols, key)){
+	    if(!D.enumerable){
+	      if(!has(it, HIDDEN))dP(it, HIDDEN, createDesc(1, {}));
+	      it[HIDDEN][key] = true;
+	    } else {
+	      if(has(it, HIDDEN) && it[HIDDEN][key])it[HIDDEN][key] = false;
+	      D = _create(D, {enumerable: createDesc(0, false)});
+	    } return setSymbolDesc(it, key, D);
+	  } return dP(it, key, D);
+	};
+	var $defineProperties = function defineProperties(it, P){
+	  anObject(it);
+	  var keys = enumKeys(P = toIObject(P))
+	    , i    = 0
+	    , l = keys.length
+	    , key;
+	  while(l > i)$defineProperty(it, key = keys[i++], P[key]);
+	  return it;
+	};
+	var $create = function create(it, P){
+	  return P === undefined ? _create(it) : $defineProperties(_create(it), P);
+	};
+	var $propertyIsEnumerable = function propertyIsEnumerable(key){
+	  var E = isEnum.call(this, key = toPrimitive(key, true));
+	  if(this === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key))return false;
+	  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
+	};
+	var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key){
+	  it  = toIObject(it);
+	  key = toPrimitive(key, true);
+	  if(it === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key))return;
+	  var D = gOPD(it, key);
+	  if(D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key]))D.enumerable = true;
+	  return D;
+	};
+	var $getOwnPropertyNames = function getOwnPropertyNames(it){
+	  var names  = gOPN(toIObject(it))
+	    , result = []
+	    , i      = 0
+	    , key;
+	  while(names.length > i){
+	    if(!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META)result.push(key);
+	  } return result;
+	};
+	var $getOwnPropertySymbols = function getOwnPropertySymbols(it){
+	  var IS_OP  = it === ObjectProto
+	    , names  = gOPN(IS_OP ? OPSymbols : toIObject(it))
+	    , result = []
+	    , i      = 0
+	    , key;
+	  while(names.length > i){
+	    if(has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectProto, key) : true))result.push(AllSymbols[key]);
+	  } return result;
+	};
+
+	// 19.4.1.1 Symbol([description])
+	if(!USE_NATIVE){
+	  $Symbol = function Symbol(){
+	    if(this instanceof $Symbol)throw TypeError('Symbol is not a constructor!');
+	    var tag = uid(arguments.length > 0 ? arguments[0] : undefined);
+	    var $set = function(value){
+	      if(this === ObjectProto)$set.call(OPSymbols, value);
+	      if(has(this, HIDDEN) && has(this[HIDDEN], tag))this[HIDDEN][tag] = false;
+	      setSymbolDesc(this, tag, createDesc(1, value));
+	    };
+	    if(DESCRIPTORS && setter)setSymbolDesc(ObjectProto, tag, {configurable: true, set: $set});
+	    return wrap(tag);
+	  };
+	  redefine($Symbol[PROTOTYPE], 'toString', function toString(){
+	    return this._k;
+	  });
+
+	  $GOPD.f = $getOwnPropertyDescriptor;
+	  $DP.f   = $defineProperty;
+	  __webpack_require__(328).f = gOPNExt.f = $getOwnPropertyNames;
+	  __webpack_require__(283).f  = $propertyIsEnumerable;
+	  __webpack_require__(282).f = $getOwnPropertySymbols;
+
+	  if(DESCRIPTORS && !__webpack_require__(305)){
+	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
+	  }
+
+	  wksExt.f = function(name){
+	    return wrap(wks(name));
+	  }
+	}
+
+	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Symbol: $Symbol});
+
+	for(var symbols = (
+	  // 19.4.2.2, 19.4.2.3, 19.4.2.4, 19.4.2.6, 19.4.2.8, 19.4.2.9, 19.4.2.10, 19.4.2.11, 19.4.2.12, 19.4.2.13, 19.4.2.14
+	  'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
+	).split(','), i = 0; symbols.length > i; )wks(symbols[i++]);
+
+	for(var symbols = $keys(wks.store), i = 0; symbols.length > i; )wksDefine(symbols[i++]);
+
+	$export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
+	  // 19.4.2.1 Symbol.for(key)
+	  'for': function(key){
+	    return has(SymbolRegistry, key += '')
+	      ? SymbolRegistry[key]
+	      : SymbolRegistry[key] = $Symbol(key);
+	  },
+	  // 19.4.2.5 Symbol.keyFor(sym)
+	  keyFor: function keyFor(key){
+	    if(isSymbol(key))return keyOf(SymbolRegistry, key);
+	    throw TypeError(key + ' is not a symbol!');
+	  },
+	  useSetter: function(){ setter = true; },
+	  useSimple: function(){ setter = false; }
+	});
+
+	$export($export.S + $export.F * !USE_NATIVE, 'Object', {
+	  // 19.1.2.2 Object.create(O [, Properties])
+	  create: $create,
+	  // 19.1.2.4 Object.defineProperty(O, P, Attributes)
+	  defineProperty: $defineProperty,
+	  // 19.1.2.3 Object.defineProperties(O, Properties)
+	  defineProperties: $defineProperties,
+	  // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
+	  getOwnPropertyDescriptor: $getOwnPropertyDescriptor,
+	  // 19.1.2.7 Object.getOwnPropertyNames(O)
+	  getOwnPropertyNames: $getOwnPropertyNames,
+	  // 19.1.2.8 Object.getOwnPropertySymbols(O)
+	  getOwnPropertySymbols: $getOwnPropertySymbols
+	});
+
+	// 24.3.2 JSON.stringify(value [, replacer [, space]])
+	$JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function(){
+	  var S = $Symbol();
+	  // MS Edge converts symbol values to JSON as {}
+	  // WebKit converts symbol values to JSON as null
+	  // V8 throws on boxed symbols
+	  return _stringify([S]) != '[null]' || _stringify({a: S}) != '{}' || _stringify(Object(S)) != '{}';
+	})), 'JSON', {
+	  stringify: function stringify(it){
+	    if(it === undefined || isSymbol(it))return; // IE8 returns string on undefined
+	    var args = [it]
+	      , i    = 1
+	      , replacer, $replacer;
+	    while(arguments.length > i)args.push(arguments[i++]);
+	    replacer = args[1];
+	    if(typeof replacer == 'function')$replacer = replacer;
+	    if($replacer || !isArray(replacer))replacer = function(key, value){
+	      if($replacer)value = $replacer.call(this, key, value);
+	      if(!isSymbol(value))return value;
+	    };
+	    args[1] = replacer;
+	    return _stringify.apply($JSON, args);
+	  }
+	});
+
+	// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
+	$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(256)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+	// 19.4.3.5 Symbol.prototype[@@toStringTag]
+	setToStringTag($Symbol, 'Symbol');
+	// 20.2.1.9 Math[@@toStringTag]
+	setToStringTag(Math, 'Math', true);
+	// 24.3.3 JSON[@@toStringTag]
+	setToStringTag(global.JSON, 'JSON', true);
+
+/***/ },
+/* 322 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var META     = __webpack_require__(280)('meta')
+	  , isObject = __webpack_require__(259)
+	  , has      = __webpack_require__(269)
+	  , setDesc  = __webpack_require__(257).f
+	  , id       = 0;
+	var isExtensible = Object.isExtensible || function(){
+	  return true;
+	};
+	var FREEZE = !__webpack_require__(262)(function(){
+	  return isExtensible(Object.preventExtensions({}));
+	});
+	var setMeta = function(it){
+	  setDesc(it, META, {value: {
+	    i: 'O' + ++id, // object ID
+	    w: {}          // weak collections IDs
+	  }});
+	};
+	var fastKey = function(it, create){
+	  // return primitive with prefix
+	  if(!isObject(it))return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
+	  if(!has(it, META)){
+	    // can't set metadata to uncaught frozen object
+	    if(!isExtensible(it))return 'F';
+	    // not necessary to add metadata
+	    if(!create)return 'E';
+	    // add missing metadata
+	    setMeta(it);
+	  // return object ID
+	  } return it[META].i;
+	};
+	var getWeak = function(it, create){
+	  if(!has(it, META)){
+	    // can't set metadata to uncaught frozen object
+	    if(!isExtensible(it))return true;
+	    // not necessary to add metadata
+	    if(!create)return false;
+	    // add missing metadata
+	    setMeta(it);
+	  // return hash weak collections IDs
+	  } return it[META].w;
+	};
+	// add metadata on freeze-family methods calling
+	var onFreeze = function(it){
+	  if(FREEZE && meta.NEED && isExtensible(it) && !has(it, META))setMeta(it);
+	  return it;
+	};
+	var meta = module.exports = {
+	  KEY:      META,
+	  NEED:     false,
+	  fastKey:  fastKey,
+	  getWeak:  getWeak,
+	  onFreeze: onFreeze
+	};
+
+/***/ },
+/* 323 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global         = __webpack_require__(252)
+	  , core           = __webpack_require__(253)
+	  , LIBRARY        = __webpack_require__(305)
+	  , wksExt         = __webpack_require__(318)
+	  , defineProperty = __webpack_require__(257).f;
+	module.exports = function(name){
+	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
+	  if(name.charAt(0) != '_' && !(name in $Symbol))defineProperty($Symbol, name, {value: wksExt.f(name)});
+	};
+
+/***/ },
+/* 324 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var getKeys   = __webpack_require__(267)
+	  , toIObject = __webpack_require__(270);
+	module.exports = function(object, el){
+	  var O      = toIObject(object)
+	    , keys   = getKeys(O)
+	    , length = keys.length
+	    , index  = 0
+	    , key;
+	  while(length > index)if(O[key = keys[index++]] === el)return key;
+	};
+
+/***/ },
+/* 325 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// all enumerable object keys, includes symbols
+	var getKeys = __webpack_require__(267)
+	  , gOPS    = __webpack_require__(282)
+	  , pIE     = __webpack_require__(283);
+	module.exports = function(it){
+	  var result     = getKeys(it)
+	    , getSymbols = gOPS.f;
+	  if(getSymbols){
+	    var symbols = getSymbols(it)
+	      , isEnum  = pIE.f
+	      , i       = 0
+	      , key;
+	    while(symbols.length > i)if(isEnum.call(it, key = symbols[i++]))result.push(key);
+	  } return result;
+	};
+
+/***/ },
+/* 326 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.2.2 IsArray(argument)
+	var cof = __webpack_require__(272);
+	module.exports = Array.isArray || function isArray(arg){
+	  return cof(arg) == 'Array';
+	};
+
+/***/ },
+/* 327 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
+	var toIObject = __webpack_require__(270)
+	  , gOPN      = __webpack_require__(328).f
+	  , toString  = {}.toString;
+
+	var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
+	  ? Object.getOwnPropertyNames(window) : [];
+
+	var getWindowNames = function(it){
+	  try {
+	    return gOPN(it);
+	  } catch(e){
+	    return windowNames.slice();
+	  }
+	};
+
+	module.exports.f = function getOwnPropertyNames(it){
+	  return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
+	};
+
+
+/***/ },
+/* 328 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
+	var $keys      = __webpack_require__(268)
+	  , hiddenKeys = __webpack_require__(281).concat('length', 'prototype');
+
+	exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
+	  return $keys(O, hiddenKeys);
+	};
+
+/***/ },
+/* 329 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var pIE            = __webpack_require__(283)
+	  , createDesc     = __webpack_require__(265)
+	  , toIObject      = __webpack_require__(270)
+	  , toPrimitive    = __webpack_require__(264)
+	  , has            = __webpack_require__(269)
+	  , IE8_DOM_DEFINE = __webpack_require__(260)
+	  , gOPD           = Object.getOwnPropertyDescriptor;
+
+	exports.f = __webpack_require__(261) ? gOPD : function getOwnPropertyDescriptor(O, P){
+	  O = toIObject(O);
+	  P = toPrimitive(P, true);
+	  if(IE8_DOM_DEFINE)try {
+	    return gOPD(O, P);
+	  } catch(e){ /* empty */ }
+	  if(has(O, P))return createDesc(!pIE.f.call(O, P), O[P]);
+	};
+
+/***/ },
+/* 330 */
+/***/ function(module, exports) {
+
+	
+
+/***/ },
+/* 331 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(323)('asyncIterator');
+
+/***/ },
+/* 332 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(323)('observable');
+
+/***/ },
+/* 333 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _setPrototypeOf = __webpack_require__(334);
+
+	var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
+
+	var _create = __webpack_require__(338);
+
+	var _create2 = _interopRequireDefault(_create);
+
+	var _typeof2 = __webpack_require__(299);
+
+	var _typeof3 = _interopRequireDefault(_typeof2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function (subClass, superClass) {
+	  if (typeof superClass !== "function" && superClass !== null) {
+	    throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : (0, _typeof3.default)(superClass)));
+	  }
+
+	  subClass.prototype = (0, _create2.default)(superClass && superClass.prototype, {
+	    constructor: {
+	      value: subClass,
+	      enumerable: false,
+	      writable: true,
+	      configurable: true
+	    }
+	  });
+	  if (superClass) _setPrototypeOf2.default ? (0, _setPrototypeOf2.default)(subClass, superClass) : subClass.__proto__ = superClass;
+	};
+
+/***/ },
+/* 334 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(335), __esModule: true };
+
+/***/ },
+/* 335 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(336);
+	module.exports = __webpack_require__(253).Object.setPrototypeOf;
+
+/***/ },
+/* 336 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.19 Object.setPrototypeOf(O, proto)
+	var $export = __webpack_require__(251);
+	$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(337).set});
+
+/***/ },
+/* 337 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Works with __proto__ only. Old v8 can't work with null proto objects.
+	/* eslint-disable no-proto */
+	var isObject = __webpack_require__(259)
+	  , anObject = __webpack_require__(258);
+	var check = function(O, proto){
+	  anObject(O);
+	  if(!isObject(proto) && proto !== null)throw TypeError(proto + ": can't set as prototype!");
+	};
+	module.exports = {
+	  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
+	    function(test, buggy, set){
+	      try {
+	        set = __webpack_require__(254)(Function.call, __webpack_require__(329).f(Object.prototype, '__proto__').set, 2);
+	        set(test, []);
+	        buggy = !(test instanceof Array);
+	      } catch(e){ buggy = true; }
+	      return function setPrototypeOf(O, proto){
+	        check(O, proto);
+	        if(buggy)O.__proto__ = proto;
+	        else set(O, proto);
+	        return O;
+	      };
+	    }({}, false) : undefined),
+	  check: check
+	};
+
+/***/ },
+/* 338 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(339), __esModule: true };
+
+/***/ },
+/* 339 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(340);
+	var $Object = __webpack_require__(253).Object;
+	module.exports = function create(P, D){
+	  return $Object.create(P, D);
+	};
+
+/***/ },
+/* 340 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $export = __webpack_require__(251)
+	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+	$export($export.S, 'Object', {create: __webpack_require__(309)});
+
+/***/ },
+/* 341 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(342), __esModule: true };
+
+/***/ },
+/* 342 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(343);
+	module.exports = __webpack_require__(253).Object.keys;
+
+/***/ },
+/* 343 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.14 Object.keys(O)
+	var toObject = __webpack_require__(284)
+	  , $keys    = __webpack_require__(267);
+
+	__webpack_require__(292)('keys', function(){
+	  return function keys(it){
+	    return $keys(toObject(it));
+	  };
+	});
+
+/***/ },
+/* 344 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ },
+/* 345 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.email = email;
+	exports.twitter = twitter;
+	exports.facebook = facebook;
+	exports.googlePlus = googlePlus;
+	exports.linkedin = linkedin;
+	exports.pinterest = pinterest;
+	exports.vk = vk;
+
+	var _assert = __webpack_require__(346);
+
+	var _assert2 = _interopRequireDefault(_assert);
+
+	var _utils = __webpack_require__(355);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/* eslint-disable prefer-template */
+	function email(subject, body) {
+	  (0, _assert2.default)(subject, 'email.subject');
+	  (0, _assert2.default)(body, 'email.body');
+
+	  return 'mailto:' + (0, _utils.objectToGetParams)({ subject: subject, body: body });
+	}
+
+	function twitter(url, _ref) {
+	  var text = _ref.text;
+	  var via = _ref.via;
+	  var _ref$hashtags = _ref.hashtags;
+	  var hashtags = _ref$hashtags === undefined ? [] : _ref$hashtags;
+
+	  (0, _assert2.default)(url, 'twitter.url');
+	  (0, _assert2.default)(text, 'twitter.text');
+	  (0, _assert2.default)(Array.isArray(hashtags), 'twitter.hashtags is not an array');
+
+	  return 'https://twitter.com/share' + (0, _utils.objectToGetParams)({
+	    url: url,
+	    text: text,
+	    via: via,
+	    hashtags: hashtags.join(',')
+	  });
+	}
+
+	function facebook(url) {
+	  (0, _assert2.default)(url, 'facebook.url');
+
+	  return 'https://facebook.com/sharer.php' + (0, _utils.objectToGetParams)({ u: url });
+	}
+
+	function googlePlus(url) {
+	  (0, _assert2.default)(url, 'googlePlus.url');
+
+	  return 'https://plus.google.com/share' + (0, _utils.objectToGetParams)({ url: url });
+	}
+
+	function linkedin(url, _ref2) {
+	  var title = _ref2.title;
+
+	  (0, _assert2.default)(url, 'linkedin.url');
+	  (0, _assert2.default)(title, 'linkedin.title');
+
+	  return 'https://linkedin.com/shareArticle' + (0, _utils.objectToGetParams)({ url: url, title: title });
+	}
+
+	function pinterest(url, _ref3) {
+	  var media = _ref3.media;
+	  var description = _ref3.description;
+
+	  (0, _assert2.default)(url, 'pinterest.url');
+	  (0, _assert2.default)(media, 'pinterest.media');
+
+	  return 'https://pinterest.com/pin/create/button/' + (0, _utils.objectToGetParams)({
+	    url: url,
+	    media: media,
+	    description: description
+	  });
+	}
+
+	function vk(url) {
+	  (0, _assert2.default)(url, 'vk.url');
+
+	  return 'https://vk.com/share.php' + (0, _utils.objectToGetParams)({ url: url });
+	}
+
+/***/ },
+/* 346 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
+	//
+	// THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
+	//
+	// Originally from narwhal.js (http://narwhaljs.org)
+	// Copyright (c) 2009 Thomas Robinson <280north.com>
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a copy
+	// of this software and associated documentation files (the 'Software'), to
+	// deal in the Software without restriction, including without limitation the
+	// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+	// sell copies of the Software, and to permit persons to whom the Software is
+	// furnished to do so, subject to the following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included in
+	// all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	// AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+	// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+	// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	'use strict';
+
+	// UTILITY
+	function compare(bufa, bufb) {
+	  var cmpLen = Math.min(bufa, bufb);
+	  if (cmpLen <= 0) {
+	    return 0;
+	  }
+	  var i = -1;
+	  var a,b;
+	  while (++i < cmpLen) {
+	    a = bufa[i];
+	    b = bufb[i];
+	    if (a < b) {
+	      return -1;
+	    } else if (a > b) {
+	      return 1;
+	    }
+	  }
+	  return 0;
+	}
+	var util = __webpack_require__(347);
+	var Buffer = __webpack_require__(350).Buffer;
+	var BufferShim = __webpack_require__(354);
+	var hasOwn = Object.prototype.hasOwnProperty;
+	var pSlice = Array.prototype.slice;
+	var functionsHaveNames = (function () {
+	  return function foo() {}.name === 'foo';
+	}());
+	function pToString (obj) {
+	  return Object.prototype.toString.call(obj);
+	}
+	function isView(arrbuf) {
+	  if (typeof global.ArrayBuffer !== 'function') {
+	    return false;
+	  }
+	  if (typeof ArrayBuffer.isView === 'function') {
+	    return ArrayBuffer.isView(arrbuf);
+	  }
+	  if (!arrbuf) {
+	    return false;
+	  }
+	  if (arrbuf instanceof DataView) {
+	    return true;
+	  }
+	  if (arrbuf.buffer && arrbuf.buffer instanceof ArrayBuffer) {
+	    return true;
+	  }
+	  return false;
+	}
+	// 1. The assert module provides functions that throw
+	// AssertionError's when particular conditions are not met. The
+	// assert module must conform to the following interface.
+
+	var assert = module.exports = ok;
+
+	// 2. The AssertionError is defined in assert.
+	// new assert.AssertionError({ message: message,
+	//                             actual: actual,
+	//                             expected: expected })
+
+	var regex = /\s*function\s+([^\(\s]*)\s*/;
+	// based on https://github.com/ljharb/function.prototype.name/blob/adeeeec8bfcc6068b187d7d9fb3d5bb1d3a30899/implementation.js
+	function getName(func) {
+	  if (!util.isFunction(func)) {
+	    return;
+	  }
+	  if (functionsHaveNames) {
+	    return func.name;
+	  }
+	  var str = func.toString();
+	  var match = str.match(regex);
+	  return match && match[1];
+	}
+	assert.AssertionError = function AssertionError(options) {
+	  this.name = 'AssertionError';
+	  this.actual = options.actual;
+	  this.expected = options.expected;
+	  this.operator = options.operator;
+	  if (options.message) {
+	    this.message = options.message;
+	    this.generatedMessage = false;
+	  } else {
+	    this.message = getMessage(this);
+	    this.generatedMessage = true;
+	  }
+	  var stackStartFunction = options.stackStartFunction || fail;
+	  if (Error.captureStackTrace) {
+	   Error.captureStackTrace(this, stackStartFunction);
+	 } else {
+	   // non v8 browsers so we can have a stacktrace
+	   var err = new Error();
+	   if (err.stack) {
+	     var out = err.stack;
+
+	     // try to strip useless frames
+	     var fn_name = getName(stackStartFunction);
+	     var idx = out.indexOf('\n' + fn_name);
+	     if (idx >= 0) {
+	       // once we have located the function frame
+	       // we need to strip out everything before it (and its line)
+	       var next_line = out.indexOf('\n', idx + 1);
+	       out = out.substring(next_line + 1);
+	     }
+
+	     this.stack = out;
+	   }
+	  }
+	};
+
+	// assert.AssertionError instanceof Error
+	util.inherits(assert.AssertionError, Error);
+
+	function truncate(s, n) {
+	  if (typeof s === 'string') {
+	    return s.length < n ? s : s.slice(0, n);
+	  } else {
+	    return s;
+	  }
+	}
+	function inspect(something) {
+	  if (functionsHaveNames || !util.isFunction(something)) {
+	    return util.inspect(something);
+	  }
+	  var rawname = getName(something);
+	  var name = rawname ? ': ' + rawname : '';
+	  return '[Function' +  name + ']';
+	}
+	function getMessage(self) {
+	  return truncate(inspect(self.actual), 128) + ' ' +
+	         self.operator + ' ' +
+	         truncate(inspect(self.expected), 128);
+	}
+
+	// At present only the three keys mentioned above are used and
+	// understood by the spec. Implementations or sub modules can pass
+	// other keys to the AssertionError's constructor - they will be
+	// ignored.
+
+	// 3. All of the following functions must throw an AssertionError
+	// when a corresponding condition is not met, with a message that
+	// may be undefined if not provided.  All assertion methods provide
+	// both the actual and expected values to the assertion error for
+	// display purposes.
+
+	function fail(actual, expected, message, operator, stackStartFunction) {
+	  throw new assert.AssertionError({
+	    message: message,
+	    actual: actual,
+	    expected: expected,
+	    operator: operator,
+	    stackStartFunction: stackStartFunction
+	  });
+	}
+
+	// EXTENSION! allows for well behaved errors defined elsewhere.
+	assert.fail = fail;
+
+	// 4. Pure assertion tests whether a value is truthy, as determined
+	// by !!guard.
+	// assert.ok(guard, message_opt);
+	// This statement is equivalent to assert.equal(true, !!guard,
+	// message_opt);. To test strictly for the value true, use
+	// assert.strictEqual(true, guard, message_opt);.
+
+	function ok(value, message) {
+	  if (!value) fail(value, true, message, '==', assert.ok);
+	}
+	assert.ok = ok;
+
+	// 5. The equality assertion tests shallow, coercive equality with
+	// ==.
+	// assert.equal(actual, expected, message_opt);
+
+	assert.equal = function equal(actual, expected, message) {
+	  if (actual != expected) fail(actual, expected, message, '==', assert.equal);
+	};
+
+	// 6. The non-equality assertion tests for whether two objects are not equal
+	// with != assert.notEqual(actual, expected, message_opt);
+
+	assert.notEqual = function notEqual(actual, expected, message) {
+	  if (actual == expected) {
+	    fail(actual, expected, message, '!=', assert.notEqual);
+	  }
+	};
+
+	// 7. The equivalence assertion tests a deep equality relation.
+	// assert.deepEqual(actual, expected, message_opt);
+
+	assert.deepEqual = function deepEqual(actual, expected, message) {
+	  if (!_deepEqual(actual, expected, false)) {
+	    fail(actual, expected, message, 'deepEqual', assert.deepEqual);
+	  }
+	};
+
+	assert.deepStrictEqual = function deepStrictEqual(actual, expected, message) {
+	  if (!_deepEqual(actual, expected, true)) {
+	    fail(actual, expected, message, 'deepStrictEqual', assert.deepStrictEqual);
+	  }
+	};
+
+	function _deepEqual(actual, expected, strict, memos) {
+	  // 7.1. All identical values are equivalent, as determined by ===.
+	  if (actual === expected) {
+	    return true;
+	  } else if (Buffer.isBuffer(actual) && Buffer.isBuffer(expected)) {
+	    return compare(actual, expected) === 0;
+
+	  // 7.2. If the expected value is a Date object, the actual value is
+	  // equivalent if it is also a Date object that refers to the same time.
+	  } else if (util.isDate(actual) && util.isDate(expected)) {
+	    return actual.getTime() === expected.getTime();
+
+	  // 7.3 If the expected value is a RegExp object, the actual value is
+	  // equivalent if it is also a RegExp object with the same source and
+	  // properties (`global`, `multiline`, `lastIndex`, `ignoreCase`).
+	  } else if (util.isRegExp(actual) && util.isRegExp(expected)) {
+	    return actual.source === expected.source &&
+	           actual.global === expected.global &&
+	           actual.multiline === expected.multiline &&
+	           actual.lastIndex === expected.lastIndex &&
+	           actual.ignoreCase === expected.ignoreCase;
+
+	  // 7.4. Other pairs that do not both pass typeof value == 'object',
+	  // equivalence is determined by ==.
+	  } else if ((actual === null || typeof actual !== 'object') &&
+	             (expected === null || typeof expected !== 'object')) {
+	    return strict ? actual === expected : actual == expected;
+
+	  // If both values are instances of typed arrays, wrap their underlying
+	  // ArrayBuffers in a Buffer each to increase performance
+	  // This optimization requires the arrays to have the same type as checked by
+	  // Object.prototype.toString (aka pToString). Never perform binary
+	  // comparisons for Float*Arrays, though, since e.g. +0 === -0 but their
+	  // bit patterns are not identical.
+	  } else if (isView(actual) && isView(expected) &&
+	             pToString(actual) === pToString(expected) &&
+	             !(actual instanceof Float32Array ||
+	               actual instanceof Float64Array)) {
+	    return compare(BufferShim.from(actual.buffer),
+	                   BufferShim.from(expected.buffer)) === 0;
+
+	  // 7.5 For all other Object pairs, including Array objects, equivalence is
+	  // determined by having the same number of owned properties (as verified
+	  // with Object.prototype.hasOwnProperty.call), the same set of keys
+	  // (although not necessarily the same order), equivalent values for every
+	  // corresponding key, and an identical 'prototype' property. Note: this
+	  // accounts for both named and indexed properties on Arrays.
+	  } else {
+	    memos = memos || {actual: [], expected: []};
+
+	    var actualIndex = memos.actual.indexOf(actual);
+	    if (actualIndex !== -1) {
+	      if (actualIndex === memos.expected.indexOf(expected)) {
+	        return true;
+	      }
+	    }
+
+	    memos.actual.push(actual);
+	    memos.expected.push(expected);
+
+	    return objEquiv(actual, expected, strict, memos);
+	  }
+	}
+
+	function isArguments(object) {
+	  return Object.prototype.toString.call(object) == '[object Arguments]';
+	}
+
+	function objEquiv(a, b, strict, actualVisitedObjects) {
+	  if (a === null || a === undefined || b === null || b === undefined)
+	    return false;
+	  // if one is a primitive, the other must be same
+	  if (util.isPrimitive(a) || util.isPrimitive(b))
+	    return a === b;
+	  if (strict && Object.getPrototypeOf(a) !== Object.getPrototypeOf(b))
+	    return false;
+	  var aIsArgs = isArguments(a);
+	  var bIsArgs = isArguments(b);
+	  if ((aIsArgs && !bIsArgs) || (!aIsArgs && bIsArgs))
+	    return false;
+	  if (aIsArgs) {
+	    a = pSlice.call(a);
+	    b = pSlice.call(b);
+	    return _deepEqual(a, b, strict);
+	  }
+	  var ka = objectKeys(a);
+	  var kb = objectKeys(b);
+	  var key, i;
+	  // having the same number of owned properties (keys incorporates
+	  // hasOwnProperty)
+	  if (ka.length !== kb.length)
+	    return false;
+	  //the same set of keys (although not necessarily the same order),
+	  ka.sort();
+	  kb.sort();
+	  //~~~cheap key test
+	  for (i = ka.length - 1; i >= 0; i--) {
+	    if (ka[i] !== kb[i])
+	      return false;
+	  }
+	  //equivalent values for every corresponding key, and
+	  //~~~possibly expensive deep test
+	  for (i = ka.length - 1; i >= 0; i--) {
+	    key = ka[i];
+	    if (!_deepEqual(a[key], b[key], strict, actualVisitedObjects))
+	      return false;
+	  }
+	  return true;
+	}
+
+	// 8. The non-equivalence assertion tests for any deep inequality.
+	// assert.notDeepEqual(actual, expected, message_opt);
+
+	assert.notDeepEqual = function notDeepEqual(actual, expected, message) {
+	  if (_deepEqual(actual, expected, false)) {
+	    fail(actual, expected, message, 'notDeepEqual', assert.notDeepEqual);
+	  }
+	};
+
+	assert.notDeepStrictEqual = notDeepStrictEqual;
+	function notDeepStrictEqual(actual, expected, message) {
+	  if (_deepEqual(actual, expected, true)) {
+	    fail(actual, expected, message, 'notDeepStrictEqual', notDeepStrictEqual);
+	  }
+	}
+
+
+	// 9. The strict equality assertion tests strict equality, as determined by ===.
+	// assert.strictEqual(actual, expected, message_opt);
+
+	assert.strictEqual = function strictEqual(actual, expected, message) {
+	  if (actual !== expected) {
+	    fail(actual, expected, message, '===', assert.strictEqual);
+	  }
+	};
+
+	// 10. The strict non-equality assertion tests for strict inequality, as
+	// determined by !==.  assert.notStrictEqual(actual, expected, message_opt);
+
+	assert.notStrictEqual = function notStrictEqual(actual, expected, message) {
+	  if (actual === expected) {
+	    fail(actual, expected, message, '!==', assert.notStrictEqual);
+	  }
+	};
+
+	function expectedException(actual, expected) {
+	  if (!actual || !expected) {
+	    return false;
+	  }
+
+	  if (Object.prototype.toString.call(expected) == '[object RegExp]') {
+	    return expected.test(actual);
+	  }
+
+	  try {
+	    if (actual instanceof expected) {
+	      return true;
+	    }
+	  } catch (e) {
+	    // Ignore.  The instanceof check doesn't work for arrow functions.
+	  }
+
+	  if (Error.isPrototypeOf(expected)) {
+	    return false;
+	  }
+
+	  return expected.call({}, actual) === true;
+	}
+
+	function _tryBlock(block) {
+	  var error;
+	  try {
+	    block();
+	  } catch (e) {
+	    error = e;
+	  }
+	  return error;
+	}
+
+	function _throws(shouldThrow, block, expected, message) {
+	  var actual;
+
+	  if (typeof block !== 'function') {
+	    throw new TypeError('"block" argument must be a function');
+	  }
+
+	  if (typeof expected === 'string') {
+	    message = expected;
+	    expected = null;
+	  }
+
+	  actual = _tryBlock(block);
+
+	  message = (expected && expected.name ? ' (' + expected.name + ').' : '.') +
+	            (message ? ' ' + message : '.');
+
+	  if (shouldThrow && !actual) {
+	    fail(actual, expected, 'Missing expected exception' + message);
+	  }
+
+	  var userProvidedMessage = typeof message === 'string';
+	  var isUnwantedException = !shouldThrow && util.isError(actual);
+	  var isUnexpectedException = !shouldThrow && actual && !expected;
+
+	  if ((isUnwantedException &&
+	      userProvidedMessage &&
+	      expectedException(actual, expected)) ||
+	      isUnexpectedException) {
+	    fail(actual, expected, 'Got unwanted exception' + message);
+	  }
+
+	  if ((shouldThrow && actual && expected &&
+	      !expectedException(actual, expected)) || (!shouldThrow && actual)) {
+	    throw actual;
+	  }
+	}
+
+	// 11. Expected to throw an error:
+	// assert.throws(block, Error_opt, message_opt);
+
+	assert.throws = function(block, /*optional*/error, /*optional*/message) {
+	  _throws(true, block, error, message);
+	};
+
+	// EXTENSION! This is annoying to write outside this module.
+	assert.doesNotThrow = function(block, /*optional*/error, /*optional*/message) {
+	  _throws(false, block, error, message);
+	};
+
+	assert.ifError = function(err) { if (err) throw err; };
+
+	var objectKeys = Object.keys || function (obj) {
+	  var keys = [];
+	  for (var key in obj) {
+	    if (hasOwn.call(obj, key)) keys.push(key);
+	  }
+	  return keys;
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 347 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	var formatRegExp = /%[sdj%]/g;
+	exports.format = function(f) {
+	  if (!isString(f)) {
+	    var objects = [];
+	    for (var i = 0; i < arguments.length; i++) {
+	      objects.push(inspect(arguments[i]));
+	    }
+	    return objects.join(' ');
+	  }
+
+	  var i = 1;
+	  var args = arguments;
+	  var len = args.length;
+	  var str = String(f).replace(formatRegExp, function(x) {
+	    if (x === '%%') return '%';
+	    if (i >= len) return x;
+	    switch (x) {
+	      case '%s': return String(args[i++]);
+	      case '%d': return Number(args[i++]);
+	      case '%j':
+	        try {
+	          return JSON.stringify(args[i++]);
+	        } catch (_) {
+	          return '[Circular]';
+	        }
+	      default:
+	        return x;
+	    }
+	  });
+	  for (var x = args[i]; i < len; x = args[++i]) {
+	    if (isNull(x) || !isObject(x)) {
+	      str += ' ' + x;
+	    } else {
+	      str += ' ' + inspect(x);
+	    }
+	  }
+	  return str;
+	};
+
+
+	// Mark that a method should not be used.
+	// Returns a modified function which warns once by default.
+	// If --no-deprecation is set, then it is a no-op.
+	exports.deprecate = function(fn, msg) {
+	  // Allow for deprecating things in the process of starting up.
+	  if (isUndefined(global.process)) {
+	    return function() {
+	      return exports.deprecate(fn, msg).apply(this, arguments);
+	    };
+	  }
+
+	  if (process.noDeprecation === true) {
+	    return fn;
+	  }
+
+	  var warned = false;
+	  function deprecated() {
+	    if (!warned) {
+	      if (process.throwDeprecation) {
+	        throw new Error(msg);
+	      } else if (process.traceDeprecation) {
+	        console.trace(msg);
+	      } else {
+	        console.error(msg);
+	      }
+	      warned = true;
+	    }
+	    return fn.apply(this, arguments);
+	  }
+
+	  return deprecated;
+	};
+
+
+	var debugs = {};
+	var debugEnviron;
+	exports.debuglog = function(set) {
+	  if (isUndefined(debugEnviron))
+	    debugEnviron = process.env.NODE_DEBUG || '';
+	  set = set.toUpperCase();
+	  if (!debugs[set]) {
+	    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
+	      var pid = process.pid;
+	      debugs[set] = function() {
+	        var msg = exports.format.apply(exports, arguments);
+	        console.error('%s %d: %s', set, pid, msg);
+	      };
+	    } else {
+	      debugs[set] = function() {};
+	    }
+	  }
+	  return debugs[set];
+	};
+
+
+	/**
+	 * Echos the value of a value. Trys to print the value out
+	 * in the best way possible given the different types.
+	 *
+	 * @param {Object} obj The object to print out.
+	 * @param {Object} opts Optional options object that alters the output.
+	 */
+	/* legacy: obj, showHidden, depth, colors*/
+	function inspect(obj, opts) {
+	  // default options
+	  var ctx = {
+	    seen: [],
+	    stylize: stylizeNoColor
+	  };
+	  // legacy...
+	  if (arguments.length >= 3) ctx.depth = arguments[2];
+	  if (arguments.length >= 4) ctx.colors = arguments[3];
+	  if (isBoolean(opts)) {
+	    // legacy...
+	    ctx.showHidden = opts;
+	  } else if (opts) {
+	    // got an "options" object
+	    exports._extend(ctx, opts);
+	  }
+	  // set default options
+	  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
+	  if (isUndefined(ctx.depth)) ctx.depth = 2;
+	  if (isUndefined(ctx.colors)) ctx.colors = false;
+	  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
+	  if (ctx.colors) ctx.stylize = stylizeWithColor;
+	  return formatValue(ctx, obj, ctx.depth);
+	}
+	exports.inspect = inspect;
+
+
+	// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
+	inspect.colors = {
+	  'bold' : [1, 22],
+	  'italic' : [3, 23],
+	  'underline' : [4, 24],
+	  'inverse' : [7, 27],
+	  'white' : [37, 39],
+	  'grey' : [90, 39],
+	  'black' : [30, 39],
+	  'blue' : [34, 39],
+	  'cyan' : [36, 39],
+	  'green' : [32, 39],
+	  'magenta' : [35, 39],
+	  'red' : [31, 39],
+	  'yellow' : [33, 39]
+	};
+
+	// Don't use 'blue' not visible on cmd.exe
+	inspect.styles = {
+	  'special': 'cyan',
+	  'number': 'yellow',
+	  'boolean': 'yellow',
+	  'undefined': 'grey',
+	  'null': 'bold',
+	  'string': 'green',
+	  'date': 'magenta',
+	  // "name": intentionally not styling
+	  'regexp': 'red'
+	};
+
+
+	function stylizeWithColor(str, styleType) {
+	  var style = inspect.styles[styleType];
+
+	  if (style) {
+	    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
+	           '\u001b[' + inspect.colors[style][1] + 'm';
+	  } else {
+	    return str;
+	  }
+	}
+
+
+	function stylizeNoColor(str, styleType) {
+	  return str;
+	}
+
+
+	function arrayToHash(array) {
+	  var hash = {};
+
+	  array.forEach(function(val, idx) {
+	    hash[val] = true;
+	  });
+
+	  return hash;
+	}
+
+
+	function formatValue(ctx, value, recurseTimes) {
+	  // Provide a hook for user-specified inspect functions.
+	  // Check that value is an object with an inspect function on it
+	  if (ctx.customInspect &&
+	      value &&
+	      isFunction(value.inspect) &&
+	      // Filter out the util module, it's inspect function is special
+	      value.inspect !== exports.inspect &&
+	      // Also filter out any prototype objects using the circular check.
+	      !(value.constructor && value.constructor.prototype === value)) {
+	    var ret = value.inspect(recurseTimes, ctx);
+	    if (!isString(ret)) {
+	      ret = formatValue(ctx, ret, recurseTimes);
+	    }
+	    return ret;
+	  }
+
+	  // Primitive types cannot have properties
+	  var primitive = formatPrimitive(ctx, value);
+	  if (primitive) {
+	    return primitive;
+	  }
+
+	  // Look up the keys of the object.
+	  var keys = Object.keys(value);
+	  var visibleKeys = arrayToHash(keys);
+
+	  if (ctx.showHidden) {
+	    keys = Object.getOwnPropertyNames(value);
+	  }
+
+	  // IE doesn't make error fields non-enumerable
+	  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
+	  if (isError(value)
+	      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
+	    return formatError(value);
+	  }
+
+	  // Some type of object without properties can be shortcutted.
+	  if (keys.length === 0) {
+	    if (isFunction(value)) {
+	      var name = value.name ? ': ' + value.name : '';
+	      return ctx.stylize('[Function' + name + ']', 'special');
+	    }
+	    if (isRegExp(value)) {
+	      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+	    }
+	    if (isDate(value)) {
+	      return ctx.stylize(Date.prototype.toString.call(value), 'date');
+	    }
+	    if (isError(value)) {
+	      return formatError(value);
+	    }
+	  }
+
+	  var base = '', array = false, braces = ['{', '}'];
+
+	  // Make Array say that they are Array
+	  if (isArray(value)) {
+	    array = true;
+	    braces = ['[', ']'];
+	  }
+
+	  // Make functions say that they are functions
+	  if (isFunction(value)) {
+	    var n = value.name ? ': ' + value.name : '';
+	    base = ' [Function' + n + ']';
+	  }
+
+	  // Make RegExps say that they are RegExps
+	  if (isRegExp(value)) {
+	    base = ' ' + RegExp.prototype.toString.call(value);
+	  }
+
+	  // Make dates with properties first say the date
+	  if (isDate(value)) {
+	    base = ' ' + Date.prototype.toUTCString.call(value);
+	  }
+
+	  // Make error with message first say the error
+	  if (isError(value)) {
+	    base = ' ' + formatError(value);
+	  }
+
+	  if (keys.length === 0 && (!array || value.length == 0)) {
+	    return braces[0] + base + braces[1];
+	  }
+
+	  if (recurseTimes < 0) {
+	    if (isRegExp(value)) {
+	      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+	    } else {
+	      return ctx.stylize('[Object]', 'special');
+	    }
+	  }
+
+	  ctx.seen.push(value);
+
+	  var output;
+	  if (array) {
+	    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
+	  } else {
+	    output = keys.map(function(key) {
+	      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
+	    });
+	  }
+
+	  ctx.seen.pop();
+
+	  return reduceToSingleString(output, base, braces);
+	}
+
+
+	function formatPrimitive(ctx, value) {
+	  if (isUndefined(value))
+	    return ctx.stylize('undefined', 'undefined');
+	  if (isString(value)) {
+	    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
+	                                             .replace(/'/g, "\\'")
+	                                             .replace(/\\"/g, '"') + '\'';
+	    return ctx.stylize(simple, 'string');
+	  }
+	  if (isNumber(value))
+	    return ctx.stylize('' + value, 'number');
+	  if (isBoolean(value))
+	    return ctx.stylize('' + value, 'boolean');
+	  // For some reason typeof null is "object", so special case here.
+	  if (isNull(value))
+	    return ctx.stylize('null', 'null');
+	}
+
+
+	function formatError(value) {
+	  return '[' + Error.prototype.toString.call(value) + ']';
+	}
+
+
+	function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
+	  var output = [];
+	  for (var i = 0, l = value.length; i < l; ++i) {
+	    if (hasOwnProperty(value, String(i))) {
+	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+	          String(i), true));
+	    } else {
+	      output.push('');
+	    }
+	  }
+	  keys.forEach(function(key) {
+	    if (!key.match(/^\d+$/)) {
+	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+	          key, true));
+	    }
+	  });
+	  return output;
+	}
+
+
+	function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
+	  var name, str, desc;
+	  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
+	  if (desc.get) {
+	    if (desc.set) {
+	      str = ctx.stylize('[Getter/Setter]', 'special');
+	    } else {
+	      str = ctx.stylize('[Getter]', 'special');
+	    }
+	  } else {
+	    if (desc.set) {
+	      str = ctx.stylize('[Setter]', 'special');
+	    }
+	  }
+	  if (!hasOwnProperty(visibleKeys, key)) {
+	    name = '[' + key + ']';
+	  }
+	  if (!str) {
+	    if (ctx.seen.indexOf(desc.value) < 0) {
+	      if (isNull(recurseTimes)) {
+	        str = formatValue(ctx, desc.value, null);
+	      } else {
+	        str = formatValue(ctx, desc.value, recurseTimes - 1);
+	      }
+	      if (str.indexOf('\n') > -1) {
+	        if (array) {
+	          str = str.split('\n').map(function(line) {
+	            return '  ' + line;
+	          }).join('\n').substr(2);
+	        } else {
+	          str = '\n' + str.split('\n').map(function(line) {
+	            return '   ' + line;
+	          }).join('\n');
+	        }
+	      }
+	    } else {
+	      str = ctx.stylize('[Circular]', 'special');
+	    }
+	  }
+	  if (isUndefined(name)) {
+	    if (array && key.match(/^\d+$/)) {
+	      return str;
+	    }
+	    name = JSON.stringify('' + key);
+	    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
+	      name = name.substr(1, name.length - 2);
+	      name = ctx.stylize(name, 'name');
+	    } else {
+	      name = name.replace(/'/g, "\\'")
+	                 .replace(/\\"/g, '"')
+	                 .replace(/(^"|"$)/g, "'");
+	      name = ctx.stylize(name, 'string');
+	    }
+	  }
+
+	  return name + ': ' + str;
+	}
+
+
+	function reduceToSingleString(output, base, braces) {
+	  var numLinesEst = 0;
+	  var length = output.reduce(function(prev, cur) {
+	    numLinesEst++;
+	    if (cur.indexOf('\n') >= 0) numLinesEst++;
+	    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
+	  }, 0);
+
+	  if (length > 60) {
+	    return braces[0] +
+	           (base === '' ? '' : base + '\n ') +
+	           ' ' +
+	           output.join(',\n  ') +
+	           ' ' +
+	           braces[1];
+	  }
+
+	  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
+	}
+
+
+	// NOTE: These type checking functions intentionally don't use `instanceof`
+	// because it is fragile and can be easily faked with `Object.create()`.
+	function isArray(ar) {
+	  return Array.isArray(ar);
+	}
+	exports.isArray = isArray;
+
+	function isBoolean(arg) {
+	  return typeof arg === 'boolean';
+	}
+	exports.isBoolean = isBoolean;
+
+	function isNull(arg) {
+	  return arg === null;
+	}
+	exports.isNull = isNull;
+
+	function isNullOrUndefined(arg) {
+	  return arg == null;
+	}
+	exports.isNullOrUndefined = isNullOrUndefined;
+
+	function isNumber(arg) {
+	  return typeof arg === 'number';
+	}
+	exports.isNumber = isNumber;
+
+	function isString(arg) {
+	  return typeof arg === 'string';
+	}
+	exports.isString = isString;
+
+	function isSymbol(arg) {
+	  return typeof arg === 'symbol';
+	}
+	exports.isSymbol = isSymbol;
+
+	function isUndefined(arg) {
+	  return arg === void 0;
+	}
+	exports.isUndefined = isUndefined;
+
+	function isRegExp(re) {
+	  return isObject(re) && objectToString(re) === '[object RegExp]';
+	}
+	exports.isRegExp = isRegExp;
+
+	function isObject(arg) {
+	  return typeof arg === 'object' && arg !== null;
+	}
+	exports.isObject = isObject;
+
+	function isDate(d) {
+	  return isObject(d) && objectToString(d) === '[object Date]';
+	}
+	exports.isDate = isDate;
+
+	function isError(e) {
+	  return isObject(e) &&
+	      (objectToString(e) === '[object Error]' || e instanceof Error);
+	}
+	exports.isError = isError;
+
+	function isFunction(arg) {
+	  return typeof arg === 'function';
+	}
+	exports.isFunction = isFunction;
+
+	function isPrimitive(arg) {
+	  return arg === null ||
+	         typeof arg === 'boolean' ||
+	         typeof arg === 'number' ||
+	         typeof arg === 'string' ||
+	         typeof arg === 'symbol' ||  // ES6 symbol
+	         typeof arg === 'undefined';
+	}
+	exports.isPrimitive = isPrimitive;
+
+	exports.isBuffer = __webpack_require__(348);
+
+	function objectToString(o) {
+	  return Object.prototype.toString.call(o);
+	}
+
+
+	function pad(n) {
+	  return n < 10 ? '0' + n.toString(10) : n.toString(10);
+	}
+
+
+	var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+	              'Oct', 'Nov', 'Dec'];
+
+	// 26 Feb 16:19:34
+	function timestamp() {
+	  var d = new Date();
+	  var time = [pad(d.getHours()),
+	              pad(d.getMinutes()),
+	              pad(d.getSeconds())].join(':');
+	  return [d.getDate(), months[d.getMonth()], time].join(' ');
+	}
+
+
+	// log is just a thin wrapper to console.log that prepends a timestamp
+	exports.log = function() {
+	  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
+	};
+
+
+	/**
+	 * Inherit the prototype methods from one constructor into another.
+	 *
+	 * The Function.prototype.inherits from lang.js rewritten as a standalone
+	 * function (not on Function.prototype). NOTE: If this file is to be loaded
+	 * during bootstrapping this function needs to be rewritten using some native
+	 * functions as prototype setup using normal JavaScript does not work as
+	 * expected during bootstrapping (see mirror.js in r114903).
+	 *
+	 * @param {function} ctor Constructor function which needs to inherit the
+	 *     prototype.
+	 * @param {function} superCtor Constructor function to inherit prototype from.
+	 */
+	exports.inherits = __webpack_require__(349);
+
+	exports._extend = function(origin, add) {
+	  // Don't do anything if add isn't an object
+	  if (!add || !isObject(add)) return origin;
+
+	  var keys = Object.keys(add);
+	  var i = keys.length;
+	  while (i--) {
+	    origin[keys[i]] = add[keys[i]];
+	  }
+	  return origin;
+	};
+
+	function hasOwnProperty(obj, prop) {
+	  return Object.prototype.hasOwnProperty.call(obj, prop);
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(10)))
+
+/***/ },
+/* 348 */
+/***/ function(module, exports) {
+
+	module.exports = function isBuffer(arg) {
+	  return arg && typeof arg === 'object'
+	    && typeof arg.copy === 'function'
+	    && typeof arg.fill === 'function'
+	    && typeof arg.readUInt8 === 'function';
+	}
+
+/***/ },
+/* 349 */
+/***/ function(module, exports) {
+
+	if (typeof Object.create === 'function') {
+	  // implementation from standard node.js 'util' module
+	  module.exports = function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor
+	    ctor.prototype = Object.create(superCtor.prototype, {
+	      constructor: {
+	        value: ctor,
+	        enumerable: false,
+	        writable: true,
+	        configurable: true
+	      }
+	    });
+	  };
+	} else {
+	  // old school shim for old browsers
+	  module.exports = function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor
+	    var TempCtor = function () {}
+	    TempCtor.prototype = superCtor.prototype
+	    ctor.prototype = new TempCtor()
+	    ctor.prototype.constructor = ctor
+	  }
+	}
+
+
+/***/ },
+/* 350 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(Buffer, global) {/*!
+	 * The buffer module from node.js, for the browser.
+	 *
+	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+	 * @license  MIT
+	 */
+	/* eslint-disable no-proto */
+
+	'use strict'
+
+	var base64 = __webpack_require__(351)
+	var ieee754 = __webpack_require__(352)
+	var isArray = __webpack_require__(353)
+
+	exports.Buffer = Buffer
+	exports.SlowBuffer = SlowBuffer
+	exports.INSPECT_MAX_BYTES = 50
+	Buffer.poolSize = 8192 // not used by this implementation
+
+	var rootParent = {}
+
+	/**
+	 * If `Buffer.TYPED_ARRAY_SUPPORT`:
+	 *   === true    Use Uint8Array implementation (fastest)
+	 *   === false   Use Object implementation (most compatible, even IE6)
+	 *
+	 * Browsers that support typed arrays are IE 10+, Firefox 4+, Chrome 7+, Safari 5.1+,
+	 * Opera 11.6+, iOS 4.2+.
+	 *
+	 * Due to various browser bugs, sometimes the Object implementation will be used even
+	 * when the browser supports typed arrays.
+	 *
+	 * Note:
+	 *
+	 *   - Firefox 4-29 lacks support for adding new properties to `Uint8Array` instances,
+	 *     See: https://bugzilla.mozilla.org/show_bug.cgi?id=695438.
+	 *
+	 *   - Safari 5-7 lacks support for changing the `Object.prototype.constructor` property
+	 *     on objects.
+	 *
+	 *   - Chrome 9-10 is missing the `TypedArray.prototype.subarray` function.
+	 *
+	 *   - IE10 has a broken `TypedArray.prototype.subarray` function which returns arrays of
+	 *     incorrect length in some situations.
+
+	 * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
+	 * get the Object implementation, which is slower but behaves correctly.
+	 */
+	Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
+	  ? global.TYPED_ARRAY_SUPPORT
+	  : typedArraySupport()
+
+	function typedArraySupport () {
+	  function Bar () {}
+	  try {
+	    var arr = new Uint8Array(1)
+	    arr.foo = function () { return 42 }
+	    arr.constructor = Bar
+	    return arr.foo() === 42 && // typed array instances can be augmented
+	        arr.constructor === Bar && // constructor can be set
+	        typeof arr.subarray === 'function' && // chrome 9-10 lack `subarray`
+	        arr.subarray(1, 1).byteLength === 0 // ie10 has broken `subarray`
+	  } catch (e) {
+	    return false
+	  }
+	}
+
+	function kMaxLength () {
+	  return Buffer.TYPED_ARRAY_SUPPORT
+	    ? 0x7fffffff
+	    : 0x3fffffff
+	}
+
+	/**
+	 * Class: Buffer
+	 * =============
+	 *
+	 * The Buffer constructor returns instances of `Uint8Array` that are augmented
+	 * with function properties for all the node `Buffer` API functions. We use
+	 * `Uint8Array` so that square bracket notation works as expected -- it returns
+	 * a single octet.
+	 *
+	 * By augmenting the instances, we can avoid modifying the `Uint8Array`
+	 * prototype.
+	 */
+	function Buffer (arg) {
+	  if (!(this instanceof Buffer)) {
+	    // Avoid going through an ArgumentsAdaptorTrampoline in the common case.
+	    if (arguments.length > 1) return new Buffer(arg, arguments[1])
+	    return new Buffer(arg)
+	  }
+
+	  if (!Buffer.TYPED_ARRAY_SUPPORT) {
+	    this.length = 0
+	    this.parent = undefined
+	  }
+
+	  // Common case.
+	  if (typeof arg === 'number') {
+	    return fromNumber(this, arg)
+	  }
+
+	  // Slightly less common case.
+	  if (typeof arg === 'string') {
+	    return fromString(this, arg, arguments.length > 1 ? arguments[1] : 'utf8')
+	  }
+
+	  // Unusual.
+	  return fromObject(this, arg)
+	}
+
+	function fromNumber (that, length) {
+	  that = allocate(that, length < 0 ? 0 : checked(length) | 0)
+	  if (!Buffer.TYPED_ARRAY_SUPPORT) {
+	    for (var i = 0; i < length; i++) {
+	      that[i] = 0
+	    }
+	  }
+	  return that
+	}
+
+	function fromString (that, string, encoding) {
+	  if (typeof encoding !== 'string' || encoding === '') encoding = 'utf8'
+
+	  // Assumption: byteLength() return value is always < kMaxLength.
+	  var length = byteLength(string, encoding) | 0
+	  that = allocate(that, length)
+
+	  that.write(string, encoding)
+	  return that
+	}
+
+	function fromObject (that, object) {
+	  if (Buffer.isBuffer(object)) return fromBuffer(that, object)
+
+	  if (isArray(object)) return fromArray(that, object)
+
+	  if (object == null) {
+	    throw new TypeError('must start with number, buffer, array or string')
+	  }
+
+	  if (typeof ArrayBuffer !== 'undefined') {
+	    if (object.buffer instanceof ArrayBuffer) {
+	      return fromTypedArray(that, object)
+	    }
+	    if (object instanceof ArrayBuffer) {
+	      return fromArrayBuffer(that, object)
+	    }
+	  }
+
+	  if (object.length) return fromArrayLike(that, object)
+
+	  return fromJsonObject(that, object)
+	}
+
+	function fromBuffer (that, buffer) {
+	  var length = checked(buffer.length) | 0
+	  that = allocate(that, length)
+	  buffer.copy(that, 0, 0, length)
+	  return that
+	}
+
+	function fromArray (that, array) {
+	  var length = checked(array.length) | 0
+	  that = allocate(that, length)
+	  for (var i = 0; i < length; i += 1) {
+	    that[i] = array[i] & 255
+	  }
+	  return that
+	}
+
+	// Duplicate of fromArray() to keep fromArray() monomorphic.
+	function fromTypedArray (that, array) {
+	  var length = checked(array.length) | 0
+	  that = allocate(that, length)
+	  // Truncating the elements is probably not what people expect from typed
+	  // arrays with BYTES_PER_ELEMENT > 1 but it's compatible with the behavior
+	  // of the old Buffer constructor.
+	  for (var i = 0; i < length; i += 1) {
+	    that[i] = array[i] & 255
+	  }
+	  return that
+	}
+
+	function fromArrayBuffer (that, array) {
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    // Return an augmented `Uint8Array` instance, for best performance
+	    array.byteLength
+	    that = Buffer._augment(new Uint8Array(array))
+	  } else {
+	    // Fallback: Return an object instance of the Buffer class
+	    that = fromTypedArray(that, new Uint8Array(array))
+	  }
+	  return that
+	}
+
+	function fromArrayLike (that, array) {
+	  var length = checked(array.length) | 0
+	  that = allocate(that, length)
+	  for (var i = 0; i < length; i += 1) {
+	    that[i] = array[i] & 255
+	  }
+	  return that
+	}
+
+	// Deserialize { type: 'Buffer', data: [1,2,3,...] } into a Buffer object.
+	// Returns a zero-length buffer for inputs that don't conform to the spec.
+	function fromJsonObject (that, object) {
+	  var array
+	  var length = 0
+
+	  if (object.type === 'Buffer' && isArray(object.data)) {
+	    array = object.data
+	    length = checked(array.length) | 0
+	  }
+	  that = allocate(that, length)
+
+	  for (var i = 0; i < length; i += 1) {
+	    that[i] = array[i] & 255
+	  }
+	  return that
+	}
+
+	if (Buffer.TYPED_ARRAY_SUPPORT) {
+	  Buffer.prototype.__proto__ = Uint8Array.prototype
+	  Buffer.__proto__ = Uint8Array
+	} else {
+	  // pre-set for values that may exist in the future
+	  Buffer.prototype.length = undefined
+	  Buffer.prototype.parent = undefined
+	}
+
+	function allocate (that, length) {
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    // Return an augmented `Uint8Array` instance, for best performance
+	    that = Buffer._augment(new Uint8Array(length))
+	    that.__proto__ = Buffer.prototype
+	  } else {
+	    // Fallback: Return an object instance of the Buffer class
+	    that.length = length
+	    that._isBuffer = true
+	  }
+
+	  var fromPool = length !== 0 && length <= Buffer.poolSize >>> 1
+	  if (fromPool) that.parent = rootParent
+
+	  return that
+	}
+
+	function checked (length) {
+	  // Note: cannot use `length < kMaxLength` here because that fails when
+	  // length is NaN (which is otherwise coerced to zero.)
+	  if (length >= kMaxLength()) {
+	    throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
+	                         'size: 0x' + kMaxLength().toString(16) + ' bytes')
+	  }
+	  return length | 0
+	}
+
+	function SlowBuffer (subject, encoding) {
+	  if (!(this instanceof SlowBuffer)) return new SlowBuffer(subject, encoding)
+
+	  var buf = new Buffer(subject, encoding)
+	  delete buf.parent
+	  return buf
+	}
+
+	Buffer.isBuffer = function isBuffer (b) {
+	  return !!(b != null && b._isBuffer)
+	}
+
+	Buffer.compare = function compare (a, b) {
+	  if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b)) {
+	    throw new TypeError('Arguments must be Buffers')
+	  }
+
+	  if (a === b) return 0
+
+	  var x = a.length
+	  var y = b.length
+
+	  var i = 0
+	  var len = Math.min(x, y)
+	  while (i < len) {
+	    if (a[i] !== b[i]) break
+
+	    ++i
+	  }
+
+	  if (i !== len) {
+	    x = a[i]
+	    y = b[i]
+	  }
+
+	  if (x < y) return -1
+	  if (y < x) return 1
+	  return 0
+	}
+
+	Buffer.isEncoding = function isEncoding (encoding) {
+	  switch (String(encoding).toLowerCase()) {
+	    case 'hex':
+	    case 'utf8':
+	    case 'utf-8':
+	    case 'ascii':
+	    case 'binary':
+	    case 'base64':
+	    case 'raw':
+	    case 'ucs2':
+	    case 'ucs-2':
+	    case 'utf16le':
+	    case 'utf-16le':
+	      return true
+	    default:
+	      return false
+	  }
+	}
+
+	Buffer.concat = function concat (list, length) {
+	  if (!isArray(list)) throw new TypeError('list argument must be an Array of Buffers.')
+
+	  if (list.length === 0) {
+	    return new Buffer(0)
+	  }
+
+	  var i
+	  if (length === undefined) {
+	    length = 0
+	    for (i = 0; i < list.length; i++) {
+	      length += list[i].length
+	    }
+	  }
+
+	  var buf = new Buffer(length)
+	  var pos = 0
+	  for (i = 0; i < list.length; i++) {
+	    var item = list[i]
+	    item.copy(buf, pos)
+	    pos += item.length
+	  }
+	  return buf
+	}
+
+	function byteLength (string, encoding) {
+	  if (typeof string !== 'string') string = '' + string
+
+	  var len = string.length
+	  if (len === 0) return 0
+
+	  // Use a for loop to avoid recursion
+	  var loweredCase = false
+	  for (;;) {
+	    switch (encoding) {
+	      case 'ascii':
+	      case 'binary':
+	      // Deprecated
+	      case 'raw':
+	      case 'raws':
+	        return len
+	      case 'utf8':
+	      case 'utf-8':
+	        return utf8ToBytes(string).length
+	      case 'ucs2':
+	      case 'ucs-2':
+	      case 'utf16le':
+	      case 'utf-16le':
+	        return len * 2
+	      case 'hex':
+	        return len >>> 1
+	      case 'base64':
+	        return base64ToBytes(string).length
+	      default:
+	        if (loweredCase) return utf8ToBytes(string).length // assume utf8
+	        encoding = ('' + encoding).toLowerCase()
+	        loweredCase = true
+	    }
+	  }
+	}
+	Buffer.byteLength = byteLength
+
+	function slowToString (encoding, start, end) {
+	  var loweredCase = false
+
+	  start = start | 0
+	  end = end === undefined || end === Infinity ? this.length : end | 0
+
+	  if (!encoding) encoding = 'utf8'
+	  if (start < 0) start = 0
+	  if (end > this.length) end = this.length
+	  if (end <= start) return ''
+
+	  while (true) {
+	    switch (encoding) {
+	      case 'hex':
+	        return hexSlice(this, start, end)
+
+	      case 'utf8':
+	      case 'utf-8':
+	        return utf8Slice(this, start, end)
+
+	      case 'ascii':
+	        return asciiSlice(this, start, end)
+
+	      case 'binary':
+	        return binarySlice(this, start, end)
+
+	      case 'base64':
+	        return base64Slice(this, start, end)
+
+	      case 'ucs2':
+	      case 'ucs-2':
+	      case 'utf16le':
+	      case 'utf-16le':
+	        return utf16leSlice(this, start, end)
+
+	      default:
+	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
+	        encoding = (encoding + '').toLowerCase()
+	        loweredCase = true
+	    }
+	  }
+	}
+
+	Buffer.prototype.toString = function toString () {
+	  var length = this.length | 0
+	  if (length === 0) return ''
+	  if (arguments.length === 0) return utf8Slice(this, 0, length)
+	  return slowToString.apply(this, arguments)
+	}
+
+	Buffer.prototype.equals = function equals (b) {
+	  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
+	  if (this === b) return true
+	  return Buffer.compare(this, b) === 0
+	}
+
+	Buffer.prototype.inspect = function inspect () {
+	  var str = ''
+	  var max = exports.INSPECT_MAX_BYTES
+	  if (this.length > 0) {
+	    str = this.toString('hex', 0, max).match(/.{2}/g).join(' ')
+	    if (this.length > max) str += ' ... '
+	  }
+	  return '<Buffer ' + str + '>'
+	}
+
+	Buffer.prototype.compare = function compare (b) {
+	  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
+	  if (this === b) return 0
+	  return Buffer.compare(this, b)
+	}
+
+	Buffer.prototype.indexOf = function indexOf (val, byteOffset) {
+	  if (byteOffset > 0x7fffffff) byteOffset = 0x7fffffff
+	  else if (byteOffset < -0x80000000) byteOffset = -0x80000000
+	  byteOffset >>= 0
+
+	  if (this.length === 0) return -1
+	  if (byteOffset >= this.length) return -1
+
+	  // Negative offsets start from the end of the buffer
+	  if (byteOffset < 0) byteOffset = Math.max(this.length + byteOffset, 0)
+
+	  if (typeof val === 'string') {
+	    if (val.length === 0) return -1 // special case: looking for empty string always fails
+	    return String.prototype.indexOf.call(this, val, byteOffset)
+	  }
+	  if (Buffer.isBuffer(val)) {
+	    return arrayIndexOf(this, val, byteOffset)
+	  }
+	  if (typeof val === 'number') {
+	    if (Buffer.TYPED_ARRAY_SUPPORT && Uint8Array.prototype.indexOf === 'function') {
+	      return Uint8Array.prototype.indexOf.call(this, val, byteOffset)
+	    }
+	    return arrayIndexOf(this, [ val ], byteOffset)
+	  }
+
+	  function arrayIndexOf (arr, val, byteOffset) {
+	    var foundIndex = -1
+	    for (var i = 0; byteOffset + i < arr.length; i++) {
+	      if (arr[byteOffset + i] === val[foundIndex === -1 ? 0 : i - foundIndex]) {
+	        if (foundIndex === -1) foundIndex = i
+	        if (i - foundIndex + 1 === val.length) return byteOffset + foundIndex
+	      } else {
+	        foundIndex = -1
+	      }
+	    }
+	    return -1
+	  }
+
+	  throw new TypeError('val must be string, number or Buffer')
+	}
+
+	// `get` is deprecated
+	Buffer.prototype.get = function get (offset) {
+	  console.log('.get() is deprecated. Access using array indexes instead.')
+	  return this.readUInt8(offset)
+	}
+
+	// `set` is deprecated
+	Buffer.prototype.set = function set (v, offset) {
+	  console.log('.set() is deprecated. Access using array indexes instead.')
+	  return this.writeUInt8(v, offset)
+	}
+
+	function hexWrite (buf, string, offset, length) {
+	  offset = Number(offset) || 0
+	  var remaining = buf.length - offset
+	  if (!length) {
+	    length = remaining
+	  } else {
+	    length = Number(length)
+	    if (length > remaining) {
+	      length = remaining
+	    }
+	  }
+
+	  // must be an even number of digits
+	  var strLen = string.length
+	  if (strLen % 2 !== 0) throw new Error('Invalid hex string')
+
+	  if (length > strLen / 2) {
+	    length = strLen / 2
+	  }
+	  for (var i = 0; i < length; i++) {
+	    var parsed = parseInt(string.substr(i * 2, 2), 16)
+	    if (isNaN(parsed)) throw new Error('Invalid hex string')
+	    buf[offset + i] = parsed
+	  }
+	  return i
+	}
+
+	function utf8Write (buf, string, offset, length) {
+	  return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length)
+	}
+
+	function asciiWrite (buf, string, offset, length) {
+	  return blitBuffer(asciiToBytes(string), buf, offset, length)
+	}
+
+	function binaryWrite (buf, string, offset, length) {
+	  return asciiWrite(buf, string, offset, length)
+	}
+
+	function base64Write (buf, string, offset, length) {
+	  return blitBuffer(base64ToBytes(string), buf, offset, length)
+	}
+
+	function ucs2Write (buf, string, offset, length) {
+	  return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length)
+	}
+
+	Buffer.prototype.write = function write (string, offset, length, encoding) {
+	  // Buffer#write(string)
+	  if (offset === undefined) {
+	    encoding = 'utf8'
+	    length = this.length
+	    offset = 0
+	  // Buffer#write(string, encoding)
+	  } else if (length === undefined && typeof offset === 'string') {
+	    encoding = offset
+	    length = this.length
+	    offset = 0
+	  // Buffer#write(string, offset[, length][, encoding])
+	  } else if (isFinite(offset)) {
+	    offset = offset | 0
+	    if (isFinite(length)) {
+	      length = length | 0
+	      if (encoding === undefined) encoding = 'utf8'
+	    } else {
+	      encoding = length
+	      length = undefined
+	    }
+	  // legacy write(string, encoding, offset, length) - remove in v0.13
+	  } else {
+	    var swap = encoding
+	    encoding = offset
+	    offset = length | 0
+	    length = swap
+	  }
+
+	  var remaining = this.length - offset
+	  if (length === undefined || length > remaining) length = remaining
+
+	  if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
+	    throw new RangeError('attempt to write outside buffer bounds')
+	  }
+
+	  if (!encoding) encoding = 'utf8'
+
+	  var loweredCase = false
+	  for (;;) {
+	    switch (encoding) {
+	      case 'hex':
+	        return hexWrite(this, string, offset, length)
+
+	      case 'utf8':
+	      case 'utf-8':
+	        return utf8Write(this, string, offset, length)
+
+	      case 'ascii':
+	        return asciiWrite(this, string, offset, length)
+
+	      case 'binary':
+	        return binaryWrite(this, string, offset, length)
+
+	      case 'base64':
+	        // Warning: maxLength not taken into account in base64Write
+	        return base64Write(this, string, offset, length)
+
+	      case 'ucs2':
+	      case 'ucs-2':
+	      case 'utf16le':
+	      case 'utf-16le':
+	        return ucs2Write(this, string, offset, length)
+
+	      default:
+	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
+	        encoding = ('' + encoding).toLowerCase()
+	        loweredCase = true
+	    }
+	  }
+	}
+
+	Buffer.prototype.toJSON = function toJSON () {
+	  return {
+	    type: 'Buffer',
+	    data: Array.prototype.slice.call(this._arr || this, 0)
+	  }
+	}
+
+	function base64Slice (buf, start, end) {
+	  if (start === 0 && end === buf.length) {
+	    return base64.fromByteArray(buf)
+	  } else {
+	    return base64.fromByteArray(buf.slice(start, end))
+	  }
+	}
+
+	function utf8Slice (buf, start, end) {
+	  end = Math.min(buf.length, end)
+	  var res = []
+
+	  var i = start
+	  while (i < end) {
+	    var firstByte = buf[i]
+	    var codePoint = null
+	    var bytesPerSequence = (firstByte > 0xEF) ? 4
+	      : (firstByte > 0xDF) ? 3
+	      : (firstByte > 0xBF) ? 2
+	      : 1
+
+	    if (i + bytesPerSequence <= end) {
+	      var secondByte, thirdByte, fourthByte, tempCodePoint
+
+	      switch (bytesPerSequence) {
+	        case 1:
+	          if (firstByte < 0x80) {
+	            codePoint = firstByte
+	          }
+	          break
+	        case 2:
+	          secondByte = buf[i + 1]
+	          if ((secondByte & 0xC0) === 0x80) {
+	            tempCodePoint = (firstByte & 0x1F) << 0x6 | (secondByte & 0x3F)
+	            if (tempCodePoint > 0x7F) {
+	              codePoint = tempCodePoint
+	            }
+	          }
+	          break
+	        case 3:
+	          secondByte = buf[i + 1]
+	          thirdByte = buf[i + 2]
+	          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80) {
+	            tempCodePoint = (firstByte & 0xF) << 0xC | (secondByte & 0x3F) << 0x6 | (thirdByte & 0x3F)
+	            if (tempCodePoint > 0x7FF && (tempCodePoint < 0xD800 || tempCodePoint > 0xDFFF)) {
+	              codePoint = tempCodePoint
+	            }
+	          }
+	          break
+	        case 4:
+	          secondByte = buf[i + 1]
+	          thirdByte = buf[i + 2]
+	          fourthByte = buf[i + 3]
+	          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80 && (fourthByte & 0xC0) === 0x80) {
+	            tempCodePoint = (firstByte & 0xF) << 0x12 | (secondByte & 0x3F) << 0xC | (thirdByte & 0x3F) << 0x6 | (fourthByte & 0x3F)
+	            if (tempCodePoint > 0xFFFF && tempCodePoint < 0x110000) {
+	              codePoint = tempCodePoint
+	            }
+	          }
+	      }
+	    }
+
+	    if (codePoint === null) {
+	      // we did not generate a valid codePoint so insert a
+	      // replacement char (U+FFFD) and advance only 1 byte
+	      codePoint = 0xFFFD
+	      bytesPerSequence = 1
+	    } else if (codePoint > 0xFFFF) {
+	      // encode to utf16 (surrogate pair dance)
+	      codePoint -= 0x10000
+	      res.push(codePoint >>> 10 & 0x3FF | 0xD800)
+	      codePoint = 0xDC00 | codePoint & 0x3FF
+	    }
+
+	    res.push(codePoint)
+	    i += bytesPerSequence
+	  }
+
+	  return decodeCodePointsArray(res)
+	}
+
+	// Based on http://stackoverflow.com/a/22747272/680742, the browser with
+	// the lowest limit is Chrome, with 0x10000 args.
+	// We go 1 magnitude less, for safety
+	var MAX_ARGUMENTS_LENGTH = 0x1000
+
+	function decodeCodePointsArray (codePoints) {
+	  var len = codePoints.length
+	  if (len <= MAX_ARGUMENTS_LENGTH) {
+	    return String.fromCharCode.apply(String, codePoints) // avoid extra slice()
+	  }
+
+	  // Decode in chunks to avoid "call stack size exceeded".
+	  var res = ''
+	  var i = 0
+	  while (i < len) {
+	    res += String.fromCharCode.apply(
+	      String,
+	      codePoints.slice(i, i += MAX_ARGUMENTS_LENGTH)
+	    )
+	  }
+	  return res
+	}
+
+	function asciiSlice (buf, start, end) {
+	  var ret = ''
+	  end = Math.min(buf.length, end)
+
+	  for (var i = start; i < end; i++) {
+	    ret += String.fromCharCode(buf[i] & 0x7F)
+	  }
+	  return ret
+	}
+
+	function binarySlice (buf, start, end) {
+	  var ret = ''
+	  end = Math.min(buf.length, end)
+
+	  for (var i = start; i < end; i++) {
+	    ret += String.fromCharCode(buf[i])
+	  }
+	  return ret
+	}
+
+	function hexSlice (buf, start, end) {
+	  var len = buf.length
+
+	  if (!start || start < 0) start = 0
+	  if (!end || end < 0 || end > len) end = len
+
+	  var out = ''
+	  for (var i = start; i < end; i++) {
+	    out += toHex(buf[i])
+	  }
+	  return out
+	}
+
+	function utf16leSlice (buf, start, end) {
+	  var bytes = buf.slice(start, end)
+	  var res = ''
+	  for (var i = 0; i < bytes.length; i += 2) {
+	    res += String.fromCharCode(bytes[i] + bytes[i + 1] * 256)
+	  }
+	  return res
+	}
+
+	Buffer.prototype.slice = function slice (start, end) {
+	  var len = this.length
+	  start = ~~start
+	  end = end === undefined ? len : ~~end
+
+	  if (start < 0) {
+	    start += len
+	    if (start < 0) start = 0
+	  } else if (start > len) {
+	    start = len
+	  }
+
+	  if (end < 0) {
+	    end += len
+	    if (end < 0) end = 0
+	  } else if (end > len) {
+	    end = len
+	  }
+
+	  if (end < start) end = start
+
+	  var newBuf
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    newBuf = Buffer._augment(this.subarray(start, end))
+	  } else {
+	    var sliceLen = end - start
+	    newBuf = new Buffer(sliceLen, undefined)
+	    for (var i = 0; i < sliceLen; i++) {
+	      newBuf[i] = this[i + start]
+	    }
+	  }
+
+	  if (newBuf.length) newBuf.parent = this.parent || this
+
+	  return newBuf
+	}
+
+	/*
+	 * Need to make sure that buffer isn't trying to write out of bounds.
+	 */
+	function checkOffset (offset, ext, length) {
+	  if ((offset % 1) !== 0 || offset < 0) throw new RangeError('offset is not uint')
+	  if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length')
+	}
+
+	Buffer.prototype.readUIntLE = function readUIntLE (offset, byteLength, noAssert) {
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+	  var val = this[offset]
+	  var mul = 1
+	  var i = 0
+	  while (++i < byteLength && (mul *= 0x100)) {
+	    val += this[offset + i] * mul
+	  }
+
+	  return val
+	}
+
+	Buffer.prototype.readUIntBE = function readUIntBE (offset, byteLength, noAssert) {
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) {
+	    checkOffset(offset, byteLength, this.length)
+	  }
+
+	  var val = this[offset + --byteLength]
+	  var mul = 1
+	  while (byteLength > 0 && (mul *= 0x100)) {
+	    val += this[offset + --byteLength] * mul
+	  }
+
+	  return val
+	}
+
+	Buffer.prototype.readUInt8 = function readUInt8 (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 1, this.length)
+	  return this[offset]
+	}
+
+	Buffer.prototype.readUInt16LE = function readUInt16LE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 2, this.length)
+	  return this[offset] | (this[offset + 1] << 8)
+	}
+
+	Buffer.prototype.readUInt16BE = function readUInt16BE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 2, this.length)
+	  return (this[offset] << 8) | this[offset + 1]
+	}
+
+	Buffer.prototype.readUInt32LE = function readUInt32LE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+
+	  return ((this[offset]) |
+	      (this[offset + 1] << 8) |
+	      (this[offset + 2] << 16)) +
+	      (this[offset + 3] * 0x1000000)
+	}
+
+	Buffer.prototype.readUInt32BE = function readUInt32BE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+
+	  return (this[offset] * 0x1000000) +
+	    ((this[offset + 1] << 16) |
+	    (this[offset + 2] << 8) |
+	    this[offset + 3])
+	}
+
+	Buffer.prototype.readIntLE = function readIntLE (offset, byteLength, noAssert) {
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+	  var val = this[offset]
+	  var mul = 1
+	  var i = 0
+	  while (++i < byteLength && (mul *= 0x100)) {
+	    val += this[offset + i] * mul
+	  }
+	  mul *= 0x80
+
+	  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
+
+	  return val
+	}
+
+	Buffer.prototype.readIntBE = function readIntBE (offset, byteLength, noAssert) {
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) checkOffset(offset, byteLength, this.length)
+
+	  var i = byteLength
+	  var mul = 1
+	  var val = this[offset + --i]
+	  while (i > 0 && (mul *= 0x100)) {
+	    val += this[offset + --i] * mul
+	  }
+	  mul *= 0x80
+
+	  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
+
+	  return val
+	}
+
+	Buffer.prototype.readInt8 = function readInt8 (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 1, this.length)
+	  if (!(this[offset] & 0x80)) return (this[offset])
+	  return ((0xff - this[offset] + 1) * -1)
+	}
+
+	Buffer.prototype.readInt16LE = function readInt16LE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 2, this.length)
+	  var val = this[offset] | (this[offset + 1] << 8)
+	  return (val & 0x8000) ? val | 0xFFFF0000 : val
+	}
+
+	Buffer.prototype.readInt16BE = function readInt16BE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 2, this.length)
+	  var val = this[offset + 1] | (this[offset] << 8)
+	  return (val & 0x8000) ? val | 0xFFFF0000 : val
+	}
+
+	Buffer.prototype.readInt32LE = function readInt32LE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+
+	  return (this[offset]) |
+	    (this[offset + 1] << 8) |
+	    (this[offset + 2] << 16) |
+	    (this[offset + 3] << 24)
+	}
+
+	Buffer.prototype.readInt32BE = function readInt32BE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+
+	  return (this[offset] << 24) |
+	    (this[offset + 1] << 16) |
+	    (this[offset + 2] << 8) |
+	    (this[offset + 3])
+	}
+
+	Buffer.prototype.readFloatLE = function readFloatLE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+	  return ieee754.read(this, offset, true, 23, 4)
+	}
+
+	Buffer.prototype.readFloatBE = function readFloatBE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 4, this.length)
+	  return ieee754.read(this, offset, false, 23, 4)
+	}
+
+	Buffer.prototype.readDoubleLE = function readDoubleLE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 8, this.length)
+	  return ieee754.read(this, offset, true, 52, 8)
+	}
+
+	Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
+	  if (!noAssert) checkOffset(offset, 8, this.length)
+	  return ieee754.read(this, offset, false, 52, 8)
+	}
+
+	function checkInt (buf, value, offset, ext, max, min) {
+	  if (!Buffer.isBuffer(buf)) throw new TypeError('buffer must be a Buffer instance')
+	  if (value > max || value < min) throw new RangeError('value is out of bounds')
+	  if (offset + ext > buf.length) throw new RangeError('index out of range')
+	}
+
+	Buffer.prototype.writeUIntLE = function writeUIntLE (value, offset, byteLength, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) checkInt(this, value, offset, byteLength, Math.pow(2, 8 * byteLength), 0)
+
+	  var mul = 1
+	  var i = 0
+	  this[offset] = value & 0xFF
+	  while (++i < byteLength && (mul *= 0x100)) {
+	    this[offset + i] = (value / mul) & 0xFF
+	  }
+
+	  return offset + byteLength
+	}
+
+	Buffer.prototype.writeUIntBE = function writeUIntBE (value, offset, byteLength, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  byteLength = byteLength | 0
+	  if (!noAssert) checkInt(this, value, offset, byteLength, Math.pow(2, 8 * byteLength), 0)
+
+	  var i = byteLength - 1
+	  var mul = 1
+	  this[offset + i] = value & 0xFF
+	  while (--i >= 0 && (mul *= 0x100)) {
+	    this[offset + i] = (value / mul) & 0xFF
+	  }
+
+	  return offset + byteLength
+	}
+
+	Buffer.prototype.writeUInt8 = function writeUInt8 (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 1, 0xff, 0)
+	  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
+	  this[offset] = (value & 0xff)
+	  return offset + 1
+	}
+
+	function objectWriteUInt16 (buf, value, offset, littleEndian) {
+	  if (value < 0) value = 0xffff + value + 1
+	  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; i++) {
+	    buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
+	      (littleEndian ? i : 1 - i) * 8
+	  }
+	}
+
+	Buffer.prototype.writeUInt16LE = function writeUInt16LE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value & 0xff)
+	    this[offset + 1] = (value >>> 8)
+	  } else {
+	    objectWriteUInt16(this, value, offset, true)
+	  }
+	  return offset + 2
+	}
+
+	Buffer.prototype.writeUInt16BE = function writeUInt16BE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value >>> 8)
+	    this[offset + 1] = (value & 0xff)
+	  } else {
+	    objectWriteUInt16(this, value, offset, false)
+	  }
+	  return offset + 2
+	}
+
+	function objectWriteUInt32 (buf, value, offset, littleEndian) {
+	  if (value < 0) value = 0xffffffff + value + 1
+	  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; i++) {
+	    buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff
+	  }
+	}
+
+	Buffer.prototype.writeUInt32LE = function writeUInt32LE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset + 3] = (value >>> 24)
+	    this[offset + 2] = (value >>> 16)
+	    this[offset + 1] = (value >>> 8)
+	    this[offset] = (value & 0xff)
+	  } else {
+	    objectWriteUInt32(this, value, offset, true)
+	  }
+	  return offset + 4
+	}
+
+	Buffer.prototype.writeUInt32BE = function writeUInt32BE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value >>> 24)
+	    this[offset + 1] = (value >>> 16)
+	    this[offset + 2] = (value >>> 8)
+	    this[offset + 3] = (value & 0xff)
+	  } else {
+	    objectWriteUInt32(this, value, offset, false)
+	  }
+	  return offset + 4
+	}
+
+	Buffer.prototype.writeIntLE = function writeIntLE (value, offset, byteLength, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) {
+	    var limit = Math.pow(2, 8 * byteLength - 1)
+
+	    checkInt(this, value, offset, byteLength, limit - 1, -limit)
+	  }
+
+	  var i = 0
+	  var mul = 1
+	  var sub = value < 0 ? 1 : 0
+	  this[offset] = value & 0xFF
+	  while (++i < byteLength && (mul *= 0x100)) {
+	    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
+	  }
+
+	  return offset + byteLength
+	}
+
+	Buffer.prototype.writeIntBE = function writeIntBE (value, offset, byteLength, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) {
+	    var limit = Math.pow(2, 8 * byteLength - 1)
+
+	    checkInt(this, value, offset, byteLength, limit - 1, -limit)
+	  }
+
+	  var i = byteLength - 1
+	  var mul = 1
+	  var sub = value < 0 ? 1 : 0
+	  this[offset + i] = value & 0xFF
+	  while (--i >= 0 && (mul *= 0x100)) {
+	    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
+	  }
+
+	  return offset + byteLength
+	}
+
+	Buffer.prototype.writeInt8 = function writeInt8 (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 1, 0x7f, -0x80)
+	  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
+	  if (value < 0) value = 0xff + value + 1
+	  this[offset] = (value & 0xff)
+	  return offset + 1
+	}
+
+	Buffer.prototype.writeInt16LE = function writeInt16LE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value & 0xff)
+	    this[offset + 1] = (value >>> 8)
+	  } else {
+	    objectWriteUInt16(this, value, offset, true)
+	  }
+	  return offset + 2
+	}
+
+	Buffer.prototype.writeInt16BE = function writeInt16BE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value >>> 8)
+	    this[offset + 1] = (value & 0xff)
+	  } else {
+	    objectWriteUInt16(this, value, offset, false)
+	  }
+	  return offset + 2
+	}
+
+	Buffer.prototype.writeInt32LE = function writeInt32LE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value & 0xff)
+	    this[offset + 1] = (value >>> 8)
+	    this[offset + 2] = (value >>> 16)
+	    this[offset + 3] = (value >>> 24)
+	  } else {
+	    objectWriteUInt32(this, value, offset, true)
+	  }
+	  return offset + 4
+	}
+
+	Buffer.prototype.writeInt32BE = function writeInt32BE (value, offset, noAssert) {
+	  value = +value
+	  offset = offset | 0
+	  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
+	  if (value < 0) value = 0xffffffff + value + 1
+	  if (Buffer.TYPED_ARRAY_SUPPORT) {
+	    this[offset] = (value >>> 24)
+	    this[offset + 1] = (value >>> 16)
+	    this[offset + 2] = (value >>> 8)
+	    this[offset + 3] = (value & 0xff)
+	  } else {
+	    objectWriteUInt32(this, value, offset, false)
+	  }
+	  return offset + 4
+	}
+
+	function checkIEEE754 (buf, value, offset, ext, max, min) {
+	  if (value > max || value < min) throw new RangeError('value is out of bounds')
+	  if (offset + ext > buf.length) throw new RangeError('index out of range')
+	  if (offset < 0) throw new RangeError('index out of range')
+	}
+
+	function writeFloat (buf, value, offset, littleEndian, noAssert) {
+	  if (!noAssert) {
+	    checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -3.4028234663852886e+38)
+	  }
+	  ieee754.write(buf, value, offset, littleEndian, 23, 4)
+	  return offset + 4
+	}
+
+	Buffer.prototype.writeFloatLE = function writeFloatLE (value, offset, noAssert) {
+	  return writeFloat(this, value, offset, true, noAssert)
+	}
+
+	Buffer.prototype.writeFloatBE = function writeFloatBE (value, offset, noAssert) {
+	  return writeFloat(this, value, offset, false, noAssert)
+	}
+
+	function writeDouble (buf, value, offset, littleEndian, noAssert) {
+	  if (!noAssert) {
+	    checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -1.7976931348623157E+308)
+	  }
+	  ieee754.write(buf, value, offset, littleEndian, 52, 8)
+	  return offset + 8
+	}
+
+	Buffer.prototype.writeDoubleLE = function writeDoubleLE (value, offset, noAssert) {
+	  return writeDouble(this, value, offset, true, noAssert)
+	}
+
+	Buffer.prototype.writeDoubleBE = function writeDoubleBE (value, offset, noAssert) {
+	  return writeDouble(this, value, offset, false, noAssert)
+	}
+
+	// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
+	Buffer.prototype.copy = function copy (target, targetStart, start, end) {
+	  if (!start) start = 0
+	  if (!end && end !== 0) end = this.length
+	  if (targetStart >= target.length) targetStart = target.length
+	  if (!targetStart) targetStart = 0
+	  if (end > 0 && end < start) end = start
+
+	  // Copy 0 bytes; we're done
+	  if (end === start) return 0
+	  if (target.length === 0 || this.length === 0) return 0
+
+	  // Fatal error conditions
+	  if (targetStart < 0) {
+	    throw new RangeError('targetStart out of bounds')
+	  }
+	  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds')
+	  if (end < 0) throw new RangeError('sourceEnd out of bounds')
+
+	  // Are we oob?
+	  if (end > this.length) end = this.length
+	  if (target.length - targetStart < end - start) {
+	    end = target.length - targetStart + start
+	  }
+
+	  var len = end - start
+	  var i
+
+	  if (this === target && start < targetStart && targetStart < end) {
+	    // descending copy from end
+	    for (i = len - 1; i >= 0; i--) {
+	      target[i + targetStart] = this[i + start]
+	    }
+	  } else if (len < 1000 || !Buffer.TYPED_ARRAY_SUPPORT) {
+	    // ascending copy from start
+	    for (i = 0; i < len; i++) {
+	      target[i + targetStart] = this[i + start]
+	    }
+	  } else {
+	    target._set(this.subarray(start, start + len), targetStart)
+	  }
+
+	  return len
+	}
+
+	// fill(value, start=0, end=buffer.length)
+	Buffer.prototype.fill = function fill (value, start, end) {
+	  if (!value) value = 0
+	  if (!start) start = 0
+	  if (!end) end = this.length
+
+	  if (end < start) throw new RangeError('end < start')
+
+	  // Fill 0 bytes; we're done
+	  if (end === start) return
+	  if (this.length === 0) return
+
+	  if (start < 0 || start >= this.length) throw new RangeError('start out of bounds')
+	  if (end < 0 || end > this.length) throw new RangeError('end out of bounds')
+
+	  var i
+	  if (typeof value === 'number') {
+	    for (i = start; i < end; i++) {
+	      this[i] = value
+	    }
+	  } else {
+	    var bytes = utf8ToBytes(value.toString())
+	    var len = bytes.length
+	    for (i = start; i < end; i++) {
+	      this[i] = bytes[i % len]
+	    }
+	  }
+
+	  return this
+	}
+
+	/**
+	 * Creates a new `ArrayBuffer` with the *copied* memory of the buffer instance.
+	 * Added in Node 0.12. Only available in browsers that support ArrayBuffer.
+	 */
+	Buffer.prototype.toArrayBuffer = function toArrayBuffer () {
+	  if (typeof Uint8Array !== 'undefined') {
+	    if (Buffer.TYPED_ARRAY_SUPPORT) {
+	      return (new Buffer(this)).buffer
+	    } else {
+	      var buf = new Uint8Array(this.length)
+	      for (var i = 0, len = buf.length; i < len; i += 1) {
+	        buf[i] = this[i]
+	      }
+	      return buf.buffer
+	    }
+	  } else {
+	    throw new TypeError('Buffer.toArrayBuffer not supported in this browser')
+	  }
+	}
+
+	// HELPER FUNCTIONS
+	// ================
+
+	var BP = Buffer.prototype
+
+	/**
+	 * Augment a Uint8Array *instance* (not the Uint8Array class!) with Buffer methods
+	 */
+	Buffer._augment = function _augment (arr) {
+	  arr.constructor = Buffer
+	  arr._isBuffer = true
+
+	  // save reference to original Uint8Array set method before overwriting
+	  arr._set = arr.set
+
+	  // deprecated
+	  arr.get = BP.get
+	  arr.set = BP.set
+
+	  arr.write = BP.write
+	  arr.toString = BP.toString
+	  arr.toLocaleString = BP.toString
+	  arr.toJSON = BP.toJSON
+	  arr.equals = BP.equals
+	  arr.compare = BP.compare
+	  arr.indexOf = BP.indexOf
+	  arr.copy = BP.copy
+	  arr.slice = BP.slice
+	  arr.readUIntLE = BP.readUIntLE
+	  arr.readUIntBE = BP.readUIntBE
+	  arr.readUInt8 = BP.readUInt8
+	  arr.readUInt16LE = BP.readUInt16LE
+	  arr.readUInt16BE = BP.readUInt16BE
+	  arr.readUInt32LE = BP.readUInt32LE
+	  arr.readUInt32BE = BP.readUInt32BE
+	  arr.readIntLE = BP.readIntLE
+	  arr.readIntBE = BP.readIntBE
+	  arr.readInt8 = BP.readInt8
+	  arr.readInt16LE = BP.readInt16LE
+	  arr.readInt16BE = BP.readInt16BE
+	  arr.readInt32LE = BP.readInt32LE
+	  arr.readInt32BE = BP.readInt32BE
+	  arr.readFloatLE = BP.readFloatLE
+	  arr.readFloatBE = BP.readFloatBE
+	  arr.readDoubleLE = BP.readDoubleLE
+	  arr.readDoubleBE = BP.readDoubleBE
+	  arr.writeUInt8 = BP.writeUInt8
+	  arr.writeUIntLE = BP.writeUIntLE
+	  arr.writeUIntBE = BP.writeUIntBE
+	  arr.writeUInt16LE = BP.writeUInt16LE
+	  arr.writeUInt16BE = BP.writeUInt16BE
+	  arr.writeUInt32LE = BP.writeUInt32LE
+	  arr.writeUInt32BE = BP.writeUInt32BE
+	  arr.writeIntLE = BP.writeIntLE
+	  arr.writeIntBE = BP.writeIntBE
+	  arr.writeInt8 = BP.writeInt8
+	  arr.writeInt16LE = BP.writeInt16LE
+	  arr.writeInt16BE = BP.writeInt16BE
+	  arr.writeInt32LE = BP.writeInt32LE
+	  arr.writeInt32BE = BP.writeInt32BE
+	  arr.writeFloatLE = BP.writeFloatLE
+	  arr.writeFloatBE = BP.writeFloatBE
+	  arr.writeDoubleLE = BP.writeDoubleLE
+	  arr.writeDoubleBE = BP.writeDoubleBE
+	  arr.fill = BP.fill
+	  arr.inspect = BP.inspect
+	  arr.toArrayBuffer = BP.toArrayBuffer
+
+	  return arr
+	}
+
+	var INVALID_BASE64_RE = /[^+\/0-9A-Za-z-_]/g
+
+	function base64clean (str) {
+	  // Node strips out invalid characters like \n and \t from the string, base64-js does not
+	  str = stringtrim(str).replace(INVALID_BASE64_RE, '')
+	  // Node converts strings with length < 2 to ''
+	  if (str.length < 2) return ''
+	  // Node allows for non-padded base64 strings (missing trailing ===), base64-js does not
+	  while (str.length % 4 !== 0) {
+	    str = str + '='
+	  }
+	  return str
+	}
+
+	function stringtrim (str) {
+	  if (str.trim) return str.trim()
+	  return str.replace(/^\s+|\s+$/g, '')
+	}
+
+	function toHex (n) {
+	  if (n < 16) return '0' + n.toString(16)
+	  return n.toString(16)
+	}
+
+	function utf8ToBytes (string, units) {
+	  units = units || Infinity
+	  var codePoint
+	  var length = string.length
+	  var leadSurrogate = null
+	  var bytes = []
+
+	  for (var i = 0; i < length; i++) {
+	    codePoint = string.charCodeAt(i)
+
+	    // is surrogate component
+	    if (codePoint > 0xD7FF && codePoint < 0xE000) {
+	      // last char was a lead
+	      if (!leadSurrogate) {
+	        // no lead yet
+	        if (codePoint > 0xDBFF) {
+	          // unexpected trail
+	          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+	          continue
+	        } else if (i + 1 === length) {
+	          // unpaired lead
+	          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+	          continue
+	        }
+
+	        // valid lead
+	        leadSurrogate = codePoint
+
+	        continue
+	      }
+
+	      // 2 leads in a row
+	      if (codePoint < 0xDC00) {
+	        if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+	        leadSurrogate = codePoint
+	        continue
+	      }
+
+	      // valid surrogate pair
+	      codePoint = (leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00) + 0x10000
+	    } else if (leadSurrogate) {
+	      // valid bmp char, but last char was a lead
+	      if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+	    }
+
+	    leadSurrogate = null
+
+	    // encode utf8
+	    if (codePoint < 0x80) {
+	      if ((units -= 1) < 0) break
+	      bytes.push(codePoint)
+	    } else if (codePoint < 0x800) {
+	      if ((units -= 2) < 0) break
+	      bytes.push(
+	        codePoint >> 0x6 | 0xC0,
+	        codePoint & 0x3F | 0x80
+	      )
+	    } else if (codePoint < 0x10000) {
+	      if ((units -= 3) < 0) break
+	      bytes.push(
+	        codePoint >> 0xC | 0xE0,
+	        codePoint >> 0x6 & 0x3F | 0x80,
+	        codePoint & 0x3F | 0x80
+	      )
+	    } else if (codePoint < 0x110000) {
+	      if ((units -= 4) < 0) break
+	      bytes.push(
+	        codePoint >> 0x12 | 0xF0,
+	        codePoint >> 0xC & 0x3F | 0x80,
+	        codePoint >> 0x6 & 0x3F | 0x80,
+	        codePoint & 0x3F | 0x80
+	      )
+	    } else {
+	      throw new Error('Invalid code point')
+	    }
+	  }
+
+	  return bytes
+	}
+
+	function asciiToBytes (str) {
+	  var byteArray = []
+	  for (var i = 0; i < str.length; i++) {
+	    // Node's code seems to be doing this and not & 0x7F..
+	    byteArray.push(str.charCodeAt(i) & 0xFF)
+	  }
+	  return byteArray
+	}
+
+	function utf16leToBytes (str, units) {
+	  var c, hi, lo
+	  var byteArray = []
+	  for (var i = 0; i < str.length; i++) {
+	    if ((units -= 2) < 0) break
+
+	    c = str.charCodeAt(i)
+	    hi = c >> 8
+	    lo = c % 256
+	    byteArray.push(lo)
+	    byteArray.push(hi)
+	  }
+
+	  return byteArray
+	}
+
+	function base64ToBytes (str) {
+	  return base64.toByteArray(base64clean(str))
+	}
+
+	function blitBuffer (src, dst, offset, length) {
+	  for (var i = 0; i < length; i++) {
+	    if ((i + offset >= dst.length) || (i >= src.length)) break
+	    dst[i + offset] = src[i]
+	  }
+	  return i
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(350).Buffer, (function() { return this; }())))
+
+/***/ },
+/* 351 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+
+	;(function (exports) {
+		'use strict';
+
+	  var Arr = (typeof Uint8Array !== 'undefined')
+	    ? Uint8Array
+	    : Array
+
+		var PLUS   = '+'.charCodeAt(0)
+		var SLASH  = '/'.charCodeAt(0)
+		var NUMBER = '0'.charCodeAt(0)
+		var LOWER  = 'a'.charCodeAt(0)
+		var UPPER  = 'A'.charCodeAt(0)
+		var PLUS_URL_SAFE = '-'.charCodeAt(0)
+		var SLASH_URL_SAFE = '_'.charCodeAt(0)
+
+		function decode (elt) {
+			var code = elt.charCodeAt(0)
+			if (code === PLUS ||
+			    code === PLUS_URL_SAFE)
+				return 62 // '+'
+			if (code === SLASH ||
+			    code === SLASH_URL_SAFE)
+				return 63 // '/'
+			if (code < NUMBER)
+				return -1 //no match
+			if (code < NUMBER + 10)
+				return code - NUMBER + 26 + 26
+			if (code < UPPER + 26)
+				return code - UPPER
+			if (code < LOWER + 26)
+				return code - LOWER + 26
+		}
+
+		function b64ToByteArray (b64) {
+			var i, j, l, tmp, placeHolders, arr
+
+			if (b64.length % 4 > 0) {
+				throw new Error('Invalid string. Length must be a multiple of 4')
+			}
+
+			// the number of equal signs (place holders)
+			// if there are two placeholders, than the two characters before it
+			// represent one byte
+			// if there is only one, then the three characters before it represent 2 bytes
+			// this is just a cheap hack to not do indexOf twice
+			var len = b64.length
+			placeHolders = '=' === b64.charAt(len - 2) ? 2 : '=' === b64.charAt(len - 1) ? 1 : 0
+
+			// base64 is 4/3 + up to two characters of the original data
+			arr = new Arr(b64.length * 3 / 4 - placeHolders)
+
+			// if there are placeholders, only get up to the last complete 4 chars
+			l = placeHolders > 0 ? b64.length - 4 : b64.length
+
+			var L = 0
+
+			function push (v) {
+				arr[L++] = v
+			}
+
+			for (i = 0, j = 0; i < l; i += 4, j += 3) {
+				tmp = (decode(b64.charAt(i)) << 18) | (decode(b64.charAt(i + 1)) << 12) | (decode(b64.charAt(i + 2)) << 6) | decode(b64.charAt(i + 3))
+				push((tmp & 0xFF0000) >> 16)
+				push((tmp & 0xFF00) >> 8)
+				push(tmp & 0xFF)
+			}
+
+			if (placeHolders === 2) {
+				tmp = (decode(b64.charAt(i)) << 2) | (decode(b64.charAt(i + 1)) >> 4)
+				push(tmp & 0xFF)
+			} else if (placeHolders === 1) {
+				tmp = (decode(b64.charAt(i)) << 10) | (decode(b64.charAt(i + 1)) << 4) | (decode(b64.charAt(i + 2)) >> 2)
+				push((tmp >> 8) & 0xFF)
+				push(tmp & 0xFF)
+			}
+
+			return arr
+		}
+
+		function uint8ToBase64 (uint8) {
+			var i,
+				extraBytes = uint8.length % 3, // if we have 1 byte left, pad 2 bytes
+				output = "",
+				temp, length
+
+			function encode (num) {
+				return lookup.charAt(num)
+			}
+
+			function tripletToBase64 (num) {
+				return encode(num >> 18 & 0x3F) + encode(num >> 12 & 0x3F) + encode(num >> 6 & 0x3F) + encode(num & 0x3F)
+			}
+
+			// go through the array every three bytes, we'll deal with trailing stuff later
+			for (i = 0, length = uint8.length - extraBytes; i < length; i += 3) {
+				temp = (uint8[i] << 16) + (uint8[i + 1] << 8) + (uint8[i + 2])
+				output += tripletToBase64(temp)
+			}
+
+			// pad the end with zeros, but make sure to not forget the extra bytes
+			switch (extraBytes) {
+				case 1:
+					temp = uint8[uint8.length - 1]
+					output += encode(temp >> 2)
+					output += encode((temp << 4) & 0x3F)
+					output += '=='
+					break
+				case 2:
+					temp = (uint8[uint8.length - 2] << 8) + (uint8[uint8.length - 1])
+					output += encode(temp >> 10)
+					output += encode((temp >> 4) & 0x3F)
+					output += encode((temp << 2) & 0x3F)
+					output += '='
+					break
+			}
+
+			return output
+		}
+
+		exports.toByteArray = b64ToByteArray
+		exports.fromByteArray = uint8ToBase64
+	}( false ? (this.base64js = {}) : exports))
+
+
+/***/ },
+/* 352 */
+/***/ function(module, exports) {
+
+	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
+	  var e, m
+	  var eLen = nBytes * 8 - mLen - 1
+	  var eMax = (1 << eLen) - 1
+	  var eBias = eMax >> 1
+	  var nBits = -7
+	  var i = isLE ? (nBytes - 1) : 0
+	  var d = isLE ? -1 : 1
+	  var s = buffer[offset + i]
+
+	  i += d
+
+	  e = s & ((1 << (-nBits)) - 1)
+	  s >>= (-nBits)
+	  nBits += eLen
+	  for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+
+	  m = e & ((1 << (-nBits)) - 1)
+	  e >>= (-nBits)
+	  nBits += mLen
+	  for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {}
+
+	  if (e === 0) {
+	    e = 1 - eBias
+	  } else if (e === eMax) {
+	    return m ? NaN : ((s ? -1 : 1) * Infinity)
+	  } else {
+	    m = m + Math.pow(2, mLen)
+	    e = e - eBias
+	  }
+	  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
+	}
+
+	exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
+	  var e, m, c
+	  var eLen = nBytes * 8 - mLen - 1
+	  var eMax = (1 << eLen) - 1
+	  var eBias = eMax >> 1
+	  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
+	  var i = isLE ? 0 : (nBytes - 1)
+	  var d = isLE ? 1 : -1
+	  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0
+
+	  value = Math.abs(value)
+
+	  if (isNaN(value) || value === Infinity) {
+	    m = isNaN(value) ? 1 : 0
+	    e = eMax
+	  } else {
+	    e = Math.floor(Math.log(value) / Math.LN2)
+	    if (value * (c = Math.pow(2, -e)) < 1) {
+	      e--
+	      c *= 2
+	    }
+	    if (e + eBias >= 1) {
+	      value += rt / c
+	    } else {
+	      value += rt * Math.pow(2, 1 - eBias)
+	    }
+	    if (value * c >= 2) {
+	      e++
+	      c /= 2
+	    }
+
+	    if (e + eBias >= eMax) {
+	      m = 0
+	      e = eMax
+	    } else if (e + eBias >= 1) {
+	      m = (value * c - 1) * Math.pow(2, mLen)
+	      e = e + eBias
+	    } else {
+	      m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
+	      e = 0
+	    }
+	  }
+
+	  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
+
+	  e = (e << mLen) | m
+	  eLen += mLen
+	  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
+
+	  buffer[offset + i - d] |= s * 128
+	}
+
+
+/***/ },
+/* 353 */
+/***/ function(module, exports) {
+
+	var toString = {}.toString;
+
+	module.exports = Array.isArray || function (arr) {
+	  return toString.call(arr) == '[object Array]';
+	};
+
+
+/***/ },
+/* 354 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
+
+	var buffer = __webpack_require__(350);
+	var Buffer = buffer.Buffer;
+	var SlowBuffer = buffer.SlowBuffer;
+	var MAX_LEN = buffer.kMaxLength || 2147483647;
+	exports.alloc = function alloc(size, fill, encoding) {
+	  if (typeof Buffer.alloc === 'function') {
+	    return Buffer.alloc(size, fill, encoding);
+	  }
+	  if (typeof encoding === 'number') {
+	    throw new TypeError('encoding must not be number');
+	  }
+	  if (typeof size !== 'number') {
+	    throw new TypeError('size must be a number');
+	  }
+	  if (size > MAX_LEN) {
+	    throw new RangeError('size is too large');
+	  }
+	  var enc = encoding;
+	  var _fill = fill;
+	  if (_fill === undefined) {
+	    enc = undefined;
+	    _fill = 0;
+	  }
+	  var buf = new Buffer(size);
+	  if (typeof _fill === 'string') {
+	    var fillBuf = new Buffer(_fill, enc);
+	    var flen = fillBuf.length;
+	    var i = -1;
+	    while (++i < size) {
+	      buf[i] = fillBuf[i % flen];
+	    }
+	  } else {
+	    buf.fill(_fill);
+	  }
+	  return buf;
+	}
+	exports.allocUnsafe = function allocUnsafe(size) {
+	  if (typeof Buffer.allocUnsafe === 'function') {
+	    return Buffer.allocUnsafe(size);
+	  }
+	  if (typeof size !== 'number') {
+	    throw new TypeError('size must be a number');
+	  }
+	  if (size > MAX_LEN) {
+	    throw new RangeError('size is too large');
+	  }
+	  return new Buffer(size);
+	}
+	exports.from = function from(value, encodingOrOffset, length) {
+	  if (typeof Buffer.from === 'function' && (!global.Uint8Array || Uint8Array.from !== Buffer.from)) {
+	    return Buffer.from(value, encodingOrOffset, length);
+	  }
+	  if (typeof value === 'number') {
+	    throw new TypeError('"value" argument must not be a number');
+	  }
+	  if (typeof value === 'string') {
+	    return new Buffer(value, encodingOrOffset);
+	  }
+	  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
+	    var offset = encodingOrOffset;
+	    if (arguments.length === 1) {
+	      return new Buffer(value);
+	    }
+	    if (typeof offset === 'undefined') {
+	      offset = 0;
+	    }
+	    var len = length;
+	    if (typeof len === 'undefined') {
+	      len = value.byteLength - offset;
+	    }
+	    if (offset >= value.byteLength) {
+	      throw new RangeError('\'offset\' is out of bounds');
+	    }
+	    if (len > value.byteLength - offset) {
+	      throw new RangeError('\'length\' is out of bounds');
+	    }
+	    return new Buffer(value.slice(offset, offset + len));
+	  }
+	  if (Buffer.isBuffer(value)) {
+	    var out = new Buffer(value.length);
+	    value.copy(out, 0, 0, value.length);
+	    return out;
+	  }
+	  if (value) {
+	    if (Array.isArray(value) || (typeof ArrayBuffer !== 'undefined' && value.buffer instanceof ArrayBuffer) || 'length' in value) {
+	      return new Buffer(value);
+	    }
+	    if (value.type === 'Buffer' && Array.isArray(value.data)) {
+	      return new Buffer(value.data);
+	    }
+	  }
+
+	  throw new TypeError('First argument must be a string, Buffer, ' + 'ArrayBuffer, Array, or array-like object.');
+	}
+	exports.allocUnsafeSlow = function allocUnsafeSlow(size) {
+	  if (typeof Buffer.allocUnsafeSlow === 'function') {
+	    return Buffer.allocUnsafeSlow(size);
+	  }
+	  if (typeof size !== 'number') {
+	    throw new TypeError('size must be a number');
+	  }
+	  if (size >= MAX_LEN) {
+	    throw new RangeError('size is too large');
+	  }
+	  return new SlowBuffer(size);
+	}
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 355 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _keys = __webpack_require__(341);
+
+	var _keys2 = _interopRequireDefault(_keys);
+
+	exports.objectToGetParams = objectToGetParams;
+	exports.windowOpen = windowOpen;
+
+	var _platform = __webpack_require__(356);
+
+	var _platform2 = _interopRequireDefault(_platform);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function objectToGetParams(object) {
+	  return '?' + (0, _keys2.default)(object).filter(function (key) {
+	    return !!object[key];
+	  }).map(function (key) {
+	    return key + '=' + encodeURIComponent(object[key]);
+	  }).join('&');
+	} /* eslint-disable prefer-template */
+
+
+	function windowOpen(url, name) {
+	  var height = arguments.length <= 2 || arguments[2] === undefined ? 400 : arguments[2];
+	  var width = arguments.length <= 3 || arguments[3] === undefined ? 550 : arguments[3];
+
+	  var left = window.outerWidth / 2 + (window.screenX || window.screenLeft || 0) - width / 2;
+	  var top = window.outerHeight / 2 + (window.screenY || window.screenTop || 0) - height / 2;
+
+	  var config = {
+	    height: height,
+	    width: width,
+	    left: left,
+	    top: top,
+	    location: 'no',
+	    toolbar: 'no',
+	    status: 'no',
+	    directories: 'no',
+	    menubar: 'no',
+	    scrollbars: 'yes',
+	    resizable: 'no',
+	    centerscreen: 'yes',
+	    chrome: 'yes'
+	  };
+
+	  return window.open(url, _platform2.default.name === 'IE' && parseInt(_platform2.default.version, 10) < 10 ? '' : name, (0, _keys2.default)(config).map(function (key) {
+	    return key + '=' + config[key];
+	  }).join(', '));
+	}
+
+/***/ },
+/* 356 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/*!
+	 * Platform.js v1.3.1 <http://mths.be/platform>
+	 * Copyright 2014-2016 Benjamin Tan <https://d10.github.io/>
+	 * Copyright 2011-2013 John-David Dalton <http://allyoucanleet.com/>
+	 * Available under MIT license <http://mths.be/mit>
+	 */
+	;(function() {
+	  'use strict';
+
+	  /** Used to determine if values are of the language type `Object` */
+	  var objectTypes = {
+	    'function': true,
+	    'object': true
+	  };
+
+	  /** Used as a reference to the global object */
+	  var root = (objectTypes[typeof window] && window) || this;
+
+	  /** Backup possible global object */
+	  var oldRoot = root;
+
+	  /** Detect free variable `exports` */
+	  var freeExports = objectTypes[typeof exports] && exports;
+
+	  /** Detect free variable `module` */
+	  var freeModule = objectTypes[typeof module] && module && !module.nodeType && module;
+
+	  /** Detect free variable `global` from Node.js or Browserified code and use it as `root` */
+	  var freeGlobal = freeExports && freeModule && typeof global == 'object' && global;
+	  if (freeGlobal && (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal || freeGlobal.self === freeGlobal)) {
+	    root = freeGlobal;
+	  }
+
+	  /**
+	   * Used as the maximum length of an array-like object.
+	   * See the [ES6 spec](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength)
+	   * for more details.
+	   */
+	  var maxSafeInteger = Math.pow(2, 53) - 1;
+
+	  /** Opera regexp */
+	  var reOpera = /\bOpera/;
+
+	  /** Possible global object */
+	  var thisBinding = this;
+
+	  /** Used for native method references */
+	  var objectProto = Object.prototype;
+
+	  /** Used to check for own properties of an object */
+	  var hasOwnProperty = objectProto.hasOwnProperty;
+
+	  /** Used to resolve the internal `[[Class]]` of values */
+	  var toString = objectProto.toString;
+
+	  /*--------------------------------------------------------------------------*/
+
+	  /**
+	   * Capitalizes a string value.
+	   *
+	   * @private
+	   * @param {string} string The string to capitalize.
+	   * @returns {string} The capitalized string.
+	   */
+	  function capitalize(string) {
+	    string = String(string);
+	    return string.charAt(0).toUpperCase() + string.slice(1);
+	  }
+
+	  /**
+	   * A utility function to clean up the OS name.
+	   *
+	   * @private
+	   * @param {string} os The OS name to clean up.
+	   * @param {string} [pattern] A `RegExp` pattern matching the OS name.
+	   * @param {string} [label] A label for the OS.
+	   */
+	  function cleanupOS(os, pattern, label) {
+	    // platform tokens defined at
+	    // http://msdn.microsoft.com/en-us/library/ms537503(VS.85).aspx
+	    // http://web.archive.org/web/20081122053950/http://msdn.microsoft.com/en-us/library/ms537503(VS.85).aspx
+	    var data = {
+	      '6.4':  '10',
+	      '6.3':  '8.1',
+	      '6.2':  '8',
+	      '6.1':  'Server 2008 R2 / 7',
+	      '6.0':  'Server 2008 / Vista',
+	      '5.2':  'Server 2003 / XP 64-bit',
+	      '5.1':  'XP',
+	      '5.01': '2000 SP1',
+	      '5.0':  '2000',
+	      '4.0':  'NT',
+	      '4.90': 'ME'
+	    };
+	    // detect Windows version from platform tokens
+	    if (pattern && label && /^Win/i.test(os) &&
+	        (data = data[0/*Opera 9.25 fix*/, /[\d.]+$/.exec(os)])) {
+	      os = 'Windows ' + data;
+	    }
+	    // correct character case and cleanup
+	    os = String(os);
+
+	    if (pattern && label) {
+	      os = os.replace(RegExp(pattern, 'i'), label);
+	    }
+
+	    os = format(
+	      os.replace(/ ce$/i, ' CE')
+	        .replace(/\bhpw/i, 'web')
+	        .replace(/\bMacintosh\b/, 'Mac OS')
+	        .replace(/_PowerPC\b/i, ' OS')
+	        .replace(/\b(OS X) [^ \d]+/i, '$1')
+	        .replace(/\bMac (OS X)\b/, '$1')
+	        .replace(/\/(\d)/, ' $1')
+	        .replace(/_/g, '.')
+	        .replace(/(?: BePC|[ .]*fc[ \d.]+)$/i, '')
+	        .replace(/\bx86\.64\b/gi, 'x86_64')
+	        .replace(/\b(Windows Phone) OS\b/, '$1')
+	        .split(' on ')[0]
+	    );
+
+	    return os;
+	  }
+
+	  /**
+	   * An iteration utility for arrays and objects.
+	   *
+	   * @private
+	   * @param {Array|Object} object The object to iterate over.
+	   * @param {Function} callback The function called per iteration.
+	   */
+	  function each(object, callback) {
+	    var index = -1,
+	        length = object ? object.length : 0;
+
+	    if (typeof length == 'number' && length > -1 && length <= maxSafeInteger) {
+	      while (++index < length) {
+	        callback(object[index], index, object);
+	      }
+	    } else {
+	      forOwn(object, callback);
+	    }
+	  }
+
+	  /**
+	   * Trim and conditionally capitalize string values.
+	   *
+	   * @private
+	   * @param {string} string The string to format.
+	   * @returns {string} The formatted string.
+	   */
+	  function format(string) {
+	    string = trim(string);
+	    return /^(?:webOS|i(?:OS|P))/.test(string)
+	      ? string
+	      : capitalize(string);
+	  }
+
+	  /**
+	   * Iterates over an object's own properties, executing the `callback` for each.
+	   *
+	   * @private
+	   * @param {Object} object The object to iterate over.
+	   * @param {Function} callback The function executed per own property.
+	   */
+	  function forOwn(object, callback) {
+	    for (var key in object) {
+	      if (hasOwnProperty.call(object, key)) {
+	        callback(object[key], key, object);
+	      }
+	    }
+	  }
+
+	  /**
+	   * Gets the internal `[[Class]]` of a value.
+	   *
+	   * @private
+	   * @param {*} value The value.
+	   * @returns {string} The `[[Class]]`.
+	   */
+	  function getClassOf(value) {
+	    return value == null
+	      ? capitalize(value)
+	      : toString.call(value).slice(8, -1);
+	  }
+
+	  /**
+	   * Host objects can return type values that are different from their actual
+	   * data type. The objects we are concerned with usually return non-primitive
+	   * types of "object", "function", or "unknown".
+	   *
+	   * @private
+	   * @param {*} object The owner of the property.
+	   * @param {string} property The property to check.
+	   * @returns {boolean} Returns `true` if the property value is a non-primitive, else `false`.
+	   */
+	  function isHostType(object, property) {
+	    var type = object != null ? typeof object[property] : 'number';
+	    return !/^(?:boolean|number|string|undefined)$/.test(type) &&
+	      (type == 'object' ? !!object[property] : true);
+	  }
+
+	  /**
+	   * Prepares a string for use in a `RegExp` by making hyphens and spaces optional.
+	   *
+	   * @private
+	   * @param {string} string The string to qualify.
+	   * @returns {string} The qualified string.
+	   */
+	  function qualify(string) {
+	    return String(string).replace(/([ -])(?!$)/g, '$1?');
+	  }
+
+	  /**
+	   * A bare-bones `Array#reduce` like utility function.
+	   *
+	   * @private
+	   * @param {Array} array The array to iterate over.
+	   * @param {Function} callback The function called per iteration.
+	   * @returns {*} The accumulated result.
+	   */
+	  function reduce(array, callback) {
+	    var accumulator = null;
+	    each(array, function(value, index) {
+	      accumulator = callback(accumulator, value, index, array);
+	    });
+	    return accumulator;
+	  }
+
+	  /**
+	   * Removes leading and trailing whitespace from a string.
+	   *
+	   * @private
+	   * @param {string} string The string to trim.
+	   * @returns {string} The trimmed string.
+	   */
+	  function trim(string) {
+	    return String(string).replace(/^ +| +$/g, '');
+	  }
+
+	  /*--------------------------------------------------------------------------*/
+
+	  /**
+	   * Creates a new platform object.
+	   *
+	   * @memberOf platform
+	   * @param {Object|string} [ua=navigator.userAgent] The user agent string or
+	   *  context object.
+	   * @returns {Object} A platform object.
+	   */
+	  function parse(ua) {
+
+	    /** The environment context object */
+	    var context = root;
+
+	    /** Used to flag when a custom context is provided */
+	    var isCustomContext = ua && typeof ua == 'object' && getClassOf(ua) != 'String';
+
+	    // juggle arguments
+	    if (isCustomContext) {
+	      context = ua;
+	      ua = null;
+	    }
+
+	    /** Browser navigator object */
+	    var nav = context.navigator || {};
+
+	    /** Browser user agent string */
+	    var userAgent = nav.userAgent || '';
+
+	    ua || (ua = userAgent);
+
+	    /** Used to flag when `thisBinding` is the [ModuleScope] */
+	    var isModuleScope = isCustomContext || thisBinding == oldRoot;
+
+	    /** Used to detect if browser is like Chrome */
+	    var likeChrome = isCustomContext
+	      ? !!nav.likeChrome
+	      : /\bChrome\b/.test(ua) && !/internal|\n/i.test(toString.toString());
+
+	    /** Internal `[[Class]]` value shortcuts */
+	    var objectClass = 'Object',
+	        airRuntimeClass = isCustomContext ? objectClass : 'ScriptBridgingProxyObject',
+	        enviroClass = isCustomContext ? objectClass : 'Environment',
+	        javaClass = (isCustomContext && context.java) ? 'JavaPackage' : getClassOf(context.java),
+	        phantomClass = isCustomContext ? objectClass : 'RuntimeObject';
+
+	    /** Detect Java environment */
+	    var java = /\bJava/.test(javaClass) && context.java;
+
+	    /** Detect Rhino */
+	    var rhino = java && getClassOf(context.environment) == enviroClass;
+
+	    /** A character to represent alpha */
+	    var alpha = java ? 'a' : '\u03b1';
+
+	    /** A character to represent beta */
+	    var beta = java ? 'b' : '\u03b2';
+
+	    /** Browser document object */
+	    var doc = context.document || {};
+
+	    /**
+	     * Detect Opera browser (Presto-based)
+	     * http://www.howtocreate.co.uk/operaStuff/operaObject.html
+	     * http://dev.opera.com/articles/view/opera-mini-web-content-authoring-guidelines/#operamini
+	     */
+	    var opera = context.operamini || context.opera;
+
+	    /** Opera `[[Class]]` */
+	    var operaClass = reOpera.test(operaClass = (isCustomContext && opera) ? opera['[[Class]]'] : getClassOf(opera))
+	      ? operaClass
+	      : (opera = null);
+
+	    /*------------------------------------------------------------------------*/
+
+	    /** Temporary variable used over the script's lifetime */
+	    var data;
+
+	    /** The CPU architecture */
+	    var arch = ua;
+
+	    /** Platform description array */
+	    var description = [];
+
+	    /** Platform alpha/beta indicator */
+	    var prerelease = null;
+
+	    /** A flag to indicate that environment features should be used to resolve the platform */
+	    var useFeatures = ua == userAgent;
+
+	    /** The browser/environment version */
+	    var version = useFeatures && opera && typeof opera.version == 'function' && opera.version();
+
+	    /** A flag to indicate if the OS ends with "/ Version" */
+	    var isSpecialCasedOS;
+
+	    /* Detectable layout engines (order is important) */
+	    var layout = getLayout([
+	      'Trident',
+	      { 'label': 'WebKit', 'pattern': 'AppleWebKit' },
+	      'iCab',
+	      'Presto',
+	      'NetFront',
+	      'Tasman',
+	      'KHTML',
+	      'Gecko'
+	    ]);
+
+	    /* Detectable browser names (order is important) */
+	    var name = getName([
+	      'Adobe AIR',
+	      'Arora',
+	      'Avant Browser',
+	      'Breach',
+	      'Camino',
+	      'Epiphany',
+	      'Fennec',
+	      'Flock',
+	      'Galeon',
+	      'GreenBrowser',
+	      'iCab',
+	      'Iceweasel',
+	      { 'label': 'SRWare Iron', 'pattern': 'Iron' },
+	      'K-Meleon',
+	      'Konqueror',
+	      'Lunascape',
+	      'Maxthon',
+	      'Midori',
+	      'Nook Browser',
+	      'PhantomJS',
+	      'Raven',
+	      'Rekonq',
+	      'RockMelt',
+	      'SeaMonkey',
+	      { 'label': 'Silk', 'pattern': '(?:Cloud9|Silk-Accelerated)' },
+	      'Sleipnir',
+	      'SlimBrowser',
+	      'Sunrise',
+	      'Swiftfox',
+	      'WebPositive',
+	      'Opera Mini',
+	      { 'label': 'Opera Mini', 'pattern': 'OPiOS' },
+	      'Opera',
+	      { 'label': 'Opera', 'pattern': 'OPR' },
+	      'Chrome',
+	      { 'label': 'Chrome Mobile', 'pattern': '(?:CriOS|CrMo)' },
+	      { 'label': 'Firefox', 'pattern': '(?:Firefox|Minefield)' },
+	      { 'label': 'IE', 'pattern': 'IEMobile' },
+	      { 'label': 'IE', 'pattern': 'MSIE' },
+	      'Safari'
+	    ]);
+
+	    /* Detectable products (order is important) */
+	    var product = getProduct([
+	      { 'label': 'BlackBerry', 'pattern': 'BB10' },
+	      'BlackBerry',
+	      { 'label': 'Galaxy S', 'pattern': 'GT-I9000' },
+	      { 'label': 'Galaxy S2', 'pattern': 'GT-I9100' },
+	      { 'label': 'Galaxy S3', 'pattern': 'GT-I9300' },
+	      { 'label': 'Galaxy S4', 'pattern': 'GT-I9500' },
+	      'Google TV',
+	      'Lumia',
+	      'iPad',
+	      'iPod',
+	      'iPhone',
+	      'Kindle',
+	      { 'label': 'Kindle Fire', 'pattern': '(?:Cloud9|Silk-Accelerated)' },
+	      'Nook',
+	      'PlayBook',
+	      'PlayStation 4',
+	      'PlayStation 3',
+	      'PlayStation Vita',
+	      'TouchPad',
+	      'Transformer',
+	      { 'label': 'Wii U', 'pattern': 'WiiU' },
+	      'Wii',
+	      'Xbox One',
+	      { 'label': 'Xbox 360', 'pattern': 'Xbox' },
+	      'Xoom'
+	    ]);
+
+	    /* Detectable manufacturers */
+	    var manufacturer = getManufacturer({
+	      'Apple': { 'iPad': 1, 'iPhone': 1, 'iPod': 1 },
+	      'Amazon': { 'Kindle': 1, 'Kindle Fire': 1 },
+	      'Asus': { 'Transformer': 1 },
+	      'Barnes & Noble': { 'Nook': 1 },
+	      'BlackBerry': { 'PlayBook': 1 },
+	      'Google': { 'Google TV': 1 },
+	      'HP': { 'TouchPad': 1 },
+	      'HTC': {},
+	      'LG': {},
+	      'Microsoft': { 'Xbox': 1, 'Xbox One': 1 },
+	      'Motorola': { 'Xoom': 1 },
+	      'Nintendo': { 'Wii U': 1,  'Wii': 1 },
+	      'Nokia': { 'Lumia': 1 },
+	      'Samsung': { 'Galaxy S': 1, 'Galaxy S2': 1, 'Galaxy S3': 1, 'Galaxy S4': 1 },
+	      'Sony': { 'PlayStation 4': 1, 'PlayStation 3': 1, 'PlayStation Vita': 1 }
+	    });
+
+	    /* Detectable OSes (order is important) */
+	    var os = getOS([
+	      'Windows Phone ',
+	      'Android',
+	      'CentOS',
+	      'Debian',
+	      'Fedora',
+	      'FreeBSD',
+	      'Gentoo',
+	      'Haiku',
+	      'Kubuntu',
+	      'Linux Mint',
+	      'Red Hat',
+	      'SuSE',
+	      'Ubuntu',
+	      'Xubuntu',
+	      'Cygwin',
+	      'Symbian OS',
+	      'hpwOS',
+	      'webOS ',
+	      'webOS',
+	      'Tablet OS',
+	      'Linux',
+	      'Mac OS X',
+	      'Macintosh',
+	      'Mac',
+	      'Windows 98;',
+	      'Windows '
+	    ]);
+
+	    /*------------------------------------------------------------------------*/
+
+	    /**
+	     * Picks the layout engine from an array of guesses.
+	     *
+	     * @private
+	     * @param {Array} guesses An array of guesses.
+	     * @returns {null|string} The detected layout engine.
+	     */
+	    function getLayout(guesses) {
+	      return reduce(guesses, function(result, guess) {
+	        return result || RegExp('\\b' + (
+	          guess.pattern || qualify(guess)
+	        ) + '\\b', 'i').exec(ua) && (guess.label || guess);
+	      });
+	    }
+
+	    /**
+	     * Picks the manufacturer from an array of guesses.
+	     *
+	     * @private
+	     * @param {Array} guesses An object of guesses.
+	     * @returns {null|string} The detected manufacturer.
+	     */
+	    function getManufacturer(guesses) {
+	      return reduce(guesses, function(result, value, key) {
+	        // lookup the manufacturer by product or scan the UA for the manufacturer
+	        return result || (
+	          value[product] ||
+	          value[0/*Opera 9.25 fix*/, /^[a-z]+(?: +[a-z]+\b)*/i.exec(product)] ||
+	          RegExp('\\b' + qualify(key) + '(?:\\b|\\w*\\d)', 'i').exec(ua)
+	        ) && key;
+	      });
+	    }
+
+	    /**
+	     * Picks the browser name from an array of guesses.
+	     *
+	     * @private
+	     * @param {Array} guesses An array of guesses.
+	     * @returns {null|string} The detected browser name.
+	     */
+	    function getName(guesses) {
+	      return reduce(guesses, function(result, guess) {
+	        return result || RegExp('\\b' + (
+	          guess.pattern || qualify(guess)
+	        ) + '\\b', 'i').exec(ua) && (guess.label || guess);
+	      });
+	    }
+
+	    /**
+	     * Picks the OS name from an array of guesses.
+	     *
+	     * @private
+	     * @param {Array} guesses An array of guesses.
+	     * @returns {null|string} The detected OS name.
+	     */
+	    function getOS(guesses) {
+	      return reduce(guesses, function(result, guess) {
+	        var pattern = guess.pattern || qualify(guess);
+	        if (!result && (result =
+	              RegExp('\\b' + pattern + '(?:/[\\d.]+|[ \\w.]*)', 'i').exec(ua)
+	            )) {
+	          result = cleanupOS(result, pattern, guess.label || guess);
+	        }
+	        return result;
+	      });
+	    }
+
+	    /**
+	     * Picks the product name from an array of guesses.
+	     *
+	     * @private
+	     * @param {Array} guesses An array of guesses.
+	     * @returns {null|string} The detected product name.
+	     */
+	    function getProduct(guesses) {
+	      return reduce(guesses, function(result, guess) {
+	        var pattern = guess.pattern || qualify(guess);
+	        if (!result && (result =
+	              RegExp('\\b' + pattern + ' *\\d+[.\\w_]*', 'i').exec(ua) ||
+	              RegExp('\\b' + pattern + '(?:; *(?:[a-z]+[_-])?[a-z]+\\d+|[^ ();-]*)', 'i').exec(ua)
+	            )) {
+	          // split by forward slash and append product version if needed
+	          if ((result = String((guess.label && !RegExp(pattern, 'i').test(guess.label)) ? guess.label : result).split('/'))[1] && !/[\d.]+/.test(result[0])) {
+	            result[0] += ' ' + result[1];
+	          }
+	          // correct character case and cleanup
+	          guess = guess.label || guess;
+	          result = format(result[0]
+	            .replace(RegExp(pattern, 'i'), guess)
+	            .replace(RegExp('; *(?:' + guess + '[_-])?', 'i'), ' ')
+	            .replace(RegExp('(' + guess + ')[-_.]?(\\w)', 'i'), '$1 $2'));
+	        }
+	        return result;
+	      });
+	    }
+
+	    /**
+	     * Resolves the version using an array of UA patterns.
+	     *
+	     * @private
+	     * @param {Array} patterns An array of UA patterns.
+	     * @returns {null|string} The detected version.
+	     */
+	    function getVersion(patterns) {
+	      return reduce(patterns, function(result, pattern) {
+	        return result || (RegExp(pattern +
+	          '(?:-[\\d.]+/|(?: for [\\w-]+)?[ /-])([\\d.]+[^ ();/_-]*)', 'i').exec(ua) || 0)[1] || null;
+	      });
+	    }
+
+	    /**
+	     * Returns `platform.description` when the platform object is coerced to a string.
+	     *
+	     * @name toString
+	     * @memberOf platform
+	     * @returns {string} Returns `platform.description` if available, else an empty string.
+	     */
+	    function toStringPlatform() {
+	      return this.description || '';
+	    }
+
+	    /*------------------------------------------------------------------------*/
+
+	    // convert layout to an array so we can add extra details
+	    layout && (layout = [layout]);
+
+	    // detect product names that contain their manufacturer's name
+	    if (manufacturer && !product) {
+	      product = getProduct([manufacturer]);
+	    }
+	    // clean up Google TV
+	    if ((data = /\bGoogle TV\b/.exec(product))) {
+	      product = data[0];
+	    }
+	    // detect simulators
+	    if (/\bSimulator\b/i.test(ua)) {
+	      product = (product ? product + ' ' : '') + 'Simulator';
+	    }
+	    // detect Opera Mini 8+ running in Turbo/Uncompressed mode on iOS
+	    if (name == 'Opera Mini' && /\bOPiOS\b/.test(ua)) {
+	      description.push('running in Turbo/Uncompressed mode');
+	    }
+	    // detect iOS
+	    if (/^iP/.test(product)) {
+	      name || (name = 'Safari');
+	      os = 'iOS' + ((data = / OS ([\d_]+)/i.exec(ua))
+	        ? ' ' + data[1].replace(/_/g, '.')
+	        : '');
+	    }
+	    // detect Kubuntu
+	    else if (name == 'Konqueror' && !/buntu/i.test(os)) {
+	      os = 'Kubuntu';
+	    }
+	    // detect Android browsers
+	    else if (manufacturer && manufacturer != 'Google' &&
+	        ((/Chrome/.test(name) && !/\bMobile Safari\b/i.test(ua)) || /\bVita\b/.test(product))) {
+	      name = 'Android Browser';
+	      os = /\bAndroid\b/.test(os) ? os : 'Android';
+	    }
+	    // detect false positives for Firefox/Safari
+	    else if (!name || (data = !/\bMinefield\b|\(Android;/i.test(ua) && /\b(?:Firefox|Safari)\b/.exec(name))) {
+	      // escape the `/` for Firefox 1
+	      if (name && !product && /[\/,]|^[^(]+?\)/.test(ua.slice(ua.indexOf(data + '/') + 8))) {
+	        // clear name of false positives
+	        name = null;
+	      }
+	      // reassign a generic name
+	      if ((data = product || manufacturer || os) &&
+	          (product || manufacturer || /\b(?:Android|Symbian OS|Tablet OS|webOS)\b/.test(os))) {
+	        name = /[a-z]+(?: Hat)?/i.exec(/\bAndroid\b/.test(os) ? os : data) + ' Browser';
+	      }
+	    }
+	    // detect Firefox OS
+	    if ((data = /\((Mobile|Tablet).*?Firefox\b/i.exec(ua)) && data[1]) {
+	      os = 'Firefox OS';
+	      if (!product) {
+	        product = data[1];
+	      }
+	    }
+	    // detect non-Opera versions (order is important)
+	    if (!version) {
+	      version = getVersion([
+	        '(?:Cloud9|CriOS|CrMo|IEMobile|Iron|Opera ?Mini|OPiOS|OPR|Raven|Silk(?!/[\\d.]+$))',
+	        'Version',
+	        qualify(name),
+	        '(?:Firefox|Minefield|NetFront)'
+	      ]);
+	    }
+	    // detect stubborn layout engines
+	    if (layout == 'iCab' && parseFloat(version) > 3) {
+	      layout = ['WebKit'];
+	    } else if (
+	        layout != 'Trident' &&
+	        (data =
+	          /\bOpera\b/.test(name) && (/\bOPR\b/.test(ua) ? 'Blink' : 'Presto') ||
+	          /\b(?:Midori|Nook|Safari)\b/i.test(ua) && 'WebKit' ||
+	          !layout && /\bMSIE\b/i.test(ua) && (os == 'Mac OS' ? 'Tasman' : 'Trident')
+	        )
+	    ) {
+	      layout = [data];
+	    }
+	    // detect NetFront on PlayStation
+	    else if (/\bPlayStation\b(?! Vita\b)/i.test(name) && layout == 'WebKit') {
+	      layout = ['NetFront'];
+	    }
+	    // detect Windows Phone 7 desktop mode
+	    if (name == 'IE' && (data = (/; *(?:XBLWP|ZuneWP)(\d+)/i.exec(ua) || 0)[1])) {
+	      name += ' Mobile';
+	      os = 'Windows Phone ' + (/\+$/.test(data) ? data : data + '.x');
+	      description.unshift('desktop mode');
+	    }
+	    // detect Windows Phone 8+ desktop mode
+	    else if (/\bWPDesktop\b/i.test(ua)) {
+	      name = 'IE Mobile';
+	      os = 'Windows Phone 8+';
+	      description.unshift('desktop mode');
+	      version || (version = (/\brv:([\d.]+)/.exec(ua) || 0)[1]);
+	    }
+	    // detect IE 11 and above
+	    else if (name != 'IE' && layout == 'Trident' && (data = /\brv:([\d.]+)/.exec(ua))) {
+	      if (!/\bWPDesktop\b/i.test(ua)) {
+	        if (name) {
+	          description.push('identifying as ' + name + (version ? ' ' + version : ''));
+	        }
+	        name = 'IE';
+	      }
+	      version = data[1];
+	    }
+	    // detect Microsoft Edge
+	    else if ((name == 'Chrome' || name != 'IE') && (data = /\bEdge\/([\d.]+)/.exec(ua))) {
+	      name = 'Microsoft Edge';
+	      version = data[1];
+	      layout = ['Trident'];
+	    }
+	    // leverage environment features
+	    if (useFeatures) {
+	      // detect server-side environments
+	      // Rhino has a global function while others have a global object
+	      if (isHostType(context, 'global')) {
+	        if (java) {
+	          data = java.lang.System;
+	          arch = data.getProperty('os.arch');
+	          os = os || data.getProperty('os.name') + ' ' + data.getProperty('os.version');
+	        }
+	        if (isModuleScope && isHostType(context, 'system') && (data = [context.system])[0]) {
+	          os || (os = data[0].os || null);
+	          try {
+	            data[1] = context.require('ringo/engine').version;
+	            version = data[1].join('.');
+	            name = 'RingoJS';
+	          } catch(e) {
+	            if (data[0].global.system == context.system) {
+	              name = 'Narwhal';
+	            }
+	          }
+	        }
+	        else if (typeof context.process == 'object' && (data = context.process)) {
+	          name = 'Node.js';
+	          arch = data.arch;
+	          os = data.platform;
+	          version = /[\d.]+/.exec(data.version)[0];
+	        }
+	        else if (rhino) {
+	          name = 'Rhino';
+	        }
+	      }
+	      // detect Adobe AIR
+	      else if (getClassOf((data = context.runtime)) == airRuntimeClass) {
+	        name = 'Adobe AIR';
+	        os = data.flash.system.Capabilities.os;
+	      }
+	      // detect PhantomJS
+	      else if (getClassOf((data = context.phantom)) == phantomClass) {
+	        name = 'PhantomJS';
+	        version = (data = data.version || null) && (data.major + '.' + data.minor + '.' + data.patch);
+	      }
+	      // detect IE compatibility modes
+	      else if (typeof doc.documentMode == 'number' && (data = /\bTrident\/(\d+)/i.exec(ua))) {
+	        // we're in compatibility mode when the Trident version + 4 doesn't
+	        // equal the document mode
+	        version = [version, doc.documentMode];
+	        if ((data = +data[1] + 4) != version[1]) {
+	          description.push('IE ' + version[1] + ' mode');
+	          layout && (layout[1] = '');
+	          version[1] = data;
+	        }
+	        version = name == 'IE' ? String(version[1].toFixed(1)) : version[0];
+	      }
+	      os = os && format(os);
+	    }
+	    // detect prerelease phases
+	    if (version && (data =
+	          /(?:[ab]|dp|pre|[ab]\d+pre)(?:\d+\+?)?$/i.exec(version) ||
+	          /(?:alpha|beta)(?: ?\d)?/i.exec(ua + ';' + (useFeatures && nav.appMinorVersion)) ||
+	          /\bMinefield\b/i.test(ua) && 'a'
+	        )) {
+	      prerelease = /b/i.test(data) ? 'beta' : 'alpha';
+	      version = version.replace(RegExp(data + '\\+?$'), '') +
+	        (prerelease == 'beta' ? beta : alpha) + (/\d+\+?/.exec(data) || '');
+	    }
+	    // detect Firefox Mobile
+	    if (name == 'Fennec' || name == 'Firefox' && /\b(?:Android|Firefox OS)\b/.test(os)) {
+	      name = 'Firefox Mobile';
+	    }
+	    // obscure Maxthon's unreliable version
+	    else if (name == 'Maxthon' && version) {
+	      version = version.replace(/\.[\d.]+/, '.x');
+	    }
+	    // detect Silk desktop/accelerated modes
+	    else if (name == 'Silk') {
+	      if (!/\bMobi/i.test(ua)) {
+	        os = 'Android';
+	        description.unshift('desktop mode');
+	      }
+	      if (/Accelerated *= *true/i.test(ua)) {
+	        description.unshift('accelerated');
+	      }
+	    }
+	    // detect Xbox 360 and Xbox One
+	    else if (/\bXbox\b/i.test(product)) {
+	      os = null;
+	      if (product == 'Xbox 360' && /\bIEMobile\b/.test(ua)) {
+	        description.unshift('mobile mode');
+	      }
+	    }
+	    // add mobile postfix
+	    else if ((/^(?:Chrome|IE|Opera)$/.test(name) || name && !product && !/Browser|Mobi/.test(name)) &&
+	        (os == 'Windows CE' || /Mobi/i.test(ua))) {
+	      name += ' Mobile';
+	    }
+	    // detect IE platform preview
+	    else if (name == 'IE' && useFeatures && context.external === null) {
+	      description.unshift('platform preview');
+	    }
+	    // detect BlackBerry OS version
+	    // http://docs.blackberry.com/en/developers/deliverables/18169/HTTP_headers_sent_by_BB_Browser_1234911_11.jsp
+	    else if ((/\bBlackBerry\b/.test(product) || /\bBB10\b/.test(ua)) && (data =
+	          (RegExp(product.replace(/ +/g, ' *') + '/([.\\d]+)', 'i').exec(ua) || 0)[1] ||
+	          version
+	        )) {
+	      data = [data, /BB10/.test(ua)];
+	      os = (data[1] ? (product = null, manufacturer = 'BlackBerry') : 'Device Software') + ' ' + data[0];
+	      version = null;
+	    }
+	    // detect Opera identifying/masking itself as another browser
+	    // http://www.opera.com/support/kb/view/843/
+	    else if (this != forOwn && (
+	          product != 'Wii' && (
+	            (useFeatures && opera) ||
+	            (/Opera/.test(name) && /\b(?:MSIE|Firefox)\b/i.test(ua)) ||
+	            (name == 'Firefox' && /\bOS X (?:\d+\.){2,}/.test(os)) ||
+	            (name == 'IE' && (
+	              (os && !/^Win/.test(os) && version > 5.5) ||
+	              /\bWindows XP\b/.test(os) && version > 8 ||
+	              version == 8 && !/\bTrident\b/.test(ua)
+	            ))
+	          )
+	        ) && !reOpera.test((data = parse.call(forOwn, ua.replace(reOpera, '') + ';'))) && data.name) {
+
+	      // when "indentifying", the UA contains both Opera and the other browser's name
+	      data = 'ing as ' + data.name + ((data = data.version) ? ' ' + data : '');
+	      if (reOpera.test(name)) {
+	        if (/\bIE\b/.test(data) && os == 'Mac OS') {
+	          os = null;
+	        }
+	        data = 'identify' + data;
+	      }
+	      // when "masking", the UA contains only the other browser's name
+	      else {
+	        data = 'mask' + data;
+	        if (operaClass) {
+	          name = format(operaClass.replace(/([a-z])([A-Z])/g, '$1 $2'));
+	        } else {
+	          name = 'Opera';
+	        }
+	        if (/\bIE\b/.test(data)) {
+	          os = null;
+	        }
+	        if (!useFeatures) {
+	          version = null;
+	        }
+	      }
+	      layout = ['Presto'];
+	      description.push(data);
+	    }
+	    // detect WebKit Nightly and approximate Chrome/Safari versions
+	    if ((data = (/\bAppleWebKit\/([\d.]+\+?)/i.exec(ua) || 0)[1])) {
+	      // correct build for numeric comparison
+	      // (e.g. "532.5" becomes "532.05")
+	      data = [parseFloat(data.replace(/\.(\d)$/, '.0$1')), data];
+	      // nightly builds are postfixed with a `+`
+	      if (name == 'Safari' && data[1].slice(-1) == '+') {
+	        name = 'WebKit Nightly';
+	        prerelease = 'alpha';
+	        version = data[1].slice(0, -1);
+	      }
+	      // clear incorrect browser versions
+	      else if (version == data[1] ||
+	          version == (data[2] = (/\bSafari\/([\d.]+\+?)/i.exec(ua) || 0)[1])) {
+	        version = null;
+	      }
+	      // use the full Chrome version when available
+	      data[1] = (/\bChrome\/([\d.]+)/i.exec(ua) || 0)[1];
+	      // detect Blink layout engine
+	      if (data[0] == 537.36 && data[2] == 537.36 && parseFloat(data[1]) >= 28 && name != 'IE' && name != 'Microsoft Edge') {
+	        layout = ['Blink'];
+	      }
+	      // detect JavaScriptCore
+	      // http://stackoverflow.com/questions/6768474/how-can-i-detect-which-javascript-engine-v8-or-jsc-is-used-at-runtime-in-androi
+	      if (!useFeatures || (!likeChrome && !data[1])) {
+	        layout && (layout[1] = 'like Safari');
+	        data = (data = data[0], data < 400 ? 1 : data < 500 ? 2 : data < 526 ? 3 : data < 533 ? 4 : data < 534 ? '4+' : data < 535 ? 5 : data < 537 ? 6 : data < 538 ? 7 : data < 601 ? 8 : '8');
+	      } else {
+	        layout && (layout[1] = 'like Chrome');
+	        data = data[1] || (data = data[0], data < 530 ? 1 : data < 532 ? 2 : data < 532.05 ? 3 : data < 533 ? 4 : data < 534.03 ? 5 : data < 534.07 ? 6 : data < 534.10 ? 7 : data < 534.13 ? 8 : data < 534.16 ? 9 : data < 534.24 ? 10 : data < 534.30 ? 11 : data < 535.01 ? 12 : data < 535.02 ? '13+' : data < 535.07 ? 15 : data < 535.11 ? 16 : data < 535.19 ? 17 : data < 536.05 ? 18 : data < 536.10 ? 19 : data < 537.01 ? 20 : data < 537.11 ? '21+' : data < 537.13 ? 23 : data < 537.18 ? 24 : data < 537.24 ? 25 : data < 537.36 ? 26 : layout != 'Blink' ? '27' : '28');
+	      }
+	      // add the postfix of ".x" or "+" for approximate versions
+	      layout && (layout[1] += ' ' + (data += typeof data == 'number' ? '.x' : /[.+]/.test(data) ? '' : '+'));
+	      // obscure version for some Safari 1-2 releases
+	      if (name == 'Safari' && (!version || parseInt(version) > 45)) {
+	        version = data;
+	      }
+	    }
+	    // detect Opera desktop modes
+	    if (name == 'Opera' &&  (data = /\bzbov|zvav$/.exec(os))) {
+	      name += ' ';
+	      description.unshift('desktop mode');
+	      if (data == 'zvav') {
+	        name += 'Mini';
+	        version = null;
+	      } else {
+	        name += 'Mobile';
+	      }
+	      os = os.replace(RegExp(' *' + data + '$'), '');
+	    }
+	    // detect Chrome desktop mode
+	    else if (name == 'Safari' && /\bChrome\b/.exec(layout && layout[1])) {
+	      description.unshift('desktop mode');
+	      name = 'Chrome Mobile';
+	      version = null;
+
+	      if (/\bOS X\b/.test(os)) {
+	        manufacturer = 'Apple';
+	        os = 'iOS 4.3+';
+	      } else {
+	        os = null;
+	      }
+	    }
+	    // strip incorrect OS versions
+	    if (version && version.indexOf((data = /[\d.]+$/.exec(os))) == 0 &&
+	        ua.indexOf('/' + data + '-') > -1) {
+	      os = trim(os.replace(data, ''));
+	    }
+	    // add layout engine
+	    if (layout && !/\b(?:Avant|Nook)\b/.test(name) && (
+	        /Browser|Lunascape|Maxthon/.test(name) ||
+	        /^(?:Adobe|Arora|Breach|Midori|Opera|Phantom|Rekonq|Rock|Sleipnir|Web)/.test(name) && layout[1])) {
+	      // don't add layout details to description if they are falsey
+	      (data = layout[layout.length - 1]) && description.push(data);
+	    }
+	    // combine contextual information
+	    if (description.length) {
+	      description = ['(' + description.join('; ') + ')'];
+	    }
+	    // append manufacturer
+	    if (manufacturer && product && product.indexOf(manufacturer) < 0) {
+	      description.push('on ' + manufacturer);
+	    }
+	    // append product
+	    if (product) {
+	      description.push((/^on /.test(description[description.length -1]) ? '' : 'on ') + product);
+	    }
+	    // parse OS into an object
+	    if (os) {
+	      data = / ([\d.+]+)$/.exec(os);
+	      isSpecialCasedOS = data && os.charAt(os.length - data[0].length - 1) == '/';
+	      os = {
+	        'architecture': 32,
+	        'family': (data && !isSpecialCasedOS) ? os.replace(data[0], '') : os,
+	        'version': data ? data[1] : null,
+	        'toString': function() {
+	          var version = this.version;
+	          return this.family + ((version && !isSpecialCasedOS) ? ' ' + version : '') + (this.architecture == 64 ? ' 64-bit' : '');
+	        }
+	      };
+	    }
+	    // add browser/OS architecture
+	    if ((data = /\b(?:AMD|IA|Win|WOW|x86_|x)64\b/i.exec(arch)) && !/\bi686\b/i.test(arch)) {
+	      if (os) {
+	        os.architecture = 64;
+	        os.family = os.family.replace(RegExp(' *' + data), '');
+	      }
+	      if (
+	          name && (/\bWOW64\b/i.test(ua) ||
+	          (useFeatures && /\w(?:86|32)$/.test(nav.cpuClass || nav.platform) && !/\bWin64; x64\b/i.test(ua)))
+	      ) {
+	        description.unshift('32-bit');
+	      }
+	    }
+
+	    ua || (ua = null);
+
+	    /*------------------------------------------------------------------------*/
+
+	    /**
+	     * The platform object.
+	     *
+	     * @name platform
+	     * @type Object
+	     */
+	    var platform = {};
+
+	    /**
+	     * The platform description.
+	     *
+	     * @memberOf platform
+	     * @type string|null
+	     */
+	    platform.description = ua;
+
+	    /**
+	     * The name of the browser's layout engine.
+	     *
+	     * @memberOf platform
+	     * @type string|null
+	     */
+	    platform.layout = layout && layout[0];
+
+	    /**
+	     * The name of the product's manufacturer.
+	     *
+	     * @memberOf platform
+	     * @type string|null
+	     */
+	    platform.manufacturer = manufacturer;
+
+	    /**
+	     * The name of the browser/environment.
+	     *
+	     * @memberOf platform
+	     * @type string|null
+	     */
+	    platform.name = name;
+
+	    /**
+	     * The alpha/beta release indicator.
+	     *
+	     * @memberOf platform
+	     * @type string|null
+	     */
+	    platform.prerelease = prerelease;
+
+	    /**
+	     * The name of the product hosting the browser.
+	     *
+	     * @memberOf platform
+	     * @type string|null
+	     */
+	    platform.product = product;
+
+	    /**
+	     * The browser's user agent string.
+	     *
+	     * @memberOf platform
+	     * @type string|null
+	     */
+	    platform.ua = ua;
+
+	    /**
+	     * The browser/environment version.
+	     *
+	     * @memberOf platform
+	     * @type string|null
+	     */
+	    platform.version = name && version;
+
+	    /**
+	     * The name of the operating system.
+	     *
+	     * @memberOf platform
+	     * @type Object
+	     */
+	    platform.os = os || {
+
+	      /**
+	       * The CPU architecture the OS is built for.
+	       *
+	       * @memberOf platform.os
+	       * @type number|null
+	       */
+	      'architecture': null,
+
+	      /**
+	       * The family of the OS.
+	       *
+	       * Common values include:
+	       * "Windows", "Windows Server 2008 R2 / 7", "Windows Server 2008 / Vista",
+	       * "Windows XP", "OS X", "Ubuntu", "Debian", "Fedora", "Red Hat", "SuSE",
+	       * "Android", "iOS" and "Windows Phone"
+	       *
+	       * @memberOf platform.os
+	       * @type string|null
+	       */
+	      'family': null,
+
+	      /**
+	       * The version of the OS.
+	       *
+	       * @memberOf platform.os
+	       * @type string|null
+	       */
+	      'version': null,
+
+	      /**
+	       * Returns the OS string.
+	       *
+	       * @memberOf platform.os
+	       * @returns {string} The OS string.
+	       */
+	      'toString': function() { return 'null'; }
+	    };
+
+	    platform.parse = parse;
+	    platform.toString = toStringPlatform;
+
+	    if (platform.version) {
+	      description.unshift(version);
+	    }
+	    if (platform.name) {
+	      description.unshift(name);
+	    }
+	    if (os && name && !(os == String(os).split(' ')[0] && (os == name.split(' ')[0] || product))) {
+	      description.push(product ? '(' + os + ')' : 'on ' + os);
+	    }
+	    if (description.length) {
+	      platform.description = description.join(' ');
+	    }
+	    return platform;
+	  }
+
+	  /*--------------------------------------------------------------------------*/
+
+	  // export platform
+	  // some AMD build optimizers, like r.js, check for condition patterns like the following:
+	  if (true) {
+	    // define as an anonymous module so, through path mapping, it can be aliased
+	    !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	      return parse();
+	    }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  }
+	  // check for `exports` after `define` in case a build optimizer adds an `exports` object
+	  else if (freeExports && freeModule) {
+	    // in Narwhal, Node.js, Rhino -require, or RingoJS
+	    forOwn(parse(), function(value, key) {
+	      freeExports[key] = value;
+	    });
+	  }
+	  // in a browser or Rhino
+	  else {
+	    root.platform = parse();
+	  }
+	}.call(this));
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(357)(module), (function() { return this; }())))
+
+/***/ },
+/* 357 */
+/***/ function(module, exports) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
+
+/***/ },
+/* 358 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.TwitterShareCount = exports.PinterestShareCount = exports.GooglePlusShareCount = exports.LinkedinShareCount = exports.FacebookShareCount = undefined;
+
+	var _extends2 = __webpack_require__(247);
+
+	var _extends3 = _interopRequireDefault(_extends2);
+
+	var _react = __webpack_require__(8);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _shareCountGetters = __webpack_require__(359);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/* eslint-disable react/no-multi-comp */
+
+
+	var SocialMediaShareCount = _react2.default.createClass({
+	  displayName: 'SocialMediaShareCount',
+
+	  propTypes: {
+	    children: _react2.default.PropTypes.func,
+	    className: _react2.default.PropTypes.string,
+	    getCount: _react2.default.PropTypes.func,
+	    url: _react2.default.PropTypes.string.isRequired
+	  },
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      count: 0
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var _this = this;
+
+	    if (this.props.getCount) {
+	      this.setState({
+	        isLoading: true
+	      });
+
+	      this.props.getCount(this.props.url, function (count) {
+	        if (_this.isMounted()) {
+	          _this.setState({
+	            count: count,
+	            isLoading: false
+	          });
+	        }
+	      });
+	    }
+	  },
+	  render: function render() {
+	    var _state = this.state;
+	    var count = _state.count;
+	    var isLoading = _state.isLoading;
+	    var children = this.props.children;
+
+
+	    var className = 'SocialMediaShareCount ' + (this.props.className || '');
+
+	    var render = children || function renderCount(shareCount) {
+	      return shareCount;
+	    };
+
+	    return _react2.default.createElement(
+	      'div',
+	      (0, _extends3.default)({}, this.props, { className: className }),
+	      !isLoading && render(count || 0)
+	    );
+	  }
+	});
+
+	function shareCountFactory(getCount) {
+	  return function (props) {
+	    return _react2.default.createElement(SocialMediaShareCount, (0, _extends3.default)({ getCount: getCount }, props));
+	  };
+	}
+
+	var FacebookShareCount = exports.FacebookShareCount = shareCountFactory(_shareCountGetters.getFacebookShareCount);
+	var LinkedinShareCount = exports.LinkedinShareCount = shareCountFactory(_shareCountGetters.getLinkedinShareCount);
+	var GooglePlusShareCount = exports.GooglePlusShareCount = shareCountFactory(_shareCountGetters.getGooglePlusShareCount);
+	var PinterestShareCount = exports.PinterestShareCount = shareCountFactory(_shareCountGetters.getPinterestShareCount);
+	var TwitterShareCount = exports.TwitterShareCount = function TwitterShareCount() {
+	  throw new Error('TwitterShareCount was removed in version 1.3.0 because' + 'the Twitter API was shut down and there is no replacement. Please ' + 'remove it from your code.');
+	};
+
+/***/ },
+/* 359 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _stringify = __webpack_require__(360);
+
+	var _stringify2 = _interopRequireDefault(_stringify);
+
+	exports.getFacebookShareCount = getFacebookShareCount;
+	exports.getGooglePlusShareCount = getGooglePlusShareCount;
+	exports.getLinkedinShareCount = getLinkedinShareCount;
+	exports.getPinterestShareCount = getPinterestShareCount;
+
+	var _jsonp = __webpack_require__(362);
+
+	var _jsonp2 = _interopRequireDefault(_jsonp);
+
+	var _platform = __webpack_require__(356);
+
+	var _platform2 = _interopRequireDefault(_platform);
+
+	var _utils = __webpack_require__(355);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function getFacebookShareCount(shareUrl, callback) {
+	  var fql = encodeURIComponent('select like_count, share_count from ' + ('link_stat where url = \'' + encodeURIComponent(shareUrl) + '\''));
+
+	  var endpoint = 'https://api.facebook.com/method/fql.query' + ('?format=json&query=' + fql);
+
+	  (0, _jsonp2.default)(endpoint, function (err, data) {
+	    if (!err) {
+	      callback(data.length && data[0].share_count ? data[0].share_count : undefined);
+	    }
+	  });
+	}
+
+	function getGooglePlusShareCount(shareUrl, callback) {
+	  if (_platform2.default.name === 'IE' && parseInt(_platform2.default.version, 10) < 11) {
+	    /* eslint-disable no-console */
+	    console.error('Google plus share count is not supported in <=IE10!');
+	    /* eslint-enable no-console */
+	    return;
+	  }
+
+	  var xhr = new XMLHttpRequest();
+
+	  xhr.open('POST', 'https://clients6.google.com/rpc');
+	  xhr.setRequestHeader('Accept', 'application/json');
+	  xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+
+	  xhr.send((0, _stringify2.default)({
+	    method: 'pos.plusones.get',
+	    id: 'p',
+	    params: {
+	      nolog: true,
+	      id: shareUrl,
+	      source: 'widget',
+	      userId: '@viewer',
+	      groupId: '@self'
+	    },
+	    jsonrpc: '2.0',
+	    key: 'p',
+	    apiVersion: 'v1'
+	  }));
+
+	  xhr.onload = function onSuccessdata() {
+	    var data = JSON.parse(this.responseText);
+	    callback(!!data ? data.result.metadata.globalCounts.count : undefined);
+	  };
+
+	  xhr.onerror = function onErrordata() {};
+	}
+
+	function getLinkedinShareCount(shareUrl, callback) {
+	  var url = 'https://www.linkedin.com/countserv/count/share';
+
+	  return (0, _jsonp2.default)(url + (0, _utils.objectToGetParams)({
+	    url: shareUrl,
+	    format: 'jsonp'
+	  }), function (err, data) {
+	    callback(!!data ? data.count : undefined);
+	  });
+	}
+
+	function getPinterestShareCount(shareUrl, callback) {
+	  var url = 'https://api.pinterest.com/v1/urls/count.json';
+
+	  return (0, _jsonp2.default)(url + (0, _utils.objectToGetParams)({
+	    url: shareUrl
+	  }), function (err, data) {
+	    callback(!!data ? data.count : undefined);
+	  });
+	}
+
+/***/ },
+/* 360 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(361), __esModule: true };
+
+/***/ },
+/* 361 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(253)
+	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return $JSON.stringify.apply($JSON, arguments);
+	};
+
+/***/ },
+/* 362 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Module dependencies
+	 */
+
+	var debug = __webpack_require__(363)('jsonp');
+
+	/**
+	 * Module exports.
+	 */
+
+	module.exports = jsonp;
+
+	/**
+	 * Callback index.
+	 */
+
+	var count = 0;
+
+	/**
+	 * Noop function.
+	 */
+
+	function noop(){}
+
+	/**
+	 * JSONP handler
+	 *
+	 * Options:
+	 *  - param {String} qs parameter (`callback`)
+	 *  - prefix {String} qs parameter (`__jp`)
+	 *  - name {String} qs parameter (`prefix` + incr)
+	 *  - timeout {Number} how long after a timeout error is emitted (`60000`)
+	 *
+	 * @param {String} url
+	 * @param {Object|Function} optional options / callback
+	 * @param {Function} optional callback
+	 */
+
+	function jsonp(url, opts, fn){
+	  if ('function' == typeof opts) {
+	    fn = opts;
+	    opts = {};
+	  }
+	  if (!opts) opts = {};
+
+	  var prefix = opts.prefix || '__jp';
+
+	  // use the callback name that was passed if one was provided.
+	  // otherwise generate a unique name by incrementing our counter.
+	  var id = opts.name || (prefix + (count++));
+
+	  var param = opts.param || 'callback';
+	  var timeout = null != opts.timeout ? opts.timeout : 60000;
+	  var enc = encodeURIComponent;
+	  var target = document.getElementsByTagName('script')[0] || document.head;
+	  var script;
+	  var timer;
+
+
+	  if (timeout) {
+	    timer = setTimeout(function(){
+	      cleanup();
+	      if (fn) fn(new Error('Timeout'));
+	    }, timeout);
+	  }
+
+	  function cleanup(){
+	    if (script.parentNode) script.parentNode.removeChild(script);
+	    window[id] = noop;
+	    if (timer) clearTimeout(timer);
+	  }
+
+	  function cancel(){
+	    if (window[id]) {
+	      cleanup();
+	    }
+	  }
+
+	  window[id] = function(data){
+	    debug('jsonp got', data);
+	    cleanup();
+	    if (fn) fn(null, data);
+	  };
+
+	  // add qs component
+	  url += (~url.indexOf('?') ? '&' : '?') + param + '=' + enc(id);
+	  url = url.replace('?&', '?');
+
+	  debug('jsonp req "%s"', url);
+
+	  // create script
+	  script = document.createElement('script');
+	  script.src = url;
+	  target.parentNode.insertBefore(script, target);
+
+	  return cancel;
+	}
+
+
+/***/ },
+/* 363 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * This is the web browser implementation of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+
+	exports = module.exports = __webpack_require__(364);
+	exports.log = log;
+	exports.formatArgs = formatArgs;
+	exports.save = save;
+	exports.load = load;
+	exports.useColors = useColors;
+
+	/**
+	 * Use chrome.storage.local if we are in an app
+	 */
+
+	var storage;
+
+	if (typeof chrome !== 'undefined' && typeof chrome.storage !== 'undefined')
+	  storage = chrome.storage.local;
+	else
+	  storage = localstorage();
+
+	/**
+	 * Colors.
+	 */
+
+	exports.colors = [
+	  'lightseagreen',
+	  'forestgreen',
+	  'goldenrod',
+	  'dodgerblue',
+	  'darkorchid',
+	  'crimson'
+	];
+
+	/**
+	 * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+	 * and the Firebug extension (any Firefox version) are known
+	 * to support "%c" CSS customizations.
+	 *
+	 * TODO: add a `localStorage` variable to explicitly enable/disable colors
+	 */
+
+	function useColors() {
+	  // is webkit? http://stackoverflow.com/a/16459606/376773
+	  return ('WebkitAppearance' in document.documentElement.style) ||
+	    // is firebug? http://stackoverflow.com/a/398120/376773
+	    (window.console && (console.firebug || (console.exception && console.table))) ||
+	    // is firefox >= v31?
+	    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+	    (navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31);
+	}
+
+	/**
+	 * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+	 */
+
+	exports.formatters.j = function(v) {
+	  return JSON.stringify(v);
+	};
+
+
+	/**
+	 * Colorize log arguments if enabled.
+	 *
+	 * @api public
+	 */
+
+	function formatArgs() {
+	  var args = arguments;
+	  var useColors = this.useColors;
+
+	  args[0] = (useColors ? '%c' : '')
+	    + this.namespace
+	    + (useColors ? ' %c' : ' ')
+	    + args[0]
+	    + (useColors ? '%c ' : ' ')
+	    + '+' + exports.humanize(this.diff);
+
+	  if (!useColors) return args;
+
+	  var c = 'color: ' + this.color;
+	  args = [args[0], c, 'color: inherit'].concat(Array.prototype.slice.call(args, 1));
+
+	  // the final "%c" is somewhat tricky, because there could be other
+	  // arguments passed either before or after the %c, so we need to
+	  // figure out the correct index to insert the CSS into
+	  var index = 0;
+	  var lastC = 0;
+	  args[0].replace(/%[a-z%]/g, function(match) {
+	    if ('%%' === match) return;
+	    index++;
+	    if ('%c' === match) {
+	      // we only are interested in the *last* %c
+	      // (the user may have provided their own)
+	      lastC = index;
+	    }
+	  });
+
+	  args.splice(lastC, 0, c);
+	  return args;
+	}
+
+	/**
+	 * Invokes `console.log()` when available.
+	 * No-op when `console.log` is not a "function".
+	 *
+	 * @api public
+	 */
+
+	function log() {
+	  // this hackery is required for IE8/9, where
+	  // the `console.log` function doesn't have 'apply'
+	  return 'object' === typeof console
+	    && console.log
+	    && Function.prototype.apply.call(console.log, console, arguments);
+	}
+
+	/**
+	 * Save `namespaces`.
+	 *
+	 * @param {String} namespaces
+	 * @api private
+	 */
+
+	function save(namespaces) {
+	  try {
+	    if (null == namespaces) {
+	      storage.removeItem('debug');
+	    } else {
+	      storage.debug = namespaces;
+	    }
+	  } catch(e) {}
+	}
+
+	/**
+	 * Load `namespaces`.
+	 *
+	 * @return {String} returns the previously persisted debug modes
+	 * @api private
+	 */
+
+	function load() {
+	  var r;
+	  try {
+	    r = storage.debug;
+	  } catch(e) {}
+	  return r;
+	}
+
+	/**
+	 * Enable namespaces listed in `localStorage.debug` initially.
+	 */
+
+	exports.enable(load());
+
+	/**
+	 * Localstorage attempts to return the localstorage.
+	 *
+	 * This is necessary because safari throws
+	 * when a user disables cookies/localstorage
+	 * and you attempt to access it.
+	 *
+	 * @return {LocalStorage}
+	 * @api private
+	 */
+
+	function localstorage(){
+	  try {
+	    return window.localStorage;
+	  } catch (e) {}
+	}
+
+
+/***/ },
+/* 364 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/**
+	 * This is the common logic for both the Node.js and web browser
+	 * implementations of `debug()`.
+	 *
+	 * Expose `debug()` as the module.
+	 */
+
+	exports = module.exports = debug;
+	exports.coerce = coerce;
+	exports.disable = disable;
+	exports.enable = enable;
+	exports.enabled = enabled;
+	exports.humanize = __webpack_require__(365);
+
+	/**
+	 * The currently active debug mode names, and names to skip.
+	 */
+
+	exports.names = [];
+	exports.skips = [];
+
+	/**
+	 * Map of special "%n" handling functions, for the debug "format" argument.
+	 *
+	 * Valid key names are a single, lowercased letter, i.e. "n".
+	 */
+
+	exports.formatters = {};
+
+	/**
+	 * Previously assigned color.
+	 */
+
+	var prevColor = 0;
+
+	/**
+	 * Previous log timestamp.
+	 */
+
+	var prevTime;
+
+	/**
+	 * Select a color.
+	 *
+	 * @return {Number}
+	 * @api private
+	 */
+
+	function selectColor() {
+	  return exports.colors[prevColor++ % exports.colors.length];
+	}
+
+	/**
+	 * Create a debugger with the given `namespace`.
+	 *
+	 * @param {String} namespace
+	 * @return {Function}
+	 * @api public
+	 */
+
+	function debug(namespace) {
+
+	  // define the `disabled` version
+	  function disabled() {
+	  }
+	  disabled.enabled = false;
+
+	  // define the `enabled` version
+	  function enabled() {
+
+	    var self = enabled;
+
+	    // set `diff` timestamp
+	    var curr = +new Date();
+	    var ms = curr - (prevTime || curr);
+	    self.diff = ms;
+	    self.prev = prevTime;
+	    self.curr = curr;
+	    prevTime = curr;
+
+	    // add the `color` if not set
+	    if (null == self.useColors) self.useColors = exports.useColors();
+	    if (null == self.color && self.useColors) self.color = selectColor();
+
+	    var args = Array.prototype.slice.call(arguments);
+
+	    args[0] = exports.coerce(args[0]);
+
+	    if ('string' !== typeof args[0]) {
+	      // anything else let's inspect with %o
+	      args = ['%o'].concat(args);
+	    }
+
+	    // apply any `formatters` transformations
+	    var index = 0;
+	    args[0] = args[0].replace(/%([a-z%])/g, function(match, format) {
+	      // if we encounter an escaped % then don't increase the array index
+	      if (match === '%%') return match;
+	      index++;
+	      var formatter = exports.formatters[format];
+	      if ('function' === typeof formatter) {
+	        var val = args[index];
+	        match = formatter.call(self, val);
+
+	        // now we need to remove `args[index]` since it's inlined in the `format`
+	        args.splice(index, 1);
+	        index--;
+	      }
+	      return match;
+	    });
+
+	    if ('function' === typeof exports.formatArgs) {
+	      args = exports.formatArgs.apply(self, args);
+	    }
+	    var logFn = enabled.log || exports.log || console.log.bind(console);
+	    logFn.apply(self, args);
+	  }
+	  enabled.enabled = true;
+
+	  var fn = exports.enabled(namespace) ? enabled : disabled;
+
+	  fn.namespace = namespace;
+
+	  return fn;
+	}
+
+	/**
+	 * Enables a debug mode by namespaces. This can include modes
+	 * separated by a colon and wildcards.
+	 *
+	 * @param {String} namespaces
+	 * @api public
+	 */
+
+	function enable(namespaces) {
+	  exports.save(namespaces);
+
+	  var split = (namespaces || '').split(/[\s,]+/);
+	  var len = split.length;
+
+	  for (var i = 0; i < len; i++) {
+	    if (!split[i]) continue; // ignore empty strings
+	    namespaces = split[i].replace(/\*/g, '.*?');
+	    if (namespaces[0] === '-') {
+	      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+	    } else {
+	      exports.names.push(new RegExp('^' + namespaces + '$'));
+	    }
+	  }
+	}
+
+	/**
+	 * Disable debug output.
+	 *
+	 * @api public
+	 */
+
+	function disable() {
+	  exports.enable('');
+	}
+
+	/**
+	 * Returns true if the given mode name is enabled, false otherwise.
+	 *
+	 * @param {String} name
+	 * @return {Boolean}
+	 * @api public
+	 */
+
+	function enabled(name) {
+	  var i, len;
+	  for (i = 0, len = exports.skips.length; i < len; i++) {
+	    if (exports.skips[i].test(name)) {
+	      return false;
+	    }
+	  }
+	  for (i = 0, len = exports.names.length; i < len; i++) {
+	    if (exports.names[i].test(name)) {
+	      return true;
+	    }
+	  }
+	  return false;
+	}
+
+	/**
+	 * Coerce `val`.
+	 *
+	 * @param {Mixed} val
+	 * @return {Mixed}
+	 * @api private
+	 */
+
+	function coerce(val) {
+	  if (val instanceof Error) return val.stack || val.message;
+	  return val;
+	}
+
+
+/***/ },
+/* 365 */
+/***/ function(module, exports) {
+
+	/**
+	 * Helpers.
+	 */
+
+	var s = 1000;
+	var m = s * 60;
+	var h = m * 60;
+	var d = h * 24;
+	var y = d * 365.25;
+
+	/**
+	 * Parse or format the given `val`.
+	 *
+	 * Options:
+	 *
+	 *  - `long` verbose formatting [false]
+	 *
+	 * @param {String|Number} val
+	 * @param {Object} options
+	 * @return {String|Number}
+	 * @api public
+	 */
+
+	module.exports = function(val, options){
+	  options = options || {};
+	  if ('string' == typeof val) return parse(val);
+	  return options.long
+	    ? long(val)
+	    : short(val);
+	};
+
+	/**
+	 * Parse the given `str` and return milliseconds.
+	 *
+	 * @param {String} str
+	 * @return {Number}
+	 * @api private
+	 */
+
+	function parse(str) {
+	  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str);
+	  if (!match) return;
+	  var n = parseFloat(match[1]);
+	  var type = (match[2] || 'ms').toLowerCase();
+	  switch (type) {
+	    case 'years':
+	    case 'year':
+	    case 'yrs':
+	    case 'yr':
+	    case 'y':
+	      return n * y;
+	    case 'days':
+	    case 'day':
+	    case 'd':
+	      return n * d;
+	    case 'hours':
+	    case 'hour':
+	    case 'hrs':
+	    case 'hr':
+	    case 'h':
+	      return n * h;
+	    case 'minutes':
+	    case 'minute':
+	    case 'mins':
+	    case 'min':
+	    case 'm':
+	      return n * m;
+	    case 'seconds':
+	    case 'second':
+	    case 'secs':
+	    case 'sec':
+	    case 's':
+	      return n * s;
+	    case 'milliseconds':
+	    case 'millisecond':
+	    case 'msecs':
+	    case 'msec':
+	    case 'ms':
+	      return n;
+	  }
+	}
+
+	/**
+	 * Short format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+
+	function short(ms) {
+	  if (ms >= d) return Math.round(ms / d) + 'd';
+	  if (ms >= h) return Math.round(ms / h) + 'h';
+	  if (ms >= m) return Math.round(ms / m) + 'm';
+	  if (ms >= s) return Math.round(ms / s) + 's';
+	  return ms + 'ms';
+	}
+
+	/**
+	 * Long format for `ms`.
+	 *
+	 * @param {Number} ms
+	 * @return {String}
+	 * @api private
+	 */
+
+	function long(ms) {
+	  return plural(ms, d, 'day')
+	    || plural(ms, h, 'hour')
+	    || plural(ms, m, 'minute')
+	    || plural(ms, s, 'second')
+	    || ms + ' ms';
+	}
+
+	/**
+	 * Pluralization helper.
+	 */
+
+	function plural(ms, n, name) {
+	  if (ms < n) return;
+	  if (ms < n * 1.5) return Math.floor(ms / n) + ' ' + name;
+	  return Math.ceil(ms / n) + ' ' + name + 's';
+	}
+
+
+/***/ },
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27139,18 +34565,18 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'row' },
+	          { className: 'row', 'data-equalizer': true, 'data-equalize-on': 'medium', id: 'test-eq' },
 	          _react2.default.createElement(
 	            'h1',
 	            { className: 'page-sub-heading' },
-	            'Subheading'
+	            'Reactive Web Designs'
 	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'large-7 columns' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'callout small' },
+	              { className: 'callout small', 'data-equalizer-watch': true },
 	              _react2.default.createElement(
 	                'h5',
 	                null,
@@ -27173,7 +34599,7 @@
 	            { className: 'large-4 columns' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'callout small' },
+	              { className: 'callout small', 'data-equalizer-watch': true },
 	              _react2.default.createElement(
 	                'dl',
 	                null,
@@ -27261,7 +34687,7 @@
 	exports.default = Home;
 
 /***/ },
-/* 245 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27278,9 +34704,13 @@
 
 	var _reactRouter = __webpack_require__(175);
 
-	var _pageheader = __webpack_require__(246);
+	var _pageheader = __webpack_require__(368);
 
 	var _pageheader2 = _interopRequireDefault(_pageheader);
+
+	var _contactform = __webpack_require__(369);
+
+	var _contactform2 = _interopRequireDefault(_contactform);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27329,112 +34759,12 @@
 	          _react2.default.createElement(
 	            'h1',
 	            { className: 'page-sub-heading' },
-	            'Subheading'
+	            'Contact Us today'
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'large-7 columns' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'callout small' },
-	              _react2.default.createElement(
-	                'h5',
-	                null,
-	                'This is a large callout'
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	              ),
-	              _react2.default.createElement(
-	                'a',
-	                { href: '#' },
-	                'This is a link'
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'large-4 columns' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'callout small' },
-	              _react2.default.createElement(
-	                'dl',
-	                null,
-	                _react2.default.createElement(
-	                  'dt',
-	                  null,
-	                  'Time'
-	                ),
-	                _react2.default.createElement(
-	                  'dd',
-	                  null,
-	                  'The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.'
-	                ),
-	                _react2.default.createElement(
-	                  'dt',
-	                  null,
-	                  'Space'
-	                ),
-	                _react2.default.createElement(
-	                  'dd',
-	                  null,
-	                  'A continuous area or expanse that is free, available, or unoccupied.'
-	                ),
-	                _react2.default.createElement(
-	                  'dd',
-	                  null,
-	                  'The dimensions of height, depth, and width within which all things exist and move.'
-	                )
-	              )
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'row' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'large-7 columns' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'callout small' },
-	              _react2.default.createElement(
-	                'h3',
-	                { className: 'callout-title' },
-	                'This is a large callout'
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                { className: 'callout-text' },
-	                'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	              ),
-	              _react2.default.createElement(
-	                'a',
-	                { href: '#' },
-	                'This is a link'
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'large-4 columns' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'callout small' },
-	              _react2.default.createElement(
-	                'h5',
-	                null,
-	                'This is a small callout'
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                'It has an easy to override visual style, and is appropriately subdued.'
-	              )
-	            )
+	            { className: 'large-8 columns' },
+	            _react2.default.createElement(_contactform2.default, null)
 	          )
 	        )
 	      );
@@ -27447,7 +34777,7 @@
 	exports.default = Contact;
 
 /***/ },
-/* 246 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27491,7 +34821,106 @@
 	exports.default = PageHeader;
 
 /***/ },
-/* 247 */
+/* 369 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(8);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(175);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ContactForm = _react2.default.createClass({
+	  displayName: 'ContactForm',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'contact-form-wrapper' },
+	      _react2.default.createElement(
+	        'form',
+	        { className: 'contact-form' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'small-6 columns form' },
+	            _react2.default.createElement(
+	              'label',
+	              { className: 'form-label' },
+	              'Name'
+	            ),
+	            _react2.default.createElement('input', { type: 'text', placeholder: 'Enter your name' }),
+	            _react2.default.createElement(
+	              'label',
+	              { className: 'form-label' },
+	              'Email'
+	            ),
+	            _react2.default.createElement('input', { type: 'text', placeholder: 'Enter your email address' }),
+	            _react2.default.createElement(
+	              'label',
+	              { className: 'form-label' },
+	              'Phone'
+	            ),
+	            _react2.default.createElement('input', { type: 'number', placeholder: 'Enter your phone number' }),
+	            _react2.default.createElement(
+	              'select',
+	              null,
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'husker' },
+	                'Design'
+	              ),
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'starbuck' },
+	                'Marketing'
+	              ),
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'hotdog' },
+	                'eCommerce'
+	              ),
+	              _react2.default.createElement(
+	                'option',
+	                { value: 'apollo' },
+	                'Other'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'label',
+	              { className: 'form-label message' },
+	              'Message'
+	            ),
+	            _react2.default.createElement('textarea', { placeholder: 'Leave a message' }),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'row columns' },
+	              _react2.default.createElement(
+	                'button',
+	                { className: 'button expanded', type: 'submit', value: 'Submit' },
+	                'Submit'
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = ContactForm;
+
+/***/ },
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27508,7 +34937,7 @@
 
 	var _reactRouter = __webpack_require__(175);
 
-	var _pageheader = __webpack_require__(246);
+	var _pageheader = __webpack_require__(368);
 
 	var _pageheader2 = _interopRequireDefault(_pageheader);
 
@@ -27559,7 +34988,7 @@
 	          _react2.default.createElement(
 	            'h1',
 	            { className: 'page-sub-heading' },
-	            'Subheading'
+	            'About Us'
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -27568,14 +34997,33 @@
 	              'div',
 	              { className: 'callout small' },
 	              _react2.default.createElement(
-	                'h5',
+	                'dl',
 	                null,
-	                'This is a large callout'
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	                _react2.default.createElement(
+	                  'dt',
+	                  null,
+	                  'Time'
+	                ),
+	                _react2.default.createElement(
+	                  'dd',
+	                  null,
+	                  'The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.'
+	                ),
+	                _react2.default.createElement(
+	                  'dt',
+	                  null,
+	                  'Space'
+	                ),
+	                _react2.default.createElement(
+	                  'dd',
+	                  null,
+	                  'A continuous area or expanse that is free, available, or unoccupied.'
+	                ),
+	                _react2.default.createElement(
+	                  'dd',
+	                  null,
+	                  'The dimensions of height, depth, and width within which all things exist and move.'
+	                )
 	              ),
 	              _react2.default.createElement(
 	                'a',
@@ -27677,23 +35125,317 @@
 	exports.default = About;
 
 /***/ },
-/* 248 */
+/* 371 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(8);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(175);
+
+	var _Social = __webpack_require__(244);
+
+	var _Social2 = _interopRequireDefault(_Social);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SideNav = function (_React$Component) {
+	    _inherits(SideNav, _React$Component);
+
+	    function SideNav() {
+	        _classCallCheck(this, SideNav);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(SideNav).apply(this, arguments));
+	    }
+
+	    _createClass(SideNav, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'off-canvas-wrapper' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'off-canvas-wrapper-inner', 'data-off-canvas-wrapper': true },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'off-canvas position-left', id: 'mainMenu', 'data-off-canvas': true, 'data-position': 'left' },
+	                        _react2.default.createElement(
+	                            'h3',
+	                            { className: 'text-center' },
+	                            'Navigation'
+	                        ),
+	                        _react2.default.createElement(
+	                            'ul',
+	                            { className: 'menu vertical', 'data-drilldown': true },
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Home'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'About Us'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Services'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'a',
+	                                    { href: '#' },
+	                                    'Contact Us'
+	                                )
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'off-canvas-content', 'data-off-canvas-content': true },
+	                        _react2.default.createElement(
+	                            'div',
+	                            null,
+	                            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'header-content' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'row' },
+	                                _react2.default.createElement(
+	                                    'div',
+	                                    { className: 'small-4 medium-4 columns' },
+	                                    _react2.default.createElement(
+	                                        'button',
+	                                        { type: 'button', 'class': 'button', 'data-toggle': 'offCanvasLeft' },
+	                                        'Open Menu'
+	                                    )
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SideNav;
+	}(_react2.default.Component);
+
+	exports.default = SideNav;
+
+/***/ },
+/* 372 */,
+/* 373 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(8);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(175);
+
+	var _pageheader = __webpack_require__(368);
+
+	var _pageheader2 = _interopRequireDefault(_pageheader);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var WebDesign = function (_React$Component) {
+	  _inherits(WebDesign, _React$Component);
+
+	  function WebDesign() {
+	    _classCallCheck(this, WebDesign);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(WebDesign).apply(this, arguments));
+	  }
+
+	  _createClass(WebDesign, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'page-wrapper' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'page-header' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'row columns' },
+	            _react2.default.createElement(
+	              'h1',
+	              { className: 'text-center page-title' },
+	              'Web Design'
+	            ),
+	            _react2.default.createElement(
+	              'h5',
+	              { className: 'page-sub-title text-center' },
+	              'This is the Web Design page'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'h1',
+	            { className: 'page-sub-heading' },
+	            'About Us'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'large-7 columns' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'callout small' },
+	              _react2.default.createElement(
+	                'dl',
+	                null,
+	                _react2.default.createElement(
+	                  'dt',
+	                  null,
+	                  'Time'
+	                ),
+	                _react2.default.createElement(
+	                  'dd',
+	                  null,
+	                  'The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.'
+	                ),
+	                _react2.default.createElement(
+	                  'dt',
+	                  null,
+	                  'Space'
+	                ),
+	                _react2.default.createElement(
+	                  'dd',
+	                  null,
+	                  'A continuous area or expanse that is free, available, or unoccupied.'
+	                ),
+	                _react2.default.createElement(
+	                  'dd',
+	                  null,
+	                  'The dimensions of height, depth, and width within which all things exist and move.'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#' },
+	                'This is a link'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'large-4 columns' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'callout small' },
+	              _react2.default.createElement(
+	                'dl',
+	                null,
+	                _react2.default.createElement(
+	                  'dt',
+	                  null,
+	                  'Time'
+	                ),
+	                _react2.default.createElement(
+	                  'dd',
+	                  null,
+	                  'The indefinite continued progress of existence and events in the past, present, and future regarded as a whole.'
+	                ),
+	                _react2.default.createElement(
+	                  'dt',
+	                  null,
+	                  'Space'
+	                ),
+	                _react2.default.createElement(
+	                  'dd',
+	                  null,
+	                  'A continuous area or expanse that is free, available, or unoccupied.'
+	                ),
+	                _react2.default.createElement(
+	                  'dd',
+	                  null,
+	                  'The dimensions of height, depth, and width within which all things exist and move.'
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return WebDesign;
+	}(_react2.default.Component);
+
+	exports.default = WebDesign;
+
+/***/ },
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(249);
+	var content = __webpack_require__(375);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(251)(content, {});
+	var update = __webpack_require__(377)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(true) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept(249, function() {
-				var newContent = __webpack_require__(249);
+			module.hot.accept(375, function() {
+				var newContent = __webpack_require__(375);
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -27703,23 +35445,23 @@
 	}
 
 /***/ },
-/* 249 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(250)();
+	exports = module.exports = __webpack_require__(376)();
 	// imports
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);", ""]);
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Noto+Sans:700,400);", ""]);
 	exports.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Monoton);", ""]);
 
 	// module
-	exports.push([module.id, "@charset \"UTF-8\";\n/**\n * Foundation for Sites by ZURB\n * Version 6.2.0\n * foundation.zurb.com\n * Licensed under MIT Open Source\n */\n/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */\n/**\n   * 1. Set default font family to sans-serif.\n   * 2. Prevent iOS and IE text size adjust after device orientation change,\n   *    without disabling user zoom.\n   */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/**\n   * Remove default margin.\n   */\nbody {\n  margin: 0; }\n\n/* HTML5 display definitions\n     ========================================================================== */\n/**\n   * Correct `block` display not defined for any HTML5 element in IE 8/9.\n   * Correct `block` display not defined for `details` or `summary` in IE 10/11\n   * and Firefox.\n   * Correct `block` display not defined for `main` in IE 11.\n   */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\n/**\n   * 1. Correct `inline-block` display not defined in IE 8/9.\n   * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.\n   */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n   * Prevent modern browsers from displaying `audio` without controls.\n   * Remove excess height in iOS 5 devices.\n   */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n   * Address `[hidden]` styling not present in IE 8/9/10.\n   * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.\n   */\n[hidden],\ntemplate {\n  display: none; }\n\n/* Links\n     ========================================================================== */\n/**\n   * Remove the gray background color from active links in IE 10.\n   */\na {\n  background-color: transparent; }\n\n/**\n   * Improve readability of focused elements when they are also in an\n   * active/hover state.\n   */\na:active,\na:hover {\n  outline: 0; }\n\n/* Text-level semantics\n     ========================================================================== */\n/**\n   * Address styling not present in IE 8/9/10/11, Safari, and Chrome.\n   */\nabbr[title] {\n  border-bottom: 1px dotted; }\n\n/**\n   * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.\n   */\nb,\nstrong {\n  font-weight: bold; }\n\n/**\n   * Address styling not present in Safari and Chrome.\n   */\ndfn {\n  font-style: italic; }\n\n/**\n   * Address variable `h1` font-size and margin within `section` and `article`\n   * contexts in Firefox 4+, Safari, and Chrome.\n   */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/**\n   * Address styling not present in IE 8/9.\n   */\nmark {\n  background: #ff0;\n  color: #000; }\n\n/**\n   * Address inconsistent and variable font size in all browsers.\n   */\nsmall {\n  font-size: 80%; }\n\n/**\n   * Prevent `sub` and `sup` affecting `line-height` in all browsers.\n   */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsup {\n  top: -0.5em; }\n\nsub {\n  bottom: -0.25em; }\n\n/* Embedded content\n     ========================================================================== */\n/**\n   * Remove border when inside `a` element in IE 8/9/10.\n   */\nimg {\n  border: 0; }\n\n/**\n   * Correct overflow not hidden in IE 9/10/11.\n   */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Grouping content\n     ========================================================================== */\n/**\n   * Address margin not present in IE 8/9 and Safari.\n   */\nfigure {\n  margin: 1em 40px; }\n\n/**\n   * Address differences between Firefox and other browsers.\n   */\nhr {\n  box-sizing: content-box;\n  height: 0; }\n\n/**\n   * Contain overflow in all browsers.\n   */\npre {\n  overflow: auto; }\n\n/**\n   * Address odd `em`-unit font size rendering in all browsers.\n   */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em; }\n\n/* Forms\n     ========================================================================== */\n/**\n   * Known limitation: by default, Chrome and Safari on OS X allow very limited\n   * styling of `select`, unless a `border` property is set.\n   */\n/**\n   * 1. Correct color not being inherited.\n   *    Known issue: affects color of disabled elements.\n   * 2. Correct font properties not being inherited.\n   * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.\n   */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  color: inherit;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n  margin: 0;\n  /* 3 */ }\n\n/**\n   * Address `overflow` set to `hidden` in IE 8/9/10/11.\n   */\nbutton {\n  overflow: visible; }\n\n/**\n   * Address inconsistent `text-transform` inheritance for `button` and `select`.\n   * All other form control elements do not inherit `text-transform` values.\n   * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.\n   * Correct `select` style inheritance in Firefox.\n   */\nbutton,\nselect {\n  text-transform: none; }\n\n/**\n   * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`\n   *    and `video` controls.\n   * 2. Correct inability to style clickable `input` types in iOS.\n   * 3. Improve usability and consistency of cursor style between image-type\n   *    `input` and others.\n   */\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n  cursor: pointer;\n  /* 3 */ }\n\n/**\n   * Re-set default cursor for disabled elements.\n   */\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default; }\n\n/**\n   * Remove inner padding and border in Firefox 4+.\n   */\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\n/**\n   * Address Firefox 4+ setting `line-height` on `input` using `!important` in\n   * the UA stylesheet.\n   */\ninput {\n  line-height: normal; }\n\n/**\n   * It's recommended that you don't attempt to style these elements.\n   * Firefox's implementation doesn't respect box-sizing, padding, or width.\n   *\n   * 1. Address box sizing set to `content-box` in IE 8/9/10.\n   * 2. Remove excess padding in IE 8/9/10.\n   */\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n   * Fix the cursor style for Chrome's increment/decrement buttons. For certain\n   * `font-size` values of the `input`, it causes the cursor style of the\n   * decrement button to change from `default` to `text`.\n   */\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n   * 1. Address `appearance` set to `searchfield` in Safari and Chrome.\n   * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.\n   */\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  box-sizing: content-box;\n  /* 2 */ }\n\n/**\n   * Remove inner padding and search cancel button in Safari and Chrome on OS X.\n   * Safari (but not Chrome) clips the cancel button when the search input has\n   * padding (and `textfield` appearance).\n   */\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n   * Define consistent border, margin, and padding.\n   * [NOTE] We don't enable this ruleset in Foundation, because we want the <fieldset> element to have plain styling.\n   */\n/* fieldset {\n    border: 1px solid #c0c0c0;\n    margin: 0 2px;\n    padding: 0.35em 0.625em 0.75em;\n  } */\n/**\n   * 1. Correct `color` not being inherited in IE 8/9/10/11.\n   * 2. Remove padding so people aren't caught out if they zero out fieldsets.\n   */\nlegend {\n  border: 0;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n   * Remove default vertical scrollbar in IE 8/9/10/11.\n   */\ntextarea {\n  overflow: auto; }\n\n/**\n   * Don't inherit the `font-weight` (applied by a rule above).\n   * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.\n   */\noptgroup {\n  font-weight: bold; }\n\n/* Tables\n     ========================================================================== */\n/**\n   * Remove most spacing between table cells.\n   */\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ntd,\nth {\n  padding: 0; }\n\n.foundation-mq {\n  font-family: \"small=0em&medium=40em&large=64em&xlarge=75em&xxlarge=90em\"; }\n\nhtml {\n  font-size: 100%;\n  box-sizing: border-box; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  padding: 0;\n  margin: 0;\n  font-family: \"Helvetica Neue\", Helvetica, Roboto, Arial, sans-serif;\n  font-weight: normal;\n  line-height: 1.5;\n  color: #0a0a0a;\n  background: #fefefe;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\nimg {\n  max-width: 100%;\n  height: auto;\n  -ms-interpolation-mode: bicubic;\n  display: inline-block;\n  vertical-align: middle; }\n\ntextarea {\n  height: auto;\n  min-height: 50px;\n  border-radius: 0.5rem; }\n\nselect {\n  width: 100%;\n  border-radius: 0.5rem; }\n\n#map_canvas img,\n#map_canvas embed,\n#map_canvas object,\n.map_canvas img,\n.map_canvas embed,\n.map_canvas object,\n.mqa-display img,\n.mqa-display embed,\n.mqa-display object {\n  max-width: none !important; }\n\nbutton {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  background: transparent;\n  padding: 0;\n  border: 0;\n  border-radius: 0.5rem;\n  line-height: 1; }\n\n.is-visible {\n  display: block !important; }\n\n.is-hidden {\n  display: none !important; }\n\n.row {\n  max-width: 75rem;\n  margin-left: auto;\n  margin-right: auto; }\n  .row::before, .row::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .row::after {\n    clear: both; }\n  .row.collapse > .column, .row.collapse > .columns {\n    padding-left: 0;\n    padding-right: 0; }\n  .row .row {\n    margin-left: -0.625rem;\n    margin-right: -0.625rem; }\n    @media screen and (min-width: 40em) {\n      .row .row {\n        margin-left: -0.9375rem;\n        margin-right: -0.9375rem; } }\n    .row .row.collapse {\n      margin-left: 0;\n      margin-right: 0; }\n  .row.expanded {\n    max-width: none; }\n    .row.expanded .row {\n      margin-left: auto;\n      margin-right: auto; }\n\n.column, .columns {\n  width: 100%;\n  float: left;\n  padding-left: 0.625rem;\n  padding-right: 0.625rem; }\n  @media screen and (min-width: 40em) {\n    .column, .columns {\n      padding-left: 0.9375rem;\n      padding-right: 0.9375rem; } }\n  .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {\n    float: right; }\n  .column.end:last-child:last-child, .end.columns:last-child:last-child {\n    float: left; }\n\n.column.row.row, .row.row.columns {\n  float: none; }\n  .row .column.row.row, .row .row.row.columns {\n    padding-left: 0;\n    padding-right: 0;\n    margin-left: 0;\n    margin-right: 0; }\n\n.small-1 {\n  width: 8.33333%; }\n\n.small-push-1 {\n  position: relative;\n  left: 8.33333%; }\n\n.small-pull-1 {\n  position: relative;\n  left: -8.33333%; }\n\n.small-offset-0 {\n  margin-left: 0%; }\n\n.small-2 {\n  width: 16.66667%; }\n\n.small-push-2 {\n  position: relative;\n  left: 16.66667%; }\n\n.small-pull-2 {\n  position: relative;\n  left: -16.66667%; }\n\n.small-offset-1 {\n  margin-left: 8.33333%; }\n\n.small-3 {\n  width: 25%; }\n\n.small-push-3 {\n  position: relative;\n  left: 25%; }\n\n.small-pull-3 {\n  position: relative;\n  left: -25%; }\n\n.small-offset-2 {\n  margin-left: 16.66667%; }\n\n.small-4 {\n  width: 33.33333%; }\n\n.small-push-4 {\n  position: relative;\n  left: 33.33333%; }\n\n.small-pull-4 {\n  position: relative;\n  left: -33.33333%; }\n\n.small-offset-3 {\n  margin-left: 25%; }\n\n.small-5 {\n  width: 41.66667%; }\n\n.small-push-5 {\n  position: relative;\n  left: 41.66667%; }\n\n.small-pull-5 {\n  position: relative;\n  left: -41.66667%; }\n\n.small-offset-4 {\n  margin-left: 33.33333%; }\n\n.small-6 {\n  width: 50%; }\n\n.small-push-6 {\n  position: relative;\n  left: 50%; }\n\n.small-pull-6 {\n  position: relative;\n  left: -50%; }\n\n.small-offset-5 {\n  margin-left: 41.66667%; }\n\n.small-7 {\n  width: 58.33333%; }\n\n.small-push-7 {\n  position: relative;\n  left: 58.33333%; }\n\n.small-pull-7 {\n  position: relative;\n  left: -58.33333%; }\n\n.small-offset-6 {\n  margin-left: 50%; }\n\n.small-8 {\n  width: 66.66667%; }\n\n.small-push-8 {\n  position: relative;\n  left: 66.66667%; }\n\n.small-pull-8 {\n  position: relative;\n  left: -66.66667%; }\n\n.small-offset-7 {\n  margin-left: 58.33333%; }\n\n.small-9 {\n  width: 75%; }\n\n.small-push-9 {\n  position: relative;\n  left: 75%; }\n\n.small-pull-9 {\n  position: relative;\n  left: -75%; }\n\n.small-offset-8 {\n  margin-left: 66.66667%; }\n\n.small-10 {\n  width: 83.33333%; }\n\n.small-push-10 {\n  position: relative;\n  left: 83.33333%; }\n\n.small-pull-10 {\n  position: relative;\n  left: -83.33333%; }\n\n.small-offset-9 {\n  margin-left: 75%; }\n\n.small-11 {\n  width: 91.66667%; }\n\n.small-push-11 {\n  position: relative;\n  left: 91.66667%; }\n\n.small-pull-11 {\n  position: relative;\n  left: -91.66667%; }\n\n.small-offset-10 {\n  margin-left: 83.33333%; }\n\n.small-12 {\n  width: 100%; }\n\n.small-offset-11 {\n  margin-left: 91.66667%; }\n\n.small-up-1 > .column, .small-up-1 > .columns {\n  width: 100%;\n  float: left; }\n  .small-up-1 > .column:nth-of-type(1n), .small-up-1 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-1 > .column:nth-of-type(1n+1), .small-up-1 > .columns:nth-of-type(1n+1) {\n    clear: both; }\n  .small-up-1 > .column:last-child, .small-up-1 > .columns:last-child {\n    float: left; }\n\n.small-up-2 > .column, .small-up-2 > .columns {\n  width: 50%;\n  float: left; }\n  .small-up-2 > .column:nth-of-type(1n), .small-up-2 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-2 > .column:nth-of-type(2n+1), .small-up-2 > .columns:nth-of-type(2n+1) {\n    clear: both; }\n  .small-up-2 > .column:last-child, .small-up-2 > .columns:last-child {\n    float: left; }\n\n.small-up-3 > .column, .small-up-3 > .columns {\n  width: 33.33333%;\n  float: left; }\n  .small-up-3 > .column:nth-of-type(1n), .small-up-3 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-3 > .column:nth-of-type(3n+1), .small-up-3 > .columns:nth-of-type(3n+1) {\n    clear: both; }\n  .small-up-3 > .column:last-child, .small-up-3 > .columns:last-child {\n    float: left; }\n\n.small-up-4 > .column, .small-up-4 > .columns {\n  width: 25%;\n  float: left; }\n  .small-up-4 > .column:nth-of-type(1n), .small-up-4 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-4 > .column:nth-of-type(4n+1), .small-up-4 > .columns:nth-of-type(4n+1) {\n    clear: both; }\n  .small-up-4 > .column:last-child, .small-up-4 > .columns:last-child {\n    float: left; }\n\n.small-up-5 > .column, .small-up-5 > .columns {\n  width: 20%;\n  float: left; }\n  .small-up-5 > .column:nth-of-type(1n), .small-up-5 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-5 > .column:nth-of-type(5n+1), .small-up-5 > .columns:nth-of-type(5n+1) {\n    clear: both; }\n  .small-up-5 > .column:last-child, .small-up-5 > .columns:last-child {\n    float: left; }\n\n.small-up-6 > .column, .small-up-6 > .columns {\n  width: 16.66667%;\n  float: left; }\n  .small-up-6 > .column:nth-of-type(1n), .small-up-6 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-6 > .column:nth-of-type(6n+1), .small-up-6 > .columns:nth-of-type(6n+1) {\n    clear: both; }\n  .small-up-6 > .column:last-child, .small-up-6 > .columns:last-child {\n    float: left; }\n\n.small-up-7 > .column, .small-up-7 > .columns {\n  width: 14.28571%;\n  float: left; }\n  .small-up-7 > .column:nth-of-type(1n), .small-up-7 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-7 > .column:nth-of-type(7n+1), .small-up-7 > .columns:nth-of-type(7n+1) {\n    clear: both; }\n  .small-up-7 > .column:last-child, .small-up-7 > .columns:last-child {\n    float: left; }\n\n.small-up-8 > .column, .small-up-8 > .columns {\n  width: 12.5%;\n  float: left; }\n  .small-up-8 > .column:nth-of-type(1n), .small-up-8 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-8 > .column:nth-of-type(8n+1), .small-up-8 > .columns:nth-of-type(8n+1) {\n    clear: both; }\n  .small-up-8 > .column:last-child, .small-up-8 > .columns:last-child {\n    float: left; }\n\n.small-collapse > .column, .small-collapse > .columns {\n  padding-left: 0;\n  padding-right: 0; }\n\n.small-collapse .row {\n  margin-left: 0;\n  margin-right: 0; }\n\n.small-uncollapse > .column, .small-uncollapse > .columns {\n  padding-left: 0.625rem;\n  padding-right: 0.625rem; }\n\n.small-centered {\n  float: none;\n  margin-left: auto;\n  margin-right: auto; }\n\n.small-uncentered,\n.small-push-0,\n.small-pull-0 {\n  position: static;\n  margin-left: 0;\n  margin-right: 0;\n  float: left; }\n\n@media screen and (min-width: 40em) {\n  .medium-1 {\n    width: 8.33333%; }\n  .medium-push-1 {\n    position: relative;\n    left: 8.33333%; }\n  .medium-pull-1 {\n    position: relative;\n    left: -8.33333%; }\n  .medium-offset-0 {\n    margin-left: 0%; }\n  .medium-2 {\n    width: 16.66667%; }\n  .medium-push-2 {\n    position: relative;\n    left: 16.66667%; }\n  .medium-pull-2 {\n    position: relative;\n    left: -16.66667%; }\n  .medium-offset-1 {\n    margin-left: 8.33333%; }\n  .medium-3 {\n    width: 25%; }\n  .medium-push-3 {\n    position: relative;\n    left: 25%; }\n  .medium-pull-3 {\n    position: relative;\n    left: -25%; }\n  .medium-offset-2 {\n    margin-left: 16.66667%; }\n  .medium-4 {\n    width: 33.33333%; }\n  .medium-push-4 {\n    position: relative;\n    left: 33.33333%; }\n  .medium-pull-4 {\n    position: relative;\n    left: -33.33333%; }\n  .medium-offset-3 {\n    margin-left: 25%; }\n  .medium-5 {\n    width: 41.66667%; }\n  .medium-push-5 {\n    position: relative;\n    left: 41.66667%; }\n  .medium-pull-5 {\n    position: relative;\n    left: -41.66667%; }\n  .medium-offset-4 {\n    margin-left: 33.33333%; }\n  .medium-6 {\n    width: 50%; }\n  .medium-push-6 {\n    position: relative;\n    left: 50%; }\n  .medium-pull-6 {\n    position: relative;\n    left: -50%; }\n  .medium-offset-5 {\n    margin-left: 41.66667%; }\n  .medium-7 {\n    width: 58.33333%; }\n  .medium-push-7 {\n    position: relative;\n    left: 58.33333%; }\n  .medium-pull-7 {\n    position: relative;\n    left: -58.33333%; }\n  .medium-offset-6 {\n    margin-left: 50%; }\n  .medium-8 {\n    width: 66.66667%; }\n  .medium-push-8 {\n    position: relative;\n    left: 66.66667%; }\n  .medium-pull-8 {\n    position: relative;\n    left: -66.66667%; }\n  .medium-offset-7 {\n    margin-left: 58.33333%; }\n  .medium-9 {\n    width: 75%; }\n  .medium-push-9 {\n    position: relative;\n    left: 75%; }\n  .medium-pull-9 {\n    position: relative;\n    left: -75%; }\n  .medium-offset-8 {\n    margin-left: 66.66667%; }\n  .medium-10 {\n    width: 83.33333%; }\n  .medium-push-10 {\n    position: relative;\n    left: 83.33333%; }\n  .medium-pull-10 {\n    position: relative;\n    left: -83.33333%; }\n  .medium-offset-9 {\n    margin-left: 75%; }\n  .medium-11 {\n    width: 91.66667%; }\n  .medium-push-11 {\n    position: relative;\n    left: 91.66667%; }\n  .medium-pull-11 {\n    position: relative;\n    left: -91.66667%; }\n  .medium-offset-10 {\n    margin-left: 83.33333%; }\n  .medium-12 {\n    width: 100%; }\n  .medium-offset-11 {\n    margin-left: 91.66667%; }\n  .medium-up-1 > .column, .medium-up-1 > .columns {\n    width: 100%;\n    float: left; }\n    .medium-up-1 > .column:nth-of-type(1n), .medium-up-1 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-1 > .column:nth-of-type(1n+1), .medium-up-1 > .columns:nth-of-type(1n+1) {\n      clear: both; }\n    .medium-up-1 > .column:last-child, .medium-up-1 > .columns:last-child {\n      float: left; }\n  .medium-up-2 > .column, .medium-up-2 > .columns {\n    width: 50%;\n    float: left; }\n    .medium-up-2 > .column:nth-of-type(1n), .medium-up-2 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-2 > .column:nth-of-type(2n+1), .medium-up-2 > .columns:nth-of-type(2n+1) {\n      clear: both; }\n    .medium-up-2 > .column:last-child, .medium-up-2 > .columns:last-child {\n      float: left; }\n  .medium-up-3 > .column, .medium-up-3 > .columns {\n    width: 33.33333%;\n    float: left; }\n    .medium-up-3 > .column:nth-of-type(1n), .medium-up-3 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-3 > .column:nth-of-type(3n+1), .medium-up-3 > .columns:nth-of-type(3n+1) {\n      clear: both; }\n    .medium-up-3 > .column:last-child, .medium-up-3 > .columns:last-child {\n      float: left; }\n  .medium-up-4 > .column, .medium-up-4 > .columns {\n    width: 25%;\n    float: left; }\n    .medium-up-4 > .column:nth-of-type(1n), .medium-up-4 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-4 > .column:nth-of-type(4n+1), .medium-up-4 > .columns:nth-of-type(4n+1) {\n      clear: both; }\n    .medium-up-4 > .column:last-child, .medium-up-4 > .columns:last-child {\n      float: left; }\n  .medium-up-5 > .column, .medium-up-5 > .columns {\n    width: 20%;\n    float: left; }\n    .medium-up-5 > .column:nth-of-type(1n), .medium-up-5 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-5 > .column:nth-of-type(5n+1), .medium-up-5 > .columns:nth-of-type(5n+1) {\n      clear: both; }\n    .medium-up-5 > .column:last-child, .medium-up-5 > .columns:last-child {\n      float: left; }\n  .medium-up-6 > .column, .medium-up-6 > .columns {\n    width: 16.66667%;\n    float: left; }\n    .medium-up-6 > .column:nth-of-type(1n), .medium-up-6 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-6 > .column:nth-of-type(6n+1), .medium-up-6 > .columns:nth-of-type(6n+1) {\n      clear: both; }\n    .medium-up-6 > .column:last-child, .medium-up-6 > .columns:last-child {\n      float: left; }\n  .medium-up-7 > .column, .medium-up-7 > .columns {\n    width: 14.28571%;\n    float: left; }\n    .medium-up-7 > .column:nth-of-type(1n), .medium-up-7 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-7 > .column:nth-of-type(7n+1), .medium-up-7 > .columns:nth-of-type(7n+1) {\n      clear: both; }\n    .medium-up-7 > .column:last-child, .medium-up-7 > .columns:last-child {\n      float: left; }\n  .medium-up-8 > .column, .medium-up-8 > .columns {\n    width: 12.5%;\n    float: left; }\n    .medium-up-8 > .column:nth-of-type(1n), .medium-up-8 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-8 > .column:nth-of-type(8n+1), .medium-up-8 > .columns:nth-of-type(8n+1) {\n      clear: both; }\n    .medium-up-8 > .column:last-child, .medium-up-8 > .columns:last-child {\n      float: left; }\n  .medium-collapse > .column, .medium-collapse > .columns {\n    padding-left: 0;\n    padding-right: 0; }\n  .medium-collapse .row {\n    margin-left: 0;\n    margin-right: 0; }\n  .medium-uncollapse > .column, .medium-uncollapse > .columns {\n    padding-left: 0.9375rem;\n    padding-right: 0.9375rem; }\n  .medium-centered {\n    float: none;\n    margin-left: auto;\n    margin-right: auto; }\n  .medium-uncentered,\n  .medium-push-0,\n  .medium-pull-0 {\n    position: static;\n    margin-left: 0;\n    margin-right: 0;\n    float: left; } }\n\n@media screen and (min-width: 64em) {\n  .large-1 {\n    width: 8.33333%; }\n  .large-push-1 {\n    position: relative;\n    left: 8.33333%; }\n  .large-pull-1 {\n    position: relative;\n    left: -8.33333%; }\n  .large-offset-0 {\n    margin-left: 0%; }\n  .large-2 {\n    width: 16.66667%; }\n  .large-push-2 {\n    position: relative;\n    left: 16.66667%; }\n  .large-pull-2 {\n    position: relative;\n    left: -16.66667%; }\n  .large-offset-1 {\n    margin-left: 8.33333%; }\n  .large-3 {\n    width: 25%; }\n  .large-push-3 {\n    position: relative;\n    left: 25%; }\n  .large-pull-3 {\n    position: relative;\n    left: -25%; }\n  .large-offset-2 {\n    margin-left: 16.66667%; }\n  .large-4 {\n    width: 33.33333%; }\n  .large-push-4 {\n    position: relative;\n    left: 33.33333%; }\n  .large-pull-4 {\n    position: relative;\n    left: -33.33333%; }\n  .large-offset-3 {\n    margin-left: 25%; }\n  .large-5 {\n    width: 41.66667%; }\n  .large-push-5 {\n    position: relative;\n    left: 41.66667%; }\n  .large-pull-5 {\n    position: relative;\n    left: -41.66667%; }\n  .large-offset-4 {\n    margin-left: 33.33333%; }\n  .large-6 {\n    width: 50%; }\n  .large-push-6 {\n    position: relative;\n    left: 50%; }\n  .large-pull-6 {\n    position: relative;\n    left: -50%; }\n  .large-offset-5 {\n    margin-left: 41.66667%; }\n  .large-7 {\n    width: 58.33333%; }\n  .large-push-7 {\n    position: relative;\n    left: 58.33333%; }\n  .large-pull-7 {\n    position: relative;\n    left: -58.33333%; }\n  .large-offset-6 {\n    margin-left: 50%; }\n  .large-8 {\n    width: 66.66667%; }\n  .large-push-8 {\n    position: relative;\n    left: 66.66667%; }\n  .large-pull-8 {\n    position: relative;\n    left: -66.66667%; }\n  .large-offset-7 {\n    margin-left: 58.33333%; }\n  .large-9 {\n    width: 75%; }\n  .large-push-9 {\n    position: relative;\n    left: 75%; }\n  .large-pull-9 {\n    position: relative;\n    left: -75%; }\n  .large-offset-8 {\n    margin-left: 66.66667%; }\n  .large-10 {\n    width: 83.33333%; }\n  .large-push-10 {\n    position: relative;\n    left: 83.33333%; }\n  .large-pull-10 {\n    position: relative;\n    left: -83.33333%; }\n  .large-offset-9 {\n    margin-left: 75%; }\n  .large-11 {\n    width: 91.66667%; }\n  .large-push-11 {\n    position: relative;\n    left: 91.66667%; }\n  .large-pull-11 {\n    position: relative;\n    left: -91.66667%; }\n  .large-offset-10 {\n    margin-left: 83.33333%; }\n  .large-12 {\n    width: 100%; }\n  .large-offset-11 {\n    margin-left: 91.66667%; }\n  .large-up-1 > .column, .large-up-1 > .columns {\n    width: 100%;\n    float: left; }\n    .large-up-1 > .column:nth-of-type(1n), .large-up-1 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-1 > .column:nth-of-type(1n+1), .large-up-1 > .columns:nth-of-type(1n+1) {\n      clear: both; }\n    .large-up-1 > .column:last-child, .large-up-1 > .columns:last-child {\n      float: left; }\n  .large-up-2 > .column, .large-up-2 > .columns {\n    width: 50%;\n    float: left; }\n    .large-up-2 > .column:nth-of-type(1n), .large-up-2 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-2 > .column:nth-of-type(2n+1), .large-up-2 > .columns:nth-of-type(2n+1) {\n      clear: both; }\n    .large-up-2 > .column:last-child, .large-up-2 > .columns:last-child {\n      float: left; }\n  .large-up-3 > .column, .large-up-3 > .columns {\n    width: 33.33333%;\n    float: left; }\n    .large-up-3 > .column:nth-of-type(1n), .large-up-3 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-3 > .column:nth-of-type(3n+1), .large-up-3 > .columns:nth-of-type(3n+1) {\n      clear: both; }\n    .large-up-3 > .column:last-child, .large-up-3 > .columns:last-child {\n      float: left; }\n  .large-up-4 > .column, .large-up-4 > .columns {\n    width: 25%;\n    float: left; }\n    .large-up-4 > .column:nth-of-type(1n), .large-up-4 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-4 > .column:nth-of-type(4n+1), .large-up-4 > .columns:nth-of-type(4n+1) {\n      clear: both; }\n    .large-up-4 > .column:last-child, .large-up-4 > .columns:last-child {\n      float: left; }\n  .large-up-5 > .column, .large-up-5 > .columns {\n    width: 20%;\n    float: left; }\n    .large-up-5 > .column:nth-of-type(1n), .large-up-5 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-5 > .column:nth-of-type(5n+1), .large-up-5 > .columns:nth-of-type(5n+1) {\n      clear: both; }\n    .large-up-5 > .column:last-child, .large-up-5 > .columns:last-child {\n      float: left; }\n  .large-up-6 > .column, .large-up-6 > .columns {\n    width: 16.66667%;\n    float: left; }\n    .large-up-6 > .column:nth-of-type(1n), .large-up-6 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-6 > .column:nth-of-type(6n+1), .large-up-6 > .columns:nth-of-type(6n+1) {\n      clear: both; }\n    .large-up-6 > .column:last-child, .large-up-6 > .columns:last-child {\n      float: left; }\n  .large-up-7 > .column, .large-up-7 > .columns {\n    width: 14.28571%;\n    float: left; }\n    .large-up-7 > .column:nth-of-type(1n), .large-up-7 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-7 > .column:nth-of-type(7n+1), .large-up-7 > .columns:nth-of-type(7n+1) {\n      clear: both; }\n    .large-up-7 > .column:last-child, .large-up-7 > .columns:last-child {\n      float: left; }\n  .large-up-8 > .column, .large-up-8 > .columns {\n    width: 12.5%;\n    float: left; }\n    .large-up-8 > .column:nth-of-type(1n), .large-up-8 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-8 > .column:nth-of-type(8n+1), .large-up-8 > .columns:nth-of-type(8n+1) {\n      clear: both; }\n    .large-up-8 > .column:last-child, .large-up-8 > .columns:last-child {\n      float: left; }\n  .large-collapse > .column, .large-collapse > .columns {\n    padding-left: 0;\n    padding-right: 0; }\n  .large-collapse .row {\n    margin-left: 0;\n    margin-right: 0; }\n  .large-uncollapse > .column, .large-uncollapse > .columns {\n    padding-left: 0.9375rem;\n    padding-right: 0.9375rem; }\n  .large-centered {\n    float: none;\n    margin-left: auto;\n    margin-right: auto; }\n  .large-uncentered,\n  .large-push-0,\n  .large-pull-0 {\n    position: static;\n    margin-left: 0;\n    margin-right: 0;\n    float: left; } }\n\ndiv,\ndl,\ndt,\ndd,\nul,\nol,\nli,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\npre,\nform,\np,\nblockquote,\nth,\ntd {\n  margin: 0;\n  padding: 0; }\n\np {\n  font-size: inherit;\n  line-height: 1.6;\n  margin-bottom: 1rem;\n  text-rendering: optimizeLegibility; }\n\nem,\ni {\n  font-style: italic;\n  line-height: inherit; }\n\nstrong,\nb {\n  font-weight: bold;\n  line-height: inherit; }\n\nsmall {\n  font-size: 80%;\n  line-height: inherit; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: normal;\n  font-style: normal;\n  color: inherit;\n  text-rendering: optimizeLegibility;\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n  line-height: 1.4; }\n  h1 small,\n  h2 small,\n  h3 small,\n  h4 small,\n  h5 small,\n  h6 small {\n    color: #cacaca;\n    line-height: 0; }\n\nh1 {\n  font-size: 1.5rem; }\n\nh2 {\n  font-size: 1.25rem; }\n\nh3 {\n  font-size: 1.1875rem; }\n\nh4 {\n  font-size: 1.125rem; }\n\nh5 {\n  font-size: 1.0625rem; }\n\nh6 {\n  font-size: 1rem; }\n\n@media screen and (min-width: 40em) {\n  h1 {\n    font-size: 3rem; }\n  h2 {\n    font-size: 2.5rem; }\n  h3 {\n    font-size: 1.9375rem; }\n  h4 {\n    font-size: 1.5625rem; }\n  h5 {\n    font-size: 1.25rem; }\n  h6 {\n    font-size: 1rem; } }\n\na {\n  color: #2199e8;\n  text-decoration: none;\n  line-height: inherit;\n  cursor: pointer; }\n  a:hover, a:focus {\n    color: #1585cf; }\n  a img {\n    border: 0; }\n\nhr {\n  max-width: 75rem;\n  height: 0;\n  border-right: 0;\n  border-top: 0;\n  border-bottom: 1px solid #cacaca;\n  border-left: 0;\n  margin: 1.25rem auto;\n  clear: both; }\n\nul,\nol,\ndl {\n  line-height: 1.6;\n  margin-bottom: 1rem;\n  list-style-position: outside; }\n\nli {\n  font-size: inherit; }\n\nul {\n  list-style-type: disc;\n  margin-left: 1.25rem; }\n\nol {\n  margin-left: 1.25rem; }\n\nul ul, ol ul, ul ol, ol ol {\n  margin-left: 1.25rem;\n  margin-bottom: 0; }\n\ndl {\n  margin-bottom: 1rem; }\n  dl dt {\n    margin-bottom: 0.3rem;\n    font-weight: bold; }\n\nblockquote {\n  margin: 0 0 1rem;\n  padding: 0.5625rem 1.25rem 0 1.1875rem;\n  border-left: 1px solid #cacaca; }\n  blockquote, blockquote p {\n    line-height: 1.6;\n    color: #8a8a8a; }\n\ncite {\n  display: block;\n  font-size: 0.8125rem;\n  color: #8a8a8a; }\n  cite:before {\n    content: '\\2014    '; }\n\nabbr {\n  color: #0a0a0a;\n  cursor: help;\n  border-bottom: 1px dotted #0a0a0a; }\n\ncode {\n  font-family: Consolas, \"Liberation Mono\", Courier, monospace;\n  font-weight: normal;\n  color: #0a0a0a;\n  background-color: #e6e6e6;\n  border: 1px solid #cacaca;\n  padding: 0.125rem 0.3125rem 0.0625rem; }\n\nkbd {\n  padding: 0.125rem 0.25rem 0;\n  margin: 0;\n  background-color: #e6e6e6;\n  color: #0a0a0a;\n  font-family: Consolas, \"Liberation Mono\", Courier, monospace;\n  border-radius: 0.5rem; }\n\n.subheader {\n  margin-top: 0.2rem;\n  margin-bottom: 0.5rem;\n  font-weight: normal;\n  line-height: 1.4;\n  color: #8a8a8a; }\n\n.lead {\n  font-size: 125%;\n  line-height: 1.6; }\n\n.stat {\n  font-size: 2.5rem;\n  line-height: 1; }\n  p + .stat {\n    margin-top: -1rem; }\n\n.no-bullet {\n  margin-left: 0;\n  list-style: none; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.text-justify {\n  text-align: justify; }\n\n@media screen and (min-width: 40em) {\n  .medium-text-left {\n    text-align: left; }\n  .medium-text-right {\n    text-align: right; }\n  .medium-text-center {\n    text-align: center; }\n  .medium-text-justify {\n    text-align: justify; } }\n\n@media screen and (min-width: 64em) {\n  .large-text-left {\n    text-align: left; }\n  .large-text-right {\n    text-align: right; }\n  .large-text-center {\n    text-align: center; }\n  .large-text-justify {\n    text-align: justify; } }\n\n.show-for-print {\n  display: none !important; }\n\n@media print {\n  * {\n    background: transparent !important;\n    color: black !important;\n    box-shadow: none !important;\n    text-shadow: none !important; }\n  .show-for-print {\n    display: block !important; }\n  .hide-for-print {\n    display: none !important; }\n  table.show-for-print {\n    display: table !important; }\n  thead.show-for-print {\n    display: table-header-group !important; }\n  tbody.show-for-print {\n    display: table-row-group !important; }\n  tr.show-for-print {\n    display: table-row !important; }\n  td.show-for-print {\n    display: table-cell !important; }\n  th.show-for-print {\n    display: table-cell !important; }\n  a,\n  a:visited {\n    text-decoration: underline; }\n  a[href]:after {\n    content: \" (\" attr(href) \")\"; }\n  .ir a:after,\n  a[href^='javascript:']:after,\n  a[href^='#']:after {\n    content: ''; }\n  abbr[title]:after {\n    content: \" (\" attr(title) \")\"; }\n  pre,\n  blockquote {\n    border: 1px solid #8a8a8a;\n    page-break-inside: avoid; }\n  thead {\n    display: table-header-group; }\n  tr,\n  img {\n    page-break-inside: avoid; }\n  img {\n    max-width: 100% !important; }\n  @page {\n    margin: 0.5cm; }\n  p,\n  h2,\n  h3 {\n    orphans: 3;\n    widows: 3; }\n  h2,\n  h3 {\n    page-break-after: avoid; } }\n\n[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],\ntextarea {\n  display: block;\n  box-sizing: border-box;\n  width: 100%;\n  height: 2.4375rem;\n  padding: 0.5rem;\n  border: 1px solid #cacaca;\n  margin: 0 0 1rem;\n  font-family: inherit;\n  font-size: 1rem;\n  color: #0a0a0a;\n  background-color: #fefefe;\n  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);\n  border-radius: 0.5rem;\n  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;\n  -webkit-appearance: none;\n  -moz-appearance: none; }\n  [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus,\n  textarea:focus {\n    border: 1px solid #8a8a8a;\n    background-color: #fefefe;\n    outline: none;\n    box-shadow: 0 0 5px #cacaca;\n    transition: box-shadow 0.5s, border-color 0.25s ease-in-out; }\n\ntextarea {\n  max-width: 100%; }\n  textarea[rows] {\n    height: auto; }\n\ninput::placeholder,\ntextarea::placeholder {\n  color: #cacaca; }\n\ninput:disabled, input[readonly],\ntextarea:disabled,\ntextarea[readonly] {\n  background-color: #e6e6e6;\n  cursor: not-allowed; }\n\n[type='submit'],\n[type='button'] {\n  border-radius: 0.5rem;\n  -webkit-appearance: none;\n  -moz-appearance: none; }\n\ninput[type='search'] {\n  box-sizing: border-box; }\n\n[type='file'],\n[type='checkbox'],\n[type='radio'] {\n  margin: 0 0 1rem; }\n\n[type='checkbox'] + label,\n[type='radio'] + label {\n  display: inline-block;\n  margin-left: 0.5rem;\n  margin-right: 1rem;\n  margin-bottom: 0;\n  vertical-align: baseline; }\n\nlabel > [type='checkbox'],\nlabel > [type='radio'] {\n  margin-right: 0.5rem; }\n\n[type='file'] {\n  width: 100%; }\n\nlabel {\n  display: block;\n  margin: 0;\n  font-size: 0.875rem;\n  font-weight: normal;\n  line-height: 1.8;\n  color: #0a0a0a; }\n  label.middle {\n    margin: 0 0 1rem;\n    padding: 0.5625rem 0; }\n\n.help-text {\n  margin-top: -0.5rem;\n  font-size: 0.8125rem;\n  font-style: italic;\n  color: #0a0a0a; }\n\n.input-group {\n  display: table;\n  width: 100%;\n  margin-bottom: 1rem; }\n  .input-group > :first-child {\n    border-radius: 0.5rem 0 0 0.5rem; }\n  .input-group > :last-child > * {\n    border-radius: 0 0.5rem 0.5rem 0; }\n\n.input-group-label, .input-group-field, .input-group-button {\n  margin: 0;\n  display: table-cell;\n  vertical-align: middle; }\n\n.input-group-label {\n  text-align: center;\n  padding: 0 1rem;\n  background: #e6e6e6;\n  color: #0a0a0a;\n  border: 1px solid #cacaca;\n  white-space: nowrap;\n  width: 1%;\n  height: 100%; }\n  .input-group-label:first-child {\n    border-right: 0; }\n  .input-group-label:last-child {\n    border-left: 0; }\n\n.input-group-field {\n  border-radius: 0;\n  height: 2.5rem; }\n\n.input-group-button {\n  padding-top: 0;\n  padding-bottom: 0;\n  text-align: center;\n  height: 100%;\n  width: 1%; }\n  .input-group-button a,\n  .input-group-button input,\n  .input-group-button button {\n    margin: 0; }\n\n.input-group .input-group-button {\n  display: table-cell; }\n\nfieldset {\n  border: 0;\n  padding: 0;\n  margin: 0; }\n\nlegend {\n  margin-bottom: 0.5rem;\n  max-width: 100%; }\n\n.fieldset {\n  border: 1px solid #cacaca;\n  padding: 1.25rem;\n  margin: 1.125rem 0; }\n  .fieldset legend {\n    background: #fefefe;\n    padding: 0 0.1875rem;\n    margin: 0;\n    margin-left: -0.1875rem; }\n\nselect {\n  height: 2.4375rem;\n  padding: 0.5rem;\n  border: 1px solid #cacaca;\n  margin: 0 0 1rem;\n  font-size: 1rem;\n  font-family: inherit;\n  line-height: normal;\n  color: #0a0a0a;\n  background-color: #fefefe;\n  border-radius: 0.5rem;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"32\" height=\"24\" viewBox=\"0 0 32 24\"><polygon points=\"0,0 32,0 16,24\" style=\"fill: rgb%28138, 138, 138%29\"></polygon></svg>');\n  background-size: 9px 6px;\n  background-position: right center;\n  background-origin: content-box;\n  background-repeat: no-repeat; }\n  @media screen and (min-width: 0\\0) {\n    select {\n      background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==\"); } }\n  select:disabled {\n    background-color: #e6e6e6;\n    cursor: not-allowed; }\n  select::-ms-expand {\n    display: none; }\n  select[multiple] {\n    height: auto; }\n\n.is-invalid-input:not(:focus) {\n  background-color: rgba(236, 88, 64, 0.1);\n  border-color: #ec5840; }\n\n.is-invalid-label {\n  color: #ec5840; }\n\n.form-error {\n  display: none;\n  margin-top: -0.5rem;\n  margin-bottom: 1rem;\n  font-size: 0.75rem;\n  font-weight: bold;\n  color: #ec5840; }\n  .form-error.is-visible {\n    display: block; }\n\n.button {\n  display: inline-block;\n  text-align: center;\n  line-height: 1;\n  cursor: pointer;\n  -webkit-appearance: none;\n  transition: background-color 0.25s ease-out, color 0.25s ease-out;\n  vertical-align: middle;\n  border: 1px solid transparent;\n  border-radius: 0.5rem;\n  padding: 0.85em 1em;\n  margin: 0 0 1rem 0;\n  font-size: 0.9rem;\n  background-color: #2199e8;\n  color: #fefefe; }\n  [data-whatinput='mouse'] .button {\n    outline: 0; }\n  .button:hover, .button:focus {\n    background-color: #1583cc;\n    color: #fefefe; }\n  .button.tiny {\n    font-size: 0.6rem; }\n  .button.small {\n    font-size: 0.75rem; }\n  .button.large {\n    font-size: 1.25rem; }\n  .button.expanded {\n    display: block;\n    width: 100%;\n    margin-left: 0;\n    margin-right: 0; }\n  .button.primary {\n    background-color: #2199e8;\n    color: #fefefe; }\n    .button.primary:hover, .button.primary:focus {\n      background-color: #147cc0;\n      color: #fefefe; }\n  .button.secondary {\n    background-color: #777;\n    color: #fefefe; }\n    .button.secondary:hover, .button.secondary:focus {\n      background-color: #5f5f5f;\n      color: #fefefe; }\n  .button.success {\n    background-color: #3adb76;\n    color: #fefefe; }\n    .button.success:hover, .button.success:focus {\n      background-color: #22bb5b;\n      color: #fefefe; }\n  .button.warning {\n    background-color: #ffae00;\n    color: #fefefe; }\n    .button.warning:hover, .button.warning:focus {\n      background-color: #cc8b00;\n      color: #fefefe; }\n  .button.alert {\n    background-color: #ec5840;\n    color: #fefefe; }\n    .button.alert:hover, .button.alert:focus {\n      background-color: #da3116;\n      color: #fefefe; }\n  .button.hollow {\n    border: 1px solid #2199e8;\n    color: #2199e8; }\n    .button.hollow, .button.hollow:hover, .button.hollow:focus {\n      background-color: transparent; }\n    .button.hollow:hover, .button.hollow:focus {\n      border-color: #0c4d78;\n      color: #0c4d78; }\n    .button.hollow.primary {\n      border: 1px solid #2199e8;\n      color: #2199e8; }\n      .button.hollow.primary:hover, .button.hollow.primary:focus {\n        border-color: #0c4d78;\n        color: #0c4d78; }\n    .button.hollow.secondary {\n      border: 1px solid #777;\n      color: #777; }\n      .button.hollow.secondary:hover, .button.hollow.secondary:focus {\n        border-color: #3c3c3c;\n        color: #3c3c3c; }\n    .button.hollow.success {\n      border: 1px solid #3adb76;\n      color: #3adb76; }\n      .button.hollow.success:hover, .button.hollow.success:focus {\n        border-color: #157539;\n        color: #157539; }\n    .button.hollow.warning {\n      border: 1px solid #ffae00;\n      color: #ffae00; }\n      .button.hollow.warning:hover, .button.hollow.warning:focus {\n        border-color: #805700;\n        color: #805700; }\n    .button.hollow.alert {\n      border: 1px solid #ec5840;\n      color: #ec5840; }\n      .button.hollow.alert:hover, .button.hollow.alert:focus {\n        border-color: #881f0e;\n        color: #881f0e; }\n  .button.disabled, .button[disabled] {\n    opacity: 0.25;\n    cursor: not-allowed;\n    pointer-events: none; }\n  .button.dropdown::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 0.4em;\n    border-color: #fefefe transparent transparent;\n    border-top-style: solid;\n    border-bottom-width: 0;\n    position: relative;\n    top: 0.4em;\n    float: right;\n    margin-left: 1em;\n    display: inline-block; }\n  .button.arrow-only::after {\n    margin-left: 0;\n    float: none;\n    top: -0.1em; }\n\n.accordion {\n  list-style-type: none;\n  background: #fefefe;\n  border: 1px solid #e6e6e6;\n  border-bottom: 0;\n  border-radius: 0.5rem;\n  margin-left: 0; }\n\n.accordion-title {\n  display: block;\n  padding: 1.25rem 1rem;\n  line-height: 1;\n  font-size: 0.75rem;\n  color: #2199e8;\n  position: relative;\n  border-bottom: 1px solid #e6e6e6; }\n  .accordion-title:hover, .accordion-title:focus {\n    background-color: #e6e6e6; }\n  .accordion-title::before {\n    content: '+';\n    position: absolute;\n    right: 1rem;\n    top: 50%;\n    margin-top: -0.5rem; }\n  .is-active > .accordion-title::before {\n    content: '\\2013'; }\n\n.accordion-content {\n  padding: 1rem;\n  display: none;\n  border-bottom: 1px solid #e6e6e6;\n  background-color: #fefefe; }\n\n.is-accordion-submenu-parent > a {\n  position: relative; }\n  .is-accordion-submenu-parent > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 6px;\n    border-color: #2199e8 transparent transparent;\n    border-top-style: solid;\n    border-bottom-width: 0;\n    position: absolute;\n    top: 50%;\n    margin-top: -4px;\n    right: 1rem; }\n\n.is-accordion-submenu-parent[aria-expanded='true'] > a::after {\n  transform-origin: 50% 50%;\n  transform: scaleY(-1); }\n\n.badge {\n  display: inline-block;\n  padding: 0.3em;\n  min-width: 2.1em;\n  font-size: 0.6rem;\n  text-align: center;\n  border-radius: 50%;\n  background: #2199e8;\n  color: #fefefe; }\n  .badge.secondary {\n    background: #777;\n    color: #fefefe; }\n  .badge.success {\n    background: #3adb76;\n    color: #fefefe; }\n  .badge.warning {\n    background: #ffae00;\n    color: #fefefe; }\n  .badge.alert {\n    background: #ec5840;\n    color: #fefefe; }\n\n.breadcrumbs {\n  list-style: none;\n  margin: 0 0 1rem 0; }\n  .breadcrumbs::before, .breadcrumbs::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .breadcrumbs::after {\n    clear: both; }\n  .breadcrumbs li {\n    float: left;\n    color: #0a0a0a;\n    font-size: 0.6875rem;\n    cursor: default;\n    text-transform: uppercase; }\n    .breadcrumbs li:not(:last-child)::after {\n      color: #cacaca;\n      content: \"/\";\n      margin: 0 0.75rem;\n      position: relative;\n      top: 1px;\n      opacity: 1; }\n  .breadcrumbs a {\n    color: #2199e8; }\n    .breadcrumbs a:hover {\n      text-decoration: underline; }\n  .breadcrumbs .disabled {\n    color: #cacaca; }\n\n.button-group {\n  margin-bottom: 1rem;\n  font-size: 0; }\n  .button-group::before, .button-group::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .button-group::after {\n    clear: both; }\n  .button-group .button {\n    margin: 0;\n    font-size: 0.9rem;\n    float: left; }\n    .button-group .button:not(:last-child) {\n      border-right: 1px solid #fefefe; }\n  .button-group.tiny .button {\n    font-size: 0.6rem; }\n  .button-group.small .button {\n    font-size: 0.75rem; }\n  .button-group.large .button {\n    font-size: 1.25rem; }\n  .button-group.expanded {\n    margin-right: -1px; }\n    .button-group.expanded::before, .button-group.expanded::after {\n      display: none; }\n    .button-group.expanded .button:first-child:nth-last-child(2), .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button {\n      display: inline-block;\n      width: calc(50% - 1px);\n      margin-right: 1px; }\n    .button-group.expanded .button:first-child:nth-last-child(3), .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button {\n      display: inline-block;\n      width: calc(33.33333% - 1px);\n      margin-right: 1px; }\n    .button-group.expanded .button:first-child:nth-last-child(4), .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button {\n      display: inline-block;\n      width: calc(25% - 1px);\n      margin-right: 1px; }\n    .button-group.expanded .button:first-child:nth-last-child(5), .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button {\n      display: inline-block;\n      width: calc(20% - 1px);\n      margin-right: 1px; }\n    .button-group.expanded .button:first-child:nth-last-child(6), .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button {\n      display: inline-block;\n      width: calc(16.66667% - 1px);\n      margin-right: 1px; }\n  .button-group.primary .button {\n    background-color: #2199e8;\n    color: #fefefe; }\n    .button-group.primary .button:hover, .button-group.primary .button:focus {\n      background-color: #147cc0;\n      color: #fefefe; }\n  .button-group.secondary .button {\n    background-color: #777;\n    color: #fefefe; }\n    .button-group.secondary .button:hover, .button-group.secondary .button:focus {\n      background-color: #5f5f5f;\n      color: #fefefe; }\n  .button-group.success .button {\n    background-color: #3adb76;\n    color: #fefefe; }\n    .button-group.success .button:hover, .button-group.success .button:focus {\n      background-color: #22bb5b;\n      color: #fefefe; }\n  .button-group.warning .button {\n    background-color: #ffae00;\n    color: #fefefe; }\n    .button-group.warning .button:hover, .button-group.warning .button:focus {\n      background-color: #cc8b00;\n      color: #fefefe; }\n  .button-group.alert .button {\n    background-color: #ec5840;\n    color: #fefefe; }\n    .button-group.alert .button:hover, .button-group.alert .button:focus {\n      background-color: #da3116;\n      color: #fefefe; }\n  .button-group.stacked .button, .button-group.stacked-for-small .button, .button-group.stacked-for-medium .button {\n    width: 100%; }\n    .button-group.stacked .button:not(:last-child), .button-group.stacked-for-small .button:not(:last-child), .button-group.stacked-for-medium .button:not(:last-child) {\n      margin-right: 0; }\n  @media screen and (min-width: 40em) {\n    .button-group.stacked-for-small .button {\n      width: auto; }\n      .button-group.stacked-for-small .button:not(:last-child) {\n        margin-right: 1px; } }\n  @media screen and (min-width: 64em) {\n    .button-group.stacked-for-medium .button {\n      width: auto; }\n      .button-group.stacked-for-medium .button:not(:last-child) {\n        margin-right: 1px; } }\n  @media screen and (max-width: 39.9375em) {\n    .button-group.stacked-for-small.expanded {\n      display: block; }\n      .button-group.stacked-for-small.expanded .button {\n        display: block;\n        margin-right: 0; } }\n\n.callout {\n  margin: 0 0 1rem 0;\n  padding: 100rem;\n  border: 1px solid rgba(10, 10, 10, 0.25);\n  border-radius: 0.5rem;\n  position: relative;\n  color: #0a0a0a;\n  background-color: white; }\n  .callout > :first-child {\n    margin-top: 0; }\n  .callout > :last-child {\n    margin-bottom: 0; }\n  .callout.primary {\n    background-color: #def0fc; }\n  .callout.secondary {\n    background-color: #ebebeb; }\n  .callout.success {\n    background-color: #e1faea; }\n  .callout.warning {\n    background-color: #fff3d9; }\n  .callout.alert {\n    background-color: #fce6e2; }\n  .callout.small {\n    padding-top: 0.5rem;\n    padding-right: 0.5rem;\n    padding-bottom: 0.5rem;\n    padding-left: 0.5rem; }\n  .callout.large {\n    padding-top: 3rem;\n    padding-right: 3rem;\n    padding-bottom: 3rem;\n    padding-left: 3rem; }\n\n.close-button {\n  position: absolute;\n  color: #8a8a8a;\n  right: 1rem;\n  top: 0.5rem;\n  font-size: 2em;\n  line-height: 1;\n  cursor: pointer; }\n  [data-whatinput='mouse'] .close-button {\n    outline: 0; }\n  .close-button:hover, .close-button:focus {\n    color: #0a0a0a; }\n\n.menu {\n  margin: 0;\n  list-style-type: none; }\n  .menu > li {\n    display: table-cell;\n    vertical-align: middle; }\n    [data-whatinput='mouse'] .menu > li {\n      outline: 0; }\n  .menu > li > a {\n    display: block;\n    padding: 0.7rem 1rem;\n    line-height: 1; }\n  .menu input,\n  .menu a,\n  .menu button {\n    margin-bottom: 0; }\n  .menu > li > a img,\n  .menu > li > a i {\n    vertical-align: middle; }\n  .menu > li > a i + span,\n  .menu > li > a img + span {\n    vertical-align: middle; }\n  .menu > li > a img,\n  .menu > li > a i {\n    margin-right: 0.25rem;\n    display: inline-block; }\n  .menu > li {\n    display: table-cell; }\n  .menu.vertical > li {\n    display: block; }\n  @media screen and (min-width: 40em) {\n    .menu.medium-horizontal > li {\n      display: table-cell; }\n    .menu.medium-vertical > li {\n      display: block; } }\n  @media screen and (min-width: 64em) {\n    .menu.large-horizontal > li {\n      display: table-cell; }\n    .menu.large-vertical > li {\n      display: block; } }\n  .menu.simple li {\n    line-height: 1;\n    display: inline-block;\n    margin-right: 1rem; }\n  .menu.simple a {\n    padding: 0; }\n  .menu.align-right::before, .menu.align-right::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .menu.align-right::after {\n    clear: both; }\n  .menu.align-right > li {\n    float: right; }\n  .menu.expanded {\n    width: 100%;\n    display: table;\n    table-layout: fixed; }\n    .menu.expanded > li:first-child:last-child {\n      width: 100%; }\n  .menu.icon-top > li > a {\n    text-align: center; }\n    .menu.icon-top > li > a img,\n    .menu.icon-top > li > a i {\n      display: block;\n      margin: 0 auto 0.25rem; }\n  .menu.nested {\n    margin-left: 1rem; }\n  .menu .active > a {\n    color: #fefefe;\n    background: #2199e8; }\n\n.menu-text {\n  font-weight: bold;\n  color: inherit;\n  line-height: 1;\n  padding-top: 0;\n  padding-bottom: 0;\n  padding: 0.7rem 1rem; }\n\n.menu-centered {\n  text-align: center; }\n  .menu-centered > .menu {\n    display: inline-block; }\n\n.no-js [data-responsive-menu] ul {\n  display: none; }\n\n.menu-icon {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle;\n  cursor: pointer;\n  width: 20px;\n  height: 16px; }\n  .menu-icon::after {\n    content: '';\n    position: absolute;\n    display: block;\n    width: 100%;\n    height: 2px;\n    background: #fefefe;\n    top: 0;\n    left: 0;\n    box-shadow: 0 7px 0 #fefefe, 0 14px 0 #fefefe; }\n  .menu-icon:hover::after {\n    background: #cacaca;\n    box-shadow: 0 7px 0 #cacaca, 0 14px 0 #cacaca; }\n\n.menu-icon.dark {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle;\n  cursor: pointer;\n  width: 20px;\n  height: 16px; }\n  .menu-icon.dark::after {\n    content: '';\n    position: absolute;\n    display: block;\n    width: 100%;\n    height: 2px;\n    background: #0a0a0a;\n    top: 0;\n    left: 0;\n    box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a; }\n  .menu-icon.dark:hover::after {\n    background: #8a8a8a;\n    box-shadow: 0 7px 0 #8a8a8a, 0 14px 0 #8a8a8a; }\n\n.is-drilldown {\n  position: relative;\n  overflow: hidden; }\n  .is-drilldown li {\n    display: block !important; }\n\n.is-drilldown-submenu {\n  position: absolute;\n  top: 0;\n  left: 100%;\n  z-index: -1;\n  height: 100%;\n  width: 100%;\n  background: #fefefe;\n  transition: transform 0.15s linear; }\n  .is-drilldown-submenu.is-active {\n    z-index: 1;\n    display: block;\n    transform: translateX(-100%); }\n  .is-drilldown-submenu.is-closing {\n    transform: translateX(100%); }\n\n.is-drilldown-submenu-parent > a {\n  position: relative; }\n  .is-drilldown-submenu-parent > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 6px;\n    border-color: transparent transparent transparent #2199e8;\n    border-left-style: solid;\n    border-right-width: 0;\n    position: absolute;\n    top: 50%;\n    margin-top: -6px;\n    right: 1rem; }\n\n.js-drilldown-back > a::before {\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border: inset 6px;\n  border-color: transparent #2199e8 transparent transparent;\n  border-right-style: solid;\n  border-left-width: 0;\n  border-left-width: 0;\n  display: inline-block;\n  vertical-align: middle;\n  margin-right: 0.75rem; }\n\n.dropdown-pane {\n  background-color: #fefefe;\n  border: 1px solid #cacaca;\n  border-radius: 0.5rem;\n  display: block;\n  font-size: 1rem;\n  padding: 1rem;\n  position: absolute;\n  visibility: hidden;\n  width: 300px;\n  z-index: 10; }\n  .dropdown-pane.is-open {\n    visibility: visible; }\n\n.dropdown-pane.tiny {\n  width: 100px; }\n\n.dropdown-pane.small {\n  width: 200px; }\n\n.dropdown-pane.large {\n  width: 400px; }\n\n.dropdown.menu > li.opens-left > .is-dropdown-submenu {\n  left: auto;\n  right: 0;\n  top: 100%; }\n\n.dropdown.menu > li.opens-right > .is-dropdown-submenu {\n  right: auto;\n  left: 0;\n  top: 100%; }\n\n.dropdown.menu > li.is-dropdown-submenu-parent > a {\n  padding-right: 1.5rem;\n  position: relative; }\n\n.dropdown.menu > li.is-dropdown-submenu-parent > a::after {\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border: inset 5px;\n  border-color: #2199e8 transparent transparent;\n  border-top-style: solid;\n  border-bottom-width: 0;\n  right: 5px;\n  margin-top: -2px; }\n\n[data-whatinput='mouse'] .dropdown.menu a {\n  outline: 0; }\n\n.no-js .dropdown.menu ul {\n  display: none; }\n\n.dropdown.menu.vertical > li .is-dropdown-submenu {\n  top: 0; }\n\n.dropdown.menu.vertical > li.opens-left .is-dropdown-submenu {\n  left: auto;\n  right: 100%; }\n\n.dropdown.menu.vertical > li.opens-right .is-dropdown-submenu {\n  right: auto;\n  left: 100%; }\n\n.dropdown.menu.vertical > li > a::after {\n  right: 14px;\n  margin-top: -3px; }\n\n.dropdown.menu.vertical > li.opens-left > a::after {\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border: inset 5px;\n  border-color: transparent #2199e8 transparent transparent;\n  border-right-style: solid;\n  border-left-width: 0; }\n\n.dropdown.menu.vertical > li.opens-right > a::after {\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border: inset 5px;\n  border-color: transparent transparent transparent #2199e8;\n  border-left-style: solid;\n  border-right-width: 0; }\n\n@media screen and (min-width: 40em) {\n  .dropdown.menu.medium-horizontal > li.opens-left > .is-dropdown-submenu {\n    left: auto;\n    right: 0;\n    top: 100%; }\n  .dropdown.menu.medium-horizontal > li.opens-right > .is-dropdown-submenu {\n    right: auto;\n    left: 0;\n    top: 100%; }\n  .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a {\n    padding-right: 1.5rem;\n    position: relative; }\n  .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: #2199e8 transparent transparent;\n    border-top-style: solid;\n    border-bottom-width: 0;\n    right: 5px;\n    margin-top: -2px; }\n  .dropdown.menu.medium-vertical > li .is-dropdown-submenu {\n    top: 0; }\n  .dropdown.menu.medium-vertical > li.opens-left .is-dropdown-submenu {\n    left: auto;\n    right: 100%; }\n  .dropdown.menu.medium-vertical > li.opens-right .is-dropdown-submenu {\n    right: auto;\n    left: 100%; }\n  .dropdown.menu.medium-vertical > li > a::after {\n    right: 14px;\n    margin-top: -3px; }\n  .dropdown.menu.medium-vertical > li.opens-left > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent #2199e8 transparent transparent;\n    border-right-style: solid;\n    border-left-width: 0; }\n  .dropdown.menu.medium-vertical > li.opens-right > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent transparent transparent #2199e8;\n    border-left-style: solid;\n    border-right-width: 0; } }\n\n@media screen and (min-width: 64em) {\n  .dropdown.menu.large-horizontal > li.opens-left > .is-dropdown-submenu {\n    left: auto;\n    right: 0;\n    top: 100%; }\n  .dropdown.menu.large-horizontal > li.opens-right > .is-dropdown-submenu {\n    right: auto;\n    left: 0;\n    top: 100%; }\n  .dropdown.menu.large-horizontal > li.is-dropdown-submenu-parent > a {\n    padding-right: 1.5rem;\n    position: relative; }\n  .dropdown.menu.large-horizontal > li.is-dropdown-submenu-parent > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: #2199e8 transparent transparent;\n    border-top-style: solid;\n    border-bottom-width: 0;\n    right: 5px;\n    margin-top: -2px; }\n  .dropdown.menu.large-vertical > li .is-dropdown-submenu {\n    top: 0; }\n  .dropdown.menu.large-vertical > li.opens-left .is-dropdown-submenu {\n    left: auto;\n    right: 100%; }\n  .dropdown.menu.large-vertical > li.opens-right .is-dropdown-submenu {\n    right: auto;\n    left: 100%; }\n  .dropdown.menu.large-vertical > li > a::after {\n    right: 14px;\n    margin-top: -3px; }\n  .dropdown.menu.large-vertical > li.opens-left > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent #2199e8 transparent transparent;\n    border-right-style: solid;\n    border-left-width: 0; }\n  .dropdown.menu.large-vertical > li.opens-right > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent transparent transparent #2199e8;\n    border-left-style: solid;\n    border-right-width: 0; } }\n\n.dropdown.menu.align-right .is-dropdown-submenu.first-sub {\n  top: 100%;\n  left: auto;\n  right: 0; }\n\n.is-dropdown-menu.vertical {\n  width: 100px; }\n  .is-dropdown-menu.vertical.align-right {\n    float: right; }\n\n.is-dropdown-submenu-parent {\n  position: relative; }\n  .is-dropdown-submenu-parent a::after {\n    position: absolute;\n    top: 50%;\n    right: 5px;\n    margin-top: -2px; }\n  .is-dropdown-submenu-parent.opens-inner .is-dropdown-submenu {\n    top: 100%; }\n  .is-dropdown-submenu-parent.opens-left .is-dropdown-submenu {\n    left: auto;\n    right: 0;\n    top: 100%; }\n\n.is-dropdown-submenu {\n  display: none;\n  position: absolute;\n  top: 0;\n  left: 100%;\n  min-width: 200px;\n  z-index: 1;\n  background: #fefefe;\n  border: 1px solid #cacaca; }\n  .is-dropdown-submenu .is-dropdown-submenu-parent > a::after {\n    right: 14px;\n    margin-top: -3px; }\n  .is-dropdown-submenu .is-dropdown-submenu-parent.opens-left > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent #2199e8 transparent transparent;\n    border-right-style: solid;\n    border-left-width: 0; }\n  .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent transparent transparent #2199e8;\n    border-left-style: solid;\n    border-right-width: 0; }\n  .is-dropdown-submenu .is-dropdown-submenu {\n    margin-top: -1px; }\n  .is-dropdown-submenu > li {\n    width: 100%; }\n  .is-dropdown-submenu:not(.js-dropdown-nohover) > .is-dropdown-submenu-parent:hover > .is-dropdown-submenu, .is-dropdown-submenu.js-dropdown-active {\n    display: block; }\n\n.flex-video {\n  position: relative;\n  height: 0;\n  padding-bottom: 75%;\n  margin-bottom: 1rem;\n  overflow: hidden; }\n  .flex-video iframe,\n  .flex-video object,\n  .flex-video embed,\n  .flex-video video {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%; }\n  .flex-video.widescreen {\n    padding-bottom: 56.25%; }\n  .flex-video.vimeo {\n    padding-top: 0; }\n\n.label {\n  display: inline-block;\n  padding: 0.33333rem 0.5rem;\n  font-size: 0.8rem;\n  line-height: 1;\n  white-space: nowrap;\n  cursor: default;\n  border-radius: 0.5rem;\n  background: #2199e8;\n  color: #fefefe; }\n  .label.secondary {\n    background: #777;\n    color: #fefefe; }\n  .label.success {\n    background: #3adb76;\n    color: #fefefe; }\n  .label.warning {\n    background: #ffae00;\n    color: #fefefe; }\n  .label.alert {\n    background: #ec5840;\n    color: #fefefe; }\n\n.media-object {\n  margin-bottom: 1rem;\n  display: block; }\n  .media-object img {\n    max-width: none; }\n  @media screen and (max-width: 39.9375em) {\n    .media-object.stack-for-small .media-object-section {\n      padding: 0;\n      padding-bottom: 1rem;\n      display: block; }\n      .media-object.stack-for-small .media-object-section img {\n        width: 100%; } }\n\n.media-object-section {\n  display: table-cell;\n  vertical-align: top; }\n  .media-object-section:first-child {\n    padding-right: 1rem; }\n  .media-object-section:last-child:not(:nth-child(2)) {\n    padding-left: 1rem; }\n  .media-object-section.middle {\n    vertical-align: middle; }\n  .media-object-section.bottom {\n    vertical-align: bottom; }\n\nhtml,\nbody {\n  height: 100%; }\n\n.off-canvas-wrapper {\n  width: 100%;\n  overflow-x: hidden;\n  position: relative;\n  backface-visibility: hidden;\n  -webkit-overflow-scrolling: auto; }\n\n.off-canvas-wrapper-inner {\n  position: relative;\n  width: 100%;\n  transition: transform 0.5s ease; }\n  .off-canvas-wrapper-inner::before, .off-canvas-wrapper-inner::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .off-canvas-wrapper-inner::after {\n    clear: both; }\n\n.off-canvas-content,\n.off-canvas-content {\n  min-height: 100%;\n  background: #fefefe;\n  transition: transform 0.5s ease;\n  backface-visibility: hidden;\n  z-index: 1;\n  padding-bottom: 0.1px;\n  box-shadow: 0 0 10px rgba(10, 10, 10, 0.5); }\n\n.js-off-canvas-exit {\n  display: none;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(254, 254, 254, 0.25);\n  cursor: pointer;\n  transition: background 0.5s ease; }\n\n.off-canvas {\n  position: absolute;\n  background: #e6e6e6;\n  z-index: -1;\n  max-height: 100%;\n  overflow-y: auto;\n  transform: translateX(0); }\n  [data-whatinput='mouse'] .off-canvas {\n    outline: 0; }\n  .off-canvas.position-left {\n    left: -250px;\n    top: 0;\n    width: 250px; }\n    .is-open-left {\n      transform: translateX(250px); }\n  .off-canvas.position-right {\n    right: -250px;\n    top: 0;\n    width: 250px; }\n    .is-open-right {\n      transform: translateX(-250px); }\n\n@media screen and (min-width: 40em) {\n  .position-left.reveal-for-medium {\n    left: 0;\n    z-index: auto;\n    position: fixed; }\n    .position-left.reveal-for-medium ~ .off-canvas-content {\n      margin-left: 250px; }\n  .position-right.reveal-for-medium {\n    right: 0;\n    z-index: auto;\n    position: fixed; }\n    .position-right.reveal-for-medium ~ .off-canvas-content {\n      margin-right: 250px; } }\n\n@media screen and (min-width: 64em) {\n  .position-left.reveal-for-large {\n    left: 0;\n    z-index: auto;\n    position: fixed; }\n    .position-left.reveal-for-large ~ .off-canvas-content {\n      margin-left: 250px; }\n  .position-right.reveal-for-large {\n    right: 0;\n    z-index: auto;\n    position: fixed; }\n    .position-right.reveal-for-large ~ .off-canvas-content {\n      margin-right: 250px; } }\n\n.orbit {\n  position: relative; }\n\n.orbit-container {\n  position: relative;\n  margin: 0;\n  overflow: hidden;\n  list-style: none; }\n\n.orbit-slide {\n  width: 100%;\n  max-height: 100%; }\n  .orbit-slide.no-motionui.is-active {\n    top: 0;\n    left: 0; }\n\n.orbit-figure {\n  margin: 0; }\n\n.orbit-image {\n  margin: 0;\n  width: 100%;\n  max-width: 100%; }\n\n.orbit-caption {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  padding: 1rem;\n  margin-bottom: 0;\n  color: #fefefe;\n  background-color: rgba(10, 10, 10, 0.5); }\n\n.orbit-previous, .orbit-next {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 10;\n  padding: 1rem;\n  color: #fefefe; }\n  [data-whatinput='mouse'] .orbit-previous, [data-whatinput='mouse'] .orbit-next {\n    outline: 0; }\n  .orbit-previous:hover, .orbit-next:hover, .orbit-previous:active, .orbit-next:active, .orbit-previous:focus, .orbit-next:focus {\n    background-color: rgba(10, 10, 10, 0.5); }\n\n.orbit-previous {\n  left: 0; }\n\n.orbit-next {\n  left: auto;\n  right: 0; }\n\n.orbit-bullets {\n  position: relative;\n  margin-top: 0.8rem;\n  margin-bottom: 0.8rem;\n  text-align: center; }\n  [data-whatinput='mouse'] .orbit-bullets {\n    outline: 0; }\n  .orbit-bullets button {\n    width: 1.2rem;\n    height: 1.2rem;\n    margin: 0.1rem;\n    background-color: #cacaca;\n    border-radius: 50%; }\n    .orbit-bullets button:hover {\n      background-color: #8a8a8a; }\n    .orbit-bullets button.is-active {\n      background-color: #8a8a8a; }\n\n.pagination {\n  margin-left: 0;\n  margin-bottom: 1rem; }\n  .pagination::before, .pagination::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .pagination::after {\n    clear: both; }\n  .pagination li {\n    font-size: 0.875rem;\n    margin-right: 0.0625rem;\n    border-radius: 0.5rem;\n    display: none; }\n    .pagination li:last-child, .pagination li:first-child {\n      display: inline-block; }\n    @media screen and (min-width: 40em) {\n      .pagination li {\n        display: inline-block; } }\n  .pagination a,\n  .pagination button {\n    color: #0a0a0a;\n    display: block;\n    padding: 0.1875rem 0.625rem;\n    border-radius: 0.5rem; }\n    .pagination a:hover,\n    .pagination button:hover {\n      background: #e6e6e6; }\n  .pagination .current {\n    padding: 0.1875rem 0.625rem;\n    background: #2199e8;\n    color: #fefefe;\n    cursor: default; }\n  .pagination .disabled {\n    padding: 0.1875rem 0.625rem;\n    color: #cacaca;\n    cursor: default; }\n    .pagination .disabled:hover {\n      background: transparent; }\n  .pagination .ellipsis::after {\n    content: '\\2026';\n    padding: 0.1875rem 0.625rem;\n    color: #0a0a0a; }\n\n.pagination-previous a::before,\n.pagination-previous.disabled::before {\n  content: '\\AB';\n  display: inline-block;\n  margin-right: 0.5rem; }\n\n.pagination-next a::after,\n.pagination-next.disabled::after {\n  content: '\\BB';\n  display: inline-block;\n  margin-left: 0.5rem; }\n\n.progress {\n  background-color: #cacaca;\n  height: 1rem;\n  margin-bottom: 1rem;\n  border-radius: 0.5rem; }\n  .progress.primary .progress-meter {\n    background-color: #2199e8; }\n  .progress.secondary .progress-meter {\n    background-color: #777; }\n  .progress.success .progress-meter {\n    background-color: #3adb76; }\n  .progress.warning .progress-meter {\n    background-color: #ffae00; }\n  .progress.alert .progress-meter {\n    background-color: #ec5840; }\n\n.progress-meter {\n  position: relative;\n  display: block;\n  width: 0%;\n  height: 100%;\n  background-color: #2199e8;\n  border-radius: 0.5rem; }\n\n.progress-meter-text {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  margin: 0;\n  font-size: 0.75rem;\n  font-weight: bold;\n  color: #fefefe;\n  white-space: nowrap;\n  border-radius: 0.5rem; }\n\n.slider {\n  position: relative;\n  height: 0.5rem;\n  margin-top: 1.25rem;\n  margin-bottom: 2.25rem;\n  background-color: #e6e6e6;\n  cursor: pointer;\n  user-select: none;\n  touch-action: none; }\n\n.slider-fill {\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: inline-block;\n  max-width: 100%;\n  height: 0.5rem;\n  background-color: #cacaca;\n  transition: all 0.2s ease-in-out; }\n  .slider-fill.is-dragging {\n    transition: all 0s linear; }\n\n.slider-handle {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  position: absolute;\n  left: 0;\n  z-index: 1;\n  display: inline-block;\n  width: 1.4rem;\n  height: 1.4rem;\n  background-color: #2199e8;\n  transition: all 0.2s ease-in-out;\n  touch-action: manipulation;\n  border-radius: 0.5rem; }\n  [data-whatinput='mouse'] .slider-handle {\n    outline: 0; }\n  .slider-handle:hover {\n    background-color: #1583cc; }\n  .slider-handle.is-dragging {\n    transition: all 0s linear; }\n\n.slider.disabled,\n.slider[disabled] {\n  opacity: 0.25;\n  cursor: not-allowed; }\n\n.slider.vertical {\n  display: inline-block;\n  width: 0.5rem;\n  height: 12.5rem;\n  margin: 0 1.25rem;\n  transform: scale(1, -1); }\n  .slider.vertical .slider-fill {\n    top: 0;\n    width: 0.5rem;\n    max-height: 100%; }\n  .slider.vertical .slider-handle {\n    position: absolute;\n    top: 0;\n    left: 50%;\n    width: 1.4rem;\n    height: 1.4rem;\n    transform: translateX(-50%); }\n\n.sticky-container {\n  position: relative; }\n\n.sticky {\n  position: absolute;\n  z-index: 0;\n  transform: translate3d(0, 0, 0); }\n\n.sticky.is-stuck {\n  position: fixed;\n  z-index: 5; }\n  .sticky.is-stuck.is-at-top {\n    top: 0; }\n  .sticky.is-stuck.is-at-bottom {\n    bottom: 0; }\n\n.sticky.is-anchored {\n  position: absolute;\n  left: auto;\n  right: auto; }\n  .sticky.is-anchored.is-at-bottom {\n    bottom: 0; }\n\nbody.is-reveal-open {\n  overflow: hidden; }\n\n.reveal-overlay {\n  display: none;\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  z-index: 1005;\n  background-color: rgba(10, 10, 10, 0.45);\n  overflow-y: scroll; }\n\n.reveal {\n  display: none;\n  z-index: 1006;\n  padding: 1rem;\n  border: 1px solid #cacaca;\n  background-color: #fefefe;\n  border-radius: 0.5rem;\n  position: relative;\n  top: 100px;\n  margin-left: auto;\n  margin-right: auto;\n  overflow-y: auto; }\n  [data-whatinput='mouse'] .reveal {\n    outline: 0; }\n  @media screen and (min-width: 40em) {\n    .reveal {\n      min-height: 0; } }\n  .reveal .column, .reveal .columns,\n  .reveal .columns {\n    min-width: 0; }\n  .reveal > :last-child {\n    margin-bottom: 0; }\n  @media screen and (min-width: 40em) {\n    .reveal {\n      width: 600px;\n      max-width: 75rem; } }\n  @media screen and (min-width: 40em) {\n    .reveal .reveal {\n      left: auto;\n      right: auto;\n      margin: 0 auto; } }\n  .reveal.collapse {\n    padding: 0; }\n  @media screen and (min-width: 40em) {\n    .reveal.tiny {\n      width: 30%;\n      max-width: 75rem; } }\n  @media screen and (min-width: 40em) {\n    .reveal.small {\n      width: 50%;\n      max-width: 75rem; } }\n  @media screen and (min-width: 40em) {\n    .reveal.large {\n      width: 90%;\n      max-width: 75rem; } }\n  .reveal.full {\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    height: 100vh;\n    min-height: 100vh;\n    max-width: none;\n    margin-left: 0;\n    border: 0; }\n  @media screen and (max-width: 39.9375em) {\n    .reveal {\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      height: 100vh;\n      min-height: 100vh;\n      max-width: none;\n      margin-left: 0;\n      border: 0; } }\n  .reveal.without-overlay {\n    position: fixed; }\n\n.switch {\n  margin-bottom: 1rem;\n  outline: 0;\n  position: relative;\n  user-select: none;\n  color: #fefefe;\n  font-weight: bold;\n  font-size: 0.875rem; }\n\n.switch-input {\n  opacity: 0;\n  position: absolute; }\n\n.switch-paddle {\n  background: #cacaca;\n  cursor: pointer;\n  display: block;\n  position: relative;\n  width: 4rem;\n  height: 2rem;\n  transition: all 0.25s ease-out;\n  border-radius: 0.5rem;\n  color: inherit;\n  font-weight: inherit; }\n  input + .switch-paddle {\n    margin: 0; }\n  .switch-paddle::after {\n    background: #fefefe;\n    content: '';\n    display: block;\n    position: absolute;\n    height: 1.5rem;\n    left: 0.25rem;\n    top: 0.25rem;\n    width: 1.5rem;\n    transition: all 0.25s ease-out;\n    transform: translate3d(0, 0, 0);\n    border-radius: 0.5rem; }\n  input:checked ~ .switch-paddle {\n    background: #2199e8; }\n    input:checked ~ .switch-paddle::after {\n      left: 2.25rem; }\n  [data-whatinput='mouse'] input:focus ~ .switch-paddle {\n    outline: 0; }\n\n.switch-active, .switch-inactive {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%); }\n\n.switch-active {\n  left: 8%;\n  display: none; }\n  input:checked + label > .switch-active {\n    display: block; }\n\n.switch-inactive {\n  right: 15%; }\n  input:checked + label > .switch-inactive {\n    display: none; }\n\n.switch.tiny .switch-paddle {\n  width: 3rem;\n  height: 1.5rem;\n  font-size: 0.625rem; }\n\n.switch.tiny .switch-paddle::after {\n  width: 1rem;\n  height: 1rem; }\n\n.switch.tiny input:checked ~ .switch-paddle:after {\n  left: 1.75rem; }\n\n.switch.small .switch-paddle {\n  width: 3.5rem;\n  height: 1.75rem;\n  font-size: 0.75rem; }\n\n.switch.small .switch-paddle::after {\n  width: 1.25rem;\n  height: 1.25rem; }\n\n.switch.small input:checked ~ .switch-paddle:after {\n  left: 2rem; }\n\n.switch.large .switch-paddle {\n  width: 5rem;\n  height: 2.5rem;\n  font-size: 1rem; }\n\n.switch.large .switch-paddle::after {\n  width: 2rem;\n  height: 2rem; }\n\n.switch.large input:checked ~ .switch-paddle:after {\n  left: 2.75rem; }\n\ntable {\n  width: 100%;\n  margin-bottom: 1rem;\n  border-radius: 0.5rem; }\n  table thead,\n  table tbody,\n  table tfoot {\n    border: 1px solid #f1f1f1;\n    background-color: #fefefe; }\n  table caption {\n    font-weight: bold;\n    padding: 0.5rem 0.625rem 0.625rem; }\n  table thead,\n  table tfoot {\n    background: #f8f8f8;\n    color: #0a0a0a; }\n    table thead tr,\n    table tfoot tr {\n      background: transparent; }\n    table thead th,\n    table thead td,\n    table tfoot th,\n    table tfoot td {\n      padding: 0.5rem 0.625rem 0.625rem;\n      font-weight: bold;\n      text-align: left; }\n  table tbody tr:nth-child(even) {\n    background-color: #f1f1f1; }\n  table tbody th,\n  table tbody td {\n    padding: 0.5rem 0.625rem 0.625rem; }\n\n@media screen and (max-width: 63.9375em) {\n  table.stack thead {\n    display: none; }\n  table.stack tfoot {\n    display: none; }\n  table.stack tr,\n  table.stack th,\n  table.stack td {\n    display: block; }\n  table.stack td {\n    border-top: 0; } }\n\ntable.scroll {\n  display: block;\n  width: 100%;\n  overflow-x: auto; }\n\ntable.hover tr:hover {\n  background-color: #f9f9f9; }\n\ntable.hover tr:nth-of-type(even):hover {\n  background-color: #ececec; }\n\n.table-scroll {\n  overflow-x: auto; }\n  .table-scroll table {\n    width: auto; }\n\n.tabs {\n  margin: 0;\n  list-style-type: none;\n  background: #fefefe;\n  border: 1px solid #e6e6e6; }\n  .tabs::before, .tabs::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .tabs::after {\n    clear: both; }\n\n.tabs.vertical > li {\n  width: auto;\n  float: none;\n  display: block; }\n\n.tabs.simple > li > a {\n  padding: 0; }\n  .tabs.simple > li > a:hover {\n    background: transparent; }\n\n.tabs.primary {\n  background: #2199e8; }\n  .tabs.primary > li > a {\n    color: #fefefe; }\n    .tabs.primary > li > a:hover, .tabs.primary > li > a:focus {\n      background: #1893e4; }\n\n.tabs-title {\n  float: left; }\n  .tabs-title > a {\n    display: block;\n    padding: 1.25rem 1.5rem;\n    line-height: 1;\n    font-size: 0.75rem; }\n    .tabs-title > a:hover {\n      background: #fefefe; }\n    .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {\n      background: #e6e6e6; }\n\n.tabs-content {\n  background: #fefefe;\n  transition: all 0.5s ease;\n  border: 1px solid #e6e6e6;\n  border-top: 0; }\n\n.tabs-content.vertical {\n  border: 1px solid #e6e6e6;\n  border-left: 0; }\n\n.tabs-panel {\n  display: none;\n  padding: 1rem; }\n  .tabs-panel.is-active {\n    display: block; }\n\n.thumbnail {\n  border: solid 4px #fefefe;\n  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);\n  display: inline-block;\n  line-height: 0;\n  max-width: 100%;\n  transition: box-shadow 200ms ease-out;\n  border-radius: 0.5rem;\n  margin-bottom: 1rem; }\n  .thumbnail:hover, .thumbnail:focus {\n    box-shadow: 0 0 6px 1px rgba(33, 153, 232, 0.5); }\n\n.title-bar {\n  background: #0a0a0a;\n  color: #fefefe;\n  padding: 0.5rem; }\n  .title-bar::before, .title-bar::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .title-bar::after {\n    clear: both; }\n  .title-bar .menu-icon {\n    margin-left: 0.25rem;\n    margin-right: 0.5rem; }\n\n.title-bar-left {\n  float: left; }\n\n.title-bar-right {\n  float: right;\n  text-align: right; }\n\n.title-bar-title {\n  font-weight: bold;\n  vertical-align: middle;\n  display: inline-block; }\n\n.menu-icon.dark {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle;\n  cursor: pointer;\n  width: 20px;\n  height: 16px; }\n  .menu-icon.dark::after {\n    content: '';\n    position: absolute;\n    display: block;\n    width: 100%;\n    height: 2px;\n    background: #0a0a0a;\n    top: 0;\n    left: 0;\n    box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a; }\n  .menu-icon.dark:hover::after {\n    background: #8a8a8a;\n    box-shadow: 0 7px 0 #8a8a8a, 0 14px 0 #8a8a8a; }\n\n.has-tip {\n  border-bottom: dotted 1px #8a8a8a;\n  font-weight: bold;\n  position: relative;\n  display: inline-block;\n  cursor: help; }\n\n.tooltip {\n  background-color: #0a0a0a;\n  color: #fefefe;\n  font-size: 80%;\n  padding: 0.75rem;\n  position: absolute;\n  z-index: 10;\n  top: calc(100% + 0.6495rem);\n  max-width: 10rem !important;\n  border-radius: 0.5rem; }\n  .tooltip::before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 0.75rem;\n    border-color: transparent transparent #0a0a0a;\n    border-bottom-style: solid;\n    border-top-width: 0;\n    bottom: 100%;\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%); }\n  .tooltip.top::before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 0.75rem;\n    border-color: #0a0a0a transparent transparent;\n    border-top-style: solid;\n    border-bottom-width: 0;\n    top: 100%;\n    bottom: auto; }\n  .tooltip.left::before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 0.75rem;\n    border-color: transparent transparent transparent #0a0a0a;\n    border-left-style: solid;\n    border-right-width: 0;\n    bottom: auto;\n    left: 100%;\n    top: 50%;\n    transform: translateY(-50%); }\n  .tooltip.right::before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 0.75rem;\n    border-color: transparent #0a0a0a transparent transparent;\n    border-right-style: solid;\n    border-left-width: 0;\n    bottom: auto;\n    left: auto;\n    right: 100%;\n    top: 50%;\n    transform: translateY(-50%); }\n\n.top-bar {\n  padding: 0.5rem; }\n  .top-bar::before, .top-bar::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .top-bar::after {\n    clear: both; }\n  .top-bar,\n  .top-bar ul {\n    background-color: #e6e6e6; }\n  .top-bar input {\n    width: 200px;\n    margin-right: 1rem; }\n  .top-bar .input-group-field {\n    width: 100%;\n    margin-right: 0; }\n  .top-bar input.button {\n    width: auto; }\n\n@media screen and (max-width: 39.9375em) {\n  .stacked-for-small .top-bar-left,\n  .stacked-for-small .top-bar-right {\n    width: 100%; } }\n\n@media screen and (max-width: 63.9375em) {\n  .stacked-for-medium .top-bar-left,\n  .stacked-for-medium .top-bar-right {\n    width: 100%; } }\n\n@media screen and (max-width: 74.9375em) {\n  .stacked-for-large .top-bar-left,\n  .stacked-for-large .top-bar-right {\n    width: 100%; } }\n\n.top-bar-left,\n.top-bar-right {\n  width: 100%; }\n\n@media screen and (min-width: 40em) {\n  .top-bar-left,\n  .top-bar-right {\n    width: auto; } }\n\n.top-bar-title {\n  float: left;\n  margin-right: 1rem; }\n\n.top-bar-left {\n  float: left; }\n\n.top-bar-right {\n  float: right; }\n\n.hide {\n  display: none !important; }\n\n.invisible {\n  visibility: hidden; }\n\n@media screen and (max-width: 39.9375em) {\n  .hide-for-small-only {\n    display: none !important; } }\n\n@media screen and (max-width: 0em), screen and (min-width: 40em) {\n  .show-for-small-only {\n    display: none !important; } }\n\n@media screen and (min-width: 40em) {\n  .hide-for-medium {\n    display: none !important; } }\n\n@media screen and (max-width: 39.9375em) {\n  .show-for-medium {\n    display: none !important; } }\n\n@media screen and (min-width: 40em) and (max-width: 63.9375em) {\n  .hide-for-medium-only {\n    display: none !important; } }\n\n@media screen and (max-width: 39.9375em), screen and (min-width: 64em) {\n  .show-for-medium-only {\n    display: none !important; } }\n\n@media screen and (min-width: 64em) {\n  .hide-for-large {\n    display: none !important; } }\n\n@media screen and (max-width: 63.9375em) {\n  .show-for-large {\n    display: none !important; } }\n\n@media screen and (min-width: 64em) and (max-width: 74.9375em) {\n  .hide-for-large-only {\n    display: none !important; } }\n\n@media screen and (max-width: 63.9375em), screen and (min-width: 75em) {\n  .show-for-large-only {\n    display: none !important; } }\n\n.show-for-sr,\n.show-on-focus {\n  position: absolute !important;\n  width: 1px;\n  height: 1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0); }\n\n.show-on-focus:active, .show-on-focus:focus {\n  position: static !important;\n  height: auto;\n  width: auto;\n  overflow: visible;\n  clip: auto; }\n\n.show-for-landscape,\n.hide-for-portrait {\n  display: block !important; }\n  @media screen and (orientation: landscape) {\n    .show-for-landscape,\n    .hide-for-portrait {\n      display: block !important; } }\n  @media screen and (orientation: portrait) {\n    .show-for-landscape,\n    .hide-for-portrait {\n      display: none !important; } }\n\n.hide-for-landscape,\n.show-for-portrait {\n  display: none !important; }\n  @media screen and (orientation: landscape) {\n    .hide-for-landscape,\n    .show-for-portrait {\n      display: none !important; } }\n  @media screen and (orientation: portrait) {\n    .hide-for-landscape,\n    .show-for-portrait {\n      display: block !important; } }\n\n.float-left {\n  float: left !important; }\n\n.float-right {\n  float: right !important; }\n\n.float-center {\n  display: block;\n  margin-left: auto;\n  margin-right: auto; }\n\n.clearfix::before, .clearfix::after {\n  content: ' ';\n  display: table;\n  flex-basis: 0;\n  order: 1; }\n\n.clearfix::after {\n  clear: both; }\n\n.top-bar, .top-bar ul {\n  background-color: #333333;\n  height: 1.25rem; }\n\n.top-bar .menu-text {\n  color: white; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n\n.site-title {\n  padding-top: 10px;\n  color: #fefefe;\n  font-family: 'Monoton', cursive;\n  font-size: 500%; }\n\n.site-sub-title {\n  color: white;\n  font-weight: bold; }\n\n.site-header {\n  height: 300px;\n  width: 100%;\n  padding: 20px;\n  padding-bottom: 100px;\n  color: white;\n  border-bottom: 5px solid black;\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c2c8ce+0,5761f2+100 */\n  background: #c2c8ce;\n  /* Old browsers */\n  background: -moz-linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* FF3.6-15 */\n  background: -webkit-linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c8ce', endColorstr='#5761f2',GradientType=1 );\n  /* IE6-9 fallback on horizontal gradient */ }\n\n.page-title {\n  padding-top: 10px;\n  color: #fefefe;\n  font-family: 'Monoton', cursive;\n  font-size: 500%; }\n\n.page-sub-title {\n  color: white;\n  font-weight: bold; }\n\n.page-header {\n  height: 200px;\n  width: 100%;\n  padding: 20px;\n  padding-bottom: 100px;\n  color: white;\n  border-bottom: 5px solid black;\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c2c8ce+0,5761f2+100 */\n  background: #c2c8ce;\n  /* Old browsers */\n  background: -moz-linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* FF3.6-15 */\n  background: -webkit-linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c8ce', endColorstr='#5761f2',GradientType=1 );\n  /* IE6-9 fallback on horizontal gradient */ }\n\n.footer-wrapper {\n  background-color: #333333;\n  height: 6.25rem; }\n\np.copyright {\n  padding: 0;\n  background-color: #168cd9;\n  margin: 0; }\n\ndiv {\n  min-height: 60px;\n  color: black; }\n\n.blue {\n  background-color: darkblue;\n  border: 5px solid black; }\n\n.magenta {\n  background-color: #8B008B; }\n\n.orange {\n  background-color: #FF8C00; }\n\n.red {\n  background-color: #8B0000; }\n\n.pink {\n  background-color: #FF1493; }\n\n.gold {\n  background-color: #FFD700; }\n\n.green {\n  background-color: #008000; }\n\n.coral {\n  background-color: #F08080; }\n\n.aqua {\n  background-color: #66CDAA; }\n\n.callout {\n  margin-top: 0;\n  background-color: #e6e6e6; }\n  .callout h3 {\n    margin: 0 2rem;\n    border-top: 2px solid #cacaca;\n    border-bottom: 2px solid #cacaca;\n    text-transform: uppercase; }\n  .callout p {\n    padding: 0;\n    margin: 0 2rem; }\n  .callout a {\n    padding: 0;\n    margin: 0 2rem; }\n\n.page-sub-heading {\n  width: 100%;\n  margin-top: 1.875rem;\n  margin-left: 2.5rem; }\n", ""]);
+	exports.push([module.id, "@charset \"UTF-8\";\n/**\n * Foundation for Sites by ZURB\n * Version 6.2.0\n * foundation.zurb.com\n * Licensed under MIT Open Source\n */\n/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */\n/**\n   * 1. Set default font family to sans-serif.\n   * 2. Prevent iOS and IE text size adjust after device orientation change,\n   *    without disabling user zoom.\n   */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/**\n   * Remove default margin.\n   */\nbody {\n  margin: 0; }\n\n/* HTML5 display definitions\n     ========================================================================== */\n/**\n   * Correct `block` display not defined for any HTML5 element in IE 8/9.\n   * Correct `block` display not defined for `details` or `summary` in IE 10/11\n   * and Firefox.\n   * Correct `block` display not defined for `main` in IE 11.\n   */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\n/**\n   * 1. Correct `inline-block` display not defined in IE 8/9.\n   * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.\n   */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */ }\n\n/**\n   * Prevent modern browsers from displaying `audio` without controls.\n   * Remove excess height in iOS 5 devices.\n   */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n   * Address `[hidden]` styling not present in IE 8/9/10.\n   * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.\n   */\n[hidden],\ntemplate {\n  display: none; }\n\n/* Links\n     ========================================================================== */\n/**\n   * Remove the gray background color from active links in IE 10.\n   */\na {\n  background-color: transparent; }\n\n/**\n   * Improve readability of focused elements when they are also in an\n   * active/hover state.\n   */\na:active,\na:hover {\n  outline: 0; }\n\n/* Text-level semantics\n     ========================================================================== */\n/**\n   * Address styling not present in IE 8/9/10/11, Safari, and Chrome.\n   */\nabbr[title] {\n  border-bottom: 1px dotted; }\n\n/**\n   * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.\n   */\nb,\nstrong {\n  font-weight: bold; }\n\n/**\n   * Address styling not present in Safari and Chrome.\n   */\ndfn {\n  font-style: italic; }\n\n/**\n   * Address variable `h1` font-size and margin within `section` and `article`\n   * contexts in Firefox 4+, Safari, and Chrome.\n   */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/**\n   * Address styling not present in IE 8/9.\n   */\nmark {\n  background: #ff0;\n  color: #000; }\n\n/**\n   * Address inconsistent and variable font size in all browsers.\n   */\nsmall {\n  font-size: 80%; }\n\n/**\n   * Prevent `sub` and `sup` affecting `line-height` in all browsers.\n   */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsup {\n  top: -0.5em; }\n\nsub {\n  bottom: -0.25em; }\n\n/* Embedded content\n     ========================================================================== */\n/**\n   * Remove border when inside `a` element in IE 8/9/10.\n   */\nimg {\n  border: 0; }\n\n/**\n   * Correct overflow not hidden in IE 9/10/11.\n   */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Grouping content\n     ========================================================================== */\n/**\n   * Address margin not present in IE 8/9 and Safari.\n   */\nfigure {\n  margin: 1em 40px; }\n\n/**\n   * Address differences between Firefox and other browsers.\n   */\nhr {\n  box-sizing: content-box;\n  height: 0; }\n\n/**\n   * Contain overflow in all browsers.\n   */\npre {\n  overflow: auto; }\n\n/**\n   * Address odd `em`-unit font size rendering in all browsers.\n   */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em; }\n\n/* Forms\n     ========================================================================== */\n/**\n   * Known limitation: by default, Chrome and Safari on OS X allow very limited\n   * styling of `select`, unless a `border` property is set.\n   */\n/**\n   * 1. Correct color not being inherited.\n   *    Known issue: affects color of disabled elements.\n   * 2. Correct font properties not being inherited.\n   * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.\n   */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  color: inherit;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n  margin: 0;\n  /* 3 */ }\n\n/**\n   * Address `overflow` set to `hidden` in IE 8/9/10/11.\n   */\nbutton {\n  overflow: visible; }\n\n/**\n   * Address inconsistent `text-transform` inheritance for `button` and `select`.\n   * All other form control elements do not inherit `text-transform` values.\n   * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.\n   * Correct `select` style inheritance in Firefox.\n   */\nbutton,\nselect {\n  text-transform: none; }\n\n/**\n   * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`\n   *    and `video` controls.\n   * 2. Correct inability to style clickable `input` types in iOS.\n   * 3. Improve usability and consistency of cursor style between image-type\n   *    `input` and others.\n   */\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n  cursor: pointer;\n  /* 3 */ }\n\n/**\n   * Re-set default cursor for disabled elements.\n   */\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default; }\n\n/**\n   * Remove inner padding and border in Firefox 4+.\n   */\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  border: 0;\n  padding: 0; }\n\n/**\n   * Address Firefox 4+ setting `line-height` on `input` using `!important` in\n   * the UA stylesheet.\n   */\ninput {\n  line-height: normal; }\n\n/**\n   * It's recommended that you don't attempt to style these elements.\n   * Firefox's implementation doesn't respect box-sizing, padding, or width.\n   *\n   * 1. Address box sizing set to `content-box` in IE 8/9/10.\n   * 2. Remove excess padding in IE 8/9/10.\n   */\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n   * Fix the cursor style for Chrome's increment/decrement buttons. For certain\n   * `font-size` values of the `input`, it causes the cursor style of the\n   * decrement button to change from `default` to `text`.\n   */\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n   * 1. Address `appearance` set to `searchfield` in Safari and Chrome.\n   * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.\n   */\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  box-sizing: content-box;\n  /* 2 */ }\n\n/**\n   * Remove inner padding and search cancel button in Safari and Chrome on OS X.\n   * Safari (but not Chrome) clips the cancel button when the search input has\n   * padding (and `textfield` appearance).\n   */\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n   * Define consistent border, margin, and padding.\n   * [NOTE] We don't enable this ruleset in Foundation, because we want the <fieldset> element to have plain styling.\n   */\n/* fieldset {\n    border: 1px solid #c0c0c0;\n    margin: 0 2px;\n    padding: 0.35em 0.625em 0.75em;\n  } */\n/**\n   * 1. Correct `color` not being inherited in IE 8/9/10/11.\n   * 2. Remove padding so people aren't caught out if they zero out fieldsets.\n   */\nlegend {\n  border: 0;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n   * Remove default vertical scrollbar in IE 8/9/10/11.\n   */\ntextarea {\n  overflow: auto; }\n\n/**\n   * Don't inherit the `font-weight` (applied by a rule above).\n   * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.\n   */\noptgroup {\n  font-weight: bold; }\n\n/* Tables\n     ========================================================================== */\n/**\n   * Remove most spacing between table cells.\n   */\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\ntd,\nth {\n  padding: 0; }\n\n.foundation-mq {\n  font-family: \"small=0em&medium=40em&large=64em&xlarge=75em&xxlarge=90em\"; }\n\nhtml {\n  font-size: 100%;\n  box-sizing: border-box; }\n\n*,\n*:before,\n*:after {\n  box-sizing: inherit; }\n\nbody {\n  padding: 0;\n  margin: 0;\n  font-family: \"Helvetica Neue\", Helvetica, Roboto, Arial, sans-serif;\n  font-weight: normal;\n  line-height: 1.5;\n  color: #0a0a0a;\n  background: #fefefe;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\nimg {\n  max-width: 100%;\n  height: auto;\n  -ms-interpolation-mode: bicubic;\n  display: inline-block;\n  vertical-align: middle; }\n\ntextarea {\n  height: auto;\n  min-height: 50px;\n  border-radius: 0.5rem; }\n\nselect {\n  width: 100%;\n  border-radius: 0.5rem; }\n\n#map_canvas img,\n#map_canvas embed,\n#map_canvas object,\n.map_canvas img,\n.map_canvas embed,\n.map_canvas object,\n.mqa-display img,\n.mqa-display embed,\n.mqa-display object {\n  max-width: none !important; }\n\nbutton {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  background: transparent;\n  padding: 0;\n  border: 0;\n  border-radius: 0.5rem;\n  line-height: 1; }\n\n.is-visible {\n  display: block !important; }\n\n.is-hidden {\n  display: none !important; }\n\n.row {\n  max-width: 75rem;\n  margin-left: auto;\n  margin-right: auto; }\n  .row::before, .row::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .row::after {\n    clear: both; }\n  .row.collapse > .column, .row.collapse > .columns {\n    padding-left: 0;\n    padding-right: 0; }\n  .row .row {\n    margin-left: -0.625rem;\n    margin-right: -0.625rem; }\n    @media screen and (min-width: 40em) {\n      .row .row {\n        margin-left: -0.9375rem;\n        margin-right: -0.9375rem; } }\n    .row .row.collapse {\n      margin-left: 0;\n      margin-right: 0; }\n  .row.expanded {\n    max-width: none; }\n    .row.expanded .row {\n      margin-left: auto;\n      margin-right: auto; }\n\n.column, .columns {\n  width: 100%;\n  float: left;\n  padding-left: 0.625rem;\n  padding-right: 0.625rem; }\n  @media screen and (min-width: 40em) {\n    .column, .columns {\n      padding-left: 0.9375rem;\n      padding-right: 0.9375rem; } }\n  .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {\n    float: right; }\n  .column.end:last-child:last-child, .end.columns:last-child:last-child {\n    float: left; }\n\n.column.row.row, .row.row.columns {\n  float: none; }\n  .row .column.row.row, .row .row.row.columns {\n    padding-left: 0;\n    padding-right: 0;\n    margin-left: 0;\n    margin-right: 0; }\n\n.small-1 {\n  width: 8.33333%; }\n\n.small-push-1 {\n  position: relative;\n  left: 8.33333%; }\n\n.small-pull-1 {\n  position: relative;\n  left: -8.33333%; }\n\n.small-offset-0 {\n  margin-left: 0%; }\n\n.small-2 {\n  width: 16.66667%; }\n\n.small-push-2 {\n  position: relative;\n  left: 16.66667%; }\n\n.small-pull-2 {\n  position: relative;\n  left: -16.66667%; }\n\n.small-offset-1 {\n  margin-left: 8.33333%; }\n\n.small-3 {\n  width: 25%; }\n\n.small-push-3 {\n  position: relative;\n  left: 25%; }\n\n.small-pull-3 {\n  position: relative;\n  left: -25%; }\n\n.small-offset-2 {\n  margin-left: 16.66667%; }\n\n.small-4 {\n  width: 33.33333%; }\n\n.small-push-4 {\n  position: relative;\n  left: 33.33333%; }\n\n.small-pull-4 {\n  position: relative;\n  left: -33.33333%; }\n\n.small-offset-3 {\n  margin-left: 25%; }\n\n.small-5 {\n  width: 41.66667%; }\n\n.small-push-5 {\n  position: relative;\n  left: 41.66667%; }\n\n.small-pull-5 {\n  position: relative;\n  left: -41.66667%; }\n\n.small-offset-4 {\n  margin-left: 33.33333%; }\n\n.small-6 {\n  width: 50%; }\n\n.small-push-6 {\n  position: relative;\n  left: 50%; }\n\n.small-pull-6 {\n  position: relative;\n  left: -50%; }\n\n.small-offset-5 {\n  margin-left: 41.66667%; }\n\n.small-7 {\n  width: 58.33333%; }\n\n.small-push-7 {\n  position: relative;\n  left: 58.33333%; }\n\n.small-pull-7 {\n  position: relative;\n  left: -58.33333%; }\n\n.small-offset-6 {\n  margin-left: 50%; }\n\n.small-8 {\n  width: 66.66667%; }\n\n.small-push-8 {\n  position: relative;\n  left: 66.66667%; }\n\n.small-pull-8 {\n  position: relative;\n  left: -66.66667%; }\n\n.small-offset-7 {\n  margin-left: 58.33333%; }\n\n.small-9 {\n  width: 75%; }\n\n.small-push-9 {\n  position: relative;\n  left: 75%; }\n\n.small-pull-9 {\n  position: relative;\n  left: -75%; }\n\n.small-offset-8 {\n  margin-left: 66.66667%; }\n\n.small-10 {\n  width: 83.33333%; }\n\n.small-push-10 {\n  position: relative;\n  left: 83.33333%; }\n\n.small-pull-10 {\n  position: relative;\n  left: -83.33333%; }\n\n.small-offset-9 {\n  margin-left: 75%; }\n\n.small-11 {\n  width: 91.66667%; }\n\n.small-push-11 {\n  position: relative;\n  left: 91.66667%; }\n\n.small-pull-11 {\n  position: relative;\n  left: -91.66667%; }\n\n.small-offset-10 {\n  margin-left: 83.33333%; }\n\n.small-12 {\n  width: 100%; }\n\n.small-offset-11 {\n  margin-left: 91.66667%; }\n\n.small-up-1 > .column, .small-up-1 > .columns {\n  width: 100%;\n  float: left; }\n  .small-up-1 > .column:nth-of-type(1n), .small-up-1 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-1 > .column:nth-of-type(1n+1), .small-up-1 > .columns:nth-of-type(1n+1) {\n    clear: both; }\n  .small-up-1 > .column:last-child, .small-up-1 > .columns:last-child {\n    float: left; }\n\n.small-up-2 > .column, .small-up-2 > .columns {\n  width: 50%;\n  float: left; }\n  .small-up-2 > .column:nth-of-type(1n), .small-up-2 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-2 > .column:nth-of-type(2n+1), .small-up-2 > .columns:nth-of-type(2n+1) {\n    clear: both; }\n  .small-up-2 > .column:last-child, .small-up-2 > .columns:last-child {\n    float: left; }\n\n.small-up-3 > .column, .small-up-3 > .columns {\n  width: 33.33333%;\n  float: left; }\n  .small-up-3 > .column:nth-of-type(1n), .small-up-3 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-3 > .column:nth-of-type(3n+1), .small-up-3 > .columns:nth-of-type(3n+1) {\n    clear: both; }\n  .small-up-3 > .column:last-child, .small-up-3 > .columns:last-child {\n    float: left; }\n\n.small-up-4 > .column, .small-up-4 > .columns {\n  width: 25%;\n  float: left; }\n  .small-up-4 > .column:nth-of-type(1n), .small-up-4 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-4 > .column:nth-of-type(4n+1), .small-up-4 > .columns:nth-of-type(4n+1) {\n    clear: both; }\n  .small-up-4 > .column:last-child, .small-up-4 > .columns:last-child {\n    float: left; }\n\n.small-up-5 > .column, .small-up-5 > .columns {\n  width: 20%;\n  float: left; }\n  .small-up-5 > .column:nth-of-type(1n), .small-up-5 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-5 > .column:nth-of-type(5n+1), .small-up-5 > .columns:nth-of-type(5n+1) {\n    clear: both; }\n  .small-up-5 > .column:last-child, .small-up-5 > .columns:last-child {\n    float: left; }\n\n.small-up-6 > .column, .small-up-6 > .columns {\n  width: 16.66667%;\n  float: left; }\n  .small-up-6 > .column:nth-of-type(1n), .small-up-6 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-6 > .column:nth-of-type(6n+1), .small-up-6 > .columns:nth-of-type(6n+1) {\n    clear: both; }\n  .small-up-6 > .column:last-child, .small-up-6 > .columns:last-child {\n    float: left; }\n\n.small-up-7 > .column, .small-up-7 > .columns {\n  width: 14.28571%;\n  float: left; }\n  .small-up-7 > .column:nth-of-type(1n), .small-up-7 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-7 > .column:nth-of-type(7n+1), .small-up-7 > .columns:nth-of-type(7n+1) {\n    clear: both; }\n  .small-up-7 > .column:last-child, .small-up-7 > .columns:last-child {\n    float: left; }\n\n.small-up-8 > .column, .small-up-8 > .columns {\n  width: 12.5%;\n  float: left; }\n  .small-up-8 > .column:nth-of-type(1n), .small-up-8 > .columns:nth-of-type(1n) {\n    clear: none; }\n  .small-up-8 > .column:nth-of-type(8n+1), .small-up-8 > .columns:nth-of-type(8n+1) {\n    clear: both; }\n  .small-up-8 > .column:last-child, .small-up-8 > .columns:last-child {\n    float: left; }\n\n.small-collapse > .column, .small-collapse > .columns {\n  padding-left: 0;\n  padding-right: 0; }\n\n.small-collapse .row {\n  margin-left: 0;\n  margin-right: 0; }\n\n.small-uncollapse > .column, .small-uncollapse > .columns {\n  padding-left: 0.625rem;\n  padding-right: 0.625rem; }\n\n.small-centered {\n  float: none;\n  margin-left: auto;\n  margin-right: auto; }\n\n.small-uncentered,\n.small-push-0,\n.small-pull-0 {\n  position: static;\n  margin-left: 0;\n  margin-right: 0;\n  float: left; }\n\n@media screen and (min-width: 40em) {\n  .medium-1 {\n    width: 8.33333%; }\n  .medium-push-1 {\n    position: relative;\n    left: 8.33333%; }\n  .medium-pull-1 {\n    position: relative;\n    left: -8.33333%; }\n  .medium-offset-0 {\n    margin-left: 0%; }\n  .medium-2 {\n    width: 16.66667%; }\n  .medium-push-2 {\n    position: relative;\n    left: 16.66667%; }\n  .medium-pull-2 {\n    position: relative;\n    left: -16.66667%; }\n  .medium-offset-1 {\n    margin-left: 8.33333%; }\n  .medium-3 {\n    width: 25%; }\n  .medium-push-3 {\n    position: relative;\n    left: 25%; }\n  .medium-pull-3 {\n    position: relative;\n    left: -25%; }\n  .medium-offset-2 {\n    margin-left: 16.66667%; }\n  .medium-4 {\n    width: 33.33333%; }\n  .medium-push-4 {\n    position: relative;\n    left: 33.33333%; }\n  .medium-pull-4 {\n    position: relative;\n    left: -33.33333%; }\n  .medium-offset-3 {\n    margin-left: 25%; }\n  .medium-5 {\n    width: 41.66667%; }\n  .medium-push-5 {\n    position: relative;\n    left: 41.66667%; }\n  .medium-pull-5 {\n    position: relative;\n    left: -41.66667%; }\n  .medium-offset-4 {\n    margin-left: 33.33333%; }\n  .medium-6 {\n    width: 50%; }\n  .medium-push-6 {\n    position: relative;\n    left: 50%; }\n  .medium-pull-6 {\n    position: relative;\n    left: -50%; }\n  .medium-offset-5 {\n    margin-left: 41.66667%; }\n  .medium-7 {\n    width: 58.33333%; }\n  .medium-push-7 {\n    position: relative;\n    left: 58.33333%; }\n  .medium-pull-7 {\n    position: relative;\n    left: -58.33333%; }\n  .medium-offset-6 {\n    margin-left: 50%; }\n  .medium-8 {\n    width: 66.66667%; }\n  .medium-push-8 {\n    position: relative;\n    left: 66.66667%; }\n  .medium-pull-8 {\n    position: relative;\n    left: -66.66667%; }\n  .medium-offset-7 {\n    margin-left: 58.33333%; }\n  .medium-9 {\n    width: 75%; }\n  .medium-push-9 {\n    position: relative;\n    left: 75%; }\n  .medium-pull-9 {\n    position: relative;\n    left: -75%; }\n  .medium-offset-8 {\n    margin-left: 66.66667%; }\n  .medium-10 {\n    width: 83.33333%; }\n  .medium-push-10 {\n    position: relative;\n    left: 83.33333%; }\n  .medium-pull-10 {\n    position: relative;\n    left: -83.33333%; }\n  .medium-offset-9 {\n    margin-left: 75%; }\n  .medium-11 {\n    width: 91.66667%; }\n  .medium-push-11 {\n    position: relative;\n    left: 91.66667%; }\n  .medium-pull-11 {\n    position: relative;\n    left: -91.66667%; }\n  .medium-offset-10 {\n    margin-left: 83.33333%; }\n  .medium-12 {\n    width: 100%; }\n  .medium-offset-11 {\n    margin-left: 91.66667%; }\n  .medium-up-1 > .column, .medium-up-1 > .columns {\n    width: 100%;\n    float: left; }\n    .medium-up-1 > .column:nth-of-type(1n), .medium-up-1 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-1 > .column:nth-of-type(1n+1), .medium-up-1 > .columns:nth-of-type(1n+1) {\n      clear: both; }\n    .medium-up-1 > .column:last-child, .medium-up-1 > .columns:last-child {\n      float: left; }\n  .medium-up-2 > .column, .medium-up-2 > .columns {\n    width: 50%;\n    float: left; }\n    .medium-up-2 > .column:nth-of-type(1n), .medium-up-2 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-2 > .column:nth-of-type(2n+1), .medium-up-2 > .columns:nth-of-type(2n+1) {\n      clear: both; }\n    .medium-up-2 > .column:last-child, .medium-up-2 > .columns:last-child {\n      float: left; }\n  .medium-up-3 > .column, .medium-up-3 > .columns {\n    width: 33.33333%;\n    float: left; }\n    .medium-up-3 > .column:nth-of-type(1n), .medium-up-3 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-3 > .column:nth-of-type(3n+1), .medium-up-3 > .columns:nth-of-type(3n+1) {\n      clear: both; }\n    .medium-up-3 > .column:last-child, .medium-up-3 > .columns:last-child {\n      float: left; }\n  .medium-up-4 > .column, .medium-up-4 > .columns {\n    width: 25%;\n    float: left; }\n    .medium-up-4 > .column:nth-of-type(1n), .medium-up-4 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-4 > .column:nth-of-type(4n+1), .medium-up-4 > .columns:nth-of-type(4n+1) {\n      clear: both; }\n    .medium-up-4 > .column:last-child, .medium-up-4 > .columns:last-child {\n      float: left; }\n  .medium-up-5 > .column, .medium-up-5 > .columns {\n    width: 20%;\n    float: left; }\n    .medium-up-5 > .column:nth-of-type(1n), .medium-up-5 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-5 > .column:nth-of-type(5n+1), .medium-up-5 > .columns:nth-of-type(5n+1) {\n      clear: both; }\n    .medium-up-5 > .column:last-child, .medium-up-5 > .columns:last-child {\n      float: left; }\n  .medium-up-6 > .column, .medium-up-6 > .columns {\n    width: 16.66667%;\n    float: left; }\n    .medium-up-6 > .column:nth-of-type(1n), .medium-up-6 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-6 > .column:nth-of-type(6n+1), .medium-up-6 > .columns:nth-of-type(6n+1) {\n      clear: both; }\n    .medium-up-6 > .column:last-child, .medium-up-6 > .columns:last-child {\n      float: left; }\n  .medium-up-7 > .column, .medium-up-7 > .columns {\n    width: 14.28571%;\n    float: left; }\n    .medium-up-7 > .column:nth-of-type(1n), .medium-up-7 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-7 > .column:nth-of-type(7n+1), .medium-up-7 > .columns:nth-of-type(7n+1) {\n      clear: both; }\n    .medium-up-7 > .column:last-child, .medium-up-7 > .columns:last-child {\n      float: left; }\n  .medium-up-8 > .column, .medium-up-8 > .columns {\n    width: 12.5%;\n    float: left; }\n    .medium-up-8 > .column:nth-of-type(1n), .medium-up-8 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .medium-up-8 > .column:nth-of-type(8n+1), .medium-up-8 > .columns:nth-of-type(8n+1) {\n      clear: both; }\n    .medium-up-8 > .column:last-child, .medium-up-8 > .columns:last-child {\n      float: left; }\n  .medium-collapse > .column, .medium-collapse > .columns {\n    padding-left: 0;\n    padding-right: 0; }\n  .medium-collapse .row {\n    margin-left: 0;\n    margin-right: 0; }\n  .medium-uncollapse > .column, .medium-uncollapse > .columns {\n    padding-left: 0.9375rem;\n    padding-right: 0.9375rem; }\n  .medium-centered {\n    float: none;\n    margin-left: auto;\n    margin-right: auto; }\n  .medium-uncentered,\n  .medium-push-0,\n  .medium-pull-0 {\n    position: static;\n    margin-left: 0;\n    margin-right: 0;\n    float: left; } }\n\n@media screen and (min-width: 64em) {\n  .large-1 {\n    width: 8.33333%; }\n  .large-push-1 {\n    position: relative;\n    left: 8.33333%; }\n  .large-pull-1 {\n    position: relative;\n    left: -8.33333%; }\n  .large-offset-0 {\n    margin-left: 0%; }\n  .large-2 {\n    width: 16.66667%; }\n  .large-push-2 {\n    position: relative;\n    left: 16.66667%; }\n  .large-pull-2 {\n    position: relative;\n    left: -16.66667%; }\n  .large-offset-1 {\n    margin-left: 8.33333%; }\n  .large-3 {\n    width: 25%; }\n  .large-push-3 {\n    position: relative;\n    left: 25%; }\n  .large-pull-3 {\n    position: relative;\n    left: -25%; }\n  .large-offset-2 {\n    margin-left: 16.66667%; }\n  .large-4 {\n    width: 33.33333%; }\n  .large-push-4 {\n    position: relative;\n    left: 33.33333%; }\n  .large-pull-4 {\n    position: relative;\n    left: -33.33333%; }\n  .large-offset-3 {\n    margin-left: 25%; }\n  .large-5 {\n    width: 41.66667%; }\n  .large-push-5 {\n    position: relative;\n    left: 41.66667%; }\n  .large-pull-5 {\n    position: relative;\n    left: -41.66667%; }\n  .large-offset-4 {\n    margin-left: 33.33333%; }\n  .large-6 {\n    width: 50%; }\n  .large-push-6 {\n    position: relative;\n    left: 50%; }\n  .large-pull-6 {\n    position: relative;\n    left: -50%; }\n  .large-offset-5 {\n    margin-left: 41.66667%; }\n  .large-7 {\n    width: 58.33333%; }\n  .large-push-7 {\n    position: relative;\n    left: 58.33333%; }\n  .large-pull-7 {\n    position: relative;\n    left: -58.33333%; }\n  .large-offset-6 {\n    margin-left: 50%; }\n  .large-8 {\n    width: 66.66667%; }\n  .large-push-8 {\n    position: relative;\n    left: 66.66667%; }\n  .large-pull-8 {\n    position: relative;\n    left: -66.66667%; }\n  .large-offset-7 {\n    margin-left: 58.33333%; }\n  .large-9 {\n    width: 75%; }\n  .large-push-9 {\n    position: relative;\n    left: 75%; }\n  .large-pull-9 {\n    position: relative;\n    left: -75%; }\n  .large-offset-8 {\n    margin-left: 66.66667%; }\n  .large-10 {\n    width: 83.33333%; }\n  .large-push-10 {\n    position: relative;\n    left: 83.33333%; }\n  .large-pull-10 {\n    position: relative;\n    left: -83.33333%; }\n  .large-offset-9 {\n    margin-left: 75%; }\n  .large-11 {\n    width: 91.66667%; }\n  .large-push-11 {\n    position: relative;\n    left: 91.66667%; }\n  .large-pull-11 {\n    position: relative;\n    left: -91.66667%; }\n  .large-offset-10 {\n    margin-left: 83.33333%; }\n  .large-12 {\n    width: 100%; }\n  .large-offset-11 {\n    margin-left: 91.66667%; }\n  .large-up-1 > .column, .large-up-1 > .columns {\n    width: 100%;\n    float: left; }\n    .large-up-1 > .column:nth-of-type(1n), .large-up-1 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-1 > .column:nth-of-type(1n+1), .large-up-1 > .columns:nth-of-type(1n+1) {\n      clear: both; }\n    .large-up-1 > .column:last-child, .large-up-1 > .columns:last-child {\n      float: left; }\n  .large-up-2 > .column, .large-up-2 > .columns {\n    width: 50%;\n    float: left; }\n    .large-up-2 > .column:nth-of-type(1n), .large-up-2 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-2 > .column:nth-of-type(2n+1), .large-up-2 > .columns:nth-of-type(2n+1) {\n      clear: both; }\n    .large-up-2 > .column:last-child, .large-up-2 > .columns:last-child {\n      float: left; }\n  .large-up-3 > .column, .large-up-3 > .columns {\n    width: 33.33333%;\n    float: left; }\n    .large-up-3 > .column:nth-of-type(1n), .large-up-3 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-3 > .column:nth-of-type(3n+1), .large-up-3 > .columns:nth-of-type(3n+1) {\n      clear: both; }\n    .large-up-3 > .column:last-child, .large-up-3 > .columns:last-child {\n      float: left; }\n  .large-up-4 > .column, .large-up-4 > .columns {\n    width: 25%;\n    float: left; }\n    .large-up-4 > .column:nth-of-type(1n), .large-up-4 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-4 > .column:nth-of-type(4n+1), .large-up-4 > .columns:nth-of-type(4n+1) {\n      clear: both; }\n    .large-up-4 > .column:last-child, .large-up-4 > .columns:last-child {\n      float: left; }\n  .large-up-5 > .column, .large-up-5 > .columns {\n    width: 20%;\n    float: left; }\n    .large-up-5 > .column:nth-of-type(1n), .large-up-5 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-5 > .column:nth-of-type(5n+1), .large-up-5 > .columns:nth-of-type(5n+1) {\n      clear: both; }\n    .large-up-5 > .column:last-child, .large-up-5 > .columns:last-child {\n      float: left; }\n  .large-up-6 > .column, .large-up-6 > .columns {\n    width: 16.66667%;\n    float: left; }\n    .large-up-6 > .column:nth-of-type(1n), .large-up-6 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-6 > .column:nth-of-type(6n+1), .large-up-6 > .columns:nth-of-type(6n+1) {\n      clear: both; }\n    .large-up-6 > .column:last-child, .large-up-6 > .columns:last-child {\n      float: left; }\n  .large-up-7 > .column, .large-up-7 > .columns {\n    width: 14.28571%;\n    float: left; }\n    .large-up-7 > .column:nth-of-type(1n), .large-up-7 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-7 > .column:nth-of-type(7n+1), .large-up-7 > .columns:nth-of-type(7n+1) {\n      clear: both; }\n    .large-up-7 > .column:last-child, .large-up-7 > .columns:last-child {\n      float: left; }\n  .large-up-8 > .column, .large-up-8 > .columns {\n    width: 12.5%;\n    float: left; }\n    .large-up-8 > .column:nth-of-type(1n), .large-up-8 > .columns:nth-of-type(1n) {\n      clear: none; }\n    .large-up-8 > .column:nth-of-type(8n+1), .large-up-8 > .columns:nth-of-type(8n+1) {\n      clear: both; }\n    .large-up-8 > .column:last-child, .large-up-8 > .columns:last-child {\n      float: left; }\n  .large-collapse > .column, .large-collapse > .columns {\n    padding-left: 0;\n    padding-right: 0; }\n  .large-collapse .row {\n    margin-left: 0;\n    margin-right: 0; }\n  .large-uncollapse > .column, .large-uncollapse > .columns {\n    padding-left: 0.9375rem;\n    padding-right: 0.9375rem; }\n  .large-centered {\n    float: none;\n    margin-left: auto;\n    margin-right: auto; }\n  .large-uncentered,\n  .large-push-0,\n  .large-pull-0 {\n    position: static;\n    margin-left: 0;\n    margin-right: 0;\n    float: left; } }\n\ndiv,\ndl,\ndt,\ndd,\nul,\nol,\nli,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\npre,\nform,\np,\nblockquote,\nth,\ntd {\n  margin: 0;\n  padding: 0; }\n\np {\n  font-size: inherit;\n  line-height: 1.6;\n  margin-bottom: 1rem;\n  text-rendering: optimizeLegibility; }\n\nem,\ni {\n  font-style: italic;\n  line-height: inherit; }\n\nstrong,\nb {\n  font-weight: bold;\n  line-height: inherit; }\n\nsmall {\n  font-size: 80%;\n  line-height: inherit; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Roboto\", sans-serif;\n  font-weight: normal;\n  font-style: normal;\n  color: inherit;\n  text-rendering: optimizeLegibility;\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n  line-height: 1.4; }\n  h1 small,\n  h2 small,\n  h3 small,\n  h4 small,\n  h5 small,\n  h6 small {\n    color: #cacaca;\n    line-height: 0; }\n\nh1 {\n  font-size: 1.5rem; }\n\nh2 {\n  font-size: 1.25rem; }\n\nh3 {\n  font-size: 1.1875rem; }\n\nh4 {\n  font-size: 1.125rem; }\n\nh5 {\n  font-size: 1.0625rem; }\n\nh6 {\n  font-size: 1rem; }\n\n@media screen and (min-width: 40em) {\n  h1 {\n    font-size: 3rem; }\n  h2 {\n    font-size: 2.5rem; }\n  h3 {\n    font-size: 1.9375rem; }\n  h4 {\n    font-size: 1.5625rem; }\n  h5 {\n    font-size: 1.25rem; }\n  h6 {\n    font-size: 1rem; } }\n\na {\n  color: #2199e8;\n  text-decoration: none;\n  line-height: inherit;\n  cursor: pointer; }\n  a:hover, a:focus {\n    color: #1585cf; }\n  a img {\n    border: 0; }\n\nhr {\n  max-width: 75rem;\n  height: 0;\n  border-right: 0;\n  border-top: 0;\n  border-bottom: 1px solid #cacaca;\n  border-left: 0;\n  margin: 1.25rem auto;\n  clear: both; }\n\nul,\nol,\ndl {\n  line-height: 1.6;\n  margin-bottom: 1rem;\n  list-style-position: outside; }\n\nli {\n  font-size: inherit; }\n\nul {\n  list-style-type: disc;\n  margin-left: 1.25rem; }\n\nol {\n  margin-left: 1.25rem; }\n\nul ul, ol ul, ul ol, ol ol {\n  margin-left: 1.25rem;\n  margin-bottom: 0; }\n\ndl {\n  margin-bottom: 1rem; }\n  dl dt {\n    margin-bottom: 0.3rem;\n    font-weight: bold; }\n\nblockquote {\n  margin: 0 0 1rem;\n  padding: 0.5625rem 1.25rem 0 1.1875rem;\n  border-left: 1px solid #cacaca; }\n  blockquote, blockquote p {\n    line-height: 1.6;\n    color: #8a8a8a; }\n\ncite {\n  display: block;\n  font-size: 0.8125rem;\n  color: #8a8a8a; }\n  cite:before {\n    content: '\\2014    '; }\n\nabbr {\n  color: #0a0a0a;\n  cursor: help;\n  border-bottom: 1px dotted #0a0a0a; }\n\ncode {\n  font-family: Consolas, \"Liberation Mono\", Courier, monospace;\n  font-weight: normal;\n  color: #0a0a0a;\n  background-color: #fafafa;\n  border: 1px solid #cacaca;\n  padding: 0.125rem 0.3125rem 0.0625rem; }\n\nkbd {\n  padding: 0.125rem 0.25rem 0;\n  margin: 0;\n  background-color: #fafafa;\n  color: #0a0a0a;\n  font-family: Consolas, \"Liberation Mono\", Courier, monospace;\n  border-radius: 0.5rem; }\n\n.subheader {\n  margin-top: 0.2rem;\n  margin-bottom: 0.5rem;\n  font-weight: normal;\n  line-height: 1.4;\n  color: #8a8a8a; }\n\n.lead {\n  font-size: 125%;\n  line-height: 1.6; }\n\n.stat {\n  font-size: 2.5rem;\n  line-height: 1; }\n  p + .stat {\n    margin-top: -1rem; }\n\n.no-bullet {\n  margin-left: 0;\n  list-style: none; }\n\n.text-left {\n  text-align: left; }\n\n.text-right {\n  text-align: right; }\n\n.text-center {\n  text-align: center; }\n\n.text-justify {\n  text-align: justify; }\n\n@media screen and (min-width: 40em) {\n  .medium-text-left {\n    text-align: left; }\n  .medium-text-right {\n    text-align: right; }\n  .medium-text-center {\n    text-align: center; }\n  .medium-text-justify {\n    text-align: justify; } }\n\n@media screen and (min-width: 64em) {\n  .large-text-left {\n    text-align: left; }\n  .large-text-right {\n    text-align: right; }\n  .large-text-center {\n    text-align: center; }\n  .large-text-justify {\n    text-align: justify; } }\n\n.show-for-print {\n  display: none !important; }\n\n@media print {\n  * {\n    background: transparent !important;\n    color: black !important;\n    box-shadow: none !important;\n    text-shadow: none !important; }\n  .show-for-print {\n    display: block !important; }\n  .hide-for-print {\n    display: none !important; }\n  table.show-for-print {\n    display: table !important; }\n  thead.show-for-print {\n    display: table-header-group !important; }\n  tbody.show-for-print {\n    display: table-row-group !important; }\n  tr.show-for-print {\n    display: table-row !important; }\n  td.show-for-print {\n    display: table-cell !important; }\n  th.show-for-print {\n    display: table-cell !important; }\n  a,\n  a:visited {\n    text-decoration: underline; }\n  a[href]:after {\n    content: \" (\" attr(href) \")\"; }\n  .ir a:after,\n  a[href^='javascript:']:after,\n  a[href^='#']:after {\n    content: ''; }\n  abbr[title]:after {\n    content: \" (\" attr(title) \")\"; }\n  pre,\n  blockquote {\n    border: 1px solid #8a8a8a;\n    page-break-inside: avoid; }\n  thead {\n    display: table-header-group; }\n  tr,\n  img {\n    page-break-inside: avoid; }\n  img {\n    max-width: 100% !important; }\n  @page {\n    margin: 0.5cm; }\n  p,\n  h2,\n  h3 {\n    orphans: 3;\n    widows: 3; }\n  h2,\n  h3 {\n    page-break-after: avoid; } }\n\n[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],\ntextarea {\n  display: block;\n  box-sizing: border-box;\n  width: 100%;\n  height: 2.4375rem;\n  padding: 0.5rem;\n  border: 1px solid #cacaca;\n  margin: 0 0 1rem;\n  font-family: inherit;\n  font-size: 1rem;\n  color: #0a0a0a;\n  background-color: #fefefe;\n  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);\n  border-radius: 0.5rem;\n  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;\n  -webkit-appearance: none;\n  -moz-appearance: none; }\n  [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus,\n  textarea:focus {\n    border: 1px solid #8a8a8a;\n    background-color: #fefefe;\n    outline: none;\n    box-shadow: 0 0 5px #cacaca;\n    transition: box-shadow 0.5s, border-color 0.25s ease-in-out; }\n\ntextarea {\n  max-width: 100%; }\n  textarea[rows] {\n    height: auto; }\n\ninput::placeholder,\ntextarea::placeholder {\n  color: #cacaca; }\n\ninput:disabled, input[readonly],\ntextarea:disabled,\ntextarea[readonly] {\n  background-color: #fafafa;\n  cursor: not-allowed; }\n\n[type='submit'],\n[type='button'] {\n  border-radius: 0.5rem;\n  -webkit-appearance: none;\n  -moz-appearance: none; }\n\ninput[type='search'] {\n  box-sizing: border-box; }\n\n[type='file'],\n[type='checkbox'],\n[type='radio'] {\n  margin: 0 0 1rem; }\n\n[type='checkbox'] + label,\n[type='radio'] + label {\n  display: inline-block;\n  margin-left: 0.5rem;\n  margin-right: 1rem;\n  margin-bottom: 0;\n  vertical-align: baseline; }\n\nlabel > [type='checkbox'],\nlabel > [type='radio'] {\n  margin-right: 0.5rem; }\n\n[type='file'] {\n  width: 100%; }\n\nlabel {\n  display: block;\n  margin: 0;\n  font-size: 0.875rem;\n  font-weight: normal;\n  line-height: 1.8;\n  color: #0a0a0a; }\n  label.middle {\n    margin: 0 0 1rem;\n    padding: 0.5625rem 0; }\n\n.help-text {\n  margin-top: -0.5rem;\n  font-size: 0.8125rem;\n  font-style: italic;\n  color: #0a0a0a; }\n\n.input-group {\n  display: table;\n  width: 100%;\n  margin-bottom: 1rem; }\n  .input-group > :first-child {\n    border-radius: 0.5rem 0 0 0.5rem; }\n  .input-group > :last-child > * {\n    border-radius: 0 0.5rem 0.5rem 0; }\n\n.input-group-label, .input-group-field, .input-group-button {\n  margin: 0;\n  display: table-cell;\n  vertical-align: middle; }\n\n.input-group-label {\n  text-align: center;\n  padding: 0 1rem;\n  background: #fafafa;\n  color: #0a0a0a;\n  border: 1px solid #cacaca;\n  white-space: nowrap;\n  width: 1%;\n  height: 100%; }\n  .input-group-label:first-child {\n    border-right: 0; }\n  .input-group-label:last-child {\n    border-left: 0; }\n\n.input-group-field {\n  border-radius: 0;\n  height: 2.5rem; }\n\n.input-group-button {\n  padding-top: 0;\n  padding-bottom: 0;\n  text-align: center;\n  height: 100%;\n  width: 1%; }\n  .input-group-button a,\n  .input-group-button input,\n  .input-group-button button {\n    margin: 0; }\n\n.input-group .input-group-button {\n  display: table-cell; }\n\nfieldset {\n  border: 0;\n  padding: 0;\n  margin: 0; }\n\nlegend {\n  margin-bottom: 0.5rem;\n  max-width: 100%; }\n\n.fieldset {\n  border: 1px solid #cacaca;\n  padding: 1.25rem;\n  margin: 1.125rem 0; }\n  .fieldset legend {\n    background: #fefefe;\n    padding: 0 0.1875rem;\n    margin: 0;\n    margin-left: -0.1875rem; }\n\nselect {\n  height: 2.4375rem;\n  padding: 0.5rem;\n  border: 1px solid #cacaca;\n  margin: 0 0 1rem;\n  font-size: 1rem;\n  font-family: inherit;\n  line-height: normal;\n  color: #0a0a0a;\n  background-color: #fefefe;\n  border-radius: 0.5rem;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"32\" height=\"24\" viewBox=\"0 0 32 24\"><polygon points=\"0,0 32,0 16,24\" style=\"fill: rgb%28138, 138, 138%29\"></polygon></svg>');\n  background-size: 9px 6px;\n  background-position: right center;\n  background-origin: content-box;\n  background-repeat: no-repeat; }\n  @media screen and (min-width: 0\\0) {\n    select {\n      background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==\"); } }\n  select:disabled {\n    background-color: #fafafa;\n    cursor: not-allowed; }\n  select::-ms-expand {\n    display: none; }\n  select[multiple] {\n    height: auto; }\n\n.is-invalid-input:not(:focus) {\n  background-color: rgba(236, 88, 64, 0.1);\n  border-color: #ec5840; }\n\n.is-invalid-label {\n  color: #ec5840; }\n\n.form-error {\n  display: none;\n  margin-top: -0.5rem;\n  margin-bottom: 1rem;\n  font-size: 0.75rem;\n  font-weight: bold;\n  color: #ec5840; }\n  .form-error.is-visible {\n    display: block; }\n\n.button {\n  display: inline-block;\n  text-align: center;\n  line-height: 1;\n  cursor: pointer;\n  -webkit-appearance: none;\n  transition: background-color 0.25s ease-out, color 0.25s ease-out;\n  vertical-align: middle;\n  border: 1px solid transparent;\n  border-radius: 0.5rem;\n  padding: 0.85em 1em;\n  margin: 0 0 1rem 0;\n  font-size: 0.9rem;\n  background-color: #2199e8;\n  color: #fefefe; }\n  [data-whatinput='mouse'] .button {\n    outline: 0; }\n  .button:hover, .button:focus {\n    background-color: #1583cc;\n    color: #fefefe; }\n  .button.tiny {\n    font-size: 0.6rem; }\n  .button.small {\n    font-size: 0.75rem; }\n  .button.large {\n    font-size: 1.25rem; }\n  .button.expanded {\n    display: block;\n    width: 100%;\n    margin-left: 0;\n    margin-right: 0; }\n  .button.primary {\n    background-color: #2199e8;\n    color: #fefefe; }\n    .button.primary:hover, .button.primary:focus {\n      background-color: #147cc0;\n      color: #fefefe; }\n  .button.secondary {\n    background-color: #777;\n    color: #fefefe; }\n    .button.secondary:hover, .button.secondary:focus {\n      background-color: #5f5f5f;\n      color: #fefefe; }\n  .button.success {\n    background-color: #3adb76;\n    color: #fefefe; }\n    .button.success:hover, .button.success:focus {\n      background-color: #22bb5b;\n      color: #fefefe; }\n  .button.warning {\n    background-color: #ffae00;\n    color: #fefefe; }\n    .button.warning:hover, .button.warning:focus {\n      background-color: #cc8b00;\n      color: #fefefe; }\n  .button.alert {\n    background-color: #ec5840;\n    color: #fefefe; }\n    .button.alert:hover, .button.alert:focus {\n      background-color: #da3116;\n      color: #fefefe; }\n  .button.hollow {\n    border: 1px solid #2199e8;\n    color: #2199e8; }\n    .button.hollow, .button.hollow:hover, .button.hollow:focus {\n      background-color: transparent; }\n    .button.hollow:hover, .button.hollow:focus {\n      border-color: #0c4d78;\n      color: #0c4d78; }\n    .button.hollow.primary {\n      border: 1px solid #2199e8;\n      color: #2199e8; }\n      .button.hollow.primary:hover, .button.hollow.primary:focus {\n        border-color: #0c4d78;\n        color: #0c4d78; }\n    .button.hollow.secondary {\n      border: 1px solid #777;\n      color: #777; }\n      .button.hollow.secondary:hover, .button.hollow.secondary:focus {\n        border-color: #3c3c3c;\n        color: #3c3c3c; }\n    .button.hollow.success {\n      border: 1px solid #3adb76;\n      color: #3adb76; }\n      .button.hollow.success:hover, .button.hollow.success:focus {\n        border-color: #157539;\n        color: #157539; }\n    .button.hollow.warning {\n      border: 1px solid #ffae00;\n      color: #ffae00; }\n      .button.hollow.warning:hover, .button.hollow.warning:focus {\n        border-color: #805700;\n        color: #805700; }\n    .button.hollow.alert {\n      border: 1px solid #ec5840;\n      color: #ec5840; }\n      .button.hollow.alert:hover, .button.hollow.alert:focus {\n        border-color: #881f0e;\n        color: #881f0e; }\n  .button.disabled, .button[disabled] {\n    opacity: 0.25;\n    cursor: not-allowed;\n    pointer-events: none; }\n  .button.dropdown::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 0.4em;\n    border-color: #fefefe transparent transparent;\n    border-top-style: solid;\n    border-bottom-width: 0;\n    position: relative;\n    top: 0.4em;\n    float: right;\n    margin-left: 1em;\n    display: inline-block; }\n  .button.arrow-only::after {\n    margin-left: 0;\n    float: none;\n    top: -0.1em; }\n\n.accordion {\n  list-style-type: none;\n  background: #fefefe;\n  border: 1px solid #fafafa;\n  border-bottom: 0;\n  border-radius: 0.5rem;\n  margin-left: 0; }\n\n.accordion-title {\n  display: block;\n  padding: 1.25rem 1rem;\n  line-height: 1;\n  font-size: 0.75rem;\n  color: #2199e8;\n  position: relative;\n  border-bottom: 1px solid #fafafa; }\n  .accordion-title:hover, .accordion-title:focus {\n    background-color: #fafafa; }\n  .accordion-title::before {\n    content: '+';\n    position: absolute;\n    right: 1rem;\n    top: 50%;\n    margin-top: -0.5rem; }\n  .is-active > .accordion-title::before {\n    content: '\\2013'; }\n\n.accordion-content {\n  padding: 1rem;\n  display: none;\n  border-bottom: 1px solid #fafafa;\n  background-color: #fefefe; }\n\n.is-accordion-submenu-parent > a {\n  position: relative; }\n  .is-accordion-submenu-parent > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 6px;\n    border-color: #2199e8 transparent transparent;\n    border-top-style: solid;\n    border-bottom-width: 0;\n    position: absolute;\n    top: 50%;\n    margin-top: -4px;\n    right: 1rem; }\n\n.is-accordion-submenu-parent[aria-expanded='true'] > a::after {\n  transform-origin: 50% 50%;\n  transform: scaleY(-1); }\n\n.badge {\n  display: inline-block;\n  padding: 0.3em;\n  min-width: 2.1em;\n  font-size: 0.6rem;\n  text-align: center;\n  border-radius: 50%;\n  background: #2199e8;\n  color: #fefefe; }\n  .badge.secondary {\n    background: #777;\n    color: #fefefe; }\n  .badge.success {\n    background: #3adb76;\n    color: #fefefe; }\n  .badge.warning {\n    background: #ffae00;\n    color: #fefefe; }\n  .badge.alert {\n    background: #ec5840;\n    color: #fefefe; }\n\n.breadcrumbs {\n  list-style: none;\n  margin: 0 0 1rem 0; }\n  .breadcrumbs::before, .breadcrumbs::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .breadcrumbs::after {\n    clear: both; }\n  .breadcrumbs li {\n    float: left;\n    color: #0a0a0a;\n    font-size: 0.6875rem;\n    cursor: default;\n    text-transform: uppercase; }\n    .breadcrumbs li:not(:last-child)::after {\n      color: #cacaca;\n      content: \"/\";\n      margin: 0 0.75rem;\n      position: relative;\n      top: 1px;\n      opacity: 1; }\n  .breadcrumbs a {\n    color: #2199e8; }\n    .breadcrumbs a:hover {\n      text-decoration: underline; }\n  .breadcrumbs .disabled {\n    color: #cacaca; }\n\n.button-group {\n  margin-bottom: 1rem;\n  font-size: 0; }\n  .button-group::before, .button-group::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .button-group::after {\n    clear: both; }\n  .button-group .button {\n    margin: 0;\n    font-size: 0.9rem;\n    float: left; }\n    .button-group .button:not(:last-child) {\n      border-right: 1px solid #fefefe; }\n  .button-group.tiny .button {\n    font-size: 0.6rem; }\n  .button-group.small .button {\n    font-size: 0.75rem; }\n  .button-group.large .button {\n    font-size: 1.25rem; }\n  .button-group.expanded {\n    margin-right: -1px; }\n    .button-group.expanded::before, .button-group.expanded::after {\n      display: none; }\n    .button-group.expanded .button:first-child:nth-last-child(2), .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button {\n      display: inline-block;\n      width: calc(50% - 1px);\n      margin-right: 1px; }\n    .button-group.expanded .button:first-child:nth-last-child(3), .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button {\n      display: inline-block;\n      width: calc(33.33333% - 1px);\n      margin-right: 1px; }\n    .button-group.expanded .button:first-child:nth-last-child(4), .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button {\n      display: inline-block;\n      width: calc(25% - 1px);\n      margin-right: 1px; }\n    .button-group.expanded .button:first-child:nth-last-child(5), .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button {\n      display: inline-block;\n      width: calc(20% - 1px);\n      margin-right: 1px; }\n    .button-group.expanded .button:first-child:nth-last-child(6), .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button {\n      display: inline-block;\n      width: calc(16.66667% - 1px);\n      margin-right: 1px; }\n  .button-group.primary .button {\n    background-color: #2199e8;\n    color: #fefefe; }\n    .button-group.primary .button:hover, .button-group.primary .button:focus {\n      background-color: #147cc0;\n      color: #fefefe; }\n  .button-group.secondary .button {\n    background-color: #777;\n    color: #fefefe; }\n    .button-group.secondary .button:hover, .button-group.secondary .button:focus {\n      background-color: #5f5f5f;\n      color: #fefefe; }\n  .button-group.success .button {\n    background-color: #3adb76;\n    color: #fefefe; }\n    .button-group.success .button:hover, .button-group.success .button:focus {\n      background-color: #22bb5b;\n      color: #fefefe; }\n  .button-group.warning .button {\n    background-color: #ffae00;\n    color: #fefefe; }\n    .button-group.warning .button:hover, .button-group.warning .button:focus {\n      background-color: #cc8b00;\n      color: #fefefe; }\n  .button-group.alert .button {\n    background-color: #ec5840;\n    color: #fefefe; }\n    .button-group.alert .button:hover, .button-group.alert .button:focus {\n      background-color: #da3116;\n      color: #fefefe; }\n  .button-group.stacked .button, .button-group.stacked-for-small .button, .button-group.stacked-for-medium .button {\n    width: 100%; }\n    .button-group.stacked .button:not(:last-child), .button-group.stacked-for-small .button:not(:last-child), .button-group.stacked-for-medium .button:not(:last-child) {\n      margin-right: 0; }\n  @media screen and (min-width: 40em) {\n    .button-group.stacked-for-small .button {\n      width: auto; }\n      .button-group.stacked-for-small .button:not(:last-child) {\n        margin-right: 1px; } }\n  @media screen and (min-width: 64em) {\n    .button-group.stacked-for-medium .button {\n      width: auto; }\n      .button-group.stacked-for-medium .button:not(:last-child) {\n        margin-right: 1px; } }\n  @media screen and (max-width: 39.9375em) {\n    .button-group.stacked-for-small.expanded {\n      display: block; }\n      .button-group.stacked-for-small.expanded .button {\n        display: block;\n        margin-right: 0; } }\n\n.callout {\n  margin: 0 0 1rem 0;\n  padding: 100rem;\n  border: 1px solid rgba(10, 10, 10, 0.25);\n  border-radius: 0.5rem;\n  position: relative;\n  color: #0a0a0a;\n  background-color: white; }\n  .callout > :first-child {\n    margin-top: 0; }\n  .callout > :last-child {\n    margin-bottom: 0; }\n  .callout.primary {\n    background-color: #def0fc; }\n  .callout.secondary {\n    background-color: #ebebeb; }\n  .callout.success {\n    background-color: #e1faea; }\n  .callout.warning {\n    background-color: #fff3d9; }\n  .callout.alert {\n    background-color: #fce6e2; }\n  .callout.small {\n    padding-top: 0.5rem;\n    padding-right: 0.5rem;\n    padding-bottom: 0.5rem;\n    padding-left: 0.5rem; }\n  .callout.large {\n    padding-top: 3rem;\n    padding-right: 3rem;\n    padding-bottom: 3rem;\n    padding-left: 3rem; }\n\n.close-button {\n  position: absolute;\n  color: #8a8a8a;\n  right: 1rem;\n  top: 0.5rem;\n  font-size: 2em;\n  line-height: 1;\n  cursor: pointer; }\n  [data-whatinput='mouse'] .close-button {\n    outline: 0; }\n  .close-button:hover, .close-button:focus {\n    color: #0a0a0a; }\n\n.menu {\n  margin: 0;\n  list-style-type: none; }\n  .menu > li {\n    display: table-cell;\n    vertical-align: middle; }\n    [data-whatinput='mouse'] .menu > li {\n      outline: 0; }\n  .menu > li > a {\n    display: block;\n    padding: 0.7rem 1rem;\n    line-height: 1; }\n  .menu input,\n  .menu a,\n  .menu button {\n    margin-bottom: 0; }\n  .menu > li > a img,\n  .menu > li > a i {\n    vertical-align: middle; }\n  .menu > li > a i + span,\n  .menu > li > a img + span {\n    vertical-align: middle; }\n  .menu > li > a img,\n  .menu > li > a i {\n    margin-right: 0.25rem;\n    display: inline-block; }\n  .menu > li {\n    display: table-cell; }\n  .menu.vertical > li {\n    display: block; }\n  @media screen and (min-width: 40em) {\n    .menu.medium-horizontal > li {\n      display: table-cell; }\n    .menu.medium-vertical > li {\n      display: block; } }\n  @media screen and (min-width: 64em) {\n    .menu.large-horizontal > li {\n      display: table-cell; }\n    .menu.large-vertical > li {\n      display: block; } }\n  .menu.simple li {\n    line-height: 1;\n    display: inline-block;\n    margin-right: 1rem; }\n  .menu.simple a {\n    padding: 0; }\n  .menu.align-right::before, .menu.align-right::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .menu.align-right::after {\n    clear: both; }\n  .menu.align-right > li {\n    float: right; }\n  .menu.expanded {\n    width: 100%;\n    display: table;\n    table-layout: fixed; }\n    .menu.expanded > li:first-child:last-child {\n      width: 100%; }\n  .menu.icon-top > li > a {\n    text-align: center; }\n    .menu.icon-top > li > a img,\n    .menu.icon-top > li > a i {\n      display: block;\n      margin: 0 auto 0.25rem; }\n  .menu.nested {\n    margin-left: 1rem; }\n  .menu .active > a {\n    color: #fefefe;\n    background: #2199e8; }\n\n.menu-text {\n  font-weight: bold;\n  color: inherit;\n  line-height: 1;\n  padding-top: 0;\n  padding-bottom: 0;\n  padding: 0.7rem 1rem; }\n\n.menu-centered {\n  text-align: center; }\n  .menu-centered > .menu {\n    display: inline-block; }\n\n.no-js [data-responsive-menu] ul {\n  display: none; }\n\n.menu-icon {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle;\n  cursor: pointer;\n  width: 20px;\n  height: 16px; }\n  .menu-icon::after {\n    content: '';\n    position: absolute;\n    display: block;\n    width: 100%;\n    height: 2px;\n    background: #fefefe;\n    top: 0;\n    left: 0;\n    box-shadow: 0 7px 0 #fefefe, 0 14px 0 #fefefe; }\n  .menu-icon:hover::after {\n    background: #cacaca;\n    box-shadow: 0 7px 0 #cacaca, 0 14px 0 #cacaca; }\n\n.menu-icon.dark {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle;\n  cursor: pointer;\n  width: 20px;\n  height: 16px; }\n  .menu-icon.dark::after {\n    content: '';\n    position: absolute;\n    display: block;\n    width: 100%;\n    height: 2px;\n    background: #0a0a0a;\n    top: 0;\n    left: 0;\n    box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a; }\n  .menu-icon.dark:hover::after {\n    background: #8a8a8a;\n    box-shadow: 0 7px 0 #8a8a8a, 0 14px 0 #8a8a8a; }\n\n.is-drilldown {\n  position: relative;\n  overflow: hidden; }\n  .is-drilldown li {\n    display: block !important; }\n\n.is-drilldown-submenu {\n  position: absolute;\n  top: 0;\n  left: 100%;\n  z-index: -1;\n  height: 100%;\n  width: 100%;\n  background: #fefefe;\n  transition: transform 0.15s linear; }\n  .is-drilldown-submenu.is-active {\n    z-index: 1;\n    display: block;\n    transform: translateX(-100%); }\n  .is-drilldown-submenu.is-closing {\n    transform: translateX(100%); }\n\n.is-drilldown-submenu-parent > a {\n  position: relative; }\n  .is-drilldown-submenu-parent > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 6px;\n    border-color: transparent transparent transparent #2199e8;\n    border-left-style: solid;\n    border-right-width: 0;\n    position: absolute;\n    top: 50%;\n    margin-top: -6px;\n    right: 1rem; }\n\n.js-drilldown-back > a::before {\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border: inset 6px;\n  border-color: transparent #2199e8 transparent transparent;\n  border-right-style: solid;\n  border-left-width: 0;\n  border-left-width: 0;\n  display: inline-block;\n  vertical-align: middle;\n  margin-right: 0.75rem; }\n\n.dropdown-pane {\n  background-color: #fefefe;\n  border: 1px solid #cacaca;\n  border-radius: 0.5rem;\n  display: block;\n  font-size: 1rem;\n  padding: 1rem;\n  position: absolute;\n  visibility: hidden;\n  width: 300px;\n  z-index: 10; }\n  .dropdown-pane.is-open {\n    visibility: visible; }\n\n.dropdown-pane.tiny {\n  width: 100px; }\n\n.dropdown-pane.small {\n  width: 200px; }\n\n.dropdown-pane.large {\n  width: 400px; }\n\n.dropdown.menu > li.opens-left > .is-dropdown-submenu {\n  left: auto;\n  right: 0;\n  top: 100%; }\n\n.dropdown.menu > li.opens-right > .is-dropdown-submenu {\n  right: auto;\n  left: 0;\n  top: 100%; }\n\n.dropdown.menu > li.is-dropdown-submenu-parent > a {\n  padding-right: 1.5rem;\n  position: relative; }\n\n.dropdown.menu > li.is-dropdown-submenu-parent > a::after {\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border: inset 5px;\n  border-color: #2199e8 transparent transparent;\n  border-top-style: solid;\n  border-bottom-width: 0;\n  right: 5px;\n  margin-top: -2px; }\n\n[data-whatinput='mouse'] .dropdown.menu a {\n  outline: 0; }\n\n.no-js .dropdown.menu ul {\n  display: none; }\n\n.dropdown.menu.vertical > li .is-dropdown-submenu {\n  top: 0; }\n\n.dropdown.menu.vertical > li.opens-left .is-dropdown-submenu {\n  left: auto;\n  right: 100%; }\n\n.dropdown.menu.vertical > li.opens-right .is-dropdown-submenu {\n  right: auto;\n  left: 100%; }\n\n.dropdown.menu.vertical > li > a::after {\n  right: 14px;\n  margin-top: -3px; }\n\n.dropdown.menu.vertical > li.opens-left > a::after {\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border: inset 5px;\n  border-color: transparent #2199e8 transparent transparent;\n  border-right-style: solid;\n  border-left-width: 0; }\n\n.dropdown.menu.vertical > li.opens-right > a::after {\n  content: '';\n  display: block;\n  width: 0;\n  height: 0;\n  border: inset 5px;\n  border-color: transparent transparent transparent #2199e8;\n  border-left-style: solid;\n  border-right-width: 0; }\n\n@media screen and (min-width: 40em) {\n  .dropdown.menu.medium-horizontal > li.opens-left > .is-dropdown-submenu {\n    left: auto;\n    right: 0;\n    top: 100%; }\n  .dropdown.menu.medium-horizontal > li.opens-right > .is-dropdown-submenu {\n    right: auto;\n    left: 0;\n    top: 100%; }\n  .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a {\n    padding-right: 1.5rem;\n    position: relative; }\n  .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: #2199e8 transparent transparent;\n    border-top-style: solid;\n    border-bottom-width: 0;\n    right: 5px;\n    margin-top: -2px; }\n  .dropdown.menu.medium-vertical > li .is-dropdown-submenu {\n    top: 0; }\n  .dropdown.menu.medium-vertical > li.opens-left .is-dropdown-submenu {\n    left: auto;\n    right: 100%; }\n  .dropdown.menu.medium-vertical > li.opens-right .is-dropdown-submenu {\n    right: auto;\n    left: 100%; }\n  .dropdown.menu.medium-vertical > li > a::after {\n    right: 14px;\n    margin-top: -3px; }\n  .dropdown.menu.medium-vertical > li.opens-left > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent #2199e8 transparent transparent;\n    border-right-style: solid;\n    border-left-width: 0; }\n  .dropdown.menu.medium-vertical > li.opens-right > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent transparent transparent #2199e8;\n    border-left-style: solid;\n    border-right-width: 0; } }\n\n@media screen and (min-width: 64em) {\n  .dropdown.menu.large-horizontal > li.opens-left > .is-dropdown-submenu {\n    left: auto;\n    right: 0;\n    top: 100%; }\n  .dropdown.menu.large-horizontal > li.opens-right > .is-dropdown-submenu {\n    right: auto;\n    left: 0;\n    top: 100%; }\n  .dropdown.menu.large-horizontal > li.is-dropdown-submenu-parent > a {\n    padding-right: 1.5rem;\n    position: relative; }\n  .dropdown.menu.large-horizontal > li.is-dropdown-submenu-parent > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: #2199e8 transparent transparent;\n    border-top-style: solid;\n    border-bottom-width: 0;\n    right: 5px;\n    margin-top: -2px; }\n  .dropdown.menu.large-vertical > li .is-dropdown-submenu {\n    top: 0; }\n  .dropdown.menu.large-vertical > li.opens-left .is-dropdown-submenu {\n    left: auto;\n    right: 100%; }\n  .dropdown.menu.large-vertical > li.opens-right .is-dropdown-submenu {\n    right: auto;\n    left: 100%; }\n  .dropdown.menu.large-vertical > li > a::after {\n    right: 14px;\n    margin-top: -3px; }\n  .dropdown.menu.large-vertical > li.opens-left > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent #2199e8 transparent transparent;\n    border-right-style: solid;\n    border-left-width: 0; }\n  .dropdown.menu.large-vertical > li.opens-right > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent transparent transparent #2199e8;\n    border-left-style: solid;\n    border-right-width: 0; } }\n\n.dropdown.menu.align-right .is-dropdown-submenu.first-sub {\n  top: 100%;\n  left: auto;\n  right: 0; }\n\n.is-dropdown-menu.vertical {\n  width: 100px; }\n  .is-dropdown-menu.vertical.align-right {\n    float: right; }\n\n.is-dropdown-submenu-parent {\n  position: relative; }\n  .is-dropdown-submenu-parent a::after {\n    position: absolute;\n    top: 50%;\n    right: 5px;\n    margin-top: -2px; }\n  .is-dropdown-submenu-parent.opens-inner .is-dropdown-submenu {\n    top: 100%; }\n  .is-dropdown-submenu-parent.opens-left .is-dropdown-submenu {\n    left: auto;\n    right: 0;\n    top: 100%; }\n\n.is-dropdown-submenu {\n  display: none;\n  position: absolute;\n  top: 0;\n  left: 100%;\n  min-width: 200px;\n  z-index: 1;\n  background: #fefefe;\n  border: 1px solid #cacaca; }\n  .is-dropdown-submenu .is-dropdown-submenu-parent > a::after {\n    right: 14px;\n    margin-top: -3px; }\n  .is-dropdown-submenu .is-dropdown-submenu-parent.opens-left > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent #2199e8 transparent transparent;\n    border-right-style: solid;\n    border-left-width: 0; }\n  .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 5px;\n    border-color: transparent transparent transparent #2199e8;\n    border-left-style: solid;\n    border-right-width: 0; }\n  .is-dropdown-submenu .is-dropdown-submenu {\n    margin-top: -1px; }\n  .is-dropdown-submenu > li {\n    width: 100%; }\n  .is-dropdown-submenu:not(.js-dropdown-nohover) > .is-dropdown-submenu-parent:hover > .is-dropdown-submenu, .is-dropdown-submenu.js-dropdown-active {\n    display: block; }\n\n.flex-video {\n  position: relative;\n  height: 0;\n  padding-bottom: 75%;\n  margin-bottom: 1rem;\n  overflow: hidden; }\n  .flex-video iframe,\n  .flex-video object,\n  .flex-video embed,\n  .flex-video video {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%; }\n  .flex-video.widescreen {\n    padding-bottom: 56.25%; }\n  .flex-video.vimeo {\n    padding-top: 0; }\n\n.label {\n  display: inline-block;\n  padding: 0.33333rem 0.5rem;\n  font-size: 0.8rem;\n  line-height: 1;\n  white-space: nowrap;\n  cursor: default;\n  border-radius: 0.5rem;\n  background: #2199e8;\n  color: #fefefe; }\n  .label.secondary {\n    background: #777;\n    color: #fefefe; }\n  .label.success {\n    background: #3adb76;\n    color: #fefefe; }\n  .label.warning {\n    background: #ffae00;\n    color: #fefefe; }\n  .label.alert {\n    background: #ec5840;\n    color: #fefefe; }\n\n.media-object {\n  margin-bottom: 1rem;\n  display: block; }\n  .media-object img {\n    max-width: none; }\n  @media screen and (max-width: 39.9375em) {\n    .media-object.stack-for-small .media-object-section {\n      padding: 0;\n      padding-bottom: 1rem;\n      display: block; }\n      .media-object.stack-for-small .media-object-section img {\n        width: 100%; } }\n\n.media-object-section {\n  display: table-cell;\n  vertical-align: top; }\n  .media-object-section:first-child {\n    padding-right: 1rem; }\n  .media-object-section:last-child:not(:nth-child(2)) {\n    padding-left: 1rem; }\n  .media-object-section.middle {\n    vertical-align: middle; }\n  .media-object-section.bottom {\n    vertical-align: bottom; }\n\nhtml,\nbody {\n  height: 100%; }\n\n.off-canvas-wrapper {\n  width: 100%;\n  overflow-x: hidden;\n  position: relative;\n  backface-visibility: hidden;\n  -webkit-overflow-scrolling: auto; }\n\n.off-canvas-wrapper-inner {\n  position: relative;\n  width: 100%;\n  transition: transform 0.5s ease; }\n  .off-canvas-wrapper-inner::before, .off-canvas-wrapper-inner::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .off-canvas-wrapper-inner::after {\n    clear: both; }\n\n.off-canvas-content,\n.off-canvas-content {\n  min-height: 100%;\n  background: #fefefe;\n  transition: transform 0.5s ease;\n  backface-visibility: hidden;\n  z-index: 1;\n  padding-bottom: 0.1px;\n  box-shadow: 0 0 10px rgba(10, 10, 10, 0.5); }\n\n.js-off-canvas-exit {\n  display: none;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(254, 254, 254, 0.25);\n  cursor: pointer;\n  transition: background 0.5s ease; }\n\n.off-canvas {\n  position: absolute;\n  background: #fafafa;\n  z-index: -1;\n  max-height: 100%;\n  overflow-y: auto;\n  transform: translateX(0); }\n  [data-whatinput='mouse'] .off-canvas {\n    outline: 0; }\n  .off-canvas.position-left {\n    left: -250px;\n    top: 0;\n    width: 250px; }\n    .is-open-left {\n      transform: translateX(250px); }\n  .off-canvas.position-right {\n    right: -250px;\n    top: 0;\n    width: 250px; }\n    .is-open-right {\n      transform: translateX(-250px); }\n\n@media screen and (min-width: 40em) {\n  .position-left.reveal-for-medium {\n    left: 0;\n    z-index: auto;\n    position: fixed; }\n    .position-left.reveal-for-medium ~ .off-canvas-content {\n      margin-left: 250px; }\n  .position-right.reveal-for-medium {\n    right: 0;\n    z-index: auto;\n    position: fixed; }\n    .position-right.reveal-for-medium ~ .off-canvas-content {\n      margin-right: 250px; } }\n\n@media screen and (min-width: 64em) {\n  .position-left.reveal-for-large {\n    left: 0;\n    z-index: auto;\n    position: fixed; }\n    .position-left.reveal-for-large ~ .off-canvas-content {\n      margin-left: 250px; }\n  .position-right.reveal-for-large {\n    right: 0;\n    z-index: auto;\n    position: fixed; }\n    .position-right.reveal-for-large ~ .off-canvas-content {\n      margin-right: 250px; } }\n\n.orbit {\n  position: relative; }\n\n.orbit-container {\n  position: relative;\n  margin: 0;\n  overflow: hidden;\n  list-style: none; }\n\n.orbit-slide {\n  width: 100%;\n  max-height: 100%; }\n  .orbit-slide.no-motionui.is-active {\n    top: 0;\n    left: 0; }\n\n.orbit-figure {\n  margin: 0; }\n\n.orbit-image {\n  margin: 0;\n  width: 100%;\n  max-width: 100%; }\n\n.orbit-caption {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  padding: 1rem;\n  margin-bottom: 0;\n  color: #fefefe;\n  background-color: rgba(10, 10, 10, 0.5); }\n\n.orbit-previous, .orbit-next {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 10;\n  padding: 1rem;\n  color: #fefefe; }\n  [data-whatinput='mouse'] .orbit-previous, [data-whatinput='mouse'] .orbit-next {\n    outline: 0; }\n  .orbit-previous:hover, .orbit-next:hover, .orbit-previous:active, .orbit-next:active, .orbit-previous:focus, .orbit-next:focus {\n    background-color: rgba(10, 10, 10, 0.5); }\n\n.orbit-previous {\n  left: 0; }\n\n.orbit-next {\n  left: auto;\n  right: 0; }\n\n.orbit-bullets {\n  position: relative;\n  margin-top: 0.8rem;\n  margin-bottom: 0.8rem;\n  text-align: center; }\n  [data-whatinput='mouse'] .orbit-bullets {\n    outline: 0; }\n  .orbit-bullets button {\n    width: 1.2rem;\n    height: 1.2rem;\n    margin: 0.1rem;\n    background-color: #cacaca;\n    border-radius: 50%; }\n    .orbit-bullets button:hover {\n      background-color: #8a8a8a; }\n    .orbit-bullets button.is-active {\n      background-color: #8a8a8a; }\n\n.pagination {\n  margin-left: 0;\n  margin-bottom: 1rem; }\n  .pagination::before, .pagination::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .pagination::after {\n    clear: both; }\n  .pagination li {\n    font-size: 0.875rem;\n    margin-right: 0.0625rem;\n    border-radius: 0.5rem;\n    display: none; }\n    .pagination li:last-child, .pagination li:first-child {\n      display: inline-block; }\n    @media screen and (min-width: 40em) {\n      .pagination li {\n        display: inline-block; } }\n  .pagination a,\n  .pagination button {\n    color: #0a0a0a;\n    display: block;\n    padding: 0.1875rem 0.625rem;\n    border-radius: 0.5rem; }\n    .pagination a:hover,\n    .pagination button:hover {\n      background: #fafafa; }\n  .pagination .current {\n    padding: 0.1875rem 0.625rem;\n    background: #2199e8;\n    color: #fefefe;\n    cursor: default; }\n  .pagination .disabled {\n    padding: 0.1875rem 0.625rem;\n    color: #cacaca;\n    cursor: default; }\n    .pagination .disabled:hover {\n      background: transparent; }\n  .pagination .ellipsis::after {\n    content: '\\2026';\n    padding: 0.1875rem 0.625rem;\n    color: #0a0a0a; }\n\n.pagination-previous a::before,\n.pagination-previous.disabled::before {\n  content: '\\AB';\n  display: inline-block;\n  margin-right: 0.5rem; }\n\n.pagination-next a::after,\n.pagination-next.disabled::after {\n  content: '\\BB';\n  display: inline-block;\n  margin-left: 0.5rem; }\n\n.progress {\n  background-color: #cacaca;\n  height: 1rem;\n  margin-bottom: 1rem;\n  border-radius: 0.5rem; }\n  .progress.primary .progress-meter {\n    background-color: #2199e8; }\n  .progress.secondary .progress-meter {\n    background-color: #777; }\n  .progress.success .progress-meter {\n    background-color: #3adb76; }\n  .progress.warning .progress-meter {\n    background-color: #ffae00; }\n  .progress.alert .progress-meter {\n    background-color: #ec5840; }\n\n.progress-meter {\n  position: relative;\n  display: block;\n  width: 0%;\n  height: 100%;\n  background-color: #2199e8;\n  border-radius: 0.5rem; }\n\n.progress-meter-text {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  margin: 0;\n  font-size: 0.75rem;\n  font-weight: bold;\n  color: #fefefe;\n  white-space: nowrap;\n  border-radius: 0.5rem; }\n\n.slider {\n  position: relative;\n  height: 0.5rem;\n  margin-top: 1.25rem;\n  margin-bottom: 2.25rem;\n  background-color: #fafafa;\n  cursor: pointer;\n  user-select: none;\n  touch-action: none; }\n\n.slider-fill {\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: inline-block;\n  max-width: 100%;\n  height: 0.5rem;\n  background-color: #cacaca;\n  transition: all 0.2s ease-in-out; }\n  .slider-fill.is-dragging {\n    transition: all 0s linear; }\n\n.slider-handle {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  position: absolute;\n  left: 0;\n  z-index: 1;\n  display: inline-block;\n  width: 1.4rem;\n  height: 1.4rem;\n  background-color: #2199e8;\n  transition: all 0.2s ease-in-out;\n  touch-action: manipulation;\n  border-radius: 0.5rem; }\n  [data-whatinput='mouse'] .slider-handle {\n    outline: 0; }\n  .slider-handle:hover {\n    background-color: #1583cc; }\n  .slider-handle.is-dragging {\n    transition: all 0s linear; }\n\n.slider.disabled,\n.slider[disabled] {\n  opacity: 0.25;\n  cursor: not-allowed; }\n\n.slider.vertical {\n  display: inline-block;\n  width: 0.5rem;\n  height: 12.5rem;\n  margin: 0 1.25rem;\n  transform: scale(1, -1); }\n  .slider.vertical .slider-fill {\n    top: 0;\n    width: 0.5rem;\n    max-height: 100%; }\n  .slider.vertical .slider-handle {\n    position: absolute;\n    top: 0;\n    left: 50%;\n    width: 1.4rem;\n    height: 1.4rem;\n    transform: translateX(-50%); }\n\n.sticky-container {\n  position: relative; }\n\n.sticky {\n  position: absolute;\n  z-index: 0;\n  transform: translate3d(0, 0, 0); }\n\n.sticky.is-stuck {\n  position: fixed;\n  z-index: 5; }\n  .sticky.is-stuck.is-at-top {\n    top: 0; }\n  .sticky.is-stuck.is-at-bottom {\n    bottom: 0; }\n\n.sticky.is-anchored {\n  position: absolute;\n  left: auto;\n  right: auto; }\n  .sticky.is-anchored.is-at-bottom {\n    bottom: 0; }\n\nbody.is-reveal-open {\n  overflow: hidden; }\n\n.reveal-overlay {\n  display: none;\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  z-index: 1005;\n  background-color: rgba(10, 10, 10, 0.45);\n  overflow-y: scroll; }\n\n.reveal {\n  display: none;\n  z-index: 1006;\n  padding: 1rem;\n  border: 1px solid #cacaca;\n  background-color: #fefefe;\n  border-radius: 0.5rem;\n  position: relative;\n  top: 100px;\n  margin-left: auto;\n  margin-right: auto;\n  overflow-y: auto; }\n  [data-whatinput='mouse'] .reveal {\n    outline: 0; }\n  @media screen and (min-width: 40em) {\n    .reveal {\n      min-height: 0; } }\n  .reveal .column, .reveal .columns,\n  .reveal .columns {\n    min-width: 0; }\n  .reveal > :last-child {\n    margin-bottom: 0; }\n  @media screen and (min-width: 40em) {\n    .reveal {\n      width: 600px;\n      max-width: 75rem; } }\n  @media screen and (min-width: 40em) {\n    .reveal .reveal {\n      left: auto;\n      right: auto;\n      margin: 0 auto; } }\n  .reveal.collapse {\n    padding: 0; }\n  @media screen and (min-width: 40em) {\n    .reveal.tiny {\n      width: 30%;\n      max-width: 75rem; } }\n  @media screen and (min-width: 40em) {\n    .reveal.small {\n      width: 50%;\n      max-width: 75rem; } }\n  @media screen and (min-width: 40em) {\n    .reveal.large {\n      width: 90%;\n      max-width: 75rem; } }\n  .reveal.full {\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    height: 100vh;\n    min-height: 100vh;\n    max-width: none;\n    margin-left: 0;\n    border: 0; }\n  @media screen and (max-width: 39.9375em) {\n    .reveal {\n      top: 0;\n      left: 0;\n      width: 100%;\n      height: 100%;\n      height: 100vh;\n      min-height: 100vh;\n      max-width: none;\n      margin-left: 0;\n      border: 0; } }\n  .reveal.without-overlay {\n    position: fixed; }\n\n.switch {\n  margin-bottom: 1rem;\n  outline: 0;\n  position: relative;\n  user-select: none;\n  color: #fefefe;\n  font-weight: bold;\n  font-size: 0.875rem; }\n\n.switch-input {\n  opacity: 0;\n  position: absolute; }\n\n.switch-paddle {\n  background: #cacaca;\n  cursor: pointer;\n  display: block;\n  position: relative;\n  width: 4rem;\n  height: 2rem;\n  transition: all 0.25s ease-out;\n  border-radius: 0.5rem;\n  color: inherit;\n  font-weight: inherit; }\n  input + .switch-paddle {\n    margin: 0; }\n  .switch-paddle::after {\n    background: #fefefe;\n    content: '';\n    display: block;\n    position: absolute;\n    height: 1.5rem;\n    left: 0.25rem;\n    top: 0.25rem;\n    width: 1.5rem;\n    transition: all 0.25s ease-out;\n    transform: translate3d(0, 0, 0);\n    border-radius: 0.5rem; }\n  input:checked ~ .switch-paddle {\n    background: #2199e8; }\n    input:checked ~ .switch-paddle::after {\n      left: 2.25rem; }\n  [data-whatinput='mouse'] input:focus ~ .switch-paddle {\n    outline: 0; }\n\n.switch-active, .switch-inactive {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%); }\n\n.switch-active {\n  left: 8%;\n  display: none; }\n  input:checked + label > .switch-active {\n    display: block; }\n\n.switch-inactive {\n  right: 15%; }\n  input:checked + label > .switch-inactive {\n    display: none; }\n\n.switch.tiny .switch-paddle {\n  width: 3rem;\n  height: 1.5rem;\n  font-size: 0.625rem; }\n\n.switch.tiny .switch-paddle::after {\n  width: 1rem;\n  height: 1rem; }\n\n.switch.tiny input:checked ~ .switch-paddle:after {\n  left: 1.75rem; }\n\n.switch.small .switch-paddle {\n  width: 3.5rem;\n  height: 1.75rem;\n  font-size: 0.75rem; }\n\n.switch.small .switch-paddle::after {\n  width: 1.25rem;\n  height: 1.25rem; }\n\n.switch.small input:checked ~ .switch-paddle:after {\n  left: 2rem; }\n\n.switch.large .switch-paddle {\n  width: 5rem;\n  height: 2.5rem;\n  font-size: 1rem; }\n\n.switch.large .switch-paddle::after {\n  width: 2rem;\n  height: 2rem; }\n\n.switch.large input:checked ~ .switch-paddle:after {\n  left: 2.75rem; }\n\ntable {\n  width: 100%;\n  margin-bottom: 1rem;\n  border-radius: 0.5rem; }\n  table thead,\n  table tbody,\n  table tfoot {\n    border: 1px solid #f1f1f1;\n    background-color: #fefefe; }\n  table caption {\n    font-weight: bold;\n    padding: 0.5rem 0.625rem 0.625rem; }\n  table thead,\n  table tfoot {\n    background: #f8f8f8;\n    color: #0a0a0a; }\n    table thead tr,\n    table tfoot tr {\n      background: transparent; }\n    table thead th,\n    table thead td,\n    table tfoot th,\n    table tfoot td {\n      padding: 0.5rem 0.625rem 0.625rem;\n      font-weight: bold;\n      text-align: left; }\n  table tbody tr:nth-child(even) {\n    background-color: #f1f1f1; }\n  table tbody th,\n  table tbody td {\n    padding: 0.5rem 0.625rem 0.625rem; }\n\n@media screen and (max-width: 63.9375em) {\n  table.stack thead {\n    display: none; }\n  table.stack tfoot {\n    display: none; }\n  table.stack tr,\n  table.stack th,\n  table.stack td {\n    display: block; }\n  table.stack td {\n    border-top: 0; } }\n\ntable.scroll {\n  display: block;\n  width: 100%;\n  overflow-x: auto; }\n\ntable.hover tr:hover {\n  background-color: #f9f9f9; }\n\ntable.hover tr:nth-of-type(even):hover {\n  background-color: #ececec; }\n\n.table-scroll {\n  overflow-x: auto; }\n  .table-scroll table {\n    width: auto; }\n\n.tabs {\n  margin: 0;\n  list-style-type: none;\n  background: #fefefe;\n  border: 1px solid #fafafa; }\n  .tabs::before, .tabs::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .tabs::after {\n    clear: both; }\n\n.tabs.vertical > li {\n  width: auto;\n  float: none;\n  display: block; }\n\n.tabs.simple > li > a {\n  padding: 0; }\n  .tabs.simple > li > a:hover {\n    background: transparent; }\n\n.tabs.primary {\n  background: #2199e8; }\n  .tabs.primary > li > a {\n    color: #fefefe; }\n    .tabs.primary > li > a:hover, .tabs.primary > li > a:focus {\n      background: #1893e4; }\n\n.tabs-title {\n  float: left; }\n  .tabs-title > a {\n    display: block;\n    padding: 1.25rem 1.5rem;\n    line-height: 1;\n    font-size: 0.75rem; }\n    .tabs-title > a:hover {\n      background: #fefefe; }\n    .tabs-title > a:focus, .tabs-title > a[aria-selected='true'] {\n      background: #fafafa; }\n\n.tabs-content {\n  background: #fefefe;\n  transition: all 0.5s ease;\n  border: 1px solid #fafafa;\n  border-top: 0; }\n\n.tabs-content.vertical {\n  border: 1px solid #fafafa;\n  border-left: 0; }\n\n.tabs-panel {\n  display: none;\n  padding: 1rem; }\n  .tabs-panel.is-active {\n    display: block; }\n\n.thumbnail {\n  border: solid 4px #fefefe;\n  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);\n  display: inline-block;\n  line-height: 0;\n  max-width: 100%;\n  transition: box-shadow 200ms ease-out;\n  border-radius: 0.5rem;\n  margin-bottom: 1rem; }\n  .thumbnail:hover, .thumbnail:focus {\n    box-shadow: 0 0 6px 1px rgba(33, 153, 232, 0.5); }\n\n.title-bar {\n  background: #0a0a0a;\n  color: #fefefe;\n  padding: 0.5rem; }\n  .title-bar::before, .title-bar::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .title-bar::after {\n    clear: both; }\n  .title-bar .menu-icon {\n    margin-left: 0.25rem;\n    margin-right: 0.5rem; }\n\n.title-bar-left {\n  float: left; }\n\n.title-bar-right {\n  float: right;\n  text-align: right; }\n\n.title-bar-title {\n  font-weight: bold;\n  vertical-align: middle;\n  display: inline-block; }\n\n.menu-icon.dark {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle;\n  cursor: pointer;\n  width: 20px;\n  height: 16px; }\n  .menu-icon.dark::after {\n    content: '';\n    position: absolute;\n    display: block;\n    width: 100%;\n    height: 2px;\n    background: #0a0a0a;\n    top: 0;\n    left: 0;\n    box-shadow: 0 7px 0 #0a0a0a, 0 14px 0 #0a0a0a; }\n  .menu-icon.dark:hover::after {\n    background: #8a8a8a;\n    box-shadow: 0 7px 0 #8a8a8a, 0 14px 0 #8a8a8a; }\n\n.has-tip {\n  border-bottom: dotted 1px #8a8a8a;\n  font-weight: bold;\n  position: relative;\n  display: inline-block;\n  cursor: help; }\n\n.tooltip {\n  background-color: #0a0a0a;\n  color: #fefefe;\n  font-size: 80%;\n  padding: 0.75rem;\n  position: absolute;\n  z-index: 10;\n  top: calc(100% + 0.6495rem);\n  max-width: 10rem !important;\n  border-radius: 0.5rem; }\n  .tooltip::before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 0.75rem;\n    border-color: transparent transparent #0a0a0a;\n    border-bottom-style: solid;\n    border-top-width: 0;\n    bottom: 100%;\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%); }\n  .tooltip.top::before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 0.75rem;\n    border-color: #0a0a0a transparent transparent;\n    border-top-style: solid;\n    border-bottom-width: 0;\n    top: 100%;\n    bottom: auto; }\n  .tooltip.left::before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 0.75rem;\n    border-color: transparent transparent transparent #0a0a0a;\n    border-left-style: solid;\n    border-right-width: 0;\n    bottom: auto;\n    left: 100%;\n    top: 50%;\n    transform: translateY(-50%); }\n  .tooltip.right::before {\n    content: '';\n    display: block;\n    width: 0;\n    height: 0;\n    border: inset 0.75rem;\n    border-color: transparent #0a0a0a transparent transparent;\n    border-right-style: solid;\n    border-left-width: 0;\n    bottom: auto;\n    left: auto;\n    right: 100%;\n    top: 50%;\n    transform: translateY(-50%); }\n\n.top-bar {\n  padding: 0.5rem; }\n  .top-bar::before, .top-bar::after {\n    content: ' ';\n    display: table;\n    flex-basis: 0;\n    order: 1; }\n  .top-bar::after {\n    clear: both; }\n  .top-bar,\n  .top-bar ul {\n    background-color: #fafafa; }\n  .top-bar input {\n    width: 200px;\n    margin-right: 1rem; }\n  .top-bar .input-group-field {\n    width: 100%;\n    margin-right: 0; }\n  .top-bar input.button {\n    width: auto; }\n\n@media screen and (max-width: 39.9375em) {\n  .stacked-for-small .top-bar-left,\n  .stacked-for-small .top-bar-right {\n    width: 100%; } }\n\n@media screen and (max-width: 63.9375em) {\n  .stacked-for-medium .top-bar-left,\n  .stacked-for-medium .top-bar-right {\n    width: 100%; } }\n\n@media screen and (max-width: 74.9375em) {\n  .stacked-for-large .top-bar-left,\n  .stacked-for-large .top-bar-right {\n    width: 100%; } }\n\n.top-bar-left,\n.top-bar-right {\n  width: 100%; }\n\n@media screen and (min-width: 40em) {\n  .top-bar-left,\n  .top-bar-right {\n    width: auto; } }\n\n.top-bar-title {\n  float: left;\n  margin-right: 1rem; }\n\n.top-bar-left {\n  float: left; }\n\n.top-bar-right {\n  float: right; }\n\n.hide {\n  display: none !important; }\n\n.invisible {\n  visibility: hidden; }\n\n@media screen and (max-width: 39.9375em) {\n  .hide-for-small-only {\n    display: none !important; } }\n\n@media screen and (max-width: 0em), screen and (min-width: 40em) {\n  .show-for-small-only {\n    display: none !important; } }\n\n@media screen and (min-width: 40em) {\n  .hide-for-medium {\n    display: none !important; } }\n\n@media screen and (max-width: 39.9375em) {\n  .show-for-medium {\n    display: none !important; } }\n\n@media screen and (min-width: 40em) and (max-width: 63.9375em) {\n  .hide-for-medium-only {\n    display: none !important; } }\n\n@media screen and (max-width: 39.9375em), screen and (min-width: 64em) {\n  .show-for-medium-only {\n    display: none !important; } }\n\n@media screen and (min-width: 64em) {\n  .hide-for-large {\n    display: none !important; } }\n\n@media screen and (max-width: 63.9375em) {\n  .show-for-large {\n    display: none !important; } }\n\n@media screen and (min-width: 64em) and (max-width: 74.9375em) {\n  .hide-for-large-only {\n    display: none !important; } }\n\n@media screen and (max-width: 63.9375em), screen and (min-width: 75em) {\n  .show-for-large-only {\n    display: none !important; } }\n\n.show-for-sr,\n.show-on-focus {\n  position: absolute !important;\n  width: 1px;\n  height: 1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0); }\n\n.show-on-focus:active, .show-on-focus:focus {\n  position: static !important;\n  height: auto;\n  width: auto;\n  overflow: visible;\n  clip: auto; }\n\n.show-for-landscape,\n.hide-for-portrait {\n  display: block !important; }\n  @media screen and (orientation: landscape) {\n    .show-for-landscape,\n    .hide-for-portrait {\n      display: block !important; } }\n  @media screen and (orientation: portrait) {\n    .show-for-landscape,\n    .hide-for-portrait {\n      display: none !important; } }\n\n.hide-for-landscape,\n.show-for-portrait {\n  display: none !important; }\n  @media screen and (orientation: landscape) {\n    .hide-for-landscape,\n    .show-for-portrait {\n      display: none !important; } }\n  @media screen and (orientation: portrait) {\n    .hide-for-landscape,\n    .show-for-portrait {\n      display: block !important; } }\n\n.float-left {\n  float: left !important; }\n\n.float-right {\n  float: right !important; }\n\n.float-center {\n  display: block;\n  margin-left: auto;\n  margin-right: auto; }\n\n.clearfix::before, .clearfix::after {\n  content: ' ';\n  display: table;\n  flex-basis: 0;\n  order: 1; }\n\n.clearfix::after {\n  clear: both; }\n\n.top-bar, .top-bar ul {\n  background-color: #333333; }\n\n.top-bar .menu-text {\n  color: white; }\n\n.top-bar .menu > .menu-text > a {\n  display: inline;\n  padding: 0; }\n\n.site-title {\n  padding-top: 10px;\n  color: #fefefe;\n  font-family: 'Monoton', cursive;\n  font-size: 500%; }\n\n.site-sub-title {\n  color: white;\n  font-weight: bold; }\n\n.site-header {\n  height: 300px;\n  width: 100%;\n  padding: 20px;\n  padding-bottom: 100px;\n  color: white;\n  border-bottom: 5px solid black;\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c2c8ce+0,5761f2+100 */\n  background: #c2c8ce;\n  /* Old browsers */\n  background: -moz-linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* FF3.6-15 */\n  background: -webkit-linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c8ce', endColorstr='#5761f2',GradientType=1 );\n  /* IE6-9 fallback on horizontal gradient */ }\n\n.page-title {\n  padding-top: 10px;\n  color: #fefefe;\n  font-family: 'Monoton', cursive;\n  font-size: 500%; }\n\n.page-sub-title {\n  color: white;\n  font-weight: bold; }\n\n.page-header {\n  height: 200px;\n  width: 100%;\n  padding: 20px;\n  padding-bottom: 100px;\n  color: white;\n  border-bottom: 5px solid black;\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c2c8ce+0,5761f2+100 */\n  background: #c2c8ce;\n  /* Old browsers */\n  background: -moz-linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* FF3.6-15 */\n  background: -webkit-linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(45deg, #c2c8ce 0%, #5761f2 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c8ce', endColorstr='#5761f2',GradientType=1 );\n  /* IE6-9 fallback on horizontal gradient */ }\n\n.form {\n  color: white;\n  border: 1px solid black;\n  border-radius: 0.3125rem;\n  margin-bottom: 100px; }\n\n/** Off Canvas **/\ndiv.off-canvas {\n  height: 100%;\n  background-color: #0f5f94; }\n  div.off-canvas a, div.off-canvas h3 {\n    color: #fefefe; }\n  div.off-canvas .is-drilldown-submenu {\n    background-color: #0f5f94; }\n\n.menu-icon,\n.menu-icon:hover {\n  width: 3.75rem;\n  height: 2.25rem;\n  margin-top: 1.5625rem; }\n  .menu-icon::after,\n  .menu-icon:hover::after {\n    background-color: black;\n    height: 0.5rem;\n    box-shadow: 0 28px 0 black, 0 14px 0 black; }\n\n.footer-wrapper {\n  background-color: #333333;\n  height: 31.25rem; }\n  .footer-wrapper a {\n    color: white;\n    font-size: 0.9375rem;\n    margin-left: 0;\n    opacity: 0.75; }\n\n.footer-heading {\n  margin-top: 1.25rem;\n  color: white;\n  font-weight: bold;\n  margin-left: 10px; }\n\np.copyright {\n  padding: 0;\n  background-color: #262626;\n  margin: 0; }\n\n.social-menu {\n  position: absolute;\n  left: 40%;\n  padding-top: 50px; }\n\n.social {\n  padding: 20px; }\n\n.blue {\n  background-color: darkblue;\n  border: 5px solid black; }\n\n.magenta {\n  background-color: #8B008B; }\n\n.orange {\n  background-color: #FF8C00; }\n\n.red {\n  background-color: #8B0000; }\n\n.pink {\n  background-color: #FF1493; }\n\n.gold {\n  background-color: #FFD700; }\n\n.green {\n  background-color: #008000; }\n\n.coral {\n  background-color: #F08080; }\n\n.aqua {\n  background-color: #66CDAA; }\n\n.callout {\n  margin-top: 0;\n  background: #fafafa;\n  border: 1px solid #eee; }\n  .callout h3 {\n    margin: 0 2rem;\n    border-bottom: 1px solid #eee;\n    text-transform: uppercase; }\n  .callout p {\n    padding: 0;\n    margin: 0 2rem; }\n  .callout a {\n    padding: 0;\n    margin: 0 2rem; }\n\n.page-sub-heading {\n  width: 100%;\n  margin-top: 1.875rem;\n  margin-left: 2.5rem; }\n\ndl {\n  padding: 0;\n  margin: 0 2rem; }\n  dl dt {\n    border-bottom: 1px solid #eee; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 250 */
+/* 376 */
 /***/ function(module, exports) {
 
 	/*
@@ -27775,7 +35517,7 @@
 
 
 /***/ },
-/* 251 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

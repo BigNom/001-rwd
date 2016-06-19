@@ -17,6 +17,12 @@ class Navbar extends React.Component {
                    <li>
                      <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link>
                    </li>
+                   <li>
+                     <Link to="/sidenav" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>SideNav</Link>
+                   </li>
+                   <li>
+                     <Link to="/landingpage" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>LandingPage</Link>
+                   </li>
                  </ul>
                </div>
                <div className="top-bar-right align-right">
